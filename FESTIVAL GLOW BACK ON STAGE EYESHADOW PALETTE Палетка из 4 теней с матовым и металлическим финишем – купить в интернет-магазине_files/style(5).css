@@ -1,0 +1,34 @@
+.OverlayPanel__Content.basket-small-empty {
+    padding: 20px 41px;
+    height: calc(150% - 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media screen and (max-width: 900px){
+    .OverlayPanel__Content.basket-small-empty {
+        padding: 20px 0px;
+    }
+}
+body .OverlayPanel--MiniCart .MiniCart__Summary {
+    padding-bottom: 20px;
+}
+body .OverlayPanel--MiniCart .MiniCart__Items {
+    height: calc(100% - 360px);
+}
+body .OverlayPanel__Footer {
+    background-color: #fff;
+}
+
+.julietta-font {
+    font-family: 'Caravan';
+    font-size: 4rem !important;
+    font-weight: 500;
+    line-height: 44px;
+    padding-bottom: 1rem;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}

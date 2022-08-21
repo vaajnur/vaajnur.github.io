@@ -1,0 +1,13 @@
+@media (min-width: 1440px) {
+    .Reviews__Filters {
+        max-width: 60%;
+    }
+}
+.Reviews__Write__Close.collapsed {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+}
+.Reviews__Write__Message {
+    text-align: center;
+}

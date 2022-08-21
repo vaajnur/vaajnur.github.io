@@ -1,0 +1,14 @@
+@media (min-width: 60em) {
+    .TopPromo__Carousel.TopPromo__CarouselItems-1 {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .TopPromo__Carousel.TopPromo__CarouselItems-2 {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .TopPromo__Carousel.TopPromo__CarouselItems-1 .TopPromo__Col:first-child,
+    .TopPromo__Carousel.TopPromo__CarouselItems-1 .TopPromo__Col:last-child,
+    .TopPromo__Carousel.TopPromo__CarouselItems-2 .TopPromo__Col:first-child,
+    .TopPromo__Carousel.TopPromo__CarouselItems-2 .TopPromo__Col:last-child {
+        justify-content: center;
+    }
+}

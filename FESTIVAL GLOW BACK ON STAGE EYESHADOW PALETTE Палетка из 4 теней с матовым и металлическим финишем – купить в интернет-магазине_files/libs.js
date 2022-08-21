@@ -5,7 +5,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(7);
+var bind = __webpack_require__(9);
 
 /*global toString:true*/
 
@@ -23000,32 +23000,6 @@ module.exports = {
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(root, factory) {
@@ -23134,7 +23108,47 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(root, 
 });
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(32);
+
+
+/***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _slicedToArray(t,a){return _arrayWithHoles(t)||_iterableToArrayLimit(t,a)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}function _iterableToArrayLimit(t,a){var n=[],e=!0,r=!1,o=void 0;try{for(var l,i=t[Symbol.iterator]();!(e=(l=i.next()).done)&&(n.push(l.value),!a||n.length!==a);e=!0);}catch(t){r=!0,o=t}finally{try{e||null==i.return||i.return()}finally{if(r)throw o}}return n}function _arrayWithHoles(t){if(Array.isArray(t))return t}!function(){var lax=function(){for(var lax={elements:[]},lastY=0,currentBreakpoint="default",breakpointsSeparator="_",transformFns={"data-lax-opacity":function(t,a){t.opacity=a},"data-lax-translate":function(t,a){t.transform+=" translate(".concat(a,"px, ").concat(a,"px)")},"data-lax-translate-x":function(t,a){t.transform+=" translateX(".concat(a,"px)")},"data-lax-translate-y":function(t,a){t.transform+=" translateY(".concat(a,"px)")},"data-lax-scale":function(t,a){t.transform+=" scale(".concat(a,")")},"data-lax-scale-x":function(t,a){t.transform+=" scaleX(".concat(a,")")},"data-lax-scale-y":function(t,a){t.transform+=" scaleY(".concat(a,")")},"data-lax-skew":function(t,a){t.transform+=" skew(".concat(a,"deg, ").concat(a,"deg)")},"data-lax-skew-x":function(t,a){t.transform+=" skewX(".concat(a,"deg)")},"data-lax-skew-y":function(t,a){t.transform+=" skewY(".concat(a,"deg)")},"data-lax-rotate":function(t,a){t.transform+=" rotate(".concat(a,"deg)")},"data-lax-rotate-x":function(t,a){t.transform+=" rotateX(".concat(a,"deg)")},"data-lax-rotate-y":function(t,a){t.transform+=" rotateY(".concat(a,"deg)")},"data-lax-brightness":function(t,a){t.filter+=" brightness(".concat(a,"%)")},"data-lax-contrast":function(t,a){t.filter+=" contrast(".concat(a,"%)")},"data-lax-hue-rotate":function(t,a){t.filter+=" hue-rotate(".concat(a,"deg)")},"data-lax-blur":function(t,a){t.filter+=" blur(".concat(a,"px)")},"data-lax-invert":function(t,a){t.filter+="  invert(".concat(a,"%)")},"data-lax-saturate":function(t,a){t.filter+="  saturate(".concat(a,"%)")},"data-lax-grayscale":function(t,a){t.filter+="  grayscale(".concat(a,"%)")},"data-lax-bg-pos":function(t,a){t.backgroundPosition="".concat(a,"px ").concat(a,"px")},"data-lax-bg-pos-x":function(t,a){t.backgroundPositionX="".concat(a,"px")},"data-lax-bg-pos-y":function(t,a){t.backgroundPositionY="".concat(a,"px")}},_crazy="",i=0;i<20;i++)_crazy+=" "+5*i+" "+47*i%360+", ";function intrp(t,a){for(var n=0;t[n][0]<=a&&void 0!==t[n+1];)n+=1;var e=t[n][0],r=void 0===t[n-1]?e:t[n-1][0],o=t[n][1],l=void 0===t[n-1]?o:t[n-1][1];return Math.min(Math.max((a-r)/(e-r),0),1)*(o-l)+l}function fnOrVal(s){return"("===s[0]?eval(s):parseFloat(s)}return lax.presets={linger:function(t){return{"data-lax-translate-y":"(vh*0.7) 0, 0 200, -500 0"}},lazy:function(t){return{"data-lax-translate-y":"(vh) 0, (-elh) ".concat(0<arguments.length&&void 0!==t?t:100)}},eager:function(t){return{"data-lax-translate-y":"(vh) 0, (-elh) -".concat(0<arguments.length&&void 0!==t?t:100)}},slalom:function(t){var a=0<arguments.length&&void 0!==t?t:50;return{"data-lax-translate-x":"vh ".concat(a,", (vh*0.8) ").concat(-a,", (vh*0.6) ").concat(a,", (vh*0.4) ").concat(-a,", (vh*0.2) ").concat(a,", (vh*0) ").concat(-a,", (-elh) ").concat(a)}},crazy:function(t){return{"data-lax-hue-rotate":"".concat(_crazy," | loop=20")}},spin:function(t){return{"data-lax-rotate":"(vh) 0, (-elh) ".concat(0<arguments.length&&void 0!==t?t:360)}},spinRev:function(t){return{"data-lax-rotate":"(vh) 0, (-elh) ".concat(-(0<arguments.length&&void 0!==t?t:360))}},spinIn:function(t){return{"data-lax-rotate":"vh ".concat(0<arguments.length&&void 0!==t?t:360,", (vh*0.5) 0")}},spinOut:function(t){return{"data-lax-rotate":"(vh*0.5) 0, -elh ".concat(0<arguments.length&&void 0!==t?t:360)}},blurInOut:function(t){var a=0<arguments.length&&void 0!==t?t:40;return{"data-lax-blur":"(vh) ".concat(a,", (vh*0.8) 0, (vh*0.2) 0, 0 ").concat(a)}},blurIn:function(t){return{"data-lax-blur":"(vh) ".concat(0<arguments.length&&void 0!==t?t:40,", (vh*0.7) 0")}},blurOut:function(t){return{"data-lax-blur":"(vh*0.3) 0, 0 ".concat(0<arguments.length&&void 0!==t?t:40)}},fadeInOut:function(){return{"data-lax-opacity":"(vh) 0, (vh*0.8) 1, (vh*0.2) 1, 0 0"}},fadeIn:function(){return{"data-lax-opacity":"(vh) 0, (vh*0.7) 1"}},fadeOut:function(){return{"data-lax-opacity":"(vh*0.3) 1, 0 0"}},driftLeft:function(t){var a=0<arguments.length&&void 0!==t?t:100;return{"data-lax-translate-x":"vh ".concat(a,", -elh ").concat(-a)}},driftRight:function(t){var a=0<arguments.length&&void 0!==t?t:100;return{"data-lax-translate-x":"vh ".concat(-a,", -elh ").concat(a)}},leftToRight:function(t){return{"data-lax-translate-x":"vh 0, -elh (vw*".concat(0<arguments.length&&void 0!==t?t:1,")")}},rightToLeft:function(t){return{"data-lax-translate-x":"vh 0, -elh (vw*".concat(-(0<arguments.length&&void 0!==t?t:1),")")}},zoomInOut:function(t){var a=0<arguments.length&&void 0!==t?t:.2;return{"data-lax-scale":"(vh) ".concat(a,", (vh*0.8) 1, (vh*0.2) 1, -elh ").concat(a)}},zoomIn:function(t){return{"data-lax-scale":"(vh) ".concat(0<arguments.length&&void 0!==t?t:.2,", (vh*0.7) 1")}},zoomOut:function(t){return{"data-lax-scale":"(vh*0.3) 1, -elh ".concat(0<arguments.length&&void 0!==t?t:.2)}},speedy:function(t){var a=0<arguments.length&&void 0!==t?t:30;return{"data-lax-skew-x":"(vh) ".concat(a,", -elh ").concat(-a)}},swing:function(t){var a=0<arguments.length&&void 0!==t?t:30;return{"data-lax-skew-y":"(vh) ".concat(a,", -elh ").concat(-a)}}},lax.addPreset=function(t,a){lax.presets[t]=a},lax.setup=function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};lax.breakpoints=t.breakpoints||{},lax.selector=t.selector||".lax",lax.populateElements()},lax.removeElement=function(a){var t=lax.elements.findIndex(function(t){return t.el=a});-1<t&&lax.elements.splice(t,1)},lax.createLaxObject=function(t){return{el:t,originalStyle:{transform:t.style.transform,filter:t.style.filter},transforms:{}}},lax.calcTransforms=function(l){for(var i=l.el,r=[],t=0;t<i.attributes.length;t++){var a=i.attributes[t];-1<a.name.indexOf("data-lax-preset")&&r.push(a)}for(var n=function(t){var a=r[t],n=a.name.split(breakpointsSeparator),o=n[1]?"".concat(breakpointsSeparator).concat(n[1]):"";a.value.split(" ").forEach(function(t){var a=t.split("-"),n=lax.presets[a[0]];if(n){var e=n(a[1]);for(var r in e)i.setAttribute("".concat(r).concat(o),e[r])}else console.log("lax error: preset ".concat(a[0]," is not defined"))});var e=i.getAttribute("data-lax-anchor");e&&""!==e||i.setAttribute("data-lax-anchor","self"),i.attributes.removeNamedItem(a.name)},e=0;e<r.length;e++)n(e);if(!(i.attributes["data-lax-use-gpu"]&&"false"===i.attributes["data-lax-use-gpu"].value)&&(i.style["backface-visibility"]="hidden",i.style["-webkit-backface-visibility"]="hidden"),i.attributes["data-lax-use-gpu"]&&i.attributes.removeNamedItem("data-lax-use-gpu"),l.optimise=!1,i.attributes["data-lax-optimize"]&&"true"===i.attributes["data-lax-optimize"].value){l.optimise=!0;var o=i.getBoundingClientRect();i.setAttribute("data-lax-opacity","".concat(-o.height-1," 0, ").concat(-o.height," 1, ").concat(window.innerHeight," 1, ").concat(window.innerHeight+1," 0")),i.attributes.removeNamedItem("data-lax-optimize")}for(var c=0;c<i.attributes.length;c++){var s=i.attributes[c];if(!(s.name.indexOf("data-lax")<0)){var u=s.name.split(breakpointsSeparator),f=u[0].split("-"),d=u[1]||"default";if("lax"===f[1])if("data-lax-anchor"===s.name){l["data-lax-anchor"]="self"===s.value?i:document.querySelector(s.value);var x=l["data-lax-anchor"].getBoundingClientRect();l.anchorTop=Math.floor(x.top)+window.scrollY}else!function(){var t=_slicedToArray(s.value.replace(/vw/g,window.innerWidth).replace(/vh/g,window.innerHeight).replace(/elh/g,i.clientHeight).replace(/elw/g,i.clientWidth).replace(/\s+/g," ").split("|"),2),a=t[0],n=t[1],r={};n&&n.split(" ").forEach(function(t){var a=_slicedToArray(t.split("="),2),n=a[0],e=a[1];r[n]=n&&fnOrVal(e)});var e=u[0],o=a.split(",").map(function(t){return t.trim().split(" ").map(fnOrVal)}).sort(function(t,a){return t[0]-a[0]});l.transforms[e]||(l.transforms[e]={}),l.transforms[e][d]={valueMap:o,options:r}}()}}var v=i.attributes["data-lax-sprite-data"]&&i.attributes["data-lax-sprite-data"].value;if(v){l.spriteData=v.split(",").map(function(t){return parseInt(t)}),i.style.height=l.spriteData[1]+"px",i.style.width=l.spriteData[0]+"px";var p=i.attributes["data-lax-sprite-image"]&&i.attributes["data-lax-sprite-image"].value;p&&(i.style.backgroundImage="url(".concat(p,")"))}return l},lax.addElement=function(t){var a=lax.calcTransforms(lax.createLaxObject(t));lax.elements.push(a),lax.updateElement(a)},lax.populateElements=function(){lax.elements=[],document.querySelectorAll(lax.selector).forEach(lax.addElement),currentBreakpoint=lax.getCurrentBreakPoint()},lax.updateElements=function(){lax.elements.forEach(function(t){lax.calcTransforms(t),lax.updateElement(t)}),currentBreakpoint=lax.getCurrentBreakPoint()},lax.getCurrentBreakPoint=function(){var t="default",a=window.innerWidth;for(var n in lax.breakpoints){if(!(parseFloat(lax.breakpoints[n])<=a))break;t=n}return t},lax.updateElement=function(t){var a=t.originalStyle,n=t.anchorTop,e=t.transforms,r=t.spriteData,o=t.el,l=n?n-lastY:lastY,i={transform:a.transform,filter:a.filter};for(var c in e){var s=e[c][currentBreakpoint]||e[c].default;if(s){var u=l;s.options.offset&&(u+=s.options.offset),s.options.speed&&(u*=s.options.speed),s.options.loop&&(u%=s.options.loop);var f=transformFns[c],d=intrp(s.valueMap,u);f&&f(i,d)}}if(r){var x=_slicedToArray(r,5),v=x[0],p=x[1],h=x[2],m=x[3],g=x[4],b=Math.floor(lastY/g)%h,y=b%m,k=Math.floor(b/m);i.backgroundPosition="-".concat(y*v,"px -").concat(k*p,"px")}if(0===i.opacity)o.style.opacity=0;else for(var w in i)o.style[w]=i[w]},lax.update=function(t){lastY!==t&&(lastY=t,lax.elements.forEach(lax.updateElement))},lax}(); true&&void 0!==module.exports?module.exports=lax:window.lax=lax}();
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23409,7 +23423,7 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23427,7 +23441,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23504,7 +23518,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23516,14 +23530,14 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(46);
+var normalizeHeaderName = __webpack_require__(50);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -23539,10 +23553,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(13);
   } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(13);
   }
   return adapter;
 }
@@ -23619,23 +23633,23 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(49)))
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(47);
-var cookies = __webpack_require__(49);
-var buildURL = __webpack_require__(8);
-var buildFullPath = __webpack_require__(50);
-var parseHeaders = __webpack_require__(53);
-var isURLSameOrigin = __webpack_require__(54);
-var createError = __webpack_require__(12);
+var settle = __webpack_require__(51);
+var cookies = __webpack_require__(53);
+var buildURL = __webpack_require__(10);
+var buildFullPath = __webpack_require__(54);
+var parseHeaders = __webpack_require__(57);
+var isURLSameOrigin = __webpack_require__(58);
+var createError = __webpack_require__(14);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -23815,13 +23829,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(48);
+var enhanceError = __webpack_require__(52);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -23840,7 +23854,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23934,7 +23948,7 @@ module.exports = function mergeConfig(config1, config2) {
 
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23960,7 +23974,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23993,33 +24007,7 @@ module.exports = util.assign(
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(40);
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var stringify = __webpack_require__(57);
-var parse = __webpack_require__(58);
-var formats = __webpack_require__(15);
-
-module.exports = {
-    formats: formats,
-    parse: parse,
-    stringify: stringify
-};
-
-
-/***/ }),
-/* 18 */,
-/* 19 */,
-/* 20 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24257,4377 +24245,17 @@ module.exports = fix;
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(22);
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * dist/inputmask
- * https://github.com/RobinHerbots/Inputmask
- * Copyright (c) 2010 - 2020 Robin Herbots
- * Licensed under the MIT license
- * Version: 5.0.5-beta.0
- */
-!function webpackUniversalModuleDefinition(root, factory) {
-    if (true) module.exports = factory(); else { var i, a; }
-}(window, function() {
-    return modules = [ function(module) {
-        module.exports = JSON.parse('{"BACKSPACE":8,"BACKSPACE_SAFARI":127,"DELETE":46,"DOWN":40,"END":35,"ENTER":13,"ESCAPE":27,"HOME":36,"INSERT":45,"LEFT":37,"PAGE_DOWN":34,"PAGE_UP":33,"RIGHT":39,"SPACE":32,"TAB":9,"UP":38,"X":88,"CONTROL":17,"KEY_229":229}');
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0, __webpack_require__(10);
-        var _mask = __webpack_require__(11), _inputmask = _interopRequireDefault(__webpack_require__(9)), _window = _interopRequireDefault(__webpack_require__(6)), _maskLexer = __webpack_require__(19), _validationTests = __webpack_require__(3), _positioning = __webpack_require__(2), _validation = __webpack_require__(4), _inputHandling = __webpack_require__(5), _eventruler = __webpack_require__(12), _definitions = _interopRequireDefault(__webpack_require__(20)), _defaults = _interopRequireDefault(__webpack_require__(21));
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var document = _window.default.document, dataKey = "_inputmask_opts";
-        function Inputmask(alias, options, internal) {
-            if (!(this instanceof Inputmask)) return new Inputmask(alias, options, internal);
-            this.dependencyLib = _inputmask.default, this.el = void 0, this.events = {}, this.maskset = void 0, 
-            !0 !== internal && ("[object Object]" === Object.prototype.toString.call(alias) ? options = alias : (options = options || {}, 
-            alias && (options.alias = alias)), this.opts = _inputmask.default.extend(!0, {}, this.defaults, options), 
-            this.noMasksCache = options && void 0 !== options.definitions, this.userOptions = options || {}, 
-            resolveAlias(this.opts.alias, options, this.opts)), this.refreshValue = !1, this.undoValue = void 0, 
-            this.$el = void 0, this.skipKeyPressEvent = !1, this.skipInputEvent = !1, this.validationEvent = !1, 
-            this.ignorable = !1, this.maxLength, this.mouseEnter = !1, this.originalPlaceholder = void 0, 
-            this.isComposing = !1;
-        }
-        function resolveAlias(aliasStr, options, opts) {
-            var aliasDefinition = Inputmask.prototype.aliases[aliasStr];
-            return aliasDefinition ? (aliasDefinition.alias && resolveAlias(aliasDefinition.alias, void 0, opts), 
-            _inputmask.default.extend(!0, opts, aliasDefinition), _inputmask.default.extend(!0, opts, options), 
-            !0) : (null === opts.mask && (opts.mask = aliasStr), !1);
-        }
-        function importAttributeOptions(npt, opts, userOptions, dataAttribute) {
-            function importOption(option, optionData) {
-                var attrOption = "" === dataAttribute ? option : dataAttribute + "-" + option;
-                optionData = void 0 !== optionData ? optionData : npt.getAttribute(attrOption), 
-                null !== optionData && ("string" == typeof optionData && (0 === option.indexOf("on") ? optionData = _window.default[optionData] : "false" === optionData ? optionData = !1 : "true" === optionData && (optionData = !0)), 
-                userOptions[option] = optionData);
-            }
-            if (!0 === opts.importDataAttributes) {
-                var attrOptions = npt.getAttribute(dataAttribute), option, dataoptions, optionData, p;
-                if (attrOptions && "" !== attrOptions && (attrOptions = attrOptions.replace(/'/g, '"'), 
-                dataoptions = JSON.parse("{" + attrOptions + "}")), dataoptions) for (p in optionData = void 0, 
-                dataoptions) if ("alias" === p.toLowerCase()) {
-                    optionData = dataoptions[p];
-                    break;
-                }
-                for (option in importOption("alias", optionData), userOptions.alias && resolveAlias(userOptions.alias, userOptions, opts), 
-                opts) {
-                    if (dataoptions) for (p in optionData = void 0, dataoptions) if (p.toLowerCase() === option.toLowerCase()) {
-                        optionData = dataoptions[p];
-                        break;
-                    }
-                    importOption(option, optionData);
-                }
-            }
-            return _inputmask.default.extend(!0, opts, userOptions), "rtl" !== npt.dir && !opts.rightAlign || (npt.style.textAlign = "right"), 
-            "rtl" !== npt.dir && !opts.numericInput || (npt.dir = "ltr", npt.removeAttribute("dir"), 
-            opts.isRTL = !0), Object.keys(userOptions).length;
-        }
-        Inputmask.prototype = {
-            dataAttribute: "data-inputmask",
-            defaults: _defaults.default,
-            definitions: _definitions.default,
-            aliases: {},
-            masksCache: {},
-            get isRTL() {
-                return this.opts.isRTL || this.opts.numericInput;
-            },
-            mask: function mask(elems) {
-                var that = this;
-                return "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
-                elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el, ndx) {
-                    var scopedOpts = _inputmask.default.extend(!0, {}, that.opts);
-                    if (importAttributeOptions(el, scopedOpts, _inputmask.default.extend(!0, {}, that.userOptions), that.dataAttribute)) {
-                        var maskset = (0, _maskLexer.generateMaskSet)(scopedOpts, that.noMasksCache);
-                        void 0 !== maskset && (void 0 !== el.inputmask && (el.inputmask.opts.autoUnmask = !0, 
-                        el.inputmask.remove()), el.inputmask = new Inputmask(void 0, void 0, !0), el.inputmask.opts = scopedOpts, 
-                        el.inputmask.noMasksCache = that.noMasksCache, el.inputmask.userOptions = _inputmask.default.extend(!0, {}, that.userOptions), 
-                        el.inputmask.el = el, el.inputmask.$el = (0, _inputmask.default)(el), el.inputmask.maskset = maskset, 
-                        _inputmask.default.data(el, dataKey, that.userOptions), _mask.mask.call(el.inputmask));
-                    }
-                }), elems && elems[0] && elems[0].inputmask || this;
-            },
-            option: function option(options, noremask) {
-                return "string" == typeof options ? this.opts[options] : "object" === _typeof(options) ? (_inputmask.default.extend(this.userOptions, options), 
-                this.el && !0 !== noremask && this.mask(this.el), this) : void 0;
-            },
-            unmaskedvalue: function unmaskedvalue(value) {
-                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
-                void 0 === this.el || void 0 !== value) {
-                    var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
-                    _inputHandling.checkVal.call(this, void 0, !1, !1, valueBuffer), "function" == typeof this.opts.onBeforeWrite && this.opts.onBeforeWrite.call(this, void 0, _positioning.getBuffer.call(this), 0, this.opts);
-                }
-                return _inputHandling.unmaskedvalue.call(this, this.el);
-            },
-            remove: function remove() {
-                if (this.el) {
-                    _inputmask.default.data(this.el, dataKey, null);
-                    var cv = this.opts.autoUnmask ? (0, _inputHandling.unmaskedvalue)(this.el) : this._valueGet(this.opts.autoUnmask), valueProperty;
-                    cv !== _positioning.getBufferTemplate.call(this).join("") ? this._valueSet(cv, this.opts.autoUnmask) : this._valueSet(""), 
-                    _eventruler.EventRuler.off(this.el), Object.getOwnPropertyDescriptor && Object.getPrototypeOf ? (valueProperty = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(this.el), "value"), 
-                    valueProperty && this.__valueGet && Object.defineProperty(this.el, "value", {
-                        get: this.__valueGet,
-                        set: this.__valueSet,
-                        configurable: !0
-                    })) : document.__lookupGetter__ && this.el.__lookupGetter__("value") && this.__valueGet && (this.el.__defineGetter__("value", this.__valueGet), 
-                    this.el.__defineSetter__("value", this.__valueSet)), this.el.inputmask = void 0;
-                }
-                return this.el;
-            },
-            getemptymask: function getemptymask() {
-                return this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
-                _positioning.getBufferTemplate.call(this).join("");
-            },
-            hasMaskedValue: function hasMaskedValue() {
-                return !this.opts.autoUnmask;
-            },
-            isComplete: function isComplete() {
-                return this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
-                _validation.isComplete.call(this, _positioning.getBuffer.call(this));
-            },
-            getmetadata: function getmetadata() {
-                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
-                Array.isArray(this.maskset.metadata)) {
-                    var maskTarget = _validationTests.getMaskTemplate.call(this, !0, 0, !1).join("");
-                    return this.maskset.metadata.forEach(function(mtdt) {
-                        return mtdt.mask !== maskTarget || (maskTarget = mtdt, !1);
-                    }), maskTarget;
-                }
-                return this.maskset.metadata;
-            },
-            isValid: function isValid(value) {
-                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
-                value) {
-                    var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
-                    _inputHandling.checkVal.call(this, void 0, !0, !1, valueBuffer);
-                } else value = this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join("");
-                for (var buffer = _positioning.getBuffer.call(this), rl = _positioning.determineLastRequiredPosition.call(this), lmib = buffer.length - 1; rl < lmib && !_positioning.isMask.call(this, lmib); lmib--) ;
-                return buffer.splice(rl, lmib + 1 - rl), _validation.isComplete.call(this, buffer) && value === (this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join(""));
-            },
-            format: function format(value, metadata) {
-                this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache);
-                var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
-                _inputHandling.checkVal.call(this, void 0, !0, !1, valueBuffer);
-                var formattedValue = this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join("");
-                return metadata ? {
-                    value: formattedValue,
-                    metadata: this.getmetadata()
-                } : formattedValue;
-            },
-            setValue: function setValue(value) {
-                this.el && (0, _inputmask.default)(this.el).trigger("setvalue", [ value ]);
-            },
-            analyseMask: _maskLexer.analyseMask
-        }, Inputmask.extendDefaults = function(options) {
-            _inputmask.default.extend(!0, Inputmask.prototype.defaults, options);
-        }, Inputmask.extendDefinitions = function(definition) {
-            _inputmask.default.extend(!0, Inputmask.prototype.definitions, definition);
-        }, Inputmask.extendAliases = function(alias) {
-            _inputmask.default.extend(!0, Inputmask.prototype.aliases, alias);
-        }, Inputmask.format = function(value, options, metadata) {
-            return Inputmask(options).format(value, metadata);
-        }, Inputmask.unmask = function(value, options) {
-            return Inputmask(options).unmaskedvalue(value);
-        }, Inputmask.isValid = function(value, options) {
-            return Inputmask(options).isValid(value);
-        }, Inputmask.remove = function(elems) {
-            "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
-            elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el) {
-                el.inputmask && el.inputmask.remove();
-            });
-        }, Inputmask.setValue = function(elems, value) {
-            "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
-            elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el) {
-                el.inputmask ? el.inputmask.setValue(value) : (0, _inputmask.default)(el).trigger("setvalue", [ value ]);
-            });
-        }, Inputmask.dependencyLib = _inputmask.default, _window.default.Inputmask = Inputmask;
-        var _default = Inputmask;
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.caret = caret, exports.determineLastRequiredPosition = determineLastRequiredPosition, 
-        exports.determineNewCaretPosition = determineNewCaretPosition, exports.getBuffer = getBuffer, 
-        exports.getBufferTemplate = getBufferTemplate, exports.getLastValidPosition = getLastValidPosition, 
-        exports.isMask = isMask, exports.resetMaskSet = resetMaskSet, exports.seekNext = seekNext, 
-        exports.seekPrevious = seekPrevious, exports.translatePosition = translatePosition;
-        var _validationTests = __webpack_require__(3), _validation = __webpack_require__(4), _mask = __webpack_require__(11);
-        function caret(input, begin, end, notranslate, isDelete) {
-            var inputmask = this, opts = this.opts, range;
-            if (void 0 === begin) return "selectionStart" in input && "selectionEnd" in input ? (begin = input.selectionStart, 
-            end = input.selectionEnd) : window.getSelection ? (range = window.getSelection().getRangeAt(0), 
-            range.commonAncestorContainer.parentNode !== input && range.commonAncestorContainer !== input || (begin = range.startOffset, 
-            end = range.endOffset)) : document.selection && document.selection.createRange && (range = document.selection.createRange(), 
-            begin = 0 - range.duplicate().moveStart("character", -input.inputmask._valueGet().length), 
-            end = begin + range.text.length), {
-                begin: notranslate ? begin : translatePosition.call(this, begin),
-                end: notranslate ? end : translatePosition.call(this, end)
-            };
-            if (Array.isArray(begin) && (end = this.isRTL ? begin[0] : begin[1], begin = this.isRTL ? begin[1] : begin[0]), 
-            void 0 !== begin.begin && (end = this.isRTL ? begin.begin : begin.end, begin = this.isRTL ? begin.end : begin.begin), 
-            "number" == typeof begin) {
-                begin = notranslate ? begin : translatePosition.call(this, begin), end = notranslate ? end : translatePosition.call(this, end), 
-                end = "number" == typeof end ? end : begin;
-                var scrollCalc = parseInt(((input.ownerDocument.defaultView || window).getComputedStyle ? (input.ownerDocument.defaultView || window).getComputedStyle(input, null) : input.currentStyle).fontSize) * end;
-                if (input.scrollLeft = scrollCalc > input.scrollWidth ? scrollCalc : 0, input.inputmask.caretPos = {
-                    begin: begin,
-                    end: end
-                }, opts.insertModeVisual && !1 === opts.insertMode && begin === end && (isDelete || end++), 
-                input === (input.inputmask.shadowRoot || document).activeElement) if ("setSelectionRange" in input) input.setSelectionRange(begin, end); else if (window.getSelection) {
-                    if (range = document.createRange(), void 0 === input.firstChild || null === input.firstChild) {
-                        var textNode = document.createTextNode("");
-                        input.appendChild(textNode);
-                    }
-                    range.setStart(input.firstChild, begin < input.inputmask._valueGet().length ? begin : input.inputmask._valueGet().length), 
-                    range.setEnd(input.firstChild, end < input.inputmask._valueGet().length ? end : input.inputmask._valueGet().length), 
-                    range.collapse(!0);
-                    var sel = window.getSelection();
-                    sel.removeAllRanges(), sel.addRange(range);
-                } else input.createTextRange && (range = input.createTextRange(), range.collapse(!0), 
-                range.moveEnd("character", end), range.moveStart("character", begin), range.select());
-            }
-        }
-        function determineLastRequiredPosition(returnDefinition) {
-            var inputmask = this, maskset = this.maskset, $ = this.dependencyLib, buffer = _validationTests.getMaskTemplate.call(this, !0, getLastValidPosition.call(this), !0, !0), bl = buffer.length, pos, lvp = getLastValidPosition.call(this), positions = {}, lvTest = maskset.validPositions[lvp], ndxIntlzr = void 0 !== lvTest ? lvTest.locator.slice() : void 0, testPos;
-            for (pos = lvp + 1; pos < buffer.length; pos++) testPos = _validationTests.getTestTemplate.call(this, pos, ndxIntlzr, pos - 1), 
-            ndxIntlzr = testPos.locator.slice(), positions[pos] = $.extend(!0, {}, testPos);
-            var lvTestAlt = lvTest && void 0 !== lvTest.alternation ? lvTest.locator[lvTest.alternation] : void 0;
-            for (pos = bl - 1; lvp < pos && (testPos = positions[pos], (testPos.match.optionality || testPos.match.optionalQuantifier && testPos.match.newBlockMarker || lvTestAlt && (lvTestAlt !== positions[pos].locator[lvTest.alternation] && 1 != testPos.match.static || !0 === testPos.match.static && testPos.locator[lvTest.alternation] && _validation.checkAlternationMatch.call(this, testPos.locator[lvTest.alternation].toString().split(","), lvTestAlt.toString().split(",")) && "" !== _validationTests.getTests.call(this, pos)[0].def)) && buffer[pos] === _validationTests.getPlaceholder.call(this, pos, testPos.match)); pos--) bl--;
-            return returnDefinition ? {
-                l: bl,
-                def: positions[bl] ? positions[bl].match : void 0
-            } : bl;
-        }
-        function determineNewCaretPosition(selectedCaret, tabbed) {
-            var inputmask = this, maskset = this.maskset, opts = this.opts;
-            function doRadixFocus(clickPos) {
-                if ("" !== opts.radixPoint && 0 !== opts.digits) {
-                    var vps = maskset.validPositions;
-                    if (void 0 === vps[clickPos] || vps[clickPos].input === _validationTests.getPlaceholder.call(inputmask, clickPos)) {
-                        if (clickPos < seekNext.call(inputmask, -1)) return !0;
-                        var radixPos = getBuffer.call(inputmask).indexOf(opts.radixPoint);
-                        if (-1 !== radixPos) {
-                            for (var vp in vps) if (vps[vp] && radixPos < vp && vps[vp].input !== _validationTests.getPlaceholder.call(inputmask, vp)) return !1;
-                            return !0;
-                        }
-                    }
-                }
-                return !1;
-            }
-            if (tabbed && (inputmask.isRTL ? selectedCaret.end = selectedCaret.begin : selectedCaret.begin = selectedCaret.end), 
-            selectedCaret.begin === selectedCaret.end) {
-                switch (opts.positionCaretOnClick) {
-                  case "none":
-                    break;
-
-                  case "select":
-                    selectedCaret = {
-                        begin: 0,
-                        end: getBuffer.call(inputmask).length
-                    };
-                    break;
-
-                  case "ignore":
-                    selectedCaret.end = selectedCaret.begin = seekNext.call(inputmask, getLastValidPosition.call(inputmask));
-                    break;
-
-                  case "radixFocus":
-                    if (doRadixFocus(selectedCaret.begin)) {
-                        var radixPos = getBuffer.call(inputmask).join("").indexOf(opts.radixPoint);
-                        selectedCaret.end = selectedCaret.begin = opts.numericInput ? seekNext.call(inputmask, radixPos) : radixPos;
-                        break;
-                    }
-
-                  default:
-                    var clickPosition = selectedCaret.begin, lvclickPosition = getLastValidPosition.call(inputmask, clickPosition, !0), lastPosition = seekNext.call(inputmask, -1 !== lvclickPosition || isMask.call(inputmask, 0) ? lvclickPosition : -1);
-                    if (clickPosition <= lastPosition) selectedCaret.end = selectedCaret.begin = isMask.call(inputmask, clickPosition, !1, !0) ? clickPosition : seekNext.call(inputmask, clickPosition); else {
-                        var lvp = maskset.validPositions[lvclickPosition], tt = _validationTests.getTestTemplate.call(inputmask, lastPosition, lvp ? lvp.match.locator : void 0, lvp), placeholder = _validationTests.getPlaceholder.call(inputmask, lastPosition, tt.match);
-                        if ("" !== placeholder && getBuffer.call(inputmask)[lastPosition] !== placeholder && !0 !== tt.match.optionalQuantifier && !0 !== tt.match.newBlockMarker || !isMask.call(inputmask, lastPosition, opts.keepStatic, !0) && tt.match.def === placeholder) {
-                            var newPos = seekNext.call(inputmask, lastPosition);
-                            (newPos <= clickPosition || clickPosition === lastPosition) && (lastPosition = newPos);
-                        }
-                        selectedCaret.end = selectedCaret.begin = lastPosition;
-                    }
-                }
-                return selectedCaret;
-            }
-        }
-        function getBuffer(noCache) {
-            var inputmask = this, maskset = this.maskset;
-            return void 0 !== maskset.buffer && !0 !== noCache || (maskset.buffer = _validationTests.getMaskTemplate.call(this, !0, getLastValidPosition.call(this), !0), 
-            void 0 === maskset._buffer && (maskset._buffer = maskset.buffer.slice())), maskset.buffer;
-        }
-        function getBufferTemplate() {
-            var inputmask = this, maskset = this.maskset;
-            return void 0 === maskset._buffer && (maskset._buffer = _validationTests.getMaskTemplate.call(this, !1, 1), 
-            void 0 === maskset.buffer && (maskset.buffer = maskset._buffer.slice())), maskset._buffer;
-        }
-        function getLastValidPosition(closestTo, strict, validPositions) {
-            var maskset = this.maskset, before = -1, after = -1, valids = validPositions || maskset.validPositions;
-            for (var posNdx in void 0 === closestTo && (closestTo = -1), valids) {
-                var psNdx = parseInt(posNdx);
-                valids[psNdx] && (strict || !0 !== valids[psNdx].generatedInput) && (psNdx <= closestTo && (before = psNdx), 
-                closestTo <= psNdx && (after = psNdx));
-            }
-            return -1 === before || before == closestTo ? after : -1 == after ? before : closestTo - before < after - closestTo ? before : after;
-        }
-        function isMask(pos, strict, fuzzy) {
-            var inputmask = this, maskset = this.maskset, test = _validationTests.getTestTemplate.call(this, pos).match;
-            if ("" === test.def && (test = _validationTests.getTest.call(this, pos).match), 
-            !0 !== test.static) return test.fn;
-            if (!0 === fuzzy && void 0 !== maskset.validPositions[pos] && !0 !== maskset.validPositions[pos].generatedInput) return !0;
-            if (!0 !== strict && -1 < pos) {
-                if (fuzzy) {
-                    var tests = _validationTests.getTests.call(this, pos);
-                    return tests.length > 1 + ("" === tests[tests.length - 1].match.def ? 1 : 0);
-                }
-                var testTemplate = _validationTests.determineTestTemplate.call(this, pos, _validationTests.getTests.call(this, pos)), testPlaceHolder = _validationTests.getPlaceholder.call(this, pos, testTemplate.match);
-                return testTemplate.match.def !== testPlaceHolder;
-            }
-            return !1;
-        }
-        function resetMaskSet(soft) {
-            var maskset = this.maskset;
-            maskset.buffer = void 0, !0 !== soft && (maskset.validPositions = {}, maskset.p = 0);
-        }
-        function seekNext(pos, newBlock, fuzzy) {
-            var inputmask = this;
-            void 0 === fuzzy && (fuzzy = !0);
-            for (var position = pos + 1; "" !== _validationTests.getTest.call(this, position).match.def && (!0 === newBlock && (!0 !== _validationTests.getTest.call(this, position).match.newBlockMarker || !isMask.call(this, position, void 0, !0)) || !0 !== newBlock && !isMask.call(this, position, void 0, fuzzy)); ) position++;
-            return position;
-        }
-        function seekPrevious(pos, newBlock) {
-            var inputmask = this, position = pos - 1;
-            if (pos <= 0) return 0;
-            for (;0 < position && (!0 === newBlock && (!0 !== _validationTests.getTest.call(this, position).match.newBlockMarker || !isMask.call(this, position, void 0, !0)) || !0 !== newBlock && !isMask.call(this, position, void 0, !0)); ) position--;
-            return position;
-        }
-        function translatePosition(pos) {
-            var inputmask = this, opts = this.opts, el = this.el;
-            return !this.isRTL || "number" != typeof pos || opts.greedy && "" === opts.placeholder || !el || (pos = this._valueGet().length - pos), 
-            pos;
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        function getLocator(tst, align) {
-            var locator = (null != tst.alternation ? tst.mloc[getDecisionTaker(tst)] : tst.locator).join("");
-            if ("" !== locator) for (;locator.length < align; ) locator += "0";
-            return locator;
-        }
-        function getDecisionTaker(tst) {
-            var decisionTaker = tst.locator[tst.alternation];
-            return "string" == typeof decisionTaker && 0 < decisionTaker.length && (decisionTaker = decisionTaker.split(",")[0]), 
-            void 0 !== decisionTaker ? decisionTaker.toString() : "";
-        }
-        function getPlaceholder(pos, test, returnPL) {
-            var inputmask = this, opts = this.opts, maskset = this.maskset;
-            if (test = test || getTest.call(this, pos).match, void 0 !== test.placeholder || !0 === returnPL) return "function" == typeof test.placeholder ? test.placeholder(opts) : test.placeholder;
-            if (!0 !== test.static) return opts.placeholder.charAt(pos % opts.placeholder.length);
-            if (-1 < pos && void 0 === maskset.validPositions[pos]) {
-                var tests = getTests.call(this, pos), staticAlternations = [], prevTest;
-                if (tests.length > 1 + ("" === tests[tests.length - 1].match.def ? 1 : 0)) for (var i = 0; i < tests.length; i++) if ("" !== tests[i].match.def && !0 !== tests[i].match.optionality && !0 !== tests[i].match.optionalQuantifier && (!0 === tests[i].match.static || void 0 === prevTest || !1 !== tests[i].match.fn.test(prevTest.match.def, maskset, pos, !0, opts)) && (staticAlternations.push(tests[i]), 
-                !0 === tests[i].match.static && (prevTest = tests[i]), 1 < staticAlternations.length && /[0-9a-bA-Z]/.test(staticAlternations[0].match.def))) return opts.placeholder.charAt(pos % opts.placeholder.length);
-            }
-            return test.def;
-        }
-        function getMaskTemplate(baseOnInput, minimalPos, includeMode, noJit, clearOptionalTail) {
-            var inputmask = this, opts = this.opts, maskset = this.maskset, greedy = opts.greedy;
-            clearOptionalTail && (opts.greedy = !1), minimalPos = minimalPos || 0;
-            var maskTemplate = [], ndxIntlzr, pos = 0, test, testPos, jitRenderStatic;
-            do {
-                if (!0 === baseOnInput && maskset.validPositions[pos]) testPos = clearOptionalTail && !0 === maskset.validPositions[pos].match.optionality && void 0 === maskset.validPositions[pos + 1] && (!0 === maskset.validPositions[pos].generatedInput || maskset.validPositions[pos].input == opts.skipOptionalPartCharacter && 0 < pos) ? determineTestTemplate.call(this, pos, getTests.call(this, pos, ndxIntlzr, pos - 1)) : maskset.validPositions[pos], 
-                test = testPos.match, ndxIntlzr = testPos.locator.slice(), maskTemplate.push(!0 === includeMode ? testPos.input : !1 === includeMode ? test.nativeDef : getPlaceholder.call(this, pos, test)); else {
-                    testPos = getTestTemplate.call(this, pos, ndxIntlzr, pos - 1), test = testPos.match, 
-                    ndxIntlzr = testPos.locator.slice();
-                    var jitMasking = !0 !== noJit && (!1 !== opts.jitMasking ? opts.jitMasking : test.jit);
-                    jitRenderStatic = jitRenderStatic && test.static && test.def !== opts.groupSeparator && null === test.fn || maskset.validPositions[pos - 1] && test.static && test.def !== opts.groupSeparator && null === test.fn, 
-                    jitRenderStatic || !1 === jitMasking || void 0 === jitMasking || "number" == typeof jitMasking && isFinite(jitMasking) && pos < jitMasking ? maskTemplate.push(!1 === includeMode ? test.nativeDef : getPlaceholder.call(this, pos, test)) : jitRenderStatic = !1;
-                }
-                pos++;
-            } while ((void 0 === this.maxLength || pos < this.maxLength) && (!0 !== test.static || "" !== test.def) || pos < minimalPos);
-            return "" === maskTemplate[maskTemplate.length - 1] && maskTemplate.pop(), !1 === includeMode && void 0 !== maskset.maskLength || (maskset.maskLength = pos - 1), 
-            opts.greedy = greedy, maskTemplate;
-        }
-        function getTestTemplate(pos, ndxIntlzr, tstPs) {
-            var inputmask = this, maskset = this.maskset;
-            return maskset.validPositions[pos] || determineTestTemplate.call(this, pos, getTests.call(this, pos, ndxIntlzr ? ndxIntlzr.slice() : ndxIntlzr, tstPs));
-        }
-        function determineTestTemplate(pos, tests) {
-            var inputmask = this, opts = this.opts;
-            pos = 0 < pos ? pos - 1 : 0;
-            for (var altTest = getTest.call(this, pos), targetLocator = getLocator(altTest), tstLocator, closest, bestMatch, ndx = 0; ndx < tests.length; ndx++) {
-                var tst = tests[ndx];
-                tstLocator = getLocator(tst, targetLocator.length);
-                var distance = Math.abs(tstLocator - targetLocator);
-                (void 0 === closest || "" !== tstLocator && distance < closest || bestMatch && !opts.greedy && bestMatch.match.optionality && "master" === bestMatch.match.newBlockMarker && (!tst.match.optionality || !tst.match.newBlockMarker) || bestMatch && bestMatch.match.optionalQuantifier && !tst.match.optionalQuantifier) && (closest = distance, 
-                bestMatch = tst);
-            }
-            return bestMatch;
-        }
-        function getTest(pos, tests) {
-            var inputmask = this, maskset = this.maskset;
-            return maskset.validPositions[pos] ? maskset.validPositions[pos] : (tests || getTests.call(this, pos))[0];
-        }
-        function getTests(pos, ndxIntlzr, tstPs) {
-            var inputmask = this, $ = this.dependencyLib, maskset = this.maskset, opts = this.opts, el = this.el, maskTokens = maskset.maskToken, testPos = ndxIntlzr ? tstPs : 0, ndxInitializer = ndxIntlzr ? ndxIntlzr.slice() : [ 0 ], matches = [], insertStop = !1, latestMatch, cacheDependency = ndxIntlzr ? ndxIntlzr.join("") : "";
-            function resolveTestFromToken(maskToken, ndxInitializer, loopNdx, quantifierRecurse) {
-                function handleMatch(match, loopNdx, quantifierRecurse) {
-                    function isFirstMatch(latestMatch, tokenGroup) {
-                        var firstMatch = 0 === tokenGroup.matches.indexOf(latestMatch);
-                        return firstMatch || tokenGroup.matches.every(function(match, ndx) {
-                            return !0 === match.isQuantifier ? firstMatch = isFirstMatch(latestMatch, tokenGroup.matches[ndx - 1]) : Object.prototype.hasOwnProperty.call(match, "matches") && (firstMatch = isFirstMatch(latestMatch, match)), 
-                            !firstMatch;
-                        }), firstMatch;
-                    }
-                    function resolveNdxInitializer(pos, alternateNdx, targetAlternation) {
-                        var bestMatch, indexPos;
-                        if ((maskset.tests[pos] || maskset.validPositions[pos]) && (maskset.tests[pos] || [ maskset.validPositions[pos] ]).every(function(lmnt, ndx) {
-                            if (lmnt.mloc[alternateNdx]) return bestMatch = lmnt, !1;
-                            var alternation = void 0 !== targetAlternation ? targetAlternation : lmnt.alternation, ndxPos = void 0 !== lmnt.locator[alternation] ? lmnt.locator[alternation].toString().indexOf(alternateNdx) : -1;
-                            return (void 0 === indexPos || ndxPos < indexPos) && -1 !== ndxPos && (bestMatch = lmnt, 
-                            indexPos = ndxPos), !0;
-                        }), bestMatch) {
-                            var bestMatchAltIndex = bestMatch.locator[bestMatch.alternation], locator = bestMatch.mloc[alternateNdx] || bestMatch.mloc[bestMatchAltIndex] || bestMatch.locator;
-                            return locator.slice((void 0 !== targetAlternation ? targetAlternation : bestMatch.alternation) + 1);
-                        }
-                        return void 0 !== targetAlternation ? resolveNdxInitializer(pos, alternateNdx) : void 0;
-                    }
-                    function isSubsetOf(source, target) {
-                        function expand(pattern) {
-                            for (var expanded = [], start = -1, end, i = 0, l = pattern.length; i < l; i++) if ("-" === pattern.charAt(i)) for (end = pattern.charCodeAt(i + 1); ++start < end; ) expanded.push(String.fromCharCode(start)); else start = pattern.charCodeAt(i), 
-                            expanded.push(pattern.charAt(i));
-                            return expanded.join("");
-                        }
-                        return source.match.def === target.match.nativeDef || !(!(opts.regex || source.match.fn instanceof RegExp && target.match.fn instanceof RegExp) || !0 === source.match.static || !0 === target.match.static) && -1 !== expand(target.match.fn.toString().replace(/[[\]/]/g, "")).indexOf(expand(source.match.fn.toString().replace(/[[\]/]/g, "")));
-                    }
-                    function staticCanMatchDefinition(source, target) {
-                        return !0 === source.match.static && !0 !== target.match.static && target.match.fn.test(source.match.def, maskset, pos, !1, opts, !1);
-                    }
-                    function setMergeLocators(targetMatch, altMatch) {
-                        var alternationNdx = targetMatch.alternation, shouldMerge = void 0 === altMatch || alternationNdx === altMatch.alternation && -1 === targetMatch.locator[alternationNdx].toString().indexOf(altMatch.locator[alternationNdx]);
-                        if (!shouldMerge && alternationNdx > altMatch.alternation) for (var i = altMatch.alternation; i < alternationNdx; i++) if (targetMatch.locator[i] !== altMatch.locator[i]) {
-                            alternationNdx = i, shouldMerge = !0;
-                            break;
-                        }
-                        if (shouldMerge) {
-                            targetMatch.mloc = targetMatch.mloc || {};
-                            var locNdx = targetMatch.locator[alternationNdx];
-                            if (void 0 !== locNdx) {
-                                if ("string" == typeof locNdx && (locNdx = locNdx.split(",")[0]), void 0 === targetMatch.mloc[locNdx] && (targetMatch.mloc[locNdx] = targetMatch.locator.slice()), 
-                                void 0 !== altMatch) {
-                                    for (var ndx in altMatch.mloc) "string" == typeof ndx && (ndx = ndx.split(",")[0]), 
-                                    void 0 === targetMatch.mloc[ndx] && (targetMatch.mloc[ndx] = altMatch.mloc[ndx]);
-                                    targetMatch.locator[alternationNdx] = Object.keys(targetMatch.mloc).join(",");
-                                }
-                                return !0;
-                            }
-                            targetMatch.alternation = void 0;
-                        }
-                        return !1;
-                    }
-                    function isSameLevel(targetMatch, altMatch) {
-                        if (targetMatch.locator.length !== altMatch.locator.length) return !1;
-                        for (var locNdx = targetMatch.alternation + 1; locNdx < targetMatch.locator.length; locNdx++) if (targetMatch.locator[locNdx] !== altMatch.locator[locNdx]) return !1;
-                        return !0;
-                    }
-                    if (testPos > pos + opts._maxTestPos) throw "Inputmask: There is probably an error in your mask definition or in the code. Create an issue on github with an example of the mask you are using. " + maskset.mask;
-                    if (testPos === pos && void 0 === match.matches) return matches.push({
-                        match: match,
-                        locator: loopNdx.reverse(),
-                        cd: cacheDependency,
-                        mloc: {}
-                    }), !0;
-                    if (void 0 !== match.matches) {
-                        if (match.isGroup && quantifierRecurse !== match) {
-                            if (match = handleMatch(maskToken.matches[maskToken.matches.indexOf(match) + 1], loopNdx, quantifierRecurse), 
-                            match) return !0;
-                        } else if (match.isOptional) {
-                            var optionalToken = match, mtchsNdx = matches.length;
-                            if (match = resolveTestFromToken(match, ndxInitializer, loopNdx, quantifierRecurse), 
-                            match) {
-                                if (matches.forEach(function(mtch, ndx) {
-                                    mtchsNdx <= ndx && (mtch.match.optionality = !0);
-                                }), latestMatch = matches[matches.length - 1].match, void 0 !== quantifierRecurse || !isFirstMatch(latestMatch, optionalToken)) return !0;
-                                insertStop = !0, testPos = pos;
-                            }
-                        } else if (match.isAlternator) {
-                            var alternateToken = match, malternateMatches = [], maltMatches, currentMatches = matches.slice(), loopNdxCnt = loopNdx.length, altIndex = 0 < ndxInitializer.length ? ndxInitializer.shift() : -1;
-                            if (-1 === altIndex || "string" == typeof altIndex) {
-                                var currentPos = testPos, ndxInitializerClone = ndxInitializer.slice(), altIndexArr = [], amndx;
-                                if ("string" == typeof altIndex) altIndexArr = altIndex.split(","); else for (amndx = 0; amndx < alternateToken.matches.length; amndx++) altIndexArr.push(amndx.toString());
-                                if (void 0 !== maskset.excludes[pos]) {
-                                    for (var altIndexArrClone = altIndexArr.slice(), i = 0, exl = maskset.excludes[pos].length; i < exl; i++) {
-                                        var excludeSet = maskset.excludes[pos][i].toString().split(":");
-                                        loopNdx.length == excludeSet[1] && altIndexArr.splice(altIndexArr.indexOf(excludeSet[0]), 1);
-                                    }
-                                    0 === altIndexArr.length && (delete maskset.excludes[pos], altIndexArr = altIndexArrClone);
-                                }
-                                (!0 === opts.keepStatic || isFinite(parseInt(opts.keepStatic)) && currentPos >= opts.keepStatic) && (altIndexArr = altIndexArr.slice(0, 1));
-                                for (var unMatchedAlternation = !1, ndx = 0; ndx < altIndexArr.length; ndx++) {
-                                    amndx = parseInt(altIndexArr[ndx]), matches = [], ndxInitializer = "string" == typeof altIndex && resolveNdxInitializer(testPos, amndx, loopNdxCnt) || ndxInitializerClone.slice(), 
-                                    alternateToken.matches[amndx] && handleMatch(alternateToken.matches[amndx], [ amndx ].concat(loopNdx), quantifierRecurse) ? match = !0 : 0 === ndx && (unMatchedAlternation = !0), 
-                                    maltMatches = matches.slice(), testPos = currentPos, matches = [];
-                                    for (var ndx1 = 0; ndx1 < maltMatches.length; ndx1++) {
-                                        var altMatch = maltMatches[ndx1], dropMatch = !1;
-                                        altMatch.match.jit = altMatch.match.jit || unMatchedAlternation, altMatch.alternation = altMatch.alternation || loopNdxCnt, 
-                                        setMergeLocators(altMatch);
-                                        for (var ndx2 = 0; ndx2 < malternateMatches.length; ndx2++) {
-                                            var altMatch2 = malternateMatches[ndx2];
-                                            if ("string" != typeof altIndex || void 0 !== altMatch.alternation && altIndexArr.includes(altMatch.locator[altMatch.alternation].toString())) {
-                                                if (altMatch.match.nativeDef === altMatch2.match.nativeDef) {
-                                                    dropMatch = !0, setMergeLocators(altMatch2, altMatch);
-                                                    break;
-                                                }
-                                                if (isSubsetOf(altMatch, altMatch2)) {
-                                                    setMergeLocators(altMatch, altMatch2) && (dropMatch = !0, malternateMatches.splice(malternateMatches.indexOf(altMatch2), 0, altMatch));
-                                                    break;
-                                                }
-                                                if (isSubsetOf(altMatch2, altMatch)) {
-                                                    setMergeLocators(altMatch2, altMatch);
-                                                    break;
-                                                }
-                                                if (staticCanMatchDefinition(altMatch, altMatch2)) {
-                                                    isSameLevel(altMatch, altMatch2) || void 0 !== el.inputmask.userOptions.keepStatic ? setMergeLocators(altMatch, altMatch2) && (dropMatch = !0, 
-                                                    malternateMatches.splice(malternateMatches.indexOf(altMatch2), 0, altMatch)) : opts.keepStatic = !0;
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                        dropMatch || malternateMatches.push(altMatch);
-                                    }
-                                }
-                                matches = currentMatches.concat(malternateMatches), testPos = pos, insertStop = 0 < matches.length, 
-                                match = 0 < malternateMatches.length, ndxInitializer = ndxInitializerClone.slice();
-                            } else match = handleMatch(alternateToken.matches[altIndex] || maskToken.matches[altIndex], [ altIndex ].concat(loopNdx), quantifierRecurse);
-                            if (match) return !0;
-                        } else if (match.isQuantifier && quantifierRecurse !== maskToken.matches[maskToken.matches.indexOf(match) - 1]) for (var qt = match, qndx = 0 < ndxInitializer.length ? ndxInitializer.shift() : 0; qndx < (isNaN(qt.quantifier.max) ? qndx + 1 : qt.quantifier.max) && testPos <= pos; qndx++) {
-                            var tokenGroup = maskToken.matches[maskToken.matches.indexOf(qt) - 1];
-                            if (match = handleMatch(tokenGroup, [ qndx ].concat(loopNdx), tokenGroup), match) {
-                                if (latestMatch = matches[matches.length - 1].match, latestMatch.optionalQuantifier = qndx >= qt.quantifier.min, 
-                                latestMatch.jit = (qndx || 1) * tokenGroup.matches.indexOf(latestMatch) >= qt.quantifier.jit, 
-                                latestMatch.optionalQuantifier && isFirstMatch(latestMatch, tokenGroup)) {
-                                    insertStop = !0, testPos = pos;
-                                    break;
-                                }
-                                return latestMatch.jit && (maskset.jitOffset[pos] = tokenGroup.matches.length - tokenGroup.matches.indexOf(latestMatch)), 
-                                !0;
-                            }
-                        } else if (match = resolveTestFromToken(match, ndxInitializer, loopNdx, quantifierRecurse), 
-                        match) return !0;
-                    } else testPos++;
-                }
-                for (var tndx = 0 < ndxInitializer.length ? ndxInitializer.shift() : 0; tndx < maskToken.matches.length; tndx++) if (!0 !== maskToken.matches[tndx].isQuantifier) {
-                    var match = handleMatch(maskToken.matches[tndx], [ tndx ].concat(loopNdx), quantifierRecurse);
-                    if (match && testPos === pos) return match;
-                    if (pos < testPos) break;
-                }
-            }
-            function mergeLocators(pos, tests) {
-                var locator = [], alternation;
-                return Array.isArray(tests) || (tests = [ tests ]), 0 < tests.length && (void 0 === tests[0].alternation || !0 === opts.keepStatic ? (locator = determineTestTemplate.call(inputmask, pos, tests.slice()).locator.slice(), 
-                0 === locator.length && (locator = tests[0].locator.slice())) : tests.forEach(function(tst) {
-                    "" !== tst.def && (0 === locator.length ? (alternation = tst.alternation, locator = tst.locator.slice()) : tst.locator[alternation] && -1 === locator[alternation].toString().indexOf(tst.locator[alternation]) && (locator[alternation] += "," + tst.locator[alternation]));
-                })), locator;
-            }
-            if (-1 < pos && (void 0 === inputmask.maxLength || pos < inputmask.maxLength)) {
-                if (void 0 === ndxIntlzr) {
-                    for (var previousPos = pos - 1, test; void 0 === (test = maskset.validPositions[previousPos] || maskset.tests[previousPos]) && -1 < previousPos; ) previousPos--;
-                    void 0 !== test && -1 < previousPos && (ndxInitializer = mergeLocators(previousPos, test), 
-                    cacheDependency = ndxInitializer.join(""), testPos = previousPos);
-                }
-                if (maskset.tests[pos] && maskset.tests[pos][0].cd === cacheDependency) return maskset.tests[pos];
-                for (var mtndx = ndxInitializer.shift(); mtndx < maskTokens.length; mtndx++) {
-                    var match = resolveTestFromToken(maskTokens[mtndx], ndxInitializer, [ mtndx ]);
-                    if (match && testPos === pos || pos < testPos) break;
-                }
-            }
-            return 0 !== matches.length && !insertStop || matches.push({
-                match: {
-                    fn: null,
-                    static: !0,
-                    optionality: !1,
-                    casing: null,
-                    def: "",
-                    placeholder: ""
-                },
-                locator: [],
-                mloc: {},
-                cd: cacheDependency
-            }), void 0 !== ndxIntlzr && maskset.tests[pos] ? $.extend(!0, [], matches) : (maskset.tests[pos] = $.extend(!0, [], matches), 
-            maskset.tests[pos]);
-        }
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.determineTestTemplate = determineTestTemplate, exports.getDecisionTaker = getDecisionTaker, 
-        exports.getMaskTemplate = getMaskTemplate, exports.getPlaceholder = getPlaceholder, 
-        exports.getTest = getTest, exports.getTests = getTests, exports.getTestTemplate = getTestTemplate;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.alternate = alternate, exports.checkAlternationMatch = checkAlternationMatch, 
-        exports.isComplete = isComplete, exports.isValid = isValid, exports.refreshFromBuffer = refreshFromBuffer, 
-        exports.revalidateMask = revalidateMask, exports.handleRemove = handleRemove;
-        var _validationTests = __webpack_require__(3), _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _eventhandlers = __webpack_require__(7);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        function alternate(maskPos, c, strict, fromIsValid, rAltPos, selection) {
-            var inputmask = this, $ = this.dependencyLib, opts = this.opts, maskset = this.maskset, validPsClone = $.extend(!0, {}, maskset.validPositions), tstClone = $.extend(!0, {}, maskset.tests), lastAlt, alternation, isValidRslt = !1, returnRslt = !1, altPos, prevAltPos, i, validPos, decisionPos, lAltPos = void 0 !== rAltPos ? rAltPos : _positioning.getLastValidPosition.call(this), nextPos, input, begin, end;
-            if (selection && (begin = selection.begin, end = selection.end, selection.begin > selection.end && (begin = selection.end, 
-            end = selection.begin)), -1 === lAltPos && void 0 === rAltPos) lastAlt = 0, prevAltPos = _validationTests.getTest.call(this, lastAlt), 
-            alternation = prevAltPos.alternation; else for (;0 <= lAltPos; lAltPos--) if (altPos = maskset.validPositions[lAltPos], 
-            altPos && void 0 !== altPos.alternation) {
-                if (prevAltPos && prevAltPos.locator[altPos.alternation] !== altPos.locator[altPos.alternation]) break;
-                lastAlt = lAltPos, alternation = maskset.validPositions[lastAlt].alternation, prevAltPos = altPos;
-            }
-            if (void 0 !== alternation) {
-                decisionPos = parseInt(lastAlt), maskset.excludes[decisionPos] = maskset.excludes[decisionPos] || [], 
-                !0 !== maskPos && maskset.excludes[decisionPos].push((0, _validationTests.getDecisionTaker)(prevAltPos) + ":" + prevAltPos.alternation);
-                var validInputs = [], resultPos = -1;
-                for (i = decisionPos; i < _positioning.getLastValidPosition.call(this, void 0, !0) + 1; i++) -1 === resultPos && maskPos <= i && void 0 !== c && (validInputs.push(c), 
-                resultPos = validInputs.length - 1), validPos = maskset.validPositions[i], validPos && !0 !== validPos.generatedInput && (void 0 === selection || i < begin || end <= i) && validInputs.push(validPos.input), 
-                delete maskset.validPositions[i];
-                for (-1 === resultPos && void 0 !== c && (validInputs.push(c), resultPos = validInputs.length - 1); void 0 !== maskset.excludes[decisionPos] && maskset.excludes[decisionPos].length < 10; ) {
-                    for (maskset.tests = {}, _positioning.resetMaskSet.call(this, !0), isValidRslt = !0, 
-                    i = 0; i < validInputs.length && (nextPos = isValidRslt.caret || _positioning.getLastValidPosition.call(this, void 0, !0) + 1, 
-                    input = validInputs[i], isValidRslt = isValid.call(this, nextPos, input, !1, fromIsValid, !0)); i++) i === resultPos && (returnRslt = isValidRslt), 
-                    1 == maskPos && isValidRslt && (returnRslt = {
-                        caretPos: i
-                    });
-                    if (isValidRslt) break;
-                    if (_positioning.resetMaskSet.call(this), prevAltPos = _validationTests.getTest.call(this, decisionPos), 
-                    maskset.validPositions = $.extend(!0, {}, validPsClone), maskset.tests = $.extend(!0, {}, tstClone), 
-                    !maskset.excludes[decisionPos]) {
-                        returnRslt = alternate.call(this, maskPos, c, strict, fromIsValid, decisionPos - 1, selection);
-                        break;
-                    }
-                    var decisionTaker = (0, _validationTests.getDecisionTaker)(prevAltPos);
-                    if (-1 !== maskset.excludes[decisionPos].indexOf(decisionTaker + ":" + prevAltPos.alternation)) {
-                        returnRslt = alternate.call(this, maskPos, c, strict, fromIsValid, decisionPos - 1, selection);
-                        break;
-                    }
-                    for (maskset.excludes[decisionPos].push(decisionTaker + ":" + prevAltPos.alternation), 
-                    i = decisionPos; i < _positioning.getLastValidPosition.call(this, void 0, !0) + 1; i++) delete maskset.validPositions[i];
-                }
-            }
-            return returnRslt && !1 === opts.keepStatic || delete maskset.excludes[decisionPos], 
-            returnRslt;
-        }
-        function casing(elem, test, pos) {
-            var opts = this.opts, maskset = this.maskset;
-            switch (opts.casing || test.casing) {
-              case "upper":
-                elem = elem.toUpperCase();
-                break;
-
-              case "lower":
-                elem = elem.toLowerCase();
-                break;
-
-              case "title":
-                var posBefore = maskset.validPositions[pos - 1];
-                elem = 0 === pos || posBefore && posBefore.input === String.fromCharCode(_keycode.default.SPACE) ? elem.toUpperCase() : elem.toLowerCase();
-                break;
-
-              default:
-                if ("function" == typeof opts.casing) {
-                    var args = Array.prototype.slice.call(arguments);
-                    args.push(maskset.validPositions), elem = opts.casing.apply(this, args);
-                }
-            }
-            return elem;
-        }
-        function checkAlternationMatch(altArr1, altArr2, na) {
-            for (var opts = this.opts, altArrC = opts.greedy ? altArr2 : altArr2.slice(0, 1), isMatch = !1, naArr = void 0 !== na ? na.split(",") : [], naNdx, i = 0; i < naArr.length; i++) -1 !== (naNdx = altArr1.indexOf(naArr[i])) && altArr1.splice(naNdx, 1);
-            for (var alndx = 0; alndx < altArr1.length; alndx++) if (altArrC.includes(altArr1[alndx])) {
-                isMatch = !0;
-                break;
-            }
-            return isMatch;
-        }
-        function handleRemove(input, k, pos, strict, fromIsValid) {
-            var inputmask = this, maskset = this.maskset, opts = this.opts;
-            if ((opts.numericInput || this.isRTL) && (k === _keycode.default.BACKSPACE ? k = _keycode.default.DELETE : k === _keycode.default.DELETE && (k = _keycode.default.BACKSPACE), 
-            this.isRTL)) {
-                var pend = pos.end;
-                pos.end = pos.begin, pos.begin = pend;
-            }
-            var lvp = _positioning.getLastValidPosition.call(this, void 0, !0), offset;
-            if (pos.end >= _positioning.getBuffer.call(this).length && lvp >= pos.end && (pos.end = lvp + 1), 
-            k === _keycode.default.BACKSPACE ? pos.end - pos.begin < 1 && (pos.begin = _positioning.seekPrevious.call(this, pos.begin)) : k === _keycode.default.DELETE && pos.begin === pos.end && (pos.end = _positioning.isMask.call(this, pos.end, !0, !0) ? pos.end + 1 : _positioning.seekNext.call(this, pos.end) + 1), 
-            !1 !== (offset = revalidateMask.call(this, pos))) {
-                if (!0 !== strict && !1 !== opts.keepStatic || null !== opts.regex && -1 !== _validationTests.getTest.call(this, pos.begin).match.def.indexOf("|")) {
-                    var result = alternate.call(this, !0);
-                    if (result) {
-                        var newPos = void 0 !== result.caret ? result.caret : result.pos ? _positioning.seekNext.call(this, result.pos.begin ? result.pos.begin : result.pos) : _positioning.getLastValidPosition.call(this, -1, !0);
-                        (k !== _keycode.default.DELETE || pos.begin > newPos) && pos.begin;
-                    }
-                }
-                !0 !== strict && (maskset.p = k === _keycode.default.DELETE ? pos.begin + offset : pos.begin);
-            }
-        }
-        function isComplete(buffer) {
-            var inputmask = this, opts = this.opts, maskset = this.maskset;
-            if ("function" == typeof opts.isComplete) return opts.isComplete(buffer, opts);
-            if ("*" !== opts.repeat) {
-                var complete = !1, lrp = _positioning.determineLastRequiredPosition.call(this, !0), aml = _positioning.seekPrevious.call(this, lrp.l);
-                if (void 0 === lrp.def || lrp.def.newBlockMarker || lrp.def.optionality || lrp.def.optionalQuantifier) {
-                    complete = !0;
-                    for (var i = 0; i <= aml; i++) {
-                        var test = _validationTests.getTestTemplate.call(this, i).match;
-                        if (!0 !== test.static && void 0 === maskset.validPositions[i] && !0 !== test.optionality && !0 !== test.optionalQuantifier || !0 === test.static && buffer[i] !== _validationTests.getPlaceholder.call(this, i, test)) {
-                            complete = !1;
-                            break;
-                        }
-                    }
-                }
-                return complete;
-            }
-        }
-        function isValid(pos, c, strict, fromIsValid, fromAlternate, validateOnly, fromCheckval) {
-            var inputmask = this, $ = this.dependencyLib, opts = this.opts, el = inputmask.el, maskset = inputmask.maskset;
-            function isSelection(posObj) {
-                return inputmask.isRTL ? 1 < posObj.begin - posObj.end || posObj.begin - posObj.end == 1 : 1 < posObj.end - posObj.begin || posObj.end - posObj.begin == 1;
-            }
-            strict = !0 === strict;
-            var maskPos = pos;
-            function processCommandObject(commandObj) {
-                if (void 0 !== commandObj) {
-                    if (void 0 !== commandObj.remove && (Array.isArray(commandObj.remove) || (commandObj.remove = [ commandObj.remove ]), 
-                    commandObj.remove.sort(function(a, b) {
-                        return b.pos - a.pos;
-                    }).forEach(function(lmnt) {
-                        revalidateMask.call(inputmask, {
-                            begin: lmnt,
-                            end: lmnt + 1
-                        });
-                    }), commandObj.remove = void 0), void 0 !== commandObj.insert && (Array.isArray(commandObj.insert) || (commandObj.insert = [ commandObj.insert ]), 
-                    commandObj.insert.sort(function(a, b) {
-                        return a.pos - b.pos;
-                    }).forEach(function(lmnt) {
-                        "" !== lmnt.c && isValid.call(inputmask, lmnt.pos, lmnt.c, void 0 === lmnt.strict || lmnt.strict, void 0 !== lmnt.fromIsValid ? lmnt.fromIsValid : fromIsValid);
-                    }), commandObj.insert = void 0), commandObj.refreshFromBuffer && commandObj.buffer) {
-                        var refresh = commandObj.refreshFromBuffer;
-                        refreshFromBuffer.call(inputmask, !0 === refresh ? refresh : refresh.start, refresh.end, commandObj.buffer), 
-                        commandObj.refreshFromBuffer = void 0;
-                    }
-                    void 0 !== commandObj.rewritePosition && (maskPos = commandObj.rewritePosition, 
-                    commandObj = !0);
-                }
-                return commandObj;
-            }
-            function _isValid(position, c, strict) {
-                var rslt = !1;
-                return _validationTests.getTests.call(inputmask, position).every(function(tst, ndx) {
-                    var test = tst.match;
-                    if (_positioning.getBuffer.call(inputmask, !0), rslt = null != test.fn ? test.fn.test(c, maskset, position, strict, opts, isSelection(pos)) : (c === test.def || c === opts.skipOptionalPartCharacter) && "" !== test.def && {
-                        c: _validationTests.getPlaceholder.call(inputmask, position, test, !0) || test.def,
-                        pos: position
-                    }, !1 === rslt) return !0;
-                    var elem = void 0 !== rslt.c ? rslt.c : c, validatedPos = position;
-                    return elem = elem === opts.skipOptionalPartCharacter && !0 === test.static ? _validationTests.getPlaceholder.call(inputmask, position, test, !0) || test.def : elem, 
-                    rslt = processCommandObject(rslt), !0 !== rslt && void 0 !== rslt.pos && rslt.pos !== position && (validatedPos = rslt.pos), 
-                    !0 !== rslt && void 0 === rslt.pos && void 0 === rslt.c || !1 === revalidateMask.call(inputmask, pos, $.extend({}, tst, {
-                        input: casing.call(inputmask, elem, test, validatedPos)
-                    }), fromIsValid, validatedPos) && (rslt = !1), !1;
-                }), rslt;
-            }
-            void 0 !== pos.begin && (maskPos = inputmask.isRTL ? pos.end : pos.begin);
-            var result = !0, positionsClone = $.extend(!0, {}, maskset.validPositions);
-            if (!1 === opts.keepStatic && void 0 !== maskset.excludes[maskPos] && !0 !== fromAlternate && !0 !== fromIsValid) for (var i = maskPos; i < (inputmask.isRTL ? pos.begin : pos.end); i++) void 0 !== maskset.excludes[i] && (maskset.excludes[i] = void 0, 
-            delete maskset.tests[i]);
-            if ("function" == typeof opts.preValidation && !0 !== fromIsValid && !0 !== validateOnly && (result = opts.preValidation.call(el, _positioning.getBuffer.call(inputmask), maskPos, c, isSelection(pos), opts, maskset, pos, strict || fromAlternate), 
-            result = processCommandObject(result)), !0 === result) {
-                if (void 0 === inputmask.maxLength || maskPos < inputmask.maxLength) {
-                    if (result = _isValid(maskPos, c, strict), (!strict || !0 === fromIsValid) && !1 === result && !0 !== validateOnly) {
-                        var currentPosValid = maskset.validPositions[maskPos];
-                        if (!currentPosValid || !0 !== currentPosValid.match.static || currentPosValid.match.def !== c && c !== opts.skipOptionalPartCharacter) {
-                            if (opts.insertMode || void 0 === maskset.validPositions[_positioning.seekNext.call(inputmask, maskPos)] || pos.end > maskPos) {
-                                var skip = !1;
-                                if (maskset.jitOffset[maskPos] && void 0 === maskset.validPositions[_positioning.seekNext.call(inputmask, maskPos)] && (result = isValid.call(inputmask, maskPos + maskset.jitOffset[maskPos], c, !0), 
-                                !1 !== result && (!0 !== fromAlternate && (result.caret = maskPos), skip = !0)), 
-                                pos.end > maskPos && (maskset.validPositions[maskPos] = void 0), !skip && !_positioning.isMask.call(inputmask, maskPos, opts.keepStatic && 0 === maskPos)) for (var nPos = maskPos + 1, snPos = _positioning.seekNext.call(inputmask, maskPos, !1, 0 !== maskPos); nPos <= snPos; nPos++) if (result = _isValid(nPos, c, strict), 
-                                !1 !== result) {
-                                    result = trackbackPositions.call(inputmask, maskPos, void 0 !== result.pos ? result.pos : nPos) || result, 
-                                    maskPos = nPos;
-                                    break;
-                                }
-                            }
-                        } else result = {
-                            caret: _positioning.seekNext.call(inputmask, maskPos)
-                        };
-                    }
-                } else result = !1;
-                !1 !== result || !opts.keepStatic || !isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && 0 !== maskPos || strict || !0 === fromAlternate ? isSelection(pos) && maskset.tests[maskPos] && 1 < maskset.tests[maskPos].length && opts.keepStatic && !strict && !0 !== fromAlternate && (result = alternate.call(inputmask, !0)) : result = alternate.call(inputmask, maskPos, c, strict, fromIsValid, void 0, pos), 
-                !0 === result && (result = {
-                    pos: maskPos
-                });
-            }
-            if ("function" == typeof opts.postValidation && !0 !== fromIsValid && !0 !== validateOnly) {
-                var postResult = opts.postValidation.call(el, _positioning.getBuffer.call(inputmask, !0), void 0 !== pos.begin ? inputmask.isRTL ? pos.end : pos.begin : pos, c, result, opts, maskset, strict, fromCheckval);
-                void 0 !== postResult && (result = !0 === postResult ? result : postResult);
-            }
-            result && void 0 === result.pos && (result.pos = maskPos), !1 === result || !0 === validateOnly ? (_positioning.resetMaskSet.call(inputmask, !0), 
-            maskset.validPositions = $.extend(!0, {}, positionsClone)) : trackbackPositions.call(inputmask, void 0, maskPos, !0);
-            var endResult = processCommandObject(result);
-            return endResult;
-        }
-        function positionCanMatchDefinition(pos, testDefinition, opts) {
-            for (var inputmask = this, maskset = this.maskset, valid = !1, tests = _validationTests.getTests.call(this, pos), tndx = 0; tndx < tests.length; tndx++) {
-                if (tests[tndx].match && (!(tests[tndx].match.nativeDef !== testDefinition.match[opts.shiftPositions ? "def" : "nativeDef"] || opts.shiftPositions && testDefinition.match.static) || tests[tndx].match.nativeDef === testDefinition.match.nativeDef)) {
-                    valid = !0;
-                    break;
-                }
-                if (tests[tndx].match && tests[tndx].match.def === testDefinition.match.nativeDef) {
-                    valid = void 0;
-                    break;
-                }
-            }
-            return !1 === valid && void 0 !== maskset.jitOffset[pos] && (valid = positionCanMatchDefinition.call(this, pos + maskset.jitOffset[pos], testDefinition, opts)), 
-            valid;
-        }
-        function refreshFromBuffer(start, end, buffer) {
-            var inputmask = this, maskset = this.maskset, opts = this.opts, $ = this.dependencyLib, el = this.el, i, p, skipOptionalPartCharacter = opts.skipOptionalPartCharacter, bffr = this.isRTL ? buffer.slice().reverse() : buffer;
-            if (opts.skipOptionalPartCharacter = "", !0 === start) _positioning.resetMaskSet.call(this), 
-            maskset.tests = {}, start = 0, end = buffer.length, p = _positioning.determineNewCaretPosition.call(this, {
-                begin: 0,
-                end: 0
-            }, !1).begin; else {
-                for (i = start; i < end; i++) delete maskset.validPositions[i];
-                p = start;
-            }
-            var keypress = new $.Event("keypress");
-            for (i = start; i < end; i++) {
-                keypress.which = bffr[i].toString().charCodeAt(0), this.ignorable = !1;
-                var valResult = _eventhandlers.EventHandlers.keypressEvent.call(el, keypress, !0, !1, !1, p);
-                !1 !== valResult && (p = valResult.forwardPosition);
-            }
-            opts.skipOptionalPartCharacter = skipOptionalPartCharacter;
-        }
-        function trackbackPositions(originalPos, newPos, fillOnly) {
-            var inputmask = this, maskset = this.maskset, $ = this.dependencyLib;
-            if (void 0 === originalPos) for (originalPos = newPos - 1; 0 < originalPos && !maskset.validPositions[originalPos]; originalPos--) ;
-            for (var ps = originalPos; ps < newPos; ps++) if (void 0 === maskset.validPositions[ps] && !_positioning.isMask.call(this, ps, !0)) {
-                var vp = 0 == ps ? _validationTests.getTest.call(this, ps) : maskset.validPositions[ps - 1];
-                if (vp) {
-                    var tests = _validationTests.getTests.call(this, ps).slice();
-                    "" === tests[tests.length - 1].match.def && tests.pop();
-                    var bestMatch = _validationTests.determineTestTemplate.call(this, ps, tests), np;
-                    if (bestMatch && (!0 !== bestMatch.match.jit || "master" === bestMatch.match.newBlockMarker && (np = maskset.validPositions[ps + 1]) && !0 === np.match.optionalQuantifier) && (bestMatch = $.extend({}, bestMatch, {
-                        input: _validationTests.getPlaceholder.call(this, ps, bestMatch.match, !0) || bestMatch.match.def
-                    }), bestMatch.generatedInput = !0, revalidateMask.call(this, ps, bestMatch, !0), 
-                    !0 !== fillOnly)) {
-                        var cvpInput = maskset.validPositions[newPos].input;
-                        return maskset.validPositions[newPos] = void 0, isValid.call(this, newPos, cvpInput, !0, !0);
-                    }
-                }
-            }
-        }
-        function revalidateMask(pos, validTest, fromIsValid, validatedPos) {
-            var inputmask = this, maskset = this.maskset, opts = this.opts, $ = this.dependencyLib;
-            function IsEnclosedStatic(pos, valids, selection) {
-                var posMatch = valids[pos];
-                if (void 0 === posMatch || !0 !== posMatch.match.static || !0 === posMatch.match.optionality || void 0 !== valids[0] && void 0 !== valids[0].alternation) return !1;
-                var prevMatch = selection.begin <= pos - 1 ? valids[pos - 1] && !0 === valids[pos - 1].match.static && valids[pos - 1] : valids[pos - 1], nextMatch = selection.end > pos + 1 ? valids[pos + 1] && !0 === valids[pos + 1].match.static && valids[pos + 1] : valids[pos + 1];
-                return prevMatch && nextMatch;
-            }
-            var offset = 0, begin = void 0 !== pos.begin ? pos.begin : pos, end = void 0 !== pos.end ? pos.end : pos;
-            if (pos.begin > pos.end && (begin = pos.end, end = pos.begin), validatedPos = void 0 !== validatedPos ? validatedPos : begin, 
-            begin !== end || opts.insertMode && void 0 !== maskset.validPositions[validatedPos] && void 0 === fromIsValid || void 0 === validTest) {
-                var positionsClone = $.extend(!0, {}, maskset.validPositions), lvp = _positioning.getLastValidPosition.call(this, void 0, !0), i;
-                for (maskset.p = begin, i = lvp; begin <= i; i--) delete maskset.validPositions[i], 
-                void 0 === validTest && delete maskset.tests[i + 1];
-                var valid = !0, j = validatedPos, posMatch = j, t, canMatch;
-                for (validTest && (maskset.validPositions[validatedPos] = $.extend(!0, {}, validTest), 
-                posMatch++, j++), i = validTest ? end : end - 1; i <= lvp; i++) {
-                    if (void 0 !== (t = positionsClone[i]) && !0 !== t.generatedInput && (end <= i || begin <= i && IsEnclosedStatic(i, positionsClone, {
-                        begin: begin,
-                        end: end
-                    }))) {
-                        for (;"" !== _validationTests.getTest.call(this, posMatch).match.def; ) {
-                            if (!1 !== (canMatch = positionCanMatchDefinition.call(this, posMatch, t, opts)) || "+" === t.match.def) {
-                                "+" === t.match.def && _positioning.getBuffer.call(this, !0);
-                                var result = isValid.call(this, posMatch, t.input, "+" !== t.match.def, "+" !== t.match.def);
-                                if (valid = !1 !== result, j = (result.pos || posMatch) + 1, !valid && canMatch) break;
-                            } else valid = !1;
-                            if (valid) {
-                                void 0 === validTest && t.match.static && i === pos.begin && offset++;
-                                break;
-                            }
-                            if (!valid && posMatch > maskset.maskLength) break;
-                            posMatch++;
-                        }
-                        "" == _validationTests.getTest.call(this, posMatch).match.def && (valid = !1), posMatch = j;
-                    }
-                    if (!valid) break;
-                }
-                if (!valid) return maskset.validPositions = $.extend(!0, {}, positionsClone), _positioning.resetMaskSet.call(this, !0), 
-                !1;
-            } else validTest && _validationTests.getTest.call(this, validatedPos).match.cd === validTest.match.cd && (maskset.validPositions[validatedPos] = $.extend(!0, {}, validTest));
-            return _positioning.resetMaskSet.call(this, !0), offset;
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.applyInputValue = applyInputValue, exports.clearOptionalTail = clearOptionalTail, 
-        exports.checkVal = checkVal, exports.HandleNativePlaceholder = HandleNativePlaceholder, 
-        exports.unmaskedvalue = unmaskedvalue, exports.writeBuffer = writeBuffer;
-        var _keycode = _interopRequireDefault(__webpack_require__(0)), _validationTests = __webpack_require__(3), _positioning = __webpack_require__(2), _validation = __webpack_require__(4), _environment = __webpack_require__(8), _eventhandlers = __webpack_require__(7);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        function applyInputValue(input, value) {
-            var inputmask = input ? input.inputmask : this, opts = inputmask.opts;
-            input.inputmask.refreshValue = !1, "function" == typeof opts.onBeforeMask && (value = opts.onBeforeMask.call(inputmask, value, opts) || value), 
-            value = value.toString().split(""), checkVal(input, !0, !1, value), inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
-            (opts.clearMaskOnLostFocus || opts.clearIncomplete) && input.inputmask._valueGet() === _positioning.getBufferTemplate.call(inputmask).join("") && -1 === _positioning.getLastValidPosition.call(inputmask) && input.inputmask._valueSet("");
-        }
-        function clearOptionalTail(buffer) {
-            var inputmask = this;
-            buffer.length = 0;
-            for (var template = _validationTests.getMaskTemplate.call(this, !0, 0, !0, void 0, !0), lmnt; void 0 !== (lmnt = template.shift()); ) buffer.push(lmnt);
-            return buffer;
-        }
-        function checkVal(input, writeOut, strict, nptvl, initiatingEvent) {
-            var inputmask = input ? input.inputmask : this, maskset = inputmask.maskset, opts = inputmask.opts, $ = inputmask.dependencyLib, inputValue = nptvl.slice(), charCodes = "", initialNdx = -1, result = void 0, skipOptionalPartCharacter = opts.skipOptionalPartCharacter;
-            function isTemplateMatch(ndx, charCodes) {
-                for (var targetTemplate = _validationTests.getMaskTemplate.call(inputmask, !0, 0).slice(ndx, _positioning.seekNext.call(inputmask, ndx)).join("").replace(/'/g, ""), charCodeNdx = targetTemplate.indexOf(charCodes); 0 < charCodeNdx && " " === targetTemplate[charCodeNdx - 1]; ) charCodeNdx--;
-                var match = 0 === charCodeNdx && !_positioning.isMask.call(inputmask, ndx) && (_validationTests.getTest.call(inputmask, ndx).match.nativeDef === charCodes.charAt(0) || !0 === _validationTests.getTest.call(inputmask, ndx).match.static && _validationTests.getTest.call(inputmask, ndx).match.nativeDef === "'" + charCodes.charAt(0) || " " === _validationTests.getTest.call(inputmask, ndx).match.nativeDef && (_validationTests.getTest.call(inputmask, ndx + 1).match.nativeDef === charCodes.charAt(0) || !0 === _validationTests.getTest.call(inputmask, ndx + 1).match.static && _validationTests.getTest.call(inputmask, ndx + 1).match.nativeDef === "'" + charCodes.charAt(0)));
-                if (!match && 0 < charCodeNdx && !_positioning.isMask.call(inputmask, ndx, !1, !0)) {
-                    var nextPos = _positioning.seekNext.call(inputmask, ndx);
-                    inputmask.caretPos.begin < nextPos && (inputmask.caretPos = {
-                        begin: nextPos
-                    });
-                }
-                return match;
-            }
-            opts.skipOptionalPartCharacter = "", _positioning.resetMaskSet.call(inputmask), 
-            maskset.tests = {}, initialNdx = opts.radixPoint ? _positioning.determineNewCaretPosition.call(inputmask, {
-                begin: 0,
-                end: 0
-            }).begin : 0, maskset.p = initialNdx, inputmask.caretPos = {
-                begin: initialNdx
-            };
-            var staticMatches = [], prevCaretPos = inputmask.caretPos;
-            if (inputValue.forEach(function(charCode, ndx) {
-                if (void 0 !== charCode) if (void 0 === maskset.validPositions[ndx] && inputValue[ndx] === _validationTests.getPlaceholder.call(inputmask, ndx) && _positioning.isMask.call(inputmask, ndx, !0) && !1 === _validation.isValid.call(inputmask, ndx, inputValue[ndx], !0, void 0, void 0, !0)) maskset.p++; else {
-                    var keypress = new $.Event("_checkval");
-                    keypress.which = charCode.toString().charCodeAt(0), charCodes += charCode;
-                    var lvp = _positioning.getLastValidPosition.call(inputmask, void 0, !0);
-                    isTemplateMatch(initialNdx, charCodes) ? result = _eventhandlers.EventHandlers.keypressEvent.call(input || inputmask, keypress, !0, !1, strict, lvp + 1) : (result = _eventhandlers.EventHandlers.keypressEvent.call(input || inputmask, keypress, !0, !1, strict, inputmask.caretPos.begin), 
-                    result && (initialNdx = inputmask.caretPos.begin + 1, charCodes = "")), result ? (void 0 !== result.pos && maskset.validPositions[result.pos] && !0 === maskset.validPositions[result.pos].match.static && void 0 === maskset.validPositions[result.pos].alternation && (staticMatches.push(result.pos), 
-                    inputmask.isRTL || (result.forwardPosition = result.pos + 1)), writeBuffer.call(inputmask, void 0, _positioning.getBuffer.call(inputmask), result.forwardPosition, keypress, !1), 
-                    inputmask.caretPos = {
-                        begin: result.forwardPosition,
-                        end: result.forwardPosition
-                    }, prevCaretPos = inputmask.caretPos) : inputmask.caretPos = prevCaretPos;
-                }
-            }), 0 < staticMatches.length) {
-                var sndx, validPos, nextValid = _positioning.seekNext.call(inputmask, -1, void 0, !1);
-                if (!_validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && staticMatches.length <= nextValid || _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && 0 < staticMatches.length && staticMatches.length !== nextValid && 0 === staticMatches[0]) for (var nextSndx = nextValid; void 0 !== (sndx = staticMatches.shift()); ) {
-                    var keypress = new $.Event("_checkval");
-                    if (validPos = maskset.validPositions[sndx], validPos.generatedInput = !0, keypress.which = validPos.input.charCodeAt(0), 
-                    result = _eventhandlers.EventHandlers.keypressEvent.call(input, keypress, !0, !1, strict, nextSndx), 
-                    result && void 0 !== result.pos && result.pos !== sndx && maskset.validPositions[result.pos] && !0 === maskset.validPositions[result.pos].match.static) staticMatches.push(result.pos); else if (!result) break;
-                    nextSndx++;
-                }
-            }
-            writeOut && writeBuffer.call(inputmask, input, _positioning.getBuffer.call(inputmask), result ? result.forwardPosition : inputmask.caretPos.begin, initiatingEvent || new $.Event("checkval"), initiatingEvent && "input" === initiatingEvent.type && inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("")), 
-            opts.skipOptionalPartCharacter = skipOptionalPartCharacter;
-        }
-        function HandleNativePlaceholder(npt, value) {
-            var inputmask = npt ? npt.inputmask : this;
-            if (_environment.ie) {
-                if (npt.inputmask._valueGet() !== value && (npt.placeholder !== value || "" === npt.placeholder)) {
-                    var buffer = _positioning.getBuffer.call(inputmask).slice(), nptValue = npt.inputmask._valueGet();
-                    if (nptValue !== value) {
-                        var lvp = _positioning.getLastValidPosition.call(inputmask);
-                        -1 === lvp && nptValue === _positioning.getBufferTemplate.call(inputmask).join("") ? buffer = [] : -1 !== lvp && clearOptionalTail.call(inputmask, buffer), 
-                        writeBuffer(npt, buffer);
-                    }
-                }
-            } else npt.placeholder !== value && (npt.placeholder = value, "" === npt.placeholder && npt.removeAttribute("placeholder"));
-        }
-        function unmaskedvalue(input) {
-            var inputmask = input ? input.inputmask : this, opts = inputmask.opts, maskset = inputmask.maskset;
-            if (input) {
-                if (void 0 === input.inputmask) return input.value;
-                input.inputmask && input.inputmask.refreshValue && applyInputValue(input, input.inputmask._valueGet(!0));
-            }
-            var umValue = [], vps = maskset.validPositions;
-            for (var pndx in vps) vps[pndx] && vps[pndx].match && (1 != vps[pndx].match.static || Array.isArray(maskset.metadata) && !0 !== vps[pndx].generatedInput) && umValue.push(vps[pndx].input);
-            var unmaskedValue = 0 === umValue.length ? "" : (inputmask.isRTL ? umValue.reverse() : umValue).join("");
-            if ("function" == typeof opts.onUnMask) {
-                var bufferValue = (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice().reverse() : _positioning.getBuffer.call(inputmask)).join("");
-                unmaskedValue = opts.onUnMask.call(inputmask, bufferValue, unmaskedValue, opts);
-            }
-            return unmaskedValue;
-        }
-        function writeBuffer(input, buffer, caretPos, event, triggerEvents) {
-            var inputmask = input ? input.inputmask : this, opts = inputmask.opts, $ = inputmask.dependencyLib;
-            if (event && "function" == typeof opts.onBeforeWrite) {
-                var result = opts.onBeforeWrite.call(inputmask, event, buffer, caretPos, opts);
-                if (result) {
-                    if (result.refreshFromBuffer) {
-                        var refresh = result.refreshFromBuffer;
-                        _validation.refreshFromBuffer.call(inputmask, !0 === refresh ? refresh : refresh.start, refresh.end, result.buffer || buffer), 
-                        buffer = _positioning.getBuffer.call(inputmask, !0);
-                    }
-                    void 0 !== caretPos && (caretPos = void 0 !== result.caret ? result.caret : caretPos);
-                }
-            }
-            if (void 0 !== input && (input.inputmask._valueSet(buffer.join("")), void 0 === caretPos || void 0 !== event && "blur" === event.type || _positioning.caret.call(inputmask, input, caretPos, void 0, void 0, void 0 !== event && "keydown" === event.type && (event.keyCode === _keycode.default.DELETE || event.keyCode === _keycode.default.BACKSPACE)), 
-            !0 === triggerEvents)) {
-                var $input = $(input), nptVal = input.inputmask._valueGet();
-                input.inputmask.skipInputEvent = !0, $input.trigger("input"), setTimeout(function() {
-                    nptVal === _positioning.getBufferTemplate.call(inputmask).join("") ? $input.trigger("cleared") : !0 === _validation.isComplete.call(inputmask, buffer) && $input.trigger("complete");
-                }, 0);
-            }
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0;
-        var _default = "undefined" != typeof window ? window : new (eval("require('jsdom').JSDOM"))("").window;
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.EventHandlers = void 0;
-        var _positioning = __webpack_require__(2), _keycode = _interopRequireDefault(__webpack_require__(0)), _environment = __webpack_require__(8), _validation = __webpack_require__(4), _inputHandling = __webpack_require__(5), _validationTests = __webpack_require__(3);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var EventHandlers = {
-            keydownEvent: function keydownEvent(e) {
-                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib, maskset = inputmask.maskset, input = this, $input = $(input), k = e.keyCode, pos = _positioning.caret.call(inputmask, input), kdResult = opts.onKeyDown.call(this, e, _positioning.getBuffer.call(inputmask), pos, opts);
-                if (void 0 !== kdResult) return kdResult;
-                if (k === _keycode.default.BACKSPACE || k === _keycode.default.DELETE || _environment.iphone && k === _keycode.default.BACKSPACE_SAFARI || e.ctrlKey && k === _keycode.default.X && !("oncut" in input)) e.preventDefault(), 
-                _validation.handleRemove.call(inputmask, input, k, pos), (0, _inputHandling.writeBuffer)(input, _positioning.getBuffer.call(inputmask, !0), maskset.p, e, input.inputmask._valueGet() !== _positioning.getBuffer.call(inputmask).join("")); else if (k === _keycode.default.END || k === _keycode.default.PAGE_DOWN) {
-                    e.preventDefault();
-                    var caretPos = _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask));
-                    _positioning.caret.call(inputmask, input, e.shiftKey ? pos.begin : caretPos, caretPos, !0);
-                } else k === _keycode.default.HOME && !e.shiftKey || k === _keycode.default.PAGE_UP ? (e.preventDefault(), 
-                _positioning.caret.call(inputmask, input, 0, e.shiftKey ? pos.begin : 0, !0)) : (opts.undoOnEscape && k === _keycode.default.ESCAPE || 90 === k && e.ctrlKey) && !0 !== e.altKey ? ((0, 
-                _inputHandling.checkVal)(input, !0, !1, inputmask.undoValue.split("")), $input.trigger("click")) : !0 === opts.tabThrough && k === _keycode.default.TAB ? !0 === e.shiftKey ? (pos.end = _positioning.seekPrevious.call(inputmask, pos.end, !0), 
-                !0 === _validationTests.getTest.call(inputmask, pos.end - 1).match.static && pos.end--, 
-                pos.begin = _positioning.seekPrevious.call(inputmask, pos.end, !0), 0 <= pos.begin && 0 < pos.end && (e.preventDefault(), 
-                _positioning.caret.call(inputmask, input, pos.begin, pos.end))) : (pos.begin = _positioning.seekNext.call(inputmask, pos.begin, !0), 
-                pos.end = _positioning.seekNext.call(inputmask, pos.begin, !0), pos.end < maskset.maskLength && pos.end--, 
-                pos.begin <= maskset.maskLength && (e.preventDefault(), _positioning.caret.call(inputmask, input, pos.begin, pos.end))) : e.shiftKey || opts.insertModeVisual && !1 === opts.insertMode && (k === _keycode.default.RIGHT ? setTimeout(function() {
-                    var caretPos = _positioning.caret.call(inputmask, input);
-                    _positioning.caret.call(inputmask, input, caretPos.begin);
-                }, 0) : k === _keycode.default.LEFT && setTimeout(function() {
-                    var caretPos_begin = _positioning.translatePosition.call(inputmask, input.inputmask.caretPos.begin), caretPos_end = _positioning.translatePosition.call(inputmask, input.inputmask.caretPos.end);
-                    inputmask.isRTL ? _positioning.caret.call(inputmask, input, caretPos_begin + (caretPos_begin === maskset.maskLength ? 0 : 1)) : _positioning.caret.call(inputmask, input, caretPos_begin - (0 === caretPos_begin ? 0 : 1));
-                }, 0));
-                inputmask.ignorable = opts.ignorables.includes(k);
-            },
-            keypressEvent: function keypressEvent(e, checkval, writeOut, strict, ndx) {
-                var inputmask = this.inputmask || this, opts = inputmask.opts, $ = inputmask.dependencyLib, maskset = inputmask.maskset, input = inputmask.el, $input = $(input), k = e.which || e.charCode || e.keyCode;
-                if (!(!0 === checkval || e.ctrlKey && e.altKey) && (e.ctrlKey || e.metaKey || inputmask.ignorable)) return k === _keycode.default.ENTER && inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && (inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
-                setTimeout(function() {
-                    $input.trigger("change");
-                }, 0)), inputmask.skipInputEvent = !0, !0;
-                if (k) {
-                    44 !== k && 46 !== k || 3 !== e.location || "" === opts.radixPoint || (k = opts.radixPoint.charCodeAt(0));
-                    var pos = checkval ? {
-                        begin: ndx,
-                        end: ndx
-                    } : _positioning.caret.call(inputmask, input), forwardPosition, c = String.fromCharCode(k);
-                    maskset.writeOutBuffer = !0;
-                    var valResult = _validation.isValid.call(inputmask, pos, c, strict, void 0, void 0, void 0, checkval);
-                    if (!1 !== valResult && (_positioning.resetMaskSet.call(inputmask, !0), forwardPosition = void 0 !== valResult.caret ? valResult.caret : _positioning.seekNext.call(inputmask, valResult.pos.begin ? valResult.pos.begin : valResult.pos), 
-                    maskset.p = forwardPosition), forwardPosition = opts.numericInput && void 0 === valResult.caret ? _positioning.seekPrevious.call(inputmask, forwardPosition) : forwardPosition, 
-                    !1 !== writeOut && (setTimeout(function() {
-                        opts.onKeyValidation.call(input, k, valResult);
-                    }, 0), maskset.writeOutBuffer && !1 !== valResult)) {
-                        var buffer = _positioning.getBuffer.call(inputmask);
-                        (0, _inputHandling.writeBuffer)(input, buffer, forwardPosition, e, !0 !== checkval);
-                    }
-                    if (e.preventDefault(), checkval) return !1 !== valResult && (valResult.forwardPosition = forwardPosition), 
-                    valResult;
-                }
-            },
-            keyupEvent: function keyupEvent(e) {
-                var inputmask = this.inputmask;
-                !inputmask.isComposing || e.keyCode !== _keycode.default.KEY_229 && e.keyCode !== _keycode.default.ENTER || inputmask.$el.trigger("input");
-            },
-            pasteEvent: function pasteEvent(e) {
-                var inputmask = this.inputmask, opts = inputmask.opts, input = this, inputValue = inputmask._valueGet(!0), caretPos = _positioning.caret.call(inputmask, this), tempValue;
-                inputmask.isRTL && (tempValue = caretPos.end, caretPos.end = caretPos.begin, caretPos.begin = tempValue);
-                var valueBeforeCaret = inputValue.substr(0, caretPos.begin), valueAfterCaret = inputValue.substr(caretPos.end, inputValue.length);
-                if (valueBeforeCaret == (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).slice(0, caretPos.begin).join("") && (valueBeforeCaret = ""), 
-                valueAfterCaret == (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).slice(caretPos.end).join("") && (valueAfterCaret = ""), 
-                window.clipboardData && window.clipboardData.getData) inputValue = valueBeforeCaret + window.clipboardData.getData("Text") + valueAfterCaret; else {
-                    if (!e.clipboardData || !e.clipboardData.getData) return !0;
-                    inputValue = valueBeforeCaret + e.clipboardData.getData("text/plain") + valueAfterCaret;
-                }
-                var pasteValue = inputValue;
-                if ("function" == typeof opts.onBeforePaste) {
-                    if (pasteValue = opts.onBeforePaste.call(inputmask, inputValue, opts), !1 === pasteValue) return e.preventDefault();
-                    pasteValue = pasteValue || inputValue;
-                }
-                return (0, _inputHandling.checkVal)(this, !0, !1, pasteValue.toString().split(""), e), 
-                e.preventDefault();
-            },
-            inputFallBackEvent: function inputFallBackEvent(e) {
-                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib;
-                function ieMobileHandler(input, inputValue, caretPos) {
-                    if (_environment.iemobile) {
-                        var inputChar = inputValue.replace(_positioning.getBuffer.call(inputmask).join(""), "");
-                        if (1 === inputChar.length) {
-                            var iv = inputValue.split("");
-                            iv.splice(caretPos.begin, 0, inputChar), inputValue = iv.join("");
-                        }
-                    }
-                    return inputValue;
-                }
-                function analyseChanges(inputValue, buffer, caretPos) {
-                    for (var frontPart = inputValue.substr(0, caretPos.begin).split(""), backPart = inputValue.substr(caretPos.begin).split(""), frontBufferPart = buffer.substr(0, caretPos.begin).split(""), backBufferPart = buffer.substr(caretPos.begin).split(""), fpl = frontPart.length >= frontBufferPart.length ? frontPart.length : frontBufferPart.length, bpl = backPart.length >= backBufferPart.length ? backPart.length : backBufferPart.length, bl, i, action = "", data = [], marker = "~", placeholder; frontPart.length < fpl; ) frontPart.push("~");
-                    for (;frontBufferPart.length < fpl; ) frontBufferPart.push("~");
-                    for (;backPart.length < bpl; ) backPart.unshift("~");
-                    for (;backBufferPart.length < bpl; ) backBufferPart.unshift("~");
-                    var newBuffer = frontPart.concat(backPart), oldBuffer = frontBufferPart.concat(backBufferPart);
-                    for (i = 0, bl = newBuffer.length; i < bl; i++) switch (placeholder = _validationTests.getPlaceholder.call(inputmask, _positioning.translatePosition.call(inputmask, i)), 
-                    action) {
-                      case "insertText":
-                        oldBuffer[i - 1] === newBuffer[i] && caretPos.begin == newBuffer.length - 1 && data.push(newBuffer[i]), 
-                        i = bl;
-                        break;
-
-                      case "insertReplacementText":
-                        "~" === newBuffer[i] ? caretPos.end++ : i = bl;
-                        break;
-
-                      case "deleteContentBackward":
-                        "~" === newBuffer[i] ? caretPos.end++ : i = bl;
-                        break;
-
-                      default:
-                        newBuffer[i] !== oldBuffer[i] && ("~" !== newBuffer[i + 1] && newBuffer[i + 1] !== placeholder && void 0 !== newBuffer[i + 1] || (oldBuffer[i] !== placeholder || "~" !== oldBuffer[i + 1]) && "~" !== oldBuffer[i] ? "~" === oldBuffer[i + 1] && oldBuffer[i] === newBuffer[i + 1] ? (action = "insertText", 
-                        data.push(newBuffer[i]), caretPos.begin--, caretPos.end--) : newBuffer[i] !== placeholder && "~" !== newBuffer[i] && ("~" === newBuffer[i + 1] || oldBuffer[i] !== newBuffer[i] && oldBuffer[i + 1] === newBuffer[i + 1]) ? (action = "insertReplacementText", 
-                        data.push(newBuffer[i]), caretPos.begin--) : "~" === newBuffer[i] ? (action = "deleteContentBackward", 
-                        !_positioning.isMask.call(inputmask, _positioning.translatePosition.call(inputmask, i), !0) && oldBuffer[i] !== opts.radixPoint || caretPos.end++) : i = bl : (action = "insertText", 
-                        data.push(newBuffer[i]), caretPos.begin--, caretPos.end--));
-                        break;
-                    }
-                    return {
-                        action: action,
-                        data: data,
-                        caret: caretPos
-                    };
-                }
-                var input = this, inputValue = input.inputmask._valueGet(!0), buffer = (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice().reverse() : _positioning.getBuffer.call(inputmask)).join(""), caretPos = _positioning.caret.call(inputmask, input, void 0, void 0, !0);
-                if (buffer !== inputValue) {
-                    inputValue = ieMobileHandler(input, inputValue, caretPos);
-                    var changes = analyseChanges(inputValue, buffer, caretPos);
-                    switch ((input.inputmask.shadowRoot || document).activeElement !== input && input.focus(), 
-                    (0, _inputHandling.writeBuffer)(input, _positioning.getBuffer.call(inputmask)), 
-                    _positioning.caret.call(inputmask, input, caretPos.begin, caretPos.end, !0), changes.action) {
-                      case "insertText":
-                      case "insertReplacementText":
-                        changes.data.forEach(function(entry, ndx) {
-                            var keypress = new $.Event("keypress");
-                            keypress.which = entry.charCodeAt(0), inputmask.ignorable = !1, EventHandlers.keypressEvent.call(input, keypress);
-                        }), setTimeout(function() {
-                            inputmask.$el.trigger("keyup");
-                        }, 0);
-                        break;
-
-                      case "deleteContentBackward":
-                        var keydown = new $.Event("keydown");
-                        keydown.keyCode = _keycode.default.BACKSPACE, EventHandlers.keydownEvent.call(input, keydown);
-                        break;
-
-                      default:
-                        (0, _inputHandling.applyInputValue)(input, inputValue);
-                        break;
-                    }
-                    e.preventDefault();
-                }
-            },
-            compositionendEvent: function compositionendEvent(e) {
-                var inputmask = this.inputmask;
-                inputmask.isComposing = !1, inputmask.$el.trigger("input");
-            },
-            setValueEvent: function setValueEvent(e, argument_1, argument_2) {
-                var inputmask = this.inputmask, input = this, value = e && e.detail ? e.detail[0] : argument_1;
-                void 0 === value && (value = this.inputmask._valueGet(!0)), (0, _inputHandling.applyInputValue)(this, value), 
-                (e.detail && void 0 !== e.detail[1] || void 0 !== argument_2) && _positioning.caret.call(inputmask, this, e.detail ? e.detail[1] : argument_2);
-            },
-            focusEvent: function focusEvent(e) {
-                var inputmask = this.inputmask, opts = inputmask.opts, input = this, nptValue = this.inputmask._valueGet();
-                opts.showMaskOnFocus && nptValue !== _positioning.getBuffer.call(inputmask).join("") && (0, 
-                _inputHandling.writeBuffer)(this, _positioning.getBuffer.call(inputmask), _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask))), 
-                !0 !== opts.positionCaretOnTab || !1 !== inputmask.mouseEnter || _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && -1 !== _positioning.getLastValidPosition.call(inputmask) || EventHandlers.clickEvent.apply(this, [ e, !0 ]), 
-                inputmask.undoValue = _positioning.getBuffer.call(inputmask).join("");
-            },
-            invalidEvent: function invalidEvent(e) {
-                this.inputmask.validationEvent = !0;
-            },
-            mouseleaveEvent: function mouseleaveEvent() {
-                var inputmask = this.inputmask, opts = inputmask.opts, input = this;
-                inputmask.mouseEnter = !1, opts.clearMaskOnLostFocus && (this.inputmask.shadowRoot || document).activeElement !== this && (0, 
-                _inputHandling.HandleNativePlaceholder)(this, inputmask.originalPlaceholder);
-            },
-            clickEvent: function clickEvent(e, tabbed) {
-                var inputmask = this.inputmask, input = this;
-                if ((this.inputmask.shadowRoot || document).activeElement === this) {
-                    var newCaretPosition = _positioning.determineNewCaretPosition.call(inputmask, _positioning.caret.call(inputmask, this), tabbed);
-                    void 0 !== newCaretPosition && _positioning.caret.call(inputmask, this, newCaretPosition);
-                }
-            },
-            cutEvent: function cutEvent(e) {
-                var inputmask = this.inputmask, maskset = inputmask.maskset, input = this, pos = _positioning.caret.call(inputmask, this), clipboardData = window.clipboardData || e.clipboardData, clipData = inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice(pos.end, pos.begin) : _positioning.getBuffer.call(inputmask).slice(pos.begin, pos.end);
-                clipboardData.setData("text", inputmask.isRTL ? clipData.reverse().join("") : clipData.join("")), 
-                document.execCommand && document.execCommand("copy"), _validation.handleRemove.call(inputmask, this, _keycode.default.DELETE, pos), 
-                (0, _inputHandling.writeBuffer)(this, _positioning.getBuffer.call(inputmask), maskset.p, e, inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join(""));
-            },
-            blurEvent: function blurEvent(e) {
-                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib, $input = $(this), input = this;
-                if (this.inputmask) {
-                    (0, _inputHandling.HandleNativePlaceholder)(this, inputmask.originalPlaceholder);
-                    var nptValue = this.inputmask._valueGet(), buffer = _positioning.getBuffer.call(inputmask).slice();
-                    "" !== nptValue && (opts.clearMaskOnLostFocus && (-1 === _positioning.getLastValidPosition.call(inputmask) && nptValue === _positioning.getBufferTemplate.call(inputmask).join("") ? buffer = [] : _inputHandling.clearOptionalTail.call(inputmask, buffer)), 
-                    !1 === _validation.isComplete.call(inputmask, buffer) && (setTimeout(function() {
-                        $input.trigger("incomplete");
-                    }, 0), opts.clearIncomplete && (_positioning.resetMaskSet.call(inputmask), buffer = opts.clearMaskOnLostFocus ? [] : _positioning.getBufferTemplate.call(inputmask).slice())), 
-                    (0, _inputHandling.writeBuffer)(this, buffer, void 0, e)), inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && (inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
-                    $input.trigger("change"));
-                }
-            },
-            mouseenterEvent: function mouseenterEvent() {
-                var inputmask = this.inputmask, opts = inputmask.opts, input = this;
-                inputmask.mouseEnter = !0, (this.inputmask.shadowRoot || document).activeElement !== this && (null == inputmask.originalPlaceholder && this.placeholder !== inputmask.originalPlaceholder && (inputmask.originalPlaceholder = this.placeholder), 
-                opts.showMaskOnHover && (0, _inputHandling.HandleNativePlaceholder)(this, (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).join("")));
-            },
-            submitEvent: function submitEvent() {
-                var inputmask = this.inputmask, opts = inputmask.opts;
-                inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && inputmask.$el.trigger("change"), 
-                opts.clearMaskOnLostFocus && -1 === _positioning.getLastValidPosition.call(inputmask) && inputmask._valueGet && inputmask._valueGet() === _positioning.getBufferTemplate.call(inputmask).join("") && inputmask._valueSet(""), 
-                opts.clearIncomplete && !1 === _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && inputmask._valueSet(""), 
-                opts.removeMaskOnSubmit && (inputmask._valueSet(inputmask.unmaskedvalue(), !0), 
-                setTimeout(function() {
-                    (0, _inputHandling.writeBuffer)(inputmask.el, _positioning.getBuffer.call(inputmask));
-                }, 0));
-            },
-            resetEvent: function resetEvent() {
-                var inputmask = this.inputmask;
-                inputmask.refreshValue = !0, setTimeout(function() {
-                    (0, _inputHandling.applyInputValue)(inputmask.el, inputmask._valueGet(!0));
-                }, 0);
-            }
-        };
-        exports.EventHandlers = EventHandlers;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.iphone = exports.iemobile = exports.mobile = exports.ie = exports.ua = void 0;
-        var ua = window.navigator && window.navigator.userAgent || "", ie = 0 < ua.indexOf("MSIE ") || 0 < ua.indexOf("Trident/"), mobile = "ontouchstart" in window, iemobile = /iemobile/i.test(ua), iphone = /iphone/i.test(ua) && !iemobile;
-        exports.iphone = iphone, exports.iemobile = iemobile, exports.mobile = mobile, exports.ie = ie, 
-        exports.ua = ua;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0;
-        var _extend = _interopRequireDefault(__webpack_require__(13)), _window = _interopRequireDefault(__webpack_require__(6)), _data = _interopRequireDefault(__webpack_require__(17)), _events = __webpack_require__(18);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var document = _window.default.document;
-        function DependencyLib(elem) {
-            return elem instanceof DependencyLib ? elem : this instanceof DependencyLib ? void (null != elem && elem !== _window.default && (this[0] = elem.nodeName ? elem : void 0 !== elem[0] && elem[0].nodeName ? elem[0] : document.querySelector(elem), 
-            void 0 !== this[0] && null !== this[0] && (this[0].eventRegistry = this[0].eventRegistry || {}))) : new DependencyLib(elem);
-        }
-        DependencyLib.prototype = {
-            on: _events.on,
-            off: _events.off,
-            trigger: _events.trigger
-        }, DependencyLib.extend = _extend.default, DependencyLib.data = _data.default, DependencyLib.Event = _events.Event;
-        var _default = DependencyLib;
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        "function" != typeof Object.getPrototypeOf && (Object.getPrototypeOf = "object" === _typeof("test".__proto__) ? function(object) {
-            return object.__proto__;
-        } : function(object) {
-            return object.constructor.prototype;
-        });
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.mask = mask, __webpack_require__(10);
-        var _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _inputHandling = __webpack_require__(5), _eventruler = __webpack_require__(12), _environment = __webpack_require__(8), _validation = __webpack_require__(4), _eventhandlers = __webpack_require__(7);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        function mask() {
-            var inputmask = this, opts = this.opts, el = this.el, $ = this.dependencyLib;
-            function isElementTypeSupported(input, opts) {
-                function patchValueProperty(npt) {
-                    var valueGet, valueSet;
-                    function patchValhook(type) {
-                        if ($.valHooks && (void 0 === $.valHooks[type] || !0 !== $.valHooks[type].inputmaskpatch)) {
-                            var valhookGet = $.valHooks[type] && $.valHooks[type].get ? $.valHooks[type].get : function(elem) {
-                                return elem.value;
-                            }, valhookSet = $.valHooks[type] && $.valHooks[type].set ? $.valHooks[type].set : function(elem, value) {
-                                return elem.value = value, elem;
-                            };
-                            $.valHooks[type] = {
-                                get: function get(elem) {
-                                    if (elem.inputmask) {
-                                        if (elem.inputmask.opts.autoUnmask) return elem.inputmask.unmaskedvalue();
-                                        var result = valhookGet(elem);
-                                        return -1 !== _positioning.getLastValidPosition.call(inputmask, void 0, void 0, elem.inputmask.maskset.validPositions) || !0 !== opts.nullable ? result : "";
-                                    }
-                                    return valhookGet(elem);
-                                },
-                                set: function set(elem, value) {
-                                    var result = valhookSet(elem, value);
-                                    return elem.inputmask && (0, _inputHandling.applyInputValue)(elem, value), result;
-                                },
-                                inputmaskpatch: !0
-                            };
-                        }
-                    }
-                    function getter() {
-                        return this.inputmask ? this.inputmask.opts.autoUnmask ? this.inputmask.unmaskedvalue() : -1 !== _positioning.getLastValidPosition.call(inputmask) || !0 !== opts.nullable ? (this.inputmask.shadowRoot || document.activeElement) === this && opts.clearMaskOnLostFocus ? (inputmask.isRTL ? _inputHandling.clearOptionalTail.call(inputmask, _positioning.getBuffer.call(inputmask).slice()).reverse() : _inputHandling.clearOptionalTail.call(inputmask, _positioning.getBuffer.call(inputmask).slice())).join("") : valueGet.call(this) : "" : valueGet.call(this);
-                    }
-                    function setter(value) {
-                        valueSet.call(this, value), this.inputmask && (0, _inputHandling.applyInputValue)(this, value);
-                    }
-                    function installNativeValueSetFallback(npt) {
-                        _eventruler.EventRuler.on(npt, "mouseenter", function() {
-                            var input = this, value = this.inputmask._valueGet(!0);
-                            value !== (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).reverse() : _positioning.getBuffer.call(inputmask)).join("") && (0, 
-                            _inputHandling.applyInputValue)(this, value);
-                        });
-                    }
-                    if (!npt.inputmask.__valueGet) {
-                        if (!0 !== opts.noValuePatching) {
-                            if (Object.getOwnPropertyDescriptor) {
-                                var valueProperty = Object.getPrototypeOf ? Object.getOwnPropertyDescriptor(Object.getPrototypeOf(npt), "value") : void 0;
-                                valueProperty && valueProperty.get && valueProperty.set ? (valueGet = valueProperty.get, 
-                                valueSet = valueProperty.set, Object.defineProperty(npt, "value", {
-                                    get: getter,
-                                    set: setter,
-                                    configurable: !0
-                                })) : "input" !== npt.tagName.toLowerCase() && (valueGet = function valueGet() {
-                                    return this.textContent;
-                                }, valueSet = function valueSet(value) {
-                                    this.textContent = value;
-                                }, Object.defineProperty(npt, "value", {
-                                    get: getter,
-                                    set: setter,
-                                    configurable: !0
-                                }));
-                            } else document.__lookupGetter__ && npt.__lookupGetter__("value") && (valueGet = npt.__lookupGetter__("value"), 
-                            valueSet = npt.__lookupSetter__("value"), npt.__defineGetter__("value", getter), 
-                            npt.__defineSetter__("value", setter));
-                            npt.inputmask.__valueGet = valueGet, npt.inputmask.__valueSet = valueSet;
-                        }
-                        npt.inputmask._valueGet = function(overruleRTL) {
-                            return inputmask.isRTL && !0 !== overruleRTL ? valueGet.call(this.el).split("").reverse().join("") : valueGet.call(this.el);
-                        }, npt.inputmask._valueSet = function(value, overruleRTL) {
-                            valueSet.call(this.el, null == value ? "" : !0 !== overruleRTL && inputmask.isRTL ? value.split("").reverse().join("") : value);
-                        }, void 0 === valueGet && (valueGet = function valueGet() {
-                            return this.value;
-                        }, valueSet = function valueSet(value) {
-                            this.value = value;
-                        }, patchValhook(npt.type), installNativeValueSetFallback(npt));
-                    }
-                }
-                "textarea" !== input.tagName.toLowerCase() && opts.ignorables.push(_keycode.default.ENTER);
-                var elementType = input.getAttribute("type"), isSupported = "input" === input.tagName.toLowerCase() && opts.supportsInputType.includes(elementType) || input.isContentEditable || "textarea" === input.tagName.toLowerCase();
-                if (!isSupported) if ("input" === input.tagName.toLowerCase()) {
-                    var el = document.createElement("input");
-                    el.setAttribute("type", elementType), isSupported = "text" === el.type, el = null;
-                } else isSupported = "partial";
-                return !1 !== isSupported ? patchValueProperty(input) : input.inputmask = void 0, 
-                isSupported;
-            }
-            _eventruler.EventRuler.off(el);
-            var isSupported = isElementTypeSupported(el, opts);
-            if (!1 !== isSupported) {
-                inputmask.originalPlaceholder = el.placeholder, inputmask.maxLength = void 0 !== el ? el.maxLength : void 0, 
-                -1 === inputmask.maxLength && (inputmask.maxLength = void 0), "inputMode" in el && null === el.getAttribute("inputmode") && (el.inputMode = opts.inputmode, 
-                el.setAttribute("inputmode", opts.inputmode)), !0 === isSupported && (opts.showMaskOnFocus = opts.showMaskOnFocus && -1 === [ "cc-number", "cc-exp" ].indexOf(el.autocomplete), 
-                _environment.iphone && (opts.insertModeVisual = !1), _eventruler.EventRuler.on(el, "submit", _eventhandlers.EventHandlers.submitEvent), 
-                _eventruler.EventRuler.on(el, "reset", _eventhandlers.EventHandlers.resetEvent), 
-                _eventruler.EventRuler.on(el, "blur", _eventhandlers.EventHandlers.blurEvent), _eventruler.EventRuler.on(el, "focus", _eventhandlers.EventHandlers.focusEvent), 
-                _eventruler.EventRuler.on(el, "invalid", _eventhandlers.EventHandlers.invalidEvent), 
-                _eventruler.EventRuler.on(el, "click", _eventhandlers.EventHandlers.clickEvent), 
-                _eventruler.EventRuler.on(el, "mouseleave", _eventhandlers.EventHandlers.mouseleaveEvent), 
-                _eventruler.EventRuler.on(el, "mouseenter", _eventhandlers.EventHandlers.mouseenterEvent), 
-                _eventruler.EventRuler.on(el, "paste", _eventhandlers.EventHandlers.pasteEvent), 
-                _eventruler.EventRuler.on(el, "cut", _eventhandlers.EventHandlers.cutEvent), _eventruler.EventRuler.on(el, "complete", opts.oncomplete), 
-                _eventruler.EventRuler.on(el, "incomplete", opts.onincomplete), _eventruler.EventRuler.on(el, "cleared", opts.oncleared), 
-                !0 !== opts.inputEventOnly && (_eventruler.EventRuler.on(el, "keydown", _eventhandlers.EventHandlers.keydownEvent), 
-                _eventruler.EventRuler.on(el, "keypress", _eventhandlers.EventHandlers.keypressEvent), 
-                _eventruler.EventRuler.on(el, "keyup", _eventhandlers.EventHandlers.keyupEvent)), 
-                (_environment.mobile || opts.inputEventOnly) && el.removeAttribute("maxLength"), 
-                _eventruler.EventRuler.on(el, "input", _eventhandlers.EventHandlers.inputFallBackEvent), 
-                _eventruler.EventRuler.on(el, "compositionend", _eventhandlers.EventHandlers.compositionendEvent)), 
-                _eventruler.EventRuler.on(el, "setvalue", _eventhandlers.EventHandlers.setValueEvent), 
-                inputmask.undoValue = _positioning.getBufferTemplate.call(inputmask).join("");
-                var activeElement = (el.inputmask.shadowRoot || document).activeElement;
-                if ("" !== el.inputmask._valueGet(!0) || !1 === opts.clearMaskOnLostFocus || activeElement === el) {
-                    (0, _inputHandling.applyInputValue)(el, el.inputmask._valueGet(!0), opts);
-                    var buffer = _positioning.getBuffer.call(inputmask).slice();
-                    !1 === _validation.isComplete.call(inputmask, buffer) && opts.clearIncomplete && _positioning.resetMaskSet.call(inputmask), 
-                    opts.clearMaskOnLostFocus && activeElement !== el && (-1 === _positioning.getLastValidPosition.call(inputmask) ? buffer = [] : _inputHandling.clearOptionalTail.call(inputmask, buffer)), 
-                    (!1 === opts.clearMaskOnLostFocus || opts.showMaskOnFocus && activeElement === el || "" !== el.inputmask._valueGet(!0)) && (0, 
-                    _inputHandling.writeBuffer)(el, buffer), activeElement === el && _positioning.caret.call(inputmask, el, _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask)));
-                }
-            }
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.EventRuler = void 0;
-        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _inputHandling = __webpack_require__(5);
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var EventRuler = {
-            on: function on(input, eventName, eventHandler) {
-                var $ = input.inputmask.dependencyLib, ev = function ev(e) {
-                    e.originalEvent && (e = e.originalEvent || e, arguments[0] = e);
-                    var that = this, args, inputmask = that.inputmask, opts = inputmask ? inputmask.opts : void 0, $ = inputmask.dependencyLib;
-                    if (void 0 === inputmask && "FORM" !== this.nodeName) {
-                        var imOpts = $.data(that, "_inputmask_opts");
-                        $(that).off(), imOpts && new _inputmask.default(imOpts).mask(that);
-                    } else {
-                        if ("setvalue" === e.type || "FORM" === this.nodeName || !(that.disabled || that.readOnly && !("keydown" === e.type && e.ctrlKey && 67 === e.keyCode || !1 === opts.tabThrough && e.keyCode === _keycode.default.TAB))) {
-                            switch (e.type) {
-                              case "input":
-                                if (!0 === inputmask.skipInputEvent || e.inputType && "insertCompositionText" === e.inputType) return inputmask.skipInputEvent = !1, 
-                                e.preventDefault();
-                                break;
-
-                              case "keydown":
-                                inputmask.skipKeyPressEvent = !1, inputmask.skipInputEvent = inputmask.isComposing = e.keyCode === _keycode.default.KEY_229;
-                                break;
-
-                              case "keyup":
-                              case "compositionend":
-                                inputmask.isComposing && (inputmask.skipInputEvent = !1);
-                                break;
-
-                              case "keypress":
-                                if (!0 === inputmask.skipKeyPressEvent) return e.preventDefault();
-                                inputmask.skipKeyPressEvent = !0;
-                                break;
-
-                              case "click":
-                              case "focus":
-                                return inputmask.validationEvent ? (inputmask.validationEvent = !1, input.blur(), 
-                                (0, _inputHandling.HandleNativePlaceholder)(input, (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).join("")), 
-                                setTimeout(function() {
-                                    input.focus();
-                                }, 3e3)) : (args = arguments, setTimeout(function() {
-                                    input.inputmask && eventHandler.apply(that, args);
-                                }, 0)), !1;
-                            }
-                            var returnVal = eventHandler.apply(that, arguments);
-                            return !1 === returnVal && (e.preventDefault(), e.stopPropagation()), returnVal;
-                        }
-                        e.preventDefault();
-                    }
-                };
-                input.inputmask.events[eventName] = input.inputmask.events[eventName] || [], input.inputmask.events[eventName].push(ev), 
-                [ "submit", "reset" ].includes(eventName) ? null !== input.form && $(input.form).on(eventName, ev.bind(input)) : $(input).on(eventName, ev);
-            },
-            off: function off(input, event) {
-                if (input.inputmask && input.inputmask.events) {
-                    var $ = input.inputmask.dependencyLib, events = input.inputmask.events;
-                    for (var eventName in event && (events = [], events[event] = input.inputmask.events[event]), 
-                    events) {
-                        for (var evArr = events[eventName]; 0 < evArr.length; ) {
-                            var ev = evArr.pop();
-                            [ "submit", "reset" ].includes(eventName) ? null !== input.form && $(input.form).off(eventName, ev) : $(input).off(eventName, ev);
-                        }
-                        delete input.inputmask.events[eventName];
-                    }
-                }
-            }
-        };
-        exports.EventRuler = EventRuler;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        function extend() {
-            var options, name, src, copy, copyIsArray, clone, target = arguments[0] || {}, i = 1, length = arguments.length, deep = !1;
-            for ("boolean" == typeof target && (deep = target, target = arguments[i] || {}, 
-            i++), "object" !== _typeof(target) && "function" != typeof target && (target = {}); i < length; i++) if (null != (options = arguments[i])) for (name in options) src = target[name], 
-            copy = options[name], target !== copy && (deep && copy && ("[object Object]" === Object.prototype.toString.call(copy) || (copyIsArray = Array.isArray(copy))) ? (clone = copyIsArray ? (copyIsArray = !1, 
-            src && Array.isArray(src) ? src : []) : src && "[object Object]" === Object.prototype.toString.call(src) ? src : {}, 
-            target[name] = extend(deep, clone, copy)) : void 0 !== copy && (target[name] = copy));
-            return target;
-        }
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = extend;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = _default;
-        var escapeRegexRegex = new RegExp("(\\" + [ "/", ".", "*", "+", "?", "|", "(", ")", "[", "]", "{", "}", "\\", "$", "^" ].join("|\\") + ")", "gim");
-        function _default(str) {
-            return str.replace(escapeRegexRegex, "\\$1");
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0, __webpack_require__(16), __webpack_require__(22), 
-        __webpack_require__(23), __webpack_require__(24);
-        var _inputmask2 = _interopRequireDefault(__webpack_require__(1));
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var _default = _inputmask2.default;
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        var _inputmask = _interopRequireDefault(__webpack_require__(1));
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        _inputmask.default.extendDefinitions({
-            A: {
-                validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
-                casing: "upper"
-            },
-            "&": {
-                validator: "[0-9A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
-                casing: "upper"
-            },
-            "#": {
-                validator: "[0-9A-Fa-f]",
-                casing: "upper"
-            }
-        });
-        var ipValidatorRegex = new RegExp("25[0-5]|2[0-4][0-9]|[01][0-9][0-9]");
-        function ipValidator(chrs, maskset, pos, strict, opts) {
-            return chrs = -1 < pos - 1 && "." !== maskset.buffer[pos - 1] ? (chrs = maskset.buffer[pos - 1] + chrs, 
-            -1 < pos - 2 && "." !== maskset.buffer[pos - 2] ? maskset.buffer[pos - 2] + chrs : "0" + chrs) : "00" + chrs, 
-            ipValidatorRegex.test(chrs);
-        }
-        _inputmask.default.extendAliases({
-            cssunit: {
-                regex: "[+-]?[0-9]+\\.?([0-9]+)?(px|em|rem|ex|%|in|cm|mm|pt|pc)"
-            },
-            url: {
-                regex: "(https?|ftp)://.*",
-                autoUnmask: !1,
-                keepStatic: !1,
-                tabThrough: !0
-            },
-            ip: {
-                mask: "i[i[i]].j[j[j]].k[k[k]].l[l[l]]",
-                definitions: {
-                    i: {
-                        validator: ipValidator
-                    },
-                    j: {
-                        validator: ipValidator
-                    },
-                    k: {
-                        validator: ipValidator
-                    },
-                    l: {
-                        validator: ipValidator
-                    }
-                },
-                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
-                    return maskedValue;
-                },
-                inputmode: "numeric"
-            },
-            email: {
-                mask: "*{1,64}[.*{1,64}][.*{1,64}][.*{1,63}]@-{1,63}.-{1,63}[.-{1,63}][.-{1,63}]",
-                greedy: !1,
-                casing: "lower",
-                onBeforePaste: function onBeforePaste(pastedValue, opts) {
-                    return pastedValue = pastedValue.toLowerCase(), pastedValue.replace("mailto:", "");
-                },
-                definitions: {
-                    "*": {
-                        validator: "[0-9\uff11-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5!#$%&'*+/=?^_`{|}~-]"
-                    },
-                    "-": {
-                        validator: "[0-9A-Za-z-]"
-                    }
-                },
-                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
-                    return maskedValue;
-                },
-                inputmode: "email"
-            },
-            mac: {
-                mask: "##:##:##:##:##:##"
-            },
-            vin: {
-                mask: "V{13}9{4}",
-                definitions: {
-                    V: {
-                        validator: "[A-HJ-NPR-Za-hj-npr-z\\d]",
-                        casing: "upper"
-                    }
-                },
-                clearIncomplete: !0,
-                autoUnmask: !0
-            },
-            ssn: {
-                mask: "999-99-9999",
-                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict) {
-                    return /^(?!219-09-9999|078-05-1120)(?!666|000|9.{2}).{3}-(?!00).{2}-(?!0{4}).{4}$/.test(buffer.join(""));
-                }
-            }
-        });
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        function _default(owner, key, value) {
-            if (void 0 === value) return owner.__data ? owner.__data[key] : null;
-            owner.__data = owner.__data || {}, owner.__data[key] = value;
-        }
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.on = on, exports.off = off, exports.trigger = trigger, exports.Event = void 0;
-        var _extend = _interopRequireDefault(__webpack_require__(13)), _window = _interopRequireDefault(__webpack_require__(6)), _inputmask = _interopRequireDefault(__webpack_require__(9)), Event;
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        function isValidElement(elem) {
-            return elem instanceof Element;
-        }
-        function on(events, handler) {
-            function addEvent(ev, namespace) {
-                elem.addEventListener ? elem.addEventListener(ev, handler, !1) : elem.attachEvent && elem.attachEvent("on" + ev, handler), 
-                eventRegistry[ev] = eventRegistry[ev] || {}, eventRegistry[ev][namespace] = eventRegistry[ev][namespace] || [], 
-                eventRegistry[ev][namespace].push(handler);
-            }
-            if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = events.split(" "), endx = 0; endx < _events.length; endx++) {
-                var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
-                addEvent(ev, namespace);
-            }
-            return this;
-        }
-        function off(events, handler) {
-            var eventRegistry, elem;
-            function removeEvent(ev, namespace, handler) {
-                if (ev in eventRegistry == !0) if (elem.removeEventListener ? elem.removeEventListener(ev, handler, !1) : elem.detachEvent && elem.detachEvent("on" + ev, handler), 
-                "global" === namespace) for (var nmsp in eventRegistry[ev]) eventRegistry[ev][nmsp].splice(eventRegistry[ev][nmsp].indexOf(handler), 1); else eventRegistry[ev][namespace].splice(eventRegistry[ev][namespace].indexOf(handler), 1);
-            }
-            function resolveNamespace(ev, namespace) {
-                var evts = [], hndx, hndL;
-                if (0 < ev.length) if (void 0 === handler) for (hndx = 0, hndL = eventRegistry[ev][namespace].length; hndx < hndL; hndx++) evts.push({
-                    ev: ev,
-                    namespace: namespace && 0 < namespace.length ? namespace : "global",
-                    handler: eventRegistry[ev][namespace][hndx]
-                }); else evts.push({
-                    ev: ev,
-                    namespace: namespace && 0 < namespace.length ? namespace : "global",
-                    handler: handler
-                }); else if (0 < namespace.length) for (var evNdx in eventRegistry) for (var nmsp in eventRegistry[evNdx]) if (nmsp === namespace) if (void 0 === handler) for (hndx = 0, 
-                hndL = eventRegistry[evNdx][nmsp].length; hndx < hndL; hndx++) evts.push({
-                    ev: evNdx,
-                    namespace: nmsp,
-                    handler: eventRegistry[evNdx][nmsp][hndx]
-                }); else evts.push({
-                    ev: evNdx,
-                    namespace: nmsp,
-                    handler: handler
-                });
-                return evts;
-            }
-            if (isValidElement(this[0])) {
-                eventRegistry = this[0].eventRegistry, elem = this[0];
-                for (var _events = events.split(" "), endx = 0; endx < _events.length; endx++) for (var nsEvent = _events[endx].split("."), offEvents = resolveNamespace(nsEvent[0], nsEvent[1]), i = 0, offEventsL = offEvents.length; i < offEventsL; i++) removeEvent(offEvents[i].ev, offEvents[i].namespace, offEvents[i].handler);
-            }
-            return this;
-        }
-        function trigger(events) {
-            if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = "string" == typeof events ? events.split(" ") : [ events.type ], endx = 0; endx < _events.length; endx++) {
-                var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
-                if (void 0 !== document && "global" === namespace) {
-                    var evnt, i, params = {
-                        bubbles: !0,
-                        cancelable: !0,
-                        detail: arguments[1]
-                    };
-                    if (document.createEvent) {
-                        try {
-                            evnt = new CustomEvent(ev, params);
-                        } catch (e) {
-                            evnt = document.createEvent("CustomEvent"), evnt.initCustomEvent(ev, params.bubbles, params.cancelable, params.detail);
-                        }
-                        events.type && (0, _extend.default)(evnt, events), elem.dispatchEvent(evnt);
-                    } else evnt = document.createEventObject(), evnt.eventType = ev, evnt.detail = arguments[1], 
-                    events.type && (0, _extend.default)(evnt, events), elem.fireEvent("on" + evnt.eventType, evnt);
-                } else if (void 0 !== eventRegistry[ev]) if (arguments[0] = arguments[0].type ? arguments[0] : _inputmask.default.Event(arguments[0]), 
-                arguments[0].detail = arguments.slice(1), "global" === namespace) for (var nmsp in eventRegistry[ev]) for (i = 0; i < eventRegistry[ev][nmsp].length; i++) eventRegistry[ev][nmsp][i].apply(elem, arguments); else for (i = 0; i < eventRegistry[ev][namespace].length; i++) eventRegistry[ev][namespace][i].apply(elem, arguments);
-            }
-            return this;
-        }
-        exports.Event = Event, "function" == typeof _window.default.CustomEvent ? exports.Event = Event = _window.default.CustomEvent : (exports.Event = Event = function Event(event, params) {
-            params = params || {
-                bubbles: !1,
-                cancelable: !1,
-                detail: void 0
-            };
-            var evt = document.createEvent("CustomEvent");
-            return evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail), 
-            evt;
-        }, Event.prototype = _window.default.Event.prototype);
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.generateMaskSet = generateMaskSet, exports.analyseMask = analyseMask;
-        var _inputmask = _interopRequireDefault(__webpack_require__(9));
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        function generateMaskSet(opts, nocache) {
-            var ms;
-            function generateMask(mask, metadata, opts) {
-                var regexMask = !1, masksetDefinition, maskdefKey;
-                if (null !== mask && "" !== mask || (regexMask = null !== opts.regex, mask = regexMask ? (mask = opts.regex, 
-                mask.replace(/^(\^)(.*)(\$)$/, "$2")) : (regexMask = !0, ".*")), 1 === mask.length && !1 === opts.greedy && 0 !== opts.repeat && (opts.placeholder = ""), 
-                0 < opts.repeat || "*" === opts.repeat || "+" === opts.repeat) {
-                    var repeatStart = "*" === opts.repeat ? 0 : "+" === opts.repeat ? 1 : opts.repeat;
-                    mask = opts.groupmarker[0] + mask + opts.groupmarker[1] + opts.quantifiermarker[0] + repeatStart + "," + opts.repeat + opts.quantifiermarker[1];
-                }
-                return maskdefKey = regexMask ? "regex_" + opts.regex : opts.numericInput ? mask.split("").reverse().join("") : mask, 
-                !1 !== opts.keepStatic && (maskdefKey = "ks_" + maskdefKey), void 0 === Inputmask.prototype.masksCache[maskdefKey] || !0 === nocache ? (masksetDefinition = {
-                    mask: mask,
-                    maskToken: Inputmask.prototype.analyseMask(mask, regexMask, opts),
-                    validPositions: {},
-                    _buffer: void 0,
-                    buffer: void 0,
-                    tests: {},
-                    excludes: {},
-                    metadata: metadata,
-                    maskLength: void 0,
-                    jitOffset: {}
-                }, !0 !== nocache && (Inputmask.prototype.masksCache[maskdefKey] = masksetDefinition, 
-                masksetDefinition = _inputmask.default.extend(!0, {}, Inputmask.prototype.masksCache[maskdefKey]))) : masksetDefinition = _inputmask.default.extend(!0, {}, Inputmask.prototype.masksCache[maskdefKey]), 
-                masksetDefinition;
-            }
-            if ("function" == typeof opts.mask && (opts.mask = opts.mask(opts)), Array.isArray(opts.mask)) {
-                if (1 < opts.mask.length) {
-                    null === opts.keepStatic && (opts.keepStatic = !0);
-                    var altMask = opts.groupmarker[0];
-                    return (opts.isRTL ? opts.mask.reverse() : opts.mask).forEach(function(msk) {
-                        1 < altMask.length && (altMask += opts.groupmarker[1] + opts.alternatormarker + opts.groupmarker[0]), 
-                        void 0 !== msk.mask && "function" != typeof msk.mask ? altMask += msk.mask : altMask += msk;
-                    }), altMask += opts.groupmarker[1], generateMask(altMask, opts.mask, opts);
-                }
-                opts.mask = opts.mask.pop();
-            }
-            return null === opts.keepStatic && (opts.keepStatic = !1), ms = opts.mask && void 0 !== opts.mask.mask && "function" != typeof opts.mask.mask ? generateMask(opts.mask.mask, opts.mask, opts) : generateMask(opts.mask, opts.mask, opts), 
-            ms;
-        }
-        function analyseMask(mask, regexMask, opts) {
-            var tokenizer = /(?:[?*+]|\{[0-9+*]+(?:,[0-9+*]*)?(?:\|[0-9+*]*)?\})|[^.?*+^${[]()|\\]+|./g, regexTokenizer = /\[\^?]?(?:[^\\\]]+|\\[\S\s]?)*]?|\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|c[A-Za-z]|[\S\s]?)|\((?:\?[:=!]?)?|(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\})\??|[^.?*+^${[()|\\]+|./g, escaped = !1, currentToken = new MaskToken(), match, m, openenings = [], maskTokens = [], openingToken, currentOpeningToken, alternator, lastMatch, closeRegexGroup = !1;
-            function MaskToken(isGroup, isOptional, isQuantifier, isAlternator) {
-                this.matches = [], this.openGroup = isGroup || !1, this.alternatorGroup = !1, this.isGroup = isGroup || !1, 
-                this.isOptional = isOptional || !1, this.isQuantifier = isQuantifier || !1, this.isAlternator = isAlternator || !1, 
-                this.quantifier = {
-                    min: 1,
-                    max: 1
-                };
-            }
-            function insertTestDefinition(mtoken, element, position) {
-                position = void 0 !== position ? position : mtoken.matches.length;
-                var prevMatch = mtoken.matches[position - 1];
-                if (regexMask) 0 === element.indexOf("[") || escaped && /\\d|\\s|\\w]/i.test(element) || "." === element ? mtoken.matches.splice(position++, 0, {
-                    fn: new RegExp(element, opts.casing ? "i" : ""),
-                    static: !1,
-                    optionality: !1,
-                    newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== element,
-                    casing: null,
-                    def: element,
-                    placeholder: void 0,
-                    nativeDef: element
-                }) : (escaped && (element = element[element.length - 1]), element.split("").forEach(function(lmnt, ndx) {
-                    prevMatch = mtoken.matches[position - 1], mtoken.matches.splice(position++, 0, {
-                        fn: /[a-z]/i.test(opts.staticDefinitionSymbol || lmnt) ? new RegExp("[" + (opts.staticDefinitionSymbol || lmnt) + "]", opts.casing ? "i" : "") : null,
-                        static: !0,
-                        optionality: !1,
-                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== lmnt && !0 !== prevMatch.static,
-                        casing: null,
-                        def: opts.staticDefinitionSymbol || lmnt,
-                        placeholder: void 0 !== opts.staticDefinitionSymbol ? lmnt : void 0,
-                        nativeDef: (escaped ? "'" : "") + lmnt
-                    });
-                })), escaped = !1; else {
-                    var maskdef = opts.definitions && opts.definitions[element] || opts.usePrototypeDefinitions && Inputmask.prototype.definitions[element];
-                    maskdef && !escaped ? mtoken.matches.splice(position++, 0, {
-                        fn: maskdef.validator ? "string" == typeof maskdef.validator ? new RegExp(maskdef.validator, opts.casing ? "i" : "") : new function() {
-                            this.test = maskdef.validator;
-                        }() : new RegExp("."),
-                        static: maskdef.static || !1,
-                        optionality: !1,
-                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== (maskdef.definitionSymbol || element),
-                        casing: maskdef.casing,
-                        def: maskdef.definitionSymbol || element,
-                        placeholder: maskdef.placeholder,
-                        nativeDef: element,
-                        generated: maskdef.generated
-                    }) : (mtoken.matches.splice(position++, 0, {
-                        fn: /[a-z]/i.test(opts.staticDefinitionSymbol || element) ? new RegExp("[" + (opts.staticDefinitionSymbol || element) + "]", opts.casing ? "i" : "") : null,
-                        static: !0,
-                        optionality: !1,
-                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== element && !0 !== prevMatch.static,
-                        casing: null,
-                        def: opts.staticDefinitionSymbol || element,
-                        placeholder: void 0 !== opts.staticDefinitionSymbol ? element : void 0,
-                        nativeDef: (escaped ? "'" : "") + element
-                    }), escaped = !1);
-                }
-            }
-            function verifyGroupMarker(maskToken) {
-                maskToken && maskToken.matches && maskToken.matches.forEach(function(token, ndx) {
-                    var nextToken = maskToken.matches[ndx + 1];
-                    (void 0 === nextToken || void 0 === nextToken.matches || !1 === nextToken.isQuantifier) && token && token.isGroup && (token.isGroup = !1, 
-                    regexMask || (insertTestDefinition(token, opts.groupmarker[0], 0), !0 !== token.openGroup && insertTestDefinition(token, opts.groupmarker[1]))), 
-                    verifyGroupMarker(token);
-                });
-            }
-            function defaultCase() {
-                if (0 < openenings.length) {
-                    if (currentOpeningToken = openenings[openenings.length - 1], insertTestDefinition(currentOpeningToken, m), 
-                    currentOpeningToken.isAlternator) {
-                        alternator = openenings.pop();
-                        for (var mndx = 0; mndx < alternator.matches.length; mndx++) alternator.matches[mndx].isGroup && (alternator.matches[mndx].isGroup = !1);
-                        0 < openenings.length ? (currentOpeningToken = openenings[openenings.length - 1], 
-                        currentOpeningToken.matches.push(alternator)) : currentToken.matches.push(alternator);
-                    }
-                } else insertTestDefinition(currentToken, m);
-            }
-            function reverseTokens(maskToken) {
-                function reverseStatic(st) {
-                    return st === opts.optionalmarker[0] ? st = opts.optionalmarker[1] : st === opts.optionalmarker[1] ? st = opts.optionalmarker[0] : st === opts.groupmarker[0] ? st = opts.groupmarker[1] : st === opts.groupmarker[1] && (st = opts.groupmarker[0]), 
-                    st;
-                }
-                for (var match in maskToken.matches = maskToken.matches.reverse(), maskToken.matches) if (Object.prototype.hasOwnProperty.call(maskToken.matches, match)) {
-                    var intMatch = parseInt(match);
-                    if (maskToken.matches[match].isQuantifier && maskToken.matches[intMatch + 1] && maskToken.matches[intMatch + 1].isGroup) {
-                        var qt = maskToken.matches[match];
-                        maskToken.matches.splice(match, 1), maskToken.matches.splice(intMatch + 1, 0, qt);
-                    }
-                    void 0 !== maskToken.matches[match].matches ? maskToken.matches[match] = reverseTokens(maskToken.matches[match]) : maskToken.matches[match] = reverseStatic(maskToken.matches[match]);
-                }
-                return maskToken;
-            }
-            function groupify(matches) {
-                var groupToken = new MaskToken(!0);
-                return groupToken.openGroup = !1, groupToken.matches = matches, groupToken;
-            }
-            function closeGroup() {
-                if (openingToken = openenings.pop(), openingToken.openGroup = !1, void 0 !== openingToken) if (0 < openenings.length) {
-                    if (currentOpeningToken = openenings[openenings.length - 1], currentOpeningToken.matches.push(openingToken), 
-                    currentOpeningToken.isAlternator) {
-                        alternator = openenings.pop();
-                        for (var mndx = 0; mndx < alternator.matches.length; mndx++) alternator.matches[mndx].isGroup = !1, 
-                        alternator.matches[mndx].alternatorGroup = !1;
-                        0 < openenings.length ? (currentOpeningToken = openenings[openenings.length - 1], 
-                        currentOpeningToken.matches.push(alternator)) : currentToken.matches.push(alternator);
-                    }
-                } else currentToken.matches.push(openingToken); else defaultCase();
-            }
-            function groupQuantifier(matches) {
-                var lastMatch = matches.pop();
-                return lastMatch.isQuantifier && (lastMatch = groupify([ matches.pop(), lastMatch ])), 
-                lastMatch;
-            }
-            for (regexMask && (opts.optionalmarker[0] = void 0, opts.optionalmarker[1] = void 0); match = regexMask ? regexTokenizer.exec(mask) : tokenizer.exec(mask); ) {
-                if (m = match[0], regexMask) switch (m.charAt(0)) {
-                  case "?":
-                    m = "{0,1}";
-                    break;
-
-                  case "+":
-                  case "*":
-                    m = "{" + m + "}";
-                    break;
-
-                  case "|":
-                    if (0 === openenings.length) {
-                        var altRegexGroup = groupify(currentToken.matches);
-                        altRegexGroup.openGroup = !0, openenings.push(altRegexGroup), currentToken.matches = [], 
-                        closeRegexGroup = !0;
-                    }
-                    break;
-                }
-                if (escaped) defaultCase(); else switch (m.charAt(0)) {
-                  case "$":
-                  case "^":
-                    regexMask || defaultCase();
-                    break;
-
-                  case "(?=":
-                    break;
-
-                  case "(?!":
-                    break;
-
-                  case "(?<=":
-                    break;
-
-                  case "(?<!":
-                    break;
-
-                  case opts.escapeChar:
-                    escaped = !0, regexMask && defaultCase();
-                    break;
-
-                  case opts.optionalmarker[1]:
-                  case opts.groupmarker[1]:
-                    closeGroup();
-                    break;
-
-                  case opts.optionalmarker[0]:
-                    openenings.push(new MaskToken(!1, !0));
-                    break;
-
-                  case opts.groupmarker[0]:
-                    openenings.push(new MaskToken(!0));
-                    break;
-
-                  case opts.quantifiermarker[0]:
-                    var quantifier = new MaskToken(!1, !1, !0);
-                    m = m.replace(/[{}]/g, "");
-                    var mqj = m.split("|"), mq = mqj[0].split(","), mq0 = isNaN(mq[0]) ? mq[0] : parseInt(mq[0]), mq1 = 1 === mq.length ? mq0 : isNaN(mq[1]) ? mq[1] : parseInt(mq[1]);
-                    "*" !== mq0 && "+" !== mq0 || (mq0 = "*" === mq1 ? 0 : 1), quantifier.quantifier = {
-                        min: mq0,
-                        max: mq1,
-                        jit: mqj[1]
-                    };
-                    var matches = 0 < openenings.length ? openenings[openenings.length - 1].matches : currentToken.matches;
-                    if (match = matches.pop(), match.isAlternator) {
-                        matches.push(match), matches = match.matches;
-                        var groupToken = new MaskToken(!0), tmpMatch = matches.pop();
-                        matches.push(groupToken), matches = groupToken.matches, match = tmpMatch;
-                    }
-                    match.isGroup || (match = groupify([ match ])), matches.push(match), matches.push(quantifier);
-                    break;
-
-                  case opts.alternatormarker:
-                    if (0 < openenings.length) {
-                        currentOpeningToken = openenings[openenings.length - 1];
-                        var subToken = currentOpeningToken.matches[currentOpeningToken.matches.length - 1];
-                        lastMatch = currentOpeningToken.openGroup && (void 0 === subToken.matches || !1 === subToken.isGroup && !1 === subToken.isAlternator) ? openenings.pop() : groupQuantifier(currentOpeningToken.matches);
-                    } else lastMatch = groupQuantifier(currentToken.matches);
-                    if (lastMatch.isAlternator) openenings.push(lastMatch); else if (lastMatch.alternatorGroup ? (alternator = openenings.pop(), 
-                    lastMatch.alternatorGroup = !1) : alternator = new MaskToken(!1, !1, !1, !0), alternator.matches.push(lastMatch), 
-                    openenings.push(alternator), lastMatch.openGroup) {
-                        lastMatch.openGroup = !1;
-                        var alternatorGroup = new MaskToken(!0);
-                        alternatorGroup.alternatorGroup = !0, openenings.push(alternatorGroup);
-                    }
-                    break;
-
-                  default:
-                    defaultCase();
-                }
-            }
-            for (closeRegexGroup && closeGroup(); 0 < openenings.length; ) openingToken = openenings.pop(), 
-            currentToken.matches.push(openingToken);
-            return 0 < currentToken.matches.length && (verifyGroupMarker(currentToken), maskTokens.push(currentToken)), 
-            (opts.numericInput || opts.isRTL) && reverseTokens(maskTokens[0]), maskTokens;
-        }
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0;
-        var _default = {
-            9: {
-                validator: "[0-9\uff10-\uff19]",
-                definitionSymbol: "*"
-            },
-            a: {
-                validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
-                definitionSymbol: "*"
-            },
-            "*": {
-                validator: "[0-9\uff10-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]"
-            }
-        };
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        Object.defineProperty(exports, "__esModule", {
-            value: !0
-        }), exports.default = void 0;
-        var _default = {
-            _maxTestPos: 500,
-            placeholder: "_",
-            optionalmarker: [ "[", "]" ],
-            quantifiermarker: [ "{", "}" ],
-            groupmarker: [ "(", ")" ],
-            alternatormarker: "|",
-            escapeChar: "\\",
-            mask: null,
-            regex: null,
-            oncomplete: function oncomplete() {},
-            onincomplete: function onincomplete() {},
-            oncleared: function oncleared() {},
-            repeat: 0,
-            greedy: !1,
-            autoUnmask: !1,
-            removeMaskOnSubmit: !1,
-            clearMaskOnLostFocus: !0,
-            insertMode: !0,
-            insertModeVisual: !0,
-            clearIncomplete: !1,
-            alias: null,
-            onKeyDown: function onKeyDown() {},
-            onBeforeMask: null,
-            onBeforePaste: function onBeforePaste(pastedValue, opts) {
-                return "function" == typeof opts.onBeforeMask ? opts.onBeforeMask.call(this, pastedValue, opts) : pastedValue;
-            },
-            onBeforeWrite: null,
-            onUnMask: null,
-            showMaskOnFocus: !0,
-            showMaskOnHover: !0,
-            onKeyValidation: function onKeyValidation() {},
-            skipOptionalPartCharacter: " ",
-            numericInput: !1,
-            rightAlign: !1,
-            undoOnEscape: !0,
-            radixPoint: "",
-            _radixDance: !1,
-            groupSeparator: "",
-            keepStatic: null,
-            positionCaretOnTab: !0,
-            tabThrough: !1,
-            supportsInputType: [ "text", "tel", "url", "password", "search" ],
-            ignorables: [ 8, 9, 19, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 93, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 0, 229 ],
-            isComplete: null,
-            preValidation: null,
-            postValidation: null,
-            staticDefinitionSymbol: void 0,
-            jitMasking: !1,
-            nullable: !0,
-            inputEventOnly: !1,
-            noValuePatching: !1,
-            positionCaretOnClick: "lvp",
-            casing: null,
-            inputmode: "text",
-            importDataAttributes: !0,
-            shiftPositions: !0,
-            usePrototypeDefinitions: !0
-        };
-        exports.default = _default;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _escapeRegex = _interopRequireDefault(__webpack_require__(14));
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var $ = _inputmask.default.dependencyLib, currentYear = new Date().getFullYear(), formatCode = {
-            d: [ "[1-9]|[12][0-9]|3[01]", Date.prototype.setDate, "day", Date.prototype.getDate ],
-            dd: [ "0[1-9]|[12][0-9]|3[01]", Date.prototype.setDate, "day", function() {
-                return pad(Date.prototype.getDate.call(this), 2);
-            } ],
-            ddd: [ "" ],
-            dddd: [ "" ],
-            m: [ "[1-9]|1[012]", Date.prototype.setMonth, "month", function() {
-                return Date.prototype.getMonth.call(this) + 1;
-            } ],
-            mm: [ "0[1-9]|1[012]", Date.prototype.setMonth, "month", function() {
-                return pad(Date.prototype.getMonth.call(this) + 1, 2);
-            } ],
-            mmm: [ "" ],
-            mmmm: [ "" ],
-            yy: [ "[0-9]{2}", Date.prototype.setFullYear, "year", function() {
-                return pad(Date.prototype.getFullYear.call(this), 2);
-            } ],
-            yyyy: [ "[0-9]{4}", Date.prototype.setFullYear, "year", function() {
-                return pad(Date.prototype.getFullYear.call(this), 4);
-            } ],
-            h: [ "[1-9]|1[0-2]", Date.prototype.setHours, "hours", Date.prototype.getHours ],
-            hh: [ "0[1-9]|1[0-2]", Date.prototype.setHours, "hours", function() {
-                return pad(Date.prototype.getHours.call(this), 2);
-            } ],
-            hx: [ function(x) {
-                return "[0-9]{".concat(x, "}");
-            }, Date.prototype.setHours, "hours", function(x) {
-                return Date.prototype.getHours;
-            } ],
-            H: [ "1?[0-9]|2[0-3]", Date.prototype.setHours, "hours", Date.prototype.getHours ],
-            HH: [ "0[0-9]|1[0-9]|2[0-3]", Date.prototype.setHours, "hours", function() {
-                return pad(Date.prototype.getHours.call(this), 2);
-            } ],
-            Hx: [ function(x) {
-                return "[0-9]{".concat(x, "}");
-            }, Date.prototype.setHours, "hours", function(x) {
-                return function() {
-                    return pad(Date.prototype.getHours.call(this), x);
-                };
-            } ],
-            M: [ "[1-5]?[0-9]", Date.prototype.setMinutes, "minutes", Date.prototype.getMinutes ],
-            MM: [ "0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]", Date.prototype.setMinutes, "minutes", function() {
-                return pad(Date.prototype.getMinutes.call(this), 2);
-            } ],
-            s: [ "[1-5]?[0-9]", Date.prototype.setSeconds, "seconds", Date.prototype.getSeconds ],
-            ss: [ "0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]", Date.prototype.setSeconds, "seconds", function() {
-                return pad(Date.prototype.getSeconds.call(this), 2);
-            } ],
-            l: [ "[0-9]{3}", Date.prototype.setMilliseconds, "milliseconds", function() {
-                return pad(Date.prototype.getMilliseconds.call(this), 3);
-            } ],
-            L: [ "[0-9]{2}", Date.prototype.setMilliseconds, "milliseconds", function() {
-                return pad(Date.prototype.getMilliseconds.call(this), 2);
-            } ],
-            t: [ "[ap]" ],
-            tt: [ "[ap]m" ],
-            T: [ "[AP]" ],
-            TT: [ "[AP]M" ],
-            Z: [ "" ],
-            o: [ "" ],
-            S: [ "" ]
-        }, formatAlias = {
-            isoDate: "yyyy-mm-dd",
-            isoTime: "HH:MM:ss",
-            isoDateTime: "yyyy-mm-dd'T'HH:MM:ss",
-            isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
-        };
-        function formatcode(match) {
-            var dynMatches = new RegExp("\\d+$").exec(match[0]);
-            if (dynMatches && void 0 !== dynMatches[0]) {
-                var fcode = formatCode[match[0][0] + "x"].slice("");
-                return fcode[0] = fcode[0](dynMatches[0]), fcode[3] = fcode[3](dynMatches[0]), fcode;
-            }
-            if (formatCode[match[0]]) return formatCode[match[0]];
-        }
-        function getTokenizer(opts) {
-            if (!opts.tokenizer) {
-                var tokens = [], dyntokens = [];
-                for (var ndx in formatCode) if (/\.*x$/.test(ndx)) {
-                    var dynToken = ndx[0] + "\\d+";
-                    -1 === dyntokens.indexOf(dynToken) && dyntokens.push(dynToken);
-                } else -1 === tokens.indexOf(ndx[0]) && tokens.push(ndx[0]);
-                opts.tokenizer = "(" + (0 < dyntokens.length ? dyntokens.join("|") + "|" : "") + tokens.join("+|") + ")+?|.", 
-                opts.tokenizer = new RegExp(opts.tokenizer, "g");
-            }
-            return opts.tokenizer;
-        }
-        function prefillYear(dateParts, currentResult, opts) {
-            if (dateParts.year !== dateParts.rawyear) {
-                var crrntyear = currentYear.toString(), enteredPart = dateParts.rawyear.replace(/[^0-9]/g, ""), currentYearPart = crrntyear.slice(0, enteredPart.length), currentYearNextPart = crrntyear.slice(enteredPart.length);
-                if (2 === enteredPart.length && enteredPart === currentYearPart) {
-                    var entryCurrentYear = new Date(currentYear, dateParts.month - 1, dateParts.day);
-                    dateParts.day == entryCurrentYear.getDate() && (!opts.max || opts.max.date.getTime() >= entryCurrentYear.getTime()) && (dateParts.date.setFullYear(currentYear), 
-                    dateParts.year = crrntyear, currentResult.insert = [ {
-                        pos: currentResult.pos + 1,
-                        c: currentYearNextPart[0]
-                    }, {
-                        pos: currentResult.pos + 2,
-                        c: currentYearNextPart[1]
-                    } ]);
-                }
-            }
-            return currentResult;
-        }
-        function isValidDate(dateParts, currentResult, opts) {
-            if (!isFinite(dateParts.rawday) || "29" == dateParts.day && !isFinite(dateParts.rawyear) || new Date(dateParts.date.getFullYear(), isFinite(dateParts.rawmonth) ? dateParts.month : dateParts.date.getMonth() + 1, 0).getDate() >= dateParts.day) return currentResult;
-            if ("29" == dateParts.day) {
-                var tokenMatch = getTokenMatch(currentResult.pos, opts);
-                if ("yyyy" === tokenMatch.targetMatch[0] && currentResult.pos - tokenMatch.targetMatchIndex == 2) return currentResult.remove = currentResult.pos + 1, 
-                currentResult;
-            }
-            return !1;
-        }
-        function isDateInRange(dateParts, result, opts, maskset, fromCheckval) {
-            if (!result) return result;
-            if (opts.min) {
-                if (dateParts.rawyear) {
-                    var rawYear = dateParts.rawyear.replace(/[^0-9]/g, ""), minYear = opts.min.year.substr(0, rawYear.length), maxYear;
-                    if (rawYear < minYear) {
-                        var tokenMatch = getTokenMatch(result.pos, opts);
-                        if (rawYear = dateParts.rawyear.substr(0, result.pos - tokenMatch.targetMatchIndex + 1), 
-                        minYear = opts.min.year.substr(0, rawYear.length), minYear <= rawYear) return result.remove = tokenMatch.targetMatchIndex + rawYear.length, 
-                        result;
-                        if (rawYear = "yyyy" === tokenMatch.targetMatch[0] ? dateParts.rawyear.substr(1, 1) : dateParts.rawyear.substr(0, 1), 
-                        minYear = opts.min.year.substr(2, 1), maxYear = opts.max ? opts.max.year.substr(2, 1) : rawYear, 
-                        1 === rawYear.length && minYear <= rawYear <= maxYear && !0 !== fromCheckval) return "yyyy" === tokenMatch.targetMatch[0] ? (result.insert = [ {
-                            pos: result.pos + 1,
-                            c: rawYear,
-                            strict: !0
-                        } ], result.caret = result.pos + 2, maskset.validPositions[result.pos].input = opts.min.year[1]) : (result.insert = [ {
-                            pos: result.pos + 1,
-                            c: opts.min.year[1],
-                            strict: !0
-                        }, {
-                            pos: result.pos + 2,
-                            c: rawYear,
-                            strict: !0
-                        } ], result.caret = result.pos + 3, maskset.validPositions[result.pos].input = opts.min.year[0]), 
-                        result;
-                        result = !1;
-                    }
-                }
-                result && dateParts.year && dateParts.year === dateParts.rawyear && opts.min.date.getTime() == opts.min.date.getTime() && (result = opts.min.date.getTime() <= dateParts.date.getTime());
-            }
-            return result && opts.max && opts.max.date.getTime() == opts.max.date.getTime() && (result = opts.max.date.getTime() >= dateParts.date.getTime()), 
-            result;
-        }
-        function parse(format, dateObjValue, opts, raw) {
-            var mask = "", match, fcode;
-            for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(format); ) if (void 0 === dateObjValue) if (fcode = formatcode(match)) mask += "(" + fcode[0] + ")"; else switch (match[0]) {
-              case "[":
-                mask += "(";
-                break;
-
-              case "]":
-                mask += ")?";
-                break;
-
-              default:
-                mask += (0, _escapeRegex.default)(match[0]);
-            } else if (fcode = formatcode(match)) if (!0 !== raw && fcode[3]) {
-                var getFn = fcode[3];
-                mask += getFn.call(dateObjValue.date);
-            } else fcode[2] ? mask += dateObjValue["raw" + fcode[2]] : mask += match[0]; else mask += match[0];
-            return mask;
-        }
-        function pad(val, len) {
-            for (val = String(val), len = len || 2; val.length < len; ) val = "0" + val;
-            return val;
-        }
-        function analyseMask(maskString, format, opts) {
-            var dateObj = {
-                date: new Date(1, 0, 1)
-            }, targetProp, mask = maskString, match, dateOperation;
-            function setValue(dateObj, value, opts) {
-                dateObj[targetProp] = value.replace(/[^0-9]/g, "0"), dateObj["raw" + targetProp] = value, 
-                void 0 !== dateOperation && dateOperation.call(dateObj.date, "month" == targetProp ? parseInt(dateObj[targetProp]) - 1 : dateObj[targetProp]);
-            }
-            if ("string" == typeof mask) {
-                for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(format); ) {
-                    var dynMatches = new RegExp("\\d+$").exec(match[0]), fcode = dynMatches ? match[0][0] + "x" : match[0], value = void 0;
-                    if (dynMatches) {
-                        var lastIndex = getTokenizer(opts).lastIndex, tokanMatch = getTokenMatch(match.index, opts);
-                        getTokenizer(opts).lastIndex = lastIndex, value = mask.slice(0, mask.indexOf(tokanMatch.nextMatch[0]));
-                    } else value = mask.slice(0, fcode.length);
-                    Object.prototype.hasOwnProperty.call(formatCode, fcode) && (targetProp = formatCode[fcode][2], 
-                    dateOperation = formatCode[fcode][1], setValue(dateObj, value, opts)), mask = mask.slice(value.length);
-                }
-                return dateObj;
-            }
-            if (mask && "object" === _typeof(mask) && Object.prototype.hasOwnProperty.call(mask, "date")) return mask;
-        }
-        function importDate(dateObj, opts) {
-            return parse(opts.inputFormat, {
-                date: dateObj
-            }, opts);
-        }
-        function getTokenMatch(pos, opts) {
-            var calcPos = 0, targetMatch, match, matchLength = 0;
-            for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(opts.inputFormat); ) {
-                var dynMatches = new RegExp("\\d+$").exec(match[0]);
-                if (matchLength = dynMatches ? parseInt(dynMatches[0]) : match[0].length, calcPos += matchLength, 
-                pos <= calcPos) {
-                    targetMatch = match, match = getTokenizer(opts).exec(opts.inputFormat);
-                    break;
-                }
-            }
-            return {
-                targetMatchIndex: calcPos - matchLength,
-                nextMatch: match,
-                targetMatch: targetMatch
-            };
-        }
-        _inputmask.default.extendAliases({
-            datetime: {
-                mask: function mask(opts) {
-                    return opts.numericInput = !1, formatCode.S = opts.i18n.ordinalSuffix.join("|"), 
-                    opts.inputFormat = formatAlias[opts.inputFormat] || opts.inputFormat, opts.displayFormat = formatAlias[opts.displayFormat] || opts.displayFormat || opts.inputFormat, 
-                    opts.outputFormat = formatAlias[opts.outputFormat] || opts.outputFormat || opts.inputFormat, 
-                    opts.placeholder = "" !== opts.placeholder ? opts.placeholder : opts.inputFormat.replace(/[[\]]/, ""), 
-                    opts.regex = parse(opts.inputFormat, void 0, opts), opts.min = analyseMask(opts.min, opts.inputFormat, opts), 
-                    opts.max = analyseMask(opts.max, opts.inputFormat, opts), null;
-                },
-                placeholder: "",
-                inputFormat: "isoDateTime",
-                displayFormat: void 0,
-                outputFormat: void 0,
-                min: null,
-                max: null,
-                skipOptionalPartCharacter: "",
-                i18n: {
-                    dayNames: [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
-                    monthNames: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
-                    ordinalSuffix: [ "st", "nd", "rd", "th" ]
-                },
-                preValidation: function preValidation(buffer, pos, c, isSelection, opts, maskset, caretPos, strict) {
-                    if (strict) return !0;
-                    if (isNaN(c) && buffer[pos] !== c) {
-                        var tokenMatch = getTokenMatch(pos, opts);
-                        if (tokenMatch.nextMatch && tokenMatch.nextMatch[0] === c && 1 < tokenMatch.targetMatch[0].length) {
-                            var validator = formatCode[tokenMatch.targetMatch[0]][0];
-                            if (new RegExp(validator).test("0" + buffer[pos - 1])) return buffer[pos] = buffer[pos - 1], 
-                            buffer[pos - 1] = "0", {
-                                fuzzy: !0,
-                                buffer: buffer,
-                                refreshFromBuffer: {
-                                    start: pos - 1,
-                                    end: pos + 1
-                                },
-                                pos: pos + 1
-                            };
-                        }
-                    }
-                    return !0;
-                },
-                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict, fromCheckval) {
-                    if (strict) return !0;
-                    var tokenMatch, validator;
-                    if (!1 === currentResult) return tokenMatch = getTokenMatch(pos + 1, opts), tokenMatch.targetMatch && tokenMatch.targetMatchIndex === pos && 1 < tokenMatch.targetMatch[0].length && void 0 !== formatCode[tokenMatch.targetMatch[0]] && (validator = formatCode[tokenMatch.targetMatch[0]][0], 
-                    new RegExp(validator).test("0" + c)) ? {
-                        insert: [ {
-                            pos: pos,
-                            c: "0"
-                        }, {
-                            pos: pos + 1,
-                            c: c
-                        } ],
-                        pos: pos + 1
-                    } : currentResult;
-                    if (currentResult.fuzzy && (buffer = currentResult.buffer, pos = currentResult.pos), 
-                    tokenMatch = getTokenMatch(pos, opts), tokenMatch.targetMatch && tokenMatch.targetMatch[0] && void 0 !== formatCode[tokenMatch.targetMatch[0]]) {
-                        validator = formatCode[tokenMatch.targetMatch[0]][0];
-                        var part = buffer.slice(tokenMatch.targetMatchIndex, tokenMatch.targetMatchIndex + tokenMatch.targetMatch[0].length);
-                        !1 === new RegExp(validator).test(part.join("")) && 2 === tokenMatch.targetMatch[0].length && maskset.validPositions[tokenMatch.targetMatchIndex] && maskset.validPositions[tokenMatch.targetMatchIndex + 1] && (maskset.validPositions[tokenMatch.targetMatchIndex + 1].input = "0");
-                    }
-                    var result = currentResult, dateParts = analyseMask(buffer.join(""), opts.inputFormat, opts);
-                    return result && dateParts.date.getTime() == dateParts.date.getTime() && (result = prefillYear(dateParts, result, opts), 
-                    result = isValidDate(dateParts, result, opts), result = isDateInRange(dateParts, result, opts, maskset, fromCheckval)), 
-                    pos && result && currentResult.pos !== pos ? {
-                        buffer: parse(opts.inputFormat, dateParts, opts).split(""),
-                        refreshFromBuffer: {
-                            start: pos,
-                            end: currentResult.pos
-                        }
-                    } : result;
-                },
-                onKeyDown: function onKeyDown(e, buffer, caretPos, opts) {
-                    var input = this;
-                    e.ctrlKey && e.keyCode === _keycode.default.RIGHT && (this.inputmask._valueSet(importDate(new Date(), opts)), 
-                    $(this).trigger("setvalue"));
-                },
-                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
-                    return unmaskedValue ? parse(opts.outputFormat, analyseMask(maskedValue, opts.inputFormat, opts), opts, !0) : unmaskedValue;
-                },
-                casing: function casing(elem, test, pos, validPositions) {
-                    return 0 == test.nativeDef.indexOf("[ap]") ? elem.toLowerCase() : 0 == test.nativeDef.indexOf("[AP]") ? elem.toUpperCase() : elem;
-                },
-                onBeforeMask: function onBeforeMask(initialValue, opts) {
-                    return "[object Date]" === Object.prototype.toString.call(initialValue) && (initialValue = importDate(initialValue, opts)), 
-                    initialValue;
-                },
-                insertMode: !1,
-                shiftPositions: !1,
-                keepStatic: !1,
-                inputmode: "numeric"
-            }
-        });
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _escapeRegex = _interopRequireDefault(__webpack_require__(14));
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var $ = _inputmask.default.dependencyLib;
-        function autoEscape(txt, opts) {
-            for (var escapedTxt = "", i = 0; i < txt.length; i++) _inputmask.default.prototype.definitions[txt.charAt(i)] || opts.definitions[txt.charAt(i)] || opts.optionalmarker[0] === txt.charAt(i) || opts.optionalmarker[1] === txt.charAt(i) || opts.quantifiermarker[0] === txt.charAt(i) || opts.quantifiermarker[1] === txt.charAt(i) || opts.groupmarker[0] === txt.charAt(i) || opts.groupmarker[1] === txt.charAt(i) || opts.alternatormarker === txt.charAt(i) ? escapedTxt += "\\" + txt.charAt(i) : escapedTxt += txt.charAt(i);
-            return escapedTxt;
-        }
-        function alignDigits(buffer, digits, opts, force) {
-            if (0 < buffer.length && 0 < digits && (!opts.digitsOptional || force)) {
-                var radixPosition = buffer.indexOf(opts.radixPoint), negationBack = !1;
-                opts.negationSymbol.back === buffer[buffer.length - 1] && (negationBack = !0, buffer.length--), 
-                -1 === radixPosition && (buffer.push(opts.radixPoint), radixPosition = buffer.length - 1);
-                for (var i = 1; i <= digits; i++) isFinite(buffer[radixPosition + i]) || (buffer[radixPosition + i] = "0");
-            }
-            return negationBack && buffer.push(opts.negationSymbol.back), buffer;
-        }
-        function findValidator(symbol, maskset) {
-            var posNdx = 0;
-            if ("+" === symbol) {
-                for (posNdx in maskset.validPositions) ;
-                posNdx = parseInt(posNdx);
-            }
-            for (var tstNdx in maskset.tests) if (tstNdx = parseInt(tstNdx), posNdx <= tstNdx) for (var ndx = 0, ndxl = maskset.tests[tstNdx].length; ndx < ndxl; ndx++) if ((void 0 === maskset.validPositions[tstNdx] || "-" === symbol) && maskset.tests[tstNdx][ndx].match.def === symbol) return tstNdx + (void 0 !== maskset.validPositions[tstNdx] && "-" !== symbol ? 1 : 0);
-            return posNdx;
-        }
-        function findValid(symbol, maskset) {
-            var ret = -1;
-            for (var ndx in maskset.validPositions) {
-                var tst = maskset.validPositions[ndx];
-                if (tst && tst.match.def === symbol) {
-                    ret = parseInt(ndx);
-                    break;
-                }
-            }
-            return ret;
-        }
-        function parseMinMaxOptions(opts) {
-            void 0 === opts.parseMinMaxOptions && (null !== opts.min && (opts.min = opts.min.toString().replace(new RegExp((0, 
-            _escapeRegex.default)(opts.groupSeparator), "g"), ""), "," === opts.radixPoint && (opts.min = opts.min.replace(opts.radixPoint, ".")), 
-            opts.min = isFinite(opts.min) ? parseFloat(opts.min) : NaN, isNaN(opts.min) && (opts.min = Number.MIN_VALUE)), 
-            null !== opts.max && (opts.max = opts.max.toString().replace(new RegExp((0, _escapeRegex.default)(opts.groupSeparator), "g"), ""), 
-            "," === opts.radixPoint && (opts.max = opts.max.replace(opts.radixPoint, ".")), 
-            opts.max = isFinite(opts.max) ? parseFloat(opts.max) : NaN, isNaN(opts.max) && (opts.max = Number.MAX_VALUE)), 
-            opts.parseMinMaxOptions = "done");
-        }
-        function genMask(opts) {
-            opts.repeat = 0, opts.groupSeparator === opts.radixPoint && opts.digits && "0" !== opts.digits && ("." === opts.radixPoint ? opts.groupSeparator = "," : "," === opts.radixPoint ? opts.groupSeparator = "." : opts.groupSeparator = ""), 
-            " " === opts.groupSeparator && (opts.skipOptionalPartCharacter = void 0), 1 < opts.placeholder.length && (opts.placeholder = opts.placeholder.charAt(0)), 
-            "radixFocus" === opts.positionCaretOnClick && "" === opts.placeholder && (opts.positionCaretOnClick = "lvp");
-            var decimalDef = "0", radixPointDef = opts.radixPoint;
-            !0 === opts.numericInput && void 0 === opts.__financeInput ? (decimalDef = "1", 
-            opts.positionCaretOnClick = "radixFocus" === opts.positionCaretOnClick ? "lvp" : opts.positionCaretOnClick, 
-            opts.digitsOptional = !1, isNaN(opts.digits) && (opts.digits = 2), opts._radixDance = !1, 
-            radixPointDef = "," === opts.radixPoint ? "?" : "!", "" !== opts.radixPoint && void 0 === opts.definitions[radixPointDef] && (opts.definitions[radixPointDef] = {}, 
-            opts.definitions[radixPointDef].validator = "[" + opts.radixPoint + "]", opts.definitions[radixPointDef].placeholder = opts.radixPoint, 
-            opts.definitions[radixPointDef].static = !0, opts.definitions[radixPointDef].generated = !0)) : (opts.__financeInput = !1, 
-            opts.numericInput = !0);
-            var mask = "[+]", altMask;
-            if (mask += autoEscape(opts.prefix, opts), "" !== opts.groupSeparator ? (void 0 === opts.definitions[opts.groupSeparator] && (opts.definitions[opts.groupSeparator] = {}, 
-            opts.definitions[opts.groupSeparator].validator = "[" + opts.groupSeparator + "]", 
-            opts.definitions[opts.groupSeparator].placeholder = opts.groupSeparator, opts.definitions[opts.groupSeparator].static = !0, 
-            opts.definitions[opts.groupSeparator].generated = !0), mask += opts._mask(opts)) : mask += "9{+}", 
-            void 0 !== opts.digits && 0 !== opts.digits) {
-                var dq = opts.digits.toString().split(",");
-                isFinite(dq[0]) && dq[1] && isFinite(dq[1]) ? mask += radixPointDef + decimalDef + "{" + opts.digits + "}" : (isNaN(opts.digits) || 0 < parseInt(opts.digits)) && (opts.digitsOptional ? (altMask = mask + radixPointDef + decimalDef + "{0," + opts.digits + "}", 
-                opts.keepStatic = !0) : mask += radixPointDef + decimalDef + "{" + opts.digits + "}");
-            }
-            return mask += autoEscape(opts.suffix, opts), mask += "[-]", altMask && (mask = [ altMask + autoEscape(opts.suffix, opts) + "[-]", mask ]), 
-            opts.greedy = !1, parseMinMaxOptions(opts), mask;
-        }
-        function hanndleRadixDance(pos, c, radixPos, maskset, opts) {
-            return opts._radixDance && opts.numericInput && c !== opts.negationSymbol.back && pos <= radixPos && (0 < radixPos || c == opts.radixPoint) && (void 0 === maskset.validPositions[pos - 1] || maskset.validPositions[pos - 1].input !== opts.negationSymbol.back) && (pos -= 1), 
-            pos;
-        }
-        function decimalValidator(chrs, maskset, pos, strict, opts) {
-            var radixPos = maskset.buffer ? maskset.buffer.indexOf(opts.radixPoint) : -1, result = -1 !== radixPos && new RegExp("[0-9\uff11-\uff19]").test(chrs);
-            return opts._radixDance && result && null == maskset.validPositions[radixPos] ? {
-                insert: {
-                    pos: radixPos === pos ? radixPos + 1 : radixPos,
-                    c: opts.radixPoint
-                },
-                pos: pos
-            } : result;
-        }
-        function checkForLeadingZeroes(buffer, opts) {
-            var numberMatches = new RegExp("(^" + ("" !== opts.negationSymbol.front ? (0, _escapeRegex.default)(opts.negationSymbol.front) + "?" : "") + (0, 
-            _escapeRegex.default)(opts.prefix) + ")(.*)(" + (0, _escapeRegex.default)(opts.suffix) + ("" != opts.negationSymbol.back ? (0, 
-            _escapeRegex.default)(opts.negationSymbol.back) + "?" : "") + "$)").exec(buffer.slice().reverse().join("")), number = numberMatches ? numberMatches[2] : "", leadingzeroes = !1;
-            return number && (number = number.split(opts.radixPoint.charAt(0))[0], leadingzeroes = new RegExp("^[0" + opts.groupSeparator + "]*").exec(number)), 
-            !(!leadingzeroes || !(1 < leadingzeroes[0].length || 0 < leadingzeroes[0].length && leadingzeroes[0].length < number.length)) && leadingzeroes;
-        }
-        _inputmask.default.extendAliases({
-            numeric: {
-                mask: genMask,
-                _mask: function _mask(opts) {
-                    return "(" + opts.groupSeparator + "999){+|1}";
-                },
-                digits: "*",
-                digitsOptional: !0,
-                enforceDigitsOnBlur: !1,
-                radixPoint: ".",
-                positionCaretOnClick: "radixFocus",
-                _radixDance: !0,
-                groupSeparator: "",
-                allowMinus: !0,
-                negationSymbol: {
-                    front: "-",
-                    back: ""
-                },
-                prefix: "",
-                suffix: "",
-                min: null,
-                max: null,
-                SetMaxOnOverflow: !1,
-                step: 1,
-                inputType: "text",
-                unmaskAsNumber: !1,
-                roundingFN: Math.round,
-                inputmode: "numeric",
-                shortcuts: {
-                    k: "000",
-                    m: "000000"
-                },
-                placeholder: "0",
-                greedy: !1,
-                rightAlign: !0,
-                insertMode: !0,
-                autoUnmask: !1,
-                skipOptionalPartCharacter: "",
-                definitions: {
-                    0: {
-                        validator: decimalValidator
-                    },
-                    1: {
-                        validator: decimalValidator,
-                        definitionSymbol: "9"
-                    },
-                    "+": {
-                        validator: function validator(chrs, maskset, pos, strict, opts) {
-                            return opts.allowMinus && ("-" === chrs || chrs === opts.negationSymbol.front);
-                        }
-                    },
-                    "-": {
-                        validator: function validator(chrs, maskset, pos, strict, opts) {
-                            return opts.allowMinus && chrs === opts.negationSymbol.back;
-                        }
-                    }
-                },
-                preValidation: function preValidation(buffer, pos, c, isSelection, opts, maskset, caretPos, strict) {
-                    if (!1 !== opts.__financeInput && c === opts.radixPoint) return !1;
-                    var pattern;
-                    if (pattern = opts.shortcuts && opts.shortcuts[c]) {
-                        if (1 < pattern.length) for (var inserts = [], i = 0; i < pattern.length; i++) inserts.push({
-                            pos: pos + i,
-                            c: pattern[i],
-                            strict: !1
-                        });
-                        return {
-                            insert: inserts
-                        };
-                    }
-                    var radixPos = buffer.indexOf(opts.radixPoint), initPos = pos;
-                    if (pos = hanndleRadixDance(pos, c, radixPos, maskset, opts), "-" === c || c === opts.negationSymbol.front) {
-                        if (!0 !== opts.allowMinus) return !1;
-                        var isNegative = !1, front = findValid("+", maskset), back = findValid("-", maskset);
-                        return -1 !== front && (isNegative = [ front, back ]), !1 !== isNegative ? {
-                            remove: isNegative,
-                            caret: initPos - opts.negationSymbol.front.length
-                        } : {
-                            insert: [ {
-                                pos: findValidator("+", maskset),
-                                c: opts.negationSymbol.front,
-                                fromIsValid: !0
-                            }, {
-                                pos: findValidator("-", maskset),
-                                c: opts.negationSymbol.back,
-                                fromIsValid: void 0
-                            } ],
-                            caret: initPos + opts.negationSymbol.back.length
-                        };
-                    }
-                    if (c === opts.groupSeparator) return {
-                        caret: initPos
-                    };
-                    if (strict) return !0;
-                    if (-1 !== radixPos && !0 === opts._radixDance && !1 === isSelection && c === opts.radixPoint && void 0 !== opts.digits && (isNaN(opts.digits) || 0 < parseInt(opts.digits)) && radixPos !== pos) return {
-                        caret: opts._radixDance && pos === radixPos - 1 ? radixPos + 1 : radixPos
-                    };
-                    if (!1 === opts.__financeInput) if (isSelection) {
-                        if (opts.digitsOptional) return {
-                            rewritePosition: caretPos.end
-                        };
-                        if (!opts.digitsOptional) {
-                            if (caretPos.begin > radixPos && caretPos.end <= radixPos) return c === opts.radixPoint ? {
-                                insert: {
-                                    pos: radixPos + 1,
-                                    c: "0",
-                                    fromIsValid: !0
-                                },
-                                rewritePosition: radixPos
-                            } : {
-                                rewritePosition: radixPos + 1
-                            };
-                            if (caretPos.begin < radixPos) return {
-                                rewritePosition: caretPos.begin - 1
-                            };
-                        }
-                    } else if (!opts.showMaskOnHover && !opts.showMaskOnFocus && !opts.digitsOptional && 0 < opts.digits && "" === this.inputmask.__valueGet.call(this)) return {
-                        rewritePosition: radixPos
-                    };
-                    return {
-                        rewritePosition: pos
-                    };
-                },
-                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict) {
-                    if (!1 === currentResult) return currentResult;
-                    if (strict) return !0;
-                    if (null !== opts.min || null !== opts.max) {
-                        var unmasked = opts.onUnMask(buffer.slice().reverse().join(""), void 0, $.extend({}, opts, {
-                            unmaskAsNumber: !0
-                        }));
-                        if (null !== opts.min && unmasked < opts.min && (unmasked.toString().length > opts.min.toString().length || unmasked < 0)) return !1;
-                        if (null !== opts.max && unmasked > opts.max) return !!opts.SetMaxOnOverflow && {
-                            refreshFromBuffer: !0,
-                            buffer: alignDigits(opts.max.toString().replace(".", opts.radixPoint).split(""), opts.digits, opts).reverse()
-                        };
-                    }
-                    return currentResult;
-                },
-                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
-                    if ("" === unmaskedValue && !0 === opts.nullable) return unmaskedValue;
-                    var processValue = maskedValue.replace(opts.prefix, "");
-                    return processValue = processValue.replace(opts.suffix, ""), processValue = processValue.replace(new RegExp((0, 
-                    _escapeRegex.default)(opts.groupSeparator), "g"), ""), "" !== opts.placeholder.charAt(0) && (processValue = processValue.replace(new RegExp(opts.placeholder.charAt(0), "g"), "0")), 
-                    opts.unmaskAsNumber ? ("" !== opts.radixPoint && -1 !== processValue.indexOf(opts.radixPoint) && (processValue = processValue.replace(_escapeRegex.default.call(this, opts.radixPoint), ".")), 
-                    processValue = processValue.replace(new RegExp("^" + (0, _escapeRegex.default)(opts.negationSymbol.front)), "-"), 
-                    processValue = processValue.replace(new RegExp((0, _escapeRegex.default)(opts.negationSymbol.back) + "$"), ""), 
-                    Number(processValue)) : processValue;
-                },
-                isComplete: function isComplete(buffer, opts) {
-                    var maskedValue = (opts.numericInput ? buffer.slice().reverse() : buffer).join("");
-                    return maskedValue = maskedValue.replace(new RegExp("^" + (0, _escapeRegex.default)(opts.negationSymbol.front)), "-"), 
-                    maskedValue = maskedValue.replace(new RegExp((0, _escapeRegex.default)(opts.negationSymbol.back) + "$"), ""), 
-                    maskedValue = maskedValue.replace(opts.prefix, ""), maskedValue = maskedValue.replace(opts.suffix, ""), 
-                    maskedValue = maskedValue.replace(new RegExp((0, _escapeRegex.default)(opts.groupSeparator) + "([0-9]{3})", "g"), "$1"), 
-                    "," === opts.radixPoint && (maskedValue = maskedValue.replace((0, _escapeRegex.default)(opts.radixPoint), ".")), 
-                    isFinite(maskedValue);
-                },
-                onBeforeMask: function onBeforeMask(initialValue, opts) {
-                    var radixPoint = opts.radixPoint || ",";
-                    isFinite(opts.digits) && (opts.digits = parseInt(opts.digits)), "number" != typeof initialValue && "number" !== opts.inputType || "" === radixPoint || (initialValue = initialValue.toString().replace(".", radixPoint));
-                    var isNagtive = "-" === initialValue.charAt(0) || initialValue.charAt(0) === opts.negationSymbol.front, valueParts = initialValue.split(radixPoint), integerPart = valueParts[0].replace(/[^\-0-9]/g, ""), decimalPart = 1 < valueParts.length ? valueParts[1].replace(/[^0-9]/g, "") : "", forceDigits = 1 < valueParts.length;
-                    initialValue = integerPart + ("" !== decimalPart ? radixPoint + decimalPart : decimalPart);
-                    var digits = 0;
-                    if ("" !== radixPoint && (digits = opts.digitsOptional ? opts.digits < decimalPart.length ? opts.digits : decimalPart.length : opts.digits, 
-                    "" !== decimalPart || !opts.digitsOptional)) {
-                        var digitsFactor = Math.pow(10, digits || 1);
-                        initialValue = initialValue.replace((0, _escapeRegex.default)(radixPoint), "."), 
-                        isNaN(parseFloat(initialValue)) || (initialValue = (opts.roundingFN(parseFloat(initialValue) * digitsFactor) / digitsFactor).toFixed(digits)), 
-                        initialValue = initialValue.toString().replace(".", radixPoint);
-                    }
-                    if (0 === opts.digits && -1 !== initialValue.indexOf(radixPoint) && (initialValue = initialValue.substring(0, initialValue.indexOf(radixPoint))), 
-                    null !== opts.min || null !== opts.max) {
-                        var numberValue = initialValue.toString().replace(radixPoint, ".");
-                        null !== opts.min && numberValue < opts.min ? initialValue = opts.min.toString().replace(".", radixPoint) : null !== opts.max && numberValue > opts.max && (initialValue = opts.max.toString().replace(".", radixPoint));
-                    }
-                    return isNagtive && "-" !== initialValue.charAt(0) && (initialValue = "-" + initialValue), 
-                    alignDigits(initialValue.toString().split(""), digits, opts, forceDigits).join("");
-                },
-                onBeforeWrite: function onBeforeWrite(e, buffer, caretPos, opts) {
-                    function stripBuffer(buffer, stripRadix) {
-                        if (!1 !== opts.__financeInput || stripRadix) {
-                            var position = buffer.indexOf(opts.radixPoint);
-                            -1 !== position && buffer.splice(position, 1);
-                        }
-                        if ("" !== opts.groupSeparator) for (;-1 !== (position = buffer.indexOf(opts.groupSeparator)); ) buffer.splice(position, 1);
-                        return buffer;
-                    }
-                    var result, leadingzeroes = checkForLeadingZeroes(buffer, opts);
-                    if (leadingzeroes) for (var caretNdx = buffer.join("").lastIndexOf(leadingzeroes[0].split("").reverse().join("")) - (leadingzeroes[0] == leadingzeroes.input ? 0 : 1), offset = leadingzeroes[0] == leadingzeroes.input ? 1 : 0, i = leadingzeroes[0].length - offset; 0 < i; i--) delete this.maskset.validPositions[caretNdx + i], 
-                    delete buffer[caretNdx + i];
-                    if (e) switch (e.type) {
-                      case "blur":
-                      case "checkval":
-                        if (null !== opts.min) {
-                            var unmasked = opts.onUnMask(buffer.slice().reverse().join(""), void 0, $.extend({}, opts, {
-                                unmaskAsNumber: !0
-                            }));
-                            if (null !== opts.min && unmasked < opts.min) return {
-                                refreshFromBuffer: !0,
-                                buffer: alignDigits(opts.min.toString().replace(".", opts.radixPoint).split(""), opts.digits, opts).reverse()
-                            };
-                        }
-                        if (buffer[buffer.length - 1] === opts.negationSymbol.front) {
-                            var nmbrMtchs = new RegExp("(^" + ("" != opts.negationSymbol.front ? (0, _escapeRegex.default)(opts.negationSymbol.front) + "?" : "") + (0, 
-                            _escapeRegex.default)(opts.prefix) + ")(.*)(" + (0, _escapeRegex.default)(opts.suffix) + ("" != opts.negationSymbol.back ? (0, 
-                            _escapeRegex.default)(opts.negationSymbol.back) + "?" : "") + "$)").exec(stripBuffer(buffer.slice(), !0).reverse().join("")), number = nmbrMtchs ? nmbrMtchs[2] : "";
-                            0 == number && (result = {
-                                refreshFromBuffer: !0,
-                                buffer: [ 0 ]
-                            });
-                        } else "" !== opts.radixPoint && buffer[0] === opts.radixPoint && (result && result.buffer ? result.buffer.shift() : (buffer.shift(), 
-                        result = {
-                            refreshFromBuffer: !0,
-                            buffer: stripBuffer(buffer)
-                        }));
-                        if (opts.enforceDigitsOnBlur) {
-                            result = result || {};
-                            var bffr = result && result.buffer || buffer.slice().reverse();
-                            result.refreshFromBuffer = !0, result.buffer = alignDigits(bffr, opts.digits, opts, !0).reverse();
-                        }
-                    }
-                    return result;
-                },
-                onKeyDown: function onKeyDown(e, buffer, caretPos, opts) {
-                    var $input = $(this), bffr;
-                    if (e.ctrlKey) switch (e.keyCode) {
-                      case _keycode.default.UP:
-                        return this.inputmask.__valueSet.call(this, parseFloat(this.inputmask.unmaskedvalue()) + parseInt(opts.step)), 
-                        $input.trigger("setvalue"), !1;
-
-                      case _keycode.default.DOWN:
-                        return this.inputmask.__valueSet.call(this, parseFloat(this.inputmask.unmaskedvalue()) - parseInt(opts.step)), 
-                        $input.trigger("setvalue"), !1;
-                    }
-                    if (!e.shiftKey && (e.keyCode === _keycode.default.DELETE || e.keyCode === _keycode.default.BACKSPACE || e.keyCode === _keycode.default.BACKSPACE_SAFARI) && caretPos.begin !== buffer.length) {
-                        if (buffer[e.keyCode === _keycode.default.DELETE ? caretPos.begin - 1 : caretPos.end] === opts.negationSymbol.front) return bffr = buffer.slice().reverse(), 
-                        "" !== opts.negationSymbol.front && bffr.shift(), "" !== opts.negationSymbol.back && bffr.pop(), 
-                        $input.trigger("setvalue", [ bffr.join(""), caretPos.begin ]), !1;
-                        if (!0 === opts._radixDance) {
-                            var radixPos = buffer.indexOf(opts.radixPoint);
-                            if (opts.digitsOptional) {
-                                if (0 === radixPos) return bffr = buffer.slice().reverse(), bffr.pop(), $input.trigger("setvalue", [ bffr.join(""), caretPos.begin >= bffr.length ? bffr.length : caretPos.begin ]), 
-                                !1;
-                            } else if (-1 !== radixPos && (caretPos.begin < radixPos || caretPos.end < radixPos || e.keyCode === _keycode.default.DELETE && caretPos.begin === radixPos)) return caretPos.begin !== caretPos.end || e.keyCode !== _keycode.default.BACKSPACE && e.keyCode !== _keycode.default.BACKSPACE_SAFARI || caretPos.begin++, 
-                            bffr = buffer.slice().reverse(), bffr.splice(bffr.length - caretPos.begin, caretPos.begin - caretPos.end + 1), 
-                            bffr = alignDigits(bffr, opts.digits, opts).join(""), $input.trigger("setvalue", [ bffr, caretPos.begin >= bffr.length ? radixPos + 1 : caretPos.begin ]), 
-                            !1;
-                        }
-                    }
-                }
-            },
-            currency: {
-                prefix: "",
-                groupSeparator: ",",
-                alias: "numeric",
-                digits: 2,
-                digitsOptional: !1
-            },
-            decimal: {
-                alias: "numeric"
-            },
-            integer: {
-                alias: "numeric",
-                digits: 0
-            },
-            percentage: {
-                alias: "numeric",
-                min: 0,
-                max: 100,
-                suffix: " %",
-                digits: 0,
-                allowMinus: !1
-            },
-            indianns: {
-                alias: "numeric",
-                _mask: function _mask(opts) {
-                    return "(" + opts.groupSeparator + "99){*|1}(" + opts.groupSeparator + "999){1|1}";
-                },
-                groupSeparator: ",",
-                radixPoint: ".",
-                placeholder: "0",
-                digits: 2,
-                digitsOptional: !1
-            }
-        });
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        var _window = _interopRequireDefault(__webpack_require__(6)), _inputmask = _interopRequireDefault(__webpack_require__(1));
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        function _classCallCheck(instance, Constructor) {
-            if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-        }
-        function _inherits(subClass, superClass) {
-            if ("function" != typeof superClass && null !== superClass) throw new TypeError("Super expression must either be null or a function");
-            subClass.prototype = Object.create(superClass && superClass.prototype, {
-                constructor: {
-                    value: subClass,
-                    writable: !0,
-                    configurable: !0
-                }
-            }), superClass && _setPrototypeOf(subClass, superClass);
-        }
-        function _createSuper(Derived) {
-            var hasNativeReflectConstruct = _isNativeReflectConstruct();
-            return function _createSuperInternal() {
-                var Super = _getPrototypeOf(Derived), result;
-                if (hasNativeReflectConstruct) {
-                    var NewTarget = _getPrototypeOf(this).constructor;
-                    result = Reflect.construct(Super, arguments, NewTarget);
-                } else result = Super.apply(this, arguments);
-                return _possibleConstructorReturn(this, result);
-            };
-        }
-        function _possibleConstructorReturn(self, call) {
-            return !call || "object" !== _typeof(call) && "function" != typeof call ? _assertThisInitialized(self) : call;
-        }
-        function _assertThisInitialized(self) {
-            if (void 0 === self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            return self;
-        }
-        function _wrapNativeSuper(Class) {
-            var _cache = "function" == typeof Map ? new Map() : void 0;
-            return _wrapNativeSuper = function _wrapNativeSuper(Class) {
-                if (null === Class || !_isNativeFunction(Class)) return Class;
-                if ("function" != typeof Class) throw new TypeError("Super expression must either be null or a function");
-                if ("undefined" != typeof _cache) {
-                    if (_cache.has(Class)) return _cache.get(Class);
-                    _cache.set(Class, Wrapper);
-                }
-                function Wrapper() {
-                    return _construct(Class, arguments, _getPrototypeOf(this).constructor);
-                }
-                return Wrapper.prototype = Object.create(Class.prototype, {
-                    constructor: {
-                        value: Wrapper,
-                        enumerable: !1,
-                        writable: !0,
-                        configurable: !0
-                    }
-                }), _setPrototypeOf(Wrapper, Class);
-            }, _wrapNativeSuper(Class);
-        }
-        function _construct(Parent, args, Class) {
-            return _construct = _isNativeReflectConstruct() ? Reflect.construct : function _construct(Parent, args, Class) {
-                var a = [ null ];
-                a.push.apply(a, args);
-                var Constructor = Function.bind.apply(Parent, a), instance = new Constructor();
-                return Class && _setPrototypeOf(instance, Class.prototype), instance;
-            }, _construct.apply(null, arguments);
-        }
-        function _isNativeReflectConstruct() {
-            if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
-            if (Reflect.construct.sham) return !1;
-            if ("function" == typeof Proxy) return !0;
-            try {
-                return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), 
-                !0;
-            } catch (e) {
-                return !1;
-            }
-        }
-        function _isNativeFunction(fn) {
-            return -1 !== Function.toString.call(fn).indexOf("[native code]");
-        }
-        function _setPrototypeOf(o, p) {
-            return _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-                return o.__proto__ = p, o;
-            }, _setPrototypeOf(o, p);
-        }
-        function _getPrototypeOf(o) {
-            return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-                return o.__proto__ || Object.getPrototypeOf(o);
-            }, _getPrototypeOf(o);
-        }
-        function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : {
-                default: obj
-            };
-        }
-        var document = _window.default.document;
-        if (document && document.head && document.head.attachShadow && _window.default.customElements && void 0 === _window.default.customElements.get("input-mask")) {
-            var InputmaskElement = function(_HTMLElement) {
-                _inherits(InputmaskElement, _HTMLElement);
-                var _super = _createSuper(InputmaskElement);
-                function InputmaskElement() {
-                    var _this;
-                    _classCallCheck(this, InputmaskElement), _this = _super.call(this);
-                    var attributeNames = _this.getAttributeNames(), shadow = _this.attachShadow({
-                        mode: "closed"
-                    }), input = document.createElement("input");
-                    for (var attr in input.type = "text", shadow.appendChild(input), attributeNames) Object.prototype.hasOwnProperty.call(attributeNames, attr) && input.setAttribute(attributeNames[attr], _this.getAttribute(attributeNames[attr]));
-                    var im = new _inputmask.default();
-                    return im.dataAttribute = "", im.mask(input), input.inputmask.shadowRoot = shadow, 
-                    _this;
-                }
-                return InputmaskElement;
-            }(_wrapNativeSuper(HTMLElement));
-            _window.default.customElements.define("input-mask", InputmaskElement);
-        }
-    } ], installedModules = {}, __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
-    __webpack_require__.d = function(exports, name, getter) {
-        __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {
-            enumerable: !0,
-            get: getter
-        });
-    }, __webpack_require__.r = function(exports) {
-        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {
-            value: "Module"
-        }), Object.defineProperty(exports, "__esModule", {
-            value: !0
-        });
-    }, __webpack_require__.t = function(value, mode) {
-        if (1 & mode && (value = __webpack_require__(value)), 8 & mode) return value;
-        if (4 & mode && "object" == typeof value && value && value.__esModule) return value;
-        var ns = Object.create(null);
-        if (__webpack_require__.r(ns), Object.defineProperty(ns, "default", {
-            enumerable: !0,
-            value: value
-        }), 2 & mode && "string" != typeof value) for (var key in value) __webpack_require__.d(ns, key, function(key) {
-            return value[key];
-        }.bind(null, key));
-        return ns;
-    }, __webpack_require__.n = function(module) {
-        var getter = module && module.__esModule ? function getDefault() {
-            return module.default;
-        } : function getModuleExports() {
-            return module;
-        };
-        return __webpack_require__.d(getter, "a", getter), getter;
-    }, __webpack_require__.o = function(object, property) {
-        return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 15);
-    function __webpack_require__(moduleId) {
-        if (installedModules[moduleId]) return installedModules[moduleId].exports;
-        var module = installedModules[moduleId] = {
-            i: moduleId,
-            l: !1,
-            exports: {}
-        };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
-        module.l = !0, module.exports;
-    }
-    var modules, installedModules;
-});
-
-/***/ }),
-/* 23 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Exposing intl-tel-input as a component
  */
-module.exports = __webpack_require__(24);
+module.exports = __webpack_require__(33);
 
 
 /***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
- * International Telephone Input v17.0.6
- * https://github.com/jackocnr/intl-tel-input.git
- * Licensed under the MIT license
- */
-
-// wrap in UMD
-(function(factory) {
-    if ( true && module.exports) module.exports = factory(); else window.intlTelInput = factory();
-})(function(undefined) {
-    "use strict";
-    return function() {
-        // Array of country objects for the flag dropdown.
-        // Here is the criteria for the plugin to support a given country/territory
-        // - It has an iso2 code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-        // - It has it's own country calling code (it is not a sub-region of another country): https://en.wikipedia.org/wiki/List_of_country_calling_codes
-        // - It has a flag in the region-flags project: https://github.com/behdad/region-flags/tree/gh-pages/png
-        // - It is supported by libphonenumber (it must be listed on this page): https://github.com/googlei18n/libphonenumber/blob/master/resources/ShortNumberMetadata.xml
-        // Each country array has the following information:
-        // [
-        //    Country name,
-        //    iso2 code,
-        //    International dial code,
-        //    Order (if >1 country with same dial code),
-        //    Area codes
-        // ]
-        var allCountries = [ [ "Afghanistan (‫افغانستان‬‎)", "af", "93" ], [ "Albania (Shqipëri)", "al", "355" ], [ "Algeria (‫الجزائر‬‎)", "dz", "213" ], [ "American Samoa", "as", "1", 5, [ "684" ] ], [ "Andorra", "ad", "376" ], [ "Angola", "ao", "244" ], [ "Anguilla", "ai", "1", 6, [ "264" ] ], [ "Antigua and Barbuda", "ag", "1", 7, [ "268" ] ], [ "Argentina", "ar", "54" ], [ "Armenia (Հայաստան)", "am", "374" ], [ "Aruba", "aw", "297" ], [ "Australia", "au", "61", 0 ], [ "Austria (Österreich)", "at", "43" ], [ "Azerbaijan (Azərbaycan)", "az", "994" ], [ "Bahamas", "bs", "1", 8, [ "242" ] ], [ "Bahrain (‫البحرين‬‎)", "bh", "973" ], [ "Bangladesh (বাংলাদেশ)", "bd", "880" ], [ "Barbados", "bb", "1", 9, [ "246" ] ], [ "Belarus (Беларусь)", "by", "375" ], [ "Belgium (België)", "be", "32" ], [ "Belize", "bz", "501" ], [ "Benin (Bénin)", "bj", "229" ], [ "Bermuda", "bm", "1", 10, [ "441" ] ], [ "Bhutan (འབྲུག)", "bt", "975" ], [ "Bolivia", "bo", "591" ], [ "Bosnia and Herzegovina (Босна и Херцеговина)", "ba", "387" ], [ "Botswana", "bw", "267" ], [ "Brazil (Brasil)", "br", "55" ], [ "British Indian Ocean Territory", "io", "246" ], [ "British Virgin Islands", "vg", "1", 11, [ "284" ] ], [ "Brunei", "bn", "673" ], [ "Bulgaria (България)", "bg", "359" ], [ "Burkina Faso", "bf", "226" ], [ "Burundi (Uburundi)", "bi", "257" ], [ "Cambodia (កម្ពុជា)", "kh", "855" ], [ "Cameroon (Cameroun)", "cm", "237" ], [ "Canada", "ca", "1", 1, [ "204", "226", "236", "249", "250", "289", "306", "343", "365", "387", "403", "416", "418", "431", "437", "438", "450", "506", "514", "519", "548", "579", "581", "587", "604", "613", "639", "647", "672", "705", "709", "742", "778", "780", "782", "807", "819", "825", "867", "873", "902", "905" ] ], [ "Cape Verde (Kabu Verdi)", "cv", "238" ], [ "Caribbean Netherlands", "bq", "599", 1, [ "3", "4", "7" ] ], [ "Cayman Islands", "ky", "1", 12, [ "345" ] ], [ "Central African Republic (République centrafricaine)", "cf", "236" ], [ "Chad (Tchad)", "td", "235" ], [ "Chile", "cl", "56" ], [ "China (中国)", "cn", "86" ], [ "Christmas Island", "cx", "61", 2, [ "89164" ] ], [ "Cocos (Keeling) Islands", "cc", "61", 1, [ "89162" ] ], [ "Colombia", "co", "57" ], [ "Comoros (‫جزر القمر‬‎)", "km", "269" ], [ "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)", "cd", "243" ], [ "Congo (Republic) (Congo-Brazzaville)", "cg", "242" ], [ "Cook Islands", "ck", "682" ], [ "Costa Rica", "cr", "506" ], [ "Côte d’Ivoire", "ci", "225" ], [ "Croatia (Hrvatska)", "hr", "385" ], [ "Cuba", "cu", "53" ], [ "Curaçao", "cw", "599", 0 ], [ "Cyprus (Κύπρος)", "cy", "357" ], [ "Czech Republic (Česká republika)", "cz", "420" ], [ "Denmark (Danmark)", "dk", "45" ], [ "Djibouti", "dj", "253" ], [ "Dominica", "dm", "1", 13, [ "767" ] ], [ "Dominican Republic (República Dominicana)", "do", "1", 2, [ "809", "829", "849" ] ], [ "Ecuador", "ec", "593" ], [ "Egypt (‫مصر‬‎)", "eg", "20" ], [ "El Salvador", "sv", "503" ], [ "Equatorial Guinea (Guinea Ecuatorial)", "gq", "240" ], [ "Eritrea", "er", "291" ], [ "Estonia (Eesti)", "ee", "372" ], [ "Ethiopia", "et", "251" ], [ "Falkland Islands (Islas Malvinas)", "fk", "500" ], [ "Faroe Islands (Føroyar)", "fo", "298" ], [ "Fiji", "fj", "679" ], [ "Finland (Suomi)", "fi", "358", 0 ], [ "France", "fr", "33" ], [ "French Guiana (Guyane française)", "gf", "594" ], [ "French Polynesia (Polynésie française)", "pf", "689" ], [ "Gabon", "ga", "241" ], [ "Gambia", "gm", "220" ], [ "Georgia (საქართველო)", "ge", "995" ], [ "Germany (Deutschland)", "de", "49" ], [ "Ghana (Gaana)", "gh", "233" ], [ "Gibraltar", "gi", "350" ], [ "Greece (Ελλάδα)", "gr", "30" ], [ "Greenland (Kalaallit Nunaat)", "gl", "299" ], [ "Grenada", "gd", "1", 14, [ "473" ] ], [ "Guadeloupe", "gp", "590", 0 ], [ "Guam", "gu", "1", 15, [ "671" ] ], [ "Guatemala", "gt", "502" ], [ "Guernsey", "gg", "44", 1, [ "1481", "7781", "7839", "7911" ] ], [ "Guinea (Guinée)", "gn", "224" ], [ "Guinea-Bissau (Guiné Bissau)", "gw", "245" ], [ "Guyana", "gy", "592" ], [ "Haiti", "ht", "509" ], [ "Honduras", "hn", "504" ], [ "Hong Kong (香港)", "hk", "852" ], [ "Hungary (Magyarország)", "hu", "36" ], [ "Iceland (Ísland)", "is", "354" ], [ "India (भारत)", "in", "91" ], [ "Indonesia", "id", "62" ], [ "Iran (‫ایران‬‎)", "ir", "98" ], [ "Iraq (‫العراق‬‎)", "iq", "964" ], [ "Ireland", "ie", "353" ], [ "Isle of Man", "im", "44", 2, [ "1624", "74576", "7524", "7924", "7624" ] ], [ "Israel (‫ישראל‬‎)", "il", "972" ], [ "Italy (Italia)", "it", "39", 0 ], [ "Jamaica", "jm", "1", 4, [ "876", "658" ] ], [ "Japan (日本)", "jp", "81" ], [ "Jersey", "je", "44", 3, [ "1534", "7509", "7700", "7797", "7829", "7937" ] ], [ "Jordan (‫الأردن‬‎)", "jo", "962" ], [ "Kazakhstan (Казахстан)", "kz", "7", 1, [ "33", "7" ] ], [ "Kenya", "ke", "254" ], [ "Kiribati", "ki", "686" ], [ "Kosovo", "xk", "383" ], [ "Kuwait (‫الكويت‬‎)", "kw", "965" ], [ "Kyrgyzstan (Кыргызстан)", "kg", "996" ], [ "Laos (ລາວ)", "la", "856" ], [ "Latvia (Latvija)", "lv", "371" ], [ "Lebanon (‫لبنان‬‎)", "lb", "961" ], [ "Lesotho", "ls", "266" ], [ "Liberia", "lr", "231" ], [ "Libya (‫ليبيا‬‎)", "ly", "218" ], [ "Liechtenstein", "li", "423" ], [ "Lithuania (Lietuva)", "lt", "370" ], [ "Luxembourg", "lu", "352" ], [ "Macau (澳門)", "mo", "853" ], [ "Macedonia (FYROM) (Македонија)", "mk", "389" ], [ "Madagascar (Madagasikara)", "mg", "261" ], [ "Malawi", "mw", "265" ], [ "Malaysia", "my", "60" ], [ "Maldives", "mv", "960" ], [ "Mali", "ml", "223" ], [ "Malta", "mt", "356" ], [ "Marshall Islands", "mh", "692" ], [ "Martinique", "mq", "596" ], [ "Mauritania (‫موريتانيا‬‎)", "mr", "222" ], [ "Mauritius (Moris)", "mu", "230" ], [ "Mayotte", "yt", "262", 1, [ "269", "639" ] ], [ "Mexico (México)", "mx", "52" ], [ "Micronesia", "fm", "691" ], [ "Moldova (Republica Moldova)", "md", "373" ], [ "Monaco", "mc", "377" ], [ "Mongolia (Монгол)", "mn", "976" ], [ "Montenegro (Crna Gora)", "me", "382" ], [ "Montserrat", "ms", "1", 16, [ "664" ] ], [ "Morocco (‫المغرب‬‎)", "ma", "212", 0 ], [ "Mozambique (Moçambique)", "mz", "258" ], [ "Myanmar (Burma) (မြန်မာ)", "mm", "95" ], [ "Namibia (Namibië)", "na", "264" ], [ "Nauru", "nr", "674" ], [ "Nepal (नेपाल)", "np", "977" ], [ "Netherlands (Nederland)", "nl", "31" ], [ "New Caledonia (Nouvelle-Calédonie)", "nc", "687" ], [ "New Zealand", "nz", "64" ], [ "Nicaragua", "ni", "505" ], [ "Niger (Nijar)", "ne", "227" ], [ "Nigeria", "ng", "234" ], [ "Niue", "nu", "683" ], [ "Norfolk Island", "nf", "672" ], [ "North Korea (조선 민주주의 인민 공화국)", "kp", "850" ], [ "Northern Mariana Islands", "mp", "1", 17, [ "670" ] ], [ "Norway (Norge)", "no", "47", 0 ], [ "Oman (‫عُمان‬‎)", "om", "968" ], [ "Pakistan (‫پاکستان‬‎)", "pk", "92" ], [ "Palau", "pw", "680" ], [ "Palestine (‫فلسطين‬‎)", "ps", "970" ], [ "Panama (Panamá)", "pa", "507" ], [ "Papua New Guinea", "pg", "675" ], [ "Paraguay", "py", "595" ], [ "Peru (Perú)", "pe", "51" ], [ "Philippines", "ph", "63" ], [ "Poland (Polska)", "pl", "48" ], [ "Portugal", "pt", "351" ], [ "Puerto Rico", "pr", "1", 3, [ "787", "939" ] ], [ "Qatar (‫قطر‬‎)", "qa", "974" ], [ "Réunion (La Réunion)", "re", "262", 0 ], [ "Romania (România)", "ro", "40" ], [ "Russia (Россия)", "ru", "7", 0 ], [ "Rwanda", "rw", "250" ], [ "Saint Barthélemy", "bl", "590", 1 ], [ "Saint Helena", "sh", "290" ], [ "Saint Kitts and Nevis", "kn", "1", 18, [ "869" ] ], [ "Saint Lucia", "lc", "1", 19, [ "758" ] ], [ "Saint Martin (Saint-Martin (partie française))", "mf", "590", 2 ], [ "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)", "pm", "508" ], [ "Saint Vincent and the Grenadines", "vc", "1", 20, [ "784" ] ], [ "Samoa", "ws", "685" ], [ "San Marino", "sm", "378" ], [ "São Tomé and Príncipe (São Tomé e Príncipe)", "st", "239" ], [ "Saudi Arabia (‫المملكة العربية السعودية‬‎)", "sa", "966" ], [ "Senegal (Sénégal)", "sn", "221" ], [ "Serbia (Србија)", "rs", "381" ], [ "Seychelles", "sc", "248" ], [ "Sierra Leone", "sl", "232" ], [ "Singapore", "sg", "65" ], [ "Sint Maarten", "sx", "1", 21, [ "721" ] ], [ "Slovakia (Slovensko)", "sk", "421" ], [ "Slovenia (Slovenija)", "si", "386" ], [ "Solomon Islands", "sb", "677" ], [ "Somalia (Soomaaliya)", "so", "252" ], [ "South Africa", "za", "27" ], [ "South Korea (대한민국)", "kr", "82" ], [ "South Sudan (‫جنوب السودان‬‎)", "ss", "211" ], [ "Spain (España)", "es", "34" ], [ "Sri Lanka (ශ්‍රී ලංකාව)", "lk", "94" ], [ "Sudan (‫السودان‬‎)", "sd", "249" ], [ "Suriname", "sr", "597" ], [ "Svalbard and Jan Mayen", "sj", "47", 1, [ "79" ] ], [ "Swaziland", "sz", "268" ], [ "Sweden (Sverige)", "se", "46" ], [ "Switzerland (Schweiz)", "ch", "41" ], [ "Syria (‫سوريا‬‎)", "sy", "963" ], [ "Taiwan (台灣)", "tw", "886" ], [ "Tajikistan", "tj", "992" ], [ "Tanzania", "tz", "255" ], [ "Thailand (ไทย)", "th", "66" ], [ "Timor-Leste", "tl", "670" ], [ "Togo", "tg", "228" ], [ "Tokelau", "tk", "690" ], [ "Tonga", "to", "676" ], [ "Trinidad and Tobago", "tt", "1", 22, [ "868" ] ], [ "Tunisia (‫تونس‬‎)", "tn", "216" ], [ "Turkey (Türkiye)", "tr", "90" ], [ "Turkmenistan", "tm", "993" ], [ "Turks and Caicos Islands", "tc", "1", 23, [ "649" ] ], [ "Tuvalu", "tv", "688" ], [ "U.S. Virgin Islands", "vi", "1", 24, [ "340" ] ], [ "Uganda", "ug", "256" ], [ "Ukraine (Україна)", "ua", "380" ], [ "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)", "ae", "971" ], [ "United Kingdom", "gb", "44", 0 ], [ "United States", "us", "1", 0 ], [ "Uruguay", "uy", "598" ], [ "Uzbekistan (Oʻzbekiston)", "uz", "998" ], [ "Vanuatu", "vu", "678" ], [ "Vatican City (Città del Vaticano)", "va", "39", 1, [ "06698" ] ], [ "Venezuela", "ve", "58" ], [ "Vietnam (Việt Nam)", "vn", "84" ], [ "Wallis and Futuna (Wallis-et-Futuna)", "wf", "681" ], [ "Western Sahara (‫الصحراء الغربية‬‎)", "eh", "212", 1, [ "5288", "5289" ] ], [ "Yemen (‫اليمن‬‎)", "ye", "967" ], [ "Zambia", "zm", "260" ], [ "Zimbabwe", "zw", "263" ], [ "Åland Islands", "ax", "358", 1, [ "18" ] ] ];
-        // loop over all of the countries above, restructuring the data to be objects with named keys
-        for (var i = 0; i < allCountries.length; i++) {
-            var c = allCountries[i];
-            allCountries[i] = {
-                name: c[0],
-                iso2: c[1],
-                dialCode: c[2],
-                priority: c[3] || 0,
-                areaCodes: c[4] || null
-            };
-        }
-        "use strict";
-        function _classCallCheck(instance, Constructor) {
-            if (!(instance instanceof Constructor)) {
-                throw new TypeError("Cannot call a class as a function");
-            }
-        }
-        function _defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || false;
-                descriptor.configurable = true;
-                if ("value" in descriptor) descriptor.writable = true;
-                Object.defineProperty(target, descriptor.key, descriptor);
-            }
-        }
-        function _createClass(Constructor, protoProps, staticProps) {
-            if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) _defineProperties(Constructor, staticProps);
-            return Constructor;
-        }
-        var intlTelInputGlobals = {
-            getInstance: function getInstance(input) {
-                var id = input.getAttribute("data-intl-tel-input-id");
-                return window.intlTelInputGlobals.instances[id];
-            },
-            instances: {},
-            // using a global like this allows us to mock it in the tests
-            documentReady: function documentReady() {
-                return document.readyState === "complete";
-            }
-        };
-        if (typeof window === "object") window.intlTelInputGlobals = intlTelInputGlobals;
-        // these vars persist through all instances of the plugin
-        var id = 0;
-        var defaults = {
-            // whether or not to allow the dropdown
-            allowDropdown: true,
-            // if there is just a dial code in the input: remove it on blur
-            autoHideDialCode: true,
-            // add a placeholder in the input with an example number for the selected country
-            autoPlaceholder: "polite",
-            // modify the parentClass
-            customContainer: "",
-            // modify the auto placeholder
-            customPlaceholder: null,
-            // append menu to specified element
-            dropdownContainer: null,
-            // don't display these countries
-            excludeCountries: [],
-            // format the input value during initialisation and on setNumber
-            formatOnDisplay: true,
-            // geoIp lookup function
-            geoIpLookup: null,
-            // inject a hidden input with this name, and on submit, populate it with the result of getNumber
-            hiddenInput: "",
-            // initial country
-            initialCountry: "",
-            // localized country names e.g. { 'de': 'Deutschland' }
-            localizedCountries: null,
-            // don't insert international dial codes
-            nationalMode: true,
-            // display only these countries
-            onlyCountries: [],
-            // number type to use for placeholders
-            placeholderNumberType: "MOBILE",
-            // the countries at the top of the list. defaults to united states and united kingdom
-            preferredCountries: [ "us", "gb" ],
-            // display the country dial code next to the selected flag so it's not part of the typed number
-            separateDialCode: false,
-            // specify the path to the libphonenumber script to enable validation/formatting
-            utilsScript: ""
-        };
-        // https://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes#Non-geographic_area_codes
-        var regionlessNanpNumbers = [ "800", "822", "833", "844", "855", "866", "877", "880", "881", "882", "883", "884", "885", "886", "887", "888", "889" ];
-        // utility function to iterate over an object. can't use Object.entries or native forEach because
-        // of IE11
-        var forEachProp = function forEachProp(obj, callback) {
-            var keys = Object.keys(obj);
-            for (var i = 0; i < keys.length; i++) {
-                callback(keys[i], obj[keys[i]]);
-            }
-        };
-        // run a method on each instance of the plugin
-        var forEachInstance = function forEachInstance(method) {
-            forEachProp(window.intlTelInputGlobals.instances, function(key) {
-                window.intlTelInputGlobals.instances[key][method]();
-            });
-        };
-        // this is our plugin class that we will create an instance of
-        // eslint-disable-next-line no-unused-vars
-        var Iti = /*#__PURE__*/
-        function() {
-            function Iti(input, options) {
-                var _this = this;
-                _classCallCheck(this, Iti);
-                this.id = id++;
-                this.telInput = input;
-                this.activeItem = null;
-                this.highlightedItem = null;
-                // process specified options / defaults
-                // alternative to Object.assign, which isn't supported by IE11
-                var customOptions = options || {};
-                this.options = {};
-                forEachProp(defaults, function(key, value) {
-                    _this.options[key] = customOptions.hasOwnProperty(key) ? customOptions[key] : value;
-                });
-                this.hadInitialPlaceholder = Boolean(input.getAttribute("placeholder"));
-            }
-            _createClass(Iti, [ {
-                key: "_init",
-                value: function _init() {
-                    var _this2 = this;
-                    // if in nationalMode, disable options relating to dial codes
-                    if (this.options.nationalMode) this.options.autoHideDialCode = false;
-                    // if separateDialCode then doesn't make sense to A) insert dial code into input
-                    // (autoHideDialCode), and B) display national numbers (because we're displaying the country
-                    // dial code next to them)
-                    if (this.options.separateDialCode) {
-                        this.options.autoHideDialCode = this.options.nationalMode = false;
-                    }
-                    // we cannot just test screen size as some smartphones/website meta tags will report desktop
-                    // resolutions
-                    // Note: for some reason jasmine breaks if you put this in the main Plugin function with the
-                    // rest of these declarations
-                    // Note: to target Android Mobiles (and not Tablets), we must find 'Android' and 'Mobile'
-                    this.isMobile = /Android.+Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-                    if (this.isMobile) {
-                        // trigger the mobile dropdown css
-                        document.body.classList.add("iti-mobile");
-                        // on mobile, we want a full screen dropdown, so we must append it to the body
-                        if (!this.options.dropdownContainer) this.options.dropdownContainer = document.body;
-                    }
-                    // these promises get resolved when their individual requests complete
-                    // this way the dev can do something like iti.promise.then(...) to know when all requests are
-                    // complete
-                    if (typeof Promise !== "undefined") {
-                        var autoCountryPromise = new Promise(function(resolve, reject) {
-                            _this2.resolveAutoCountryPromise = resolve;
-                            _this2.rejectAutoCountryPromise = reject;
-                        });
-                        var utilsScriptPromise = new Promise(function(resolve, reject) {
-                            _this2.resolveUtilsScriptPromise = resolve;
-                            _this2.rejectUtilsScriptPromise = reject;
-                        });
-                        this.promise = Promise.all([ autoCountryPromise, utilsScriptPromise ]);
-                    } else {
-                        // prevent errors when Promise doesn't exist
-                        this.resolveAutoCountryPromise = this.rejectAutoCountryPromise = function() {};
-                        this.resolveUtilsScriptPromise = this.rejectUtilsScriptPromise = function() {};
-                    }
-                    // in various situations there could be no country selected initially, but we need to be able
-                    // to assume this variable exists
-                    this.selectedCountryData = {};
-                    // process all the data: onlyCountries, excludeCountries, preferredCountries etc
-                    this._processCountryData();
-                    // generate the markup
-                    this._generateMarkup();
-                    // set the initial state of the input value and the selected flag
-                    this._setInitialState();
-                    // start all of the event listeners: autoHideDialCode, input keydown, selectedFlag click
-                    this._initListeners();
-                    // utils script, and auto country
-                    this._initRequests();
-                }
-            }, {
-                key: "_processCountryData",
-                value: function _processCountryData() {
-                    // process onlyCountries or excludeCountries array if present
-                    this._processAllCountries();
-                    // process the countryCodes map
-                    this._processCountryCodes();
-                    // process the preferredCountries
-                    this._processPreferredCountries();
-                    // translate countries according to localizedCountries option
-                    if (this.options.localizedCountries) this._translateCountriesByLocale();
-                    // sort countries by name
-                    if (this.options.onlyCountries.length || this.options.localizedCountries) {
-                        this.countries.sort(this._countryNameSort);
-                    }
-                }
-            }, {
-                key: "_addCountryCode",
-                value: function _addCountryCode(iso2, countryCode, priority) {
-                    if (countryCode.length > this.countryCodeMaxLen) {
-                        this.countryCodeMaxLen = countryCode.length;
-                    }
-                    if (!this.countryCodes.hasOwnProperty(countryCode)) {
-                        this.countryCodes[countryCode] = [];
-                    }
-                    // bail if we already have this country for this countryCode
-                    for (var i = 0; i < this.countryCodes[countryCode].length; i++) {
-                        if (this.countryCodes[countryCode][i] === iso2) return;
-                    }
-                    // check for undefined as 0 is falsy
-                    var index = priority !== undefined ? priority : this.countryCodes[countryCode].length;
-                    this.countryCodes[countryCode][index] = iso2;
-                }
-            }, {
-                key: "_processAllCountries",
-                value: function _processAllCountries() {
-                    if (this.options.onlyCountries.length) {
-                        var lowerCaseOnlyCountries = this.options.onlyCountries.map(function(country) {
-                            return country.toLowerCase();
-                        });
-                        this.countries = allCountries.filter(function(country) {
-                            return lowerCaseOnlyCountries.indexOf(country.iso2) > -1;
-                        });
-                    } else if (this.options.excludeCountries.length) {
-                        var lowerCaseExcludeCountries = this.options.excludeCountries.map(function(country) {
-                            return country.toLowerCase();
-                        });
-                        this.countries = allCountries.filter(function(country) {
-                            return lowerCaseExcludeCountries.indexOf(country.iso2) === -1;
-                        });
-                    } else {
-                        this.countries = allCountries;
-                    }
-                }
-            }, {
-                key: "_translateCountriesByLocale",
-                value: function _translateCountriesByLocale() {
-                    for (var i = 0; i < this.countries.length; i++) {
-                        var iso = this.countries[i].iso2.toLowerCase();
-                        if (this.options.localizedCountries.hasOwnProperty(iso)) {
-                            this.countries[i].name = this.options.localizedCountries[iso];
-                        }
-                    }
-                }
-            }, {
-                key: "_countryNameSort",
-                value: function _countryNameSort(a, b) {
-                    return a.name.localeCompare(b.name);
-                }
-            }, {
-                key: "_processCountryCodes",
-                value: function _processCountryCodes() {
-                    this.countryCodeMaxLen = 0;
-                    // here we store just dial codes
-                    this.dialCodes = {};
-                    // here we store "country codes" (both dial codes and their area codes)
-                    this.countryCodes = {};
-                    // first: add dial codes
-                    for (var i = 0; i < this.countries.length; i++) {
-                        var c = this.countries[i];
-                        if (!this.dialCodes[c.dialCode]) this.dialCodes[c.dialCode] = true;
-                        this._addCountryCode(c.iso2, c.dialCode, c.priority);
-                    }
-                    // next: add area codes
-                    // this is a second loop over countries, to make sure we have all of the "root" countries
-                    // already in the map, so that we can access them, as each time we add an area code substring
-                    // to the map, we also need to include the "root" country's code, as that also matches
-                    for (var _i = 0; _i < this.countries.length; _i++) {
-                        var _c = this.countries[_i];
-                        // area codes
-                        if (_c.areaCodes) {
-                            var rootCountryCode = this.countryCodes[_c.dialCode][0];
-                            // for each area code
-                            for (var j = 0; j < _c.areaCodes.length; j++) {
-                                var areaCode = _c.areaCodes[j];
-                                // for each digit in the area code to add all partial matches as well
-                                for (var k = 1; k < areaCode.length; k++) {
-                                    var partialDialCode = _c.dialCode + areaCode.substr(0, k);
-                                    // start with the root country, as that also matches this dial code
-                                    this._addCountryCode(rootCountryCode, partialDialCode);
-                                    this._addCountryCode(_c.iso2, partialDialCode);
-                                }
-                                // add the full area code
-                                this._addCountryCode(_c.iso2, _c.dialCode + areaCode);
-                            }
-                        }
-                    }
-                }
-            }, {
-                key: "_processPreferredCountries",
-                value: function _processPreferredCountries() {
-                    this.preferredCountries = [];
-                    for (var i = 0; i < this.options.preferredCountries.length; i++) {
-                        var countryCode = this.options.preferredCountries[i].toLowerCase();
-                        var countryData = this._getCountryData(countryCode, false, true);
-                        if (countryData) this.preferredCountries.push(countryData);
-                    }
-                }
-            }, {
-                key: "_createEl",
-                value: function _createEl(name, attrs, container) {
-                    var el = document.createElement(name);
-                    if (attrs) forEachProp(attrs, function(key, value) {
-                        return el.setAttribute(key, value);
-                    });
-                    if (container) container.appendChild(el);
-                    return el;
-                }
-            }, {
-                key: "_generateMarkup",
-                value: function _generateMarkup() {
-                    // if autocomplete does not exist on the element and its form, then
-                    // prevent autocomplete as there's no safe, cross-browser event we can react to, so it can
-                    // easily put the plugin in an inconsistent state e.g. the wrong flag selected for the
-                    // autocompleted number, which on submit could mean wrong number is saved (esp in nationalMode)
-                    if (!this.telInput.hasAttribute("autocomplete") && !(this.telInput.form && this.telInput.form.hasAttribute("autocomplete"))) {
-                        this.telInput.setAttribute("autocomplete", "off");
-                    }
-                    // containers (mostly for positioning)
-                    var parentClass = "iti";
-                    if (this.options.allowDropdown) parentClass += " iti--allow-dropdown";
-                    if (this.options.separateDialCode) parentClass += " iti--separate-dial-code";
-                    if (this.options.customContainer) {
-                        parentClass += " ";
-                        parentClass += this.options.customContainer;
-                    }
-                    var wrapper = this._createEl("div", {
-                        "class": parentClass
-                    });
-                    this.telInput.parentNode.insertBefore(wrapper, this.telInput);
-                    this.flagsContainer = this._createEl("div", {
-                        "class": "iti__flag-container"
-                    }, wrapper);
-                    wrapper.appendChild(this.telInput);
-                    // selected flag (displayed to left of input)
-                    this.selectedFlag = this._createEl("div", {
-                        "class": "iti__selected-flag",
-                        role: "combobox",
-                        "aria-controls": "iti-".concat(this.id, "__country-listbox"),
-                        "aria-owns": "iti-".concat(this.id, "__country-listbox"),
-                        "aria-expanded": "false"
-                    }, this.flagsContainer);
-                    this.selectedFlagInner = this._createEl("div", {
-                        "class": "iti__flag"
-                    }, this.selectedFlag);
-                    if (this.options.separateDialCode) {
-                        this.selectedDialCode = this._createEl("div", {
-                            "class": "iti__selected-dial-code"
-                        }, this.selectedFlag);
-                    }
-                    if (this.options.allowDropdown) {
-                        // make element focusable and tab navigable
-                        this.selectedFlag.setAttribute("tabindex", "0");
-                        this.dropdownArrow = this._createEl("div", {
-                            "class": "iti__arrow"
-                        }, this.selectedFlag);
-                        // country dropdown: preferred countries, then divider, then all countries
-                        this.countryList = this._createEl("ul", {
-                            "class": "iti__country-list iti__hide",
-                            id: "iti-".concat(this.id, "__country-listbox"),
-                            role: "listbox",
-                            "aria-label": "List of countries"
-                        });
-                        if (this.preferredCountries.length) {
-                            this._appendListItems(this.preferredCountries, "iti__preferred", true);
-                            this._createEl("li", {
-                                "class": "iti__divider",
-                                role: "separator",
-                                "aria-disabled": "true"
-                            }, this.countryList);
-                        }
-                        this._appendListItems(this.countries, "iti__standard");
-                        // create dropdownContainer markup
-                        if (this.options.dropdownContainer) {
-                            this.dropdown = this._createEl("div", {
-                                "class": "iti iti--container"
-                            });
-                            this.dropdown.appendChild(this.countryList);
-                        } else {
-                            this.flagsContainer.appendChild(this.countryList);
-                        }
-                    }
-                    if (this.options.hiddenInput) {
-                        var hiddenInputName = this.options.hiddenInput;
-                        var name = this.telInput.getAttribute("name");
-                        if (name) {
-                            var i = name.lastIndexOf("[");
-                            // if input name contains square brackets, then give the hidden input the same name,
-                            // replacing the contents of the last set of brackets with the given hiddenInput name
-                            if (i !== -1) hiddenInputName = "".concat(name.substr(0, i), "[").concat(hiddenInputName, "]");
-                        }
-                        this.hiddenInput = this._createEl("input", {
-                            type: "hidden",
-                            name: hiddenInputName
-                        });
-                        wrapper.appendChild(this.hiddenInput);
-                    }
-                }
-            }, {
-                key: "_appendListItems",
-                value: function _appendListItems(countries, className, preferred) {
-                    // we create so many DOM elements, it is faster to build a temp string
-                    // and then add everything to the DOM in one go at the end
-                    var tmp = "";
-                    // for each country
-                    for (var i = 0; i < countries.length; i++) {
-                        var c = countries[i];
-                        var idSuffix = preferred ? "-preferred" : "";
-                        // open the list item
-                        tmp += "<li class='iti__country ".concat(className, "' tabIndex='-1' id='iti-").concat(this.id, "__item-").concat(c.iso2).concat(idSuffix, "' role='option' data-dial-code='").concat(c.dialCode, "' data-country-code='").concat(c.iso2, "' aria-selected='false'>");
-                        // add the flag
-                        tmp += "<div class='iti__flag-box'><div class='iti__flag iti__".concat(c.iso2, "'></div></div>");
-                        // and the country name and dial code
-                        tmp += "<span class='iti__country-name'>".concat(c.name, "</span>");
-                        tmp += "<span class='iti__dial-code'>+".concat(c.dialCode, "</span>");
-                        // close the list item
-                        tmp += "</li>";
-                    }
-                    this.countryList.insertAdjacentHTML("beforeend", tmp);
-                }
-            }, {
-                key: "_setInitialState",
-                value: function _setInitialState() {
-                    var val = this.telInput.value;
-                    var dialCode = this._getDialCode(val);
-                    var isRegionlessNanp = this._isRegionlessNanp(val);
-                    var _this$options = this.options, initialCountry = _this$options.initialCountry, nationalMode = _this$options.nationalMode, autoHideDialCode = _this$options.autoHideDialCode, separateDialCode = _this$options.separateDialCode;
-                    // if we already have a dial code, and it's not a regionlessNanp, we can go ahead and set the
-                    // flag, else fall back to the default country
-                    if (dialCode && !isRegionlessNanp) {
-                        this._updateFlagFromNumber(val);
-                    } else if (initialCountry !== "auto") {
-                        // see if we should select a flag
-                        if (initialCountry) {
-                            this._setFlag(initialCountry.toLowerCase());
-                        } else {
-                            if (dialCode && isRegionlessNanp) {
-                                // has intl dial code, is regionless nanp, and no initialCountry, so default to US
-                                this._setFlag("us");
-                            } else {
-                                // no dial code and no initialCountry, so default to first in list
-                                this.defaultCountry = this.preferredCountries.length ? this.preferredCountries[0].iso2 : this.countries[0].iso2;
-                                if (!val) {
-                                    this._setFlag(this.defaultCountry);
-                                }
-                            }
-                        }
-                        // if empty and no nationalMode and no autoHideDialCode then insert the default dial code
-                        if (!val && !nationalMode && !autoHideDialCode && !separateDialCode) {
-                            this.telInput.value = "+".concat(this.selectedCountryData.dialCode);
-                        }
-                    }
-                    // NOTE: if initialCountry is set to auto, that will be handled separately
-                    // format - note this wont be run after _updateDialCode as that's only called if no val
-                    if (val) this._updateValFromNumber(val);
-                }
-            }, {
-                key: "_initListeners",
-                value: function _initListeners() {
-                    this._initKeyListeners();
-                    if (this.options.autoHideDialCode) this._initBlurListeners();
-                    if (this.options.allowDropdown) this._initDropdownListeners();
-                    if (this.hiddenInput) this._initHiddenInputListener();
-                }
-            }, {
-                key: "_initHiddenInputListener",
-                value: function _initHiddenInputListener() {
-                    var _this3 = this;
-                    this._handleHiddenInputSubmit = function() {
-                        _this3.hiddenInput.value = _this3.getNumber();
-                    };
-                    if (this.telInput.form) this.telInput.form.addEventListener("submit", this._handleHiddenInputSubmit);
-                }
-            }, {
-                key: "_getClosestLabel",
-                value: function _getClosestLabel() {
-                    var el = this.telInput;
-                    while (el && el.tagName !== "LABEL") {
-                        el = el.parentNode;
-                    }
-                    return el;
-                }
-            }, {
-                key: "_initDropdownListeners",
-                value: function _initDropdownListeners() {
-                    var _this4 = this;
-                    // hack for input nested inside label (which is valid markup): clicking the selected-flag to
-                    // open the dropdown would then automatically trigger a 2nd click on the input which would
-                    // close it again
-                    this._handleLabelClick = function(e) {
-                        // if the dropdown is closed, then focus the input, else ignore the click
-                        if (_this4.countryList.classList.contains("iti__hide")) _this4.telInput.focus(); else e.preventDefault();
-                    };
-                    var label = this._getClosestLabel();
-                    if (label) label.addEventListener("click", this._handleLabelClick);
-                    // toggle country dropdown on click
-                    this._handleClickSelectedFlag = function() {
-                        // only intercept this event if we're opening the dropdown
-                        // else let it bubble up to the top ("click-off-to-close" listener)
-                        // we cannot just stopPropagation as it may be needed to close another instance
-                        if (_this4.countryList.classList.contains("iti__hide") && !_this4.telInput.disabled && !_this4.telInput.readOnly) {
-                            _this4._showDropdown();
-                        }
-                    };
-                    this.selectedFlag.addEventListener("click", this._handleClickSelectedFlag);
-                    // open dropdown list if currently focused
-                    this._handleFlagsContainerKeydown = function(e) {
-                        var isDropdownHidden = _this4.countryList.classList.contains("iti__hide");
-                        if (isDropdownHidden && [ "ArrowUp", "Up", "ArrowDown", "Down", " ", "Enter" ].indexOf(e.key) !== -1) {
-                            // prevent form from being submitted if "ENTER" was pressed
-                            e.preventDefault();
-                            // prevent event from being handled again by document
-                            e.stopPropagation();
-                            _this4._showDropdown();
-                        }
-                        // allow navigation from dropdown to input on TAB
-                        if (e.key === "Tab") _this4._closeDropdown();
-                    };
-                    this.flagsContainer.addEventListener("keydown", this._handleFlagsContainerKeydown);
-                }
-            }, {
-                key: "_initRequests",
-                value: function _initRequests() {
-                    var _this5 = this;
-                    // if the user has specified the path to the utils script, fetch it on window.load, else resolve
-                    if (this.options.utilsScript && !window.intlTelInputUtils) {
-                        // if the plugin is being initialised after the window.load event has already been fired
-                        if (window.intlTelInputGlobals.documentReady()) {
-                            window.intlTelInputGlobals.loadUtils(this.options.utilsScript);
-                        } else {
-                            // wait until the load event so we don't block any other requests e.g. the flags image
-                            window.addEventListener("load", function() {
-                                window.intlTelInputGlobals.loadUtils(_this5.options.utilsScript);
-                            });
-                        }
-                    } else this.resolveUtilsScriptPromise();
-                    if (this.options.initialCountry === "auto") this._loadAutoCountry(); else this.resolveAutoCountryPromise();
-                }
-            }, {
-                key: "_loadAutoCountry",
-                value: function _loadAutoCountry() {
-                    // 3 options:
-                    // 1) already loaded (we're done)
-                    // 2) not already started loading (start)
-                    // 3) already started loading (do nothing - just wait for loading callback to fire)
-                    if (window.intlTelInputGlobals.autoCountry) {
-                        this.handleAutoCountry();
-                    } else if (!window.intlTelInputGlobals.startedLoadingAutoCountry) {
-                        // don't do this twice!
-                        window.intlTelInputGlobals.startedLoadingAutoCountry = true;
-                        if (typeof this.options.geoIpLookup === "function") {
-                            this.options.geoIpLookup(function(countryCode) {
-                                window.intlTelInputGlobals.autoCountry = countryCode.toLowerCase();
-                                // tell all instances the auto country is ready
-                                // TODO: this should just be the current instances
-                                // UPDATE: use setTimeout in case their geoIpLookup function calls this callback straight
-                                // away (e.g. if they have already done the geo ip lookup somewhere else). Using
-                                // setTimeout means that the current thread of execution will finish before executing
-                                // this, which allows the plugin to finish initialising.
-                                setTimeout(function() {
-                                    return forEachInstance("handleAutoCountry");
-                                });
-                            }, function() {
-                                return forEachInstance("rejectAutoCountryPromise");
-                            });
-                        }
-                    }
-                }
-            }, {
-                key: "_initKeyListeners",
-                value: function _initKeyListeners() {
-                    var _this6 = this;
-                    // update flag on keyup
-                    this._handleKeyupEvent = function() {
-                        if (_this6._updateFlagFromNumber(_this6.telInput.value)) {
-                            _this6._triggerCountryChange();
-                        }
-                    };
-                    this.telInput.addEventListener("keyup", this._handleKeyupEvent);
-                    // update flag on cut/paste events (now supported in all major browsers)
-                    this._handleClipboardEvent = function() {
-                        // hack because "paste" event is fired before input is updated
-                        setTimeout(_this6._handleKeyupEvent);
-                    };
-                    this.telInput.addEventListener("cut", this._handleClipboardEvent);
-                    this.telInput.addEventListener("paste", this._handleClipboardEvent);
-                }
-            }, {
-                key: "_cap",
-                value: function _cap(number) {
-                    var max = this.telInput.getAttribute("maxlength");
-                    return max && number.length > max ? number.substr(0, max) : number;
-                }
-            }, {
-                key: "_initBlurListeners",
-                value: function _initBlurListeners() {
-                    var _this7 = this;
-                    // on blur or form submit: if just a dial code then remove it
-                    this._handleSubmitOrBlurEvent = function() {
-                        _this7._removeEmptyDialCode();
-                    };
-                    if (this.telInput.form) this.telInput.form.addEventListener("submit", this._handleSubmitOrBlurEvent);
-                    this.telInput.addEventListener("blur", this._handleSubmitOrBlurEvent);
-                }
-            }, {
-                key: "_removeEmptyDialCode",
-                value: function _removeEmptyDialCode() {
-                    if (this.telInput.value.charAt(0) === "+") {
-                        var numeric = this._getNumeric(this.telInput.value);
-                        // if just a plus, or if just a dial code
-                        if (!numeric || this.selectedCountryData.dialCode === numeric) {
-                            this.telInput.value = "";
-                        }
-                    }
-                }
-            }, {
-                key: "_getNumeric",
-                value: function _getNumeric(s) {
-                    return s.replace(/\D/g, "");
-                }
-            }, {
-                key: "_trigger",
-                value: function _trigger(name) {
-                    // have to use old school document.createEvent as IE11 doesn't support `new Event()` syntax
-                    var e = document.createEvent("Event");
-                    e.initEvent(name, true, true);
-                    // can bubble, and is cancellable
-                    this.telInput.dispatchEvent(e);
-                }
-            }, {
-                key: "_showDropdown",
-                value: function _showDropdown() {
-                    this.countryList.classList.remove("iti__hide");
-                    this.selectedFlag.setAttribute("aria-expanded", "true");
-                    this._setDropdownPosition();
-                    // update highlighting and scroll to active list item
-                    if (this.activeItem) {
-                        this._highlightListItem(this.activeItem, false);
-                        this._scrollTo(this.activeItem, true);
-                    }
-                    // bind all the dropdown-related listeners: mouseover, click, click-off, keydown
-                    this._bindDropdownListeners();
-                    // update the arrow
-                    this.dropdownArrow.classList.add("iti__arrow--up");
-                    this._trigger("open:countrydropdown");
-                }
-            }, {
-                key: "_toggleClass",
-                value: function _toggleClass(el, className, shouldHaveClass) {
-                    if (shouldHaveClass && !el.classList.contains(className)) el.classList.add(className); else if (!shouldHaveClass && el.classList.contains(className)) el.classList.remove(className);
-                }
-            }, {
-                key: "_setDropdownPosition",
-                value: function _setDropdownPosition() {
-                    var _this8 = this;
-                    if (this.options.dropdownContainer) {
-                        this.options.dropdownContainer.appendChild(this.dropdown);
-                    }
-                    if (!this.isMobile) {
-                        var pos = this.telInput.getBoundingClientRect();
-                        // windowTop from https://stackoverflow.com/a/14384091/217866
-                        var windowTop = window.pageYOffset || document.documentElement.scrollTop;
-                        var inputTop = pos.top + windowTop;
-                        var dropdownHeight = this.countryList.offsetHeight;
-                        // dropdownFitsBelow = (dropdownBottom < windowBottom)
-                        var dropdownFitsBelow = inputTop + this.telInput.offsetHeight + dropdownHeight < windowTop + window.innerHeight;
-                        var dropdownFitsAbove = inputTop - dropdownHeight > windowTop;
-                        // by default, the dropdown will be below the input. If we want to position it above the
-                        // input, we add the dropup class.
-                        this._toggleClass(this.countryList, "iti__country-list--dropup", !dropdownFitsBelow && dropdownFitsAbove);
-                        // if dropdownContainer is enabled, calculate postion
-                        if (this.options.dropdownContainer) {
-                            // by default the dropdown will be directly over the input because it's not in the flow.
-                            // If we want to position it below, we need to add some extra top value.
-                            var extraTop = !dropdownFitsBelow && dropdownFitsAbove ? 0 : this.telInput.offsetHeight;
-                            // calculate placement
-                            this.dropdown.style.top = "".concat(inputTop + extraTop, "px");
-                            this.dropdown.style.left = "".concat(pos.left + document.body.scrollLeft, "px");
-                            // close menu on window scroll
-                            this._handleWindowScroll = function() {
-                                return _this8._closeDropdown();
-                            };
-                            window.addEventListener("scroll", this._handleWindowScroll);
-                        }
-                    }
-                }
-            }, {
-                key: "_getClosestListItem",
-                value: function _getClosestListItem(target) {
-                    var el = target;
-                    while (el && el !== this.countryList && !el.classList.contains("iti__country")) {
-                        el = el.parentNode;
-                    }
-                    // if we reached the countryList element, then return null
-                    return el === this.countryList ? null : el;
-                }
-            }, {
-                key: "_bindDropdownListeners",
-                value: function _bindDropdownListeners() {
-                    var _this9 = this;
-                    // when mouse over a list item, just highlight that one
-                    // we add the class "highlight", so if they hit "enter" we know which one to select
-                    this._handleMouseoverCountryList = function(e) {
-                        // handle event delegation, as we're listening for this event on the countryList
-                        var listItem = _this9._getClosestListItem(e.target);
-                        if (listItem) _this9._highlightListItem(listItem, false);
-                    };
-                    this.countryList.addEventListener("mouseover", this._handleMouseoverCountryList);
-                    // listen for country selection
-                    this._handleClickCountryList = function(e) {
-                        var listItem = _this9._getClosestListItem(e.target);
-                        if (listItem) _this9._selectListItem(listItem);
-                    };
-                    this.countryList.addEventListener("click", this._handleClickCountryList);
-                    // click off to close
-                    // (except when this initial opening click is bubbling up)
-                    // we cannot just stopPropagation as it may be needed to close another instance
-                    var isOpening = true;
-                    this._handleClickOffToClose = function() {
-                        if (!isOpening) _this9._closeDropdown();
-                        isOpening = false;
-                    };
-                    document.documentElement.addEventListener("click", this._handleClickOffToClose);
-                    // listen for up/down scrolling, enter to select, or letters to jump to country name.
-                    // use keydown as keypress doesn't fire for non-char keys and we want to catch if they
-                    // just hit down and hold it to scroll down (no keyup event).
-                    // listen on the document because that's where key events are triggered if no input has focus
-                    var query = "";
-                    var queryTimer = null;
-                    this._handleKeydownOnDropdown = function(e) {
-                        // prevent down key from scrolling the whole page,
-                        // and enter key from submitting a form etc
-                        e.preventDefault();
-                        // up and down to navigate
-                        if (e.key === "ArrowUp" || e.key === "Up" || e.key === "ArrowDown" || e.key === "Down") _this9._handleUpDownKey(e.key); else if (e.key === "Enter") _this9._handleEnterKey(); else if (e.key === "Escape") _this9._closeDropdown(); else if (/^[a-zA-ZÀ-ÿа-яА-Я ]$/.test(e.key)) {
-                            // jump to countries that start with the query string
-                            if (queryTimer) clearTimeout(queryTimer);
-                            query += e.key.toLowerCase();
-                            _this9._searchForCountry(query);
-                            // if the timer hits 1 second, reset the query
-                            queryTimer = setTimeout(function() {
-                                query = "";
-                            }, 1e3);
-                        }
-                    };
-                    document.addEventListener("keydown", this._handleKeydownOnDropdown);
-                }
-            }, {
-                key: "_handleUpDownKey",
-                value: function _handleUpDownKey(key) {
-                    var next = key === "ArrowUp" || key === "Up" ? this.highlightedItem.previousElementSibling : this.highlightedItem.nextElementSibling;
-                    if (next) {
-                        // skip the divider
-                        if (next.classList.contains("iti__divider")) {
-                            next = key === "ArrowUp" || key === "Up" ? next.previousElementSibling : next.nextElementSibling;
-                        }
-                        this._highlightListItem(next, true);
-                    }
-                }
-            }, {
-                key: "_handleEnterKey",
-                value: function _handleEnterKey() {
-                    if (this.highlightedItem) this._selectListItem(this.highlightedItem);
-                }
-            }, {
-                key: "_searchForCountry",
-                value: function _searchForCountry(query) {
-                    for (var i = 0; i < this.countries.length; i++) {
-                        if (this._startsWith(this.countries[i].name, query)) {
-                            var listItem = this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(this.countries[i].iso2));
-                            // update highlighting and scroll
-                            this._highlightListItem(listItem, false);
-                            this._scrollTo(listItem, true);
-                            break;
-                        }
-                    }
-                }
-            }, {
-                key: "_startsWith",
-                value: function _startsWith(a, b) {
-                    return a.substr(0, b.length).toLowerCase() === b;
-                }
-            }, {
-                key: "_updateValFromNumber",
-                value: function _updateValFromNumber(originalNumber) {
-                    var number = originalNumber;
-                    if (this.options.formatOnDisplay && window.intlTelInputUtils && this.selectedCountryData) {
-                        var useNational = !this.options.separateDialCode && (this.options.nationalMode || number.charAt(0) !== "+");
-                        var _intlTelInputUtils$nu = intlTelInputUtils.numberFormat, NATIONAL = _intlTelInputUtils$nu.NATIONAL, INTERNATIONAL = _intlTelInputUtils$nu.INTERNATIONAL;
-                        var format = useNational ? NATIONAL : INTERNATIONAL;
-                        number = intlTelInputUtils.formatNumber(number, this.selectedCountryData.iso2, format);
-                    }
-                    number = this._beforeSetNumber(number);
-                    this.telInput.value = number;
-                }
-            }, {
-                key: "_updateFlagFromNumber",
-                value: function _updateFlagFromNumber(originalNumber) {
-                    // if we're in nationalMode and we already have US/Canada selected, make sure the number starts
-                    // with a +1 so _getDialCode will be able to extract the area code
-                    // update: if we dont yet have selectedCountryData, but we're here (trying to update the flag
-                    // from the number), that means we're initialising the plugin with a number that already has a
-                    // dial code, so fine to ignore this bit
-                    var number = originalNumber;
-                    var selectedDialCode = this.selectedCountryData.dialCode;
-                    var isNanp = selectedDialCode === "1";
-                    if (number && this.options.nationalMode && isNanp && number.charAt(0) !== "+") {
-                        if (number.charAt(0) !== "1") number = "1".concat(number);
-                        number = "+".concat(number);
-                    }
-                    // update flag if user types area code for another country
-                    if (this.options.separateDialCode && selectedDialCode && number.charAt(0) !== "+") {
-                        number = "+".concat(selectedDialCode).concat(number);
-                    }
-                    // try and extract valid dial code from input
-                    var dialCode = this._getDialCode(number, true);
-                    var numeric = this._getNumeric(number);
-                    var countryCode = null;
-                    if (dialCode) {
-                        var countryCodes = this.countryCodes[this._getNumeric(dialCode)];
-                        // check if the right country is already selected. this should be false if the number is
-                        // longer than the matched dial code because in this case we need to make sure that if
-                        // there are multiple country matches, that the first one is selected (note: we could
-                        // just check that here, but it requires the same loop that we already have later)
-                        var alreadySelected = countryCodes.indexOf(this.selectedCountryData.iso2) !== -1 && numeric.length <= dialCode.length - 1;
-                        var isRegionlessNanpNumber = selectedDialCode === "1" && this._isRegionlessNanp(numeric);
-                        // only update the flag if:
-                        // A) NOT (we currently have a NANP flag selected, and the number is a regionlessNanp)
-                        // AND
-                        // B) the right country is not already selected
-                        if (!isRegionlessNanpNumber && !alreadySelected) {
-                            // if using onlyCountries option, countryCodes[0] may be empty, so we must find the first
-                            // non-empty index
-                            for (var j = 0; j < countryCodes.length; j++) {
-                                if (countryCodes[j]) {
-                                    countryCode = countryCodes[j];
-                                    break;
-                                }
-                            }
-                        }
-                    } else if (number.charAt(0) === "+" && numeric.length) {
-                        // invalid dial code, so empty
-                        // Note: use getNumeric here because the number has not been formatted yet, so could contain
-                        // bad chars
-                        countryCode = "";
-                    } else if (!number || number === "+") {
-                        // empty, or just a plus, so default
-                        countryCode = this.defaultCountry;
-                    }
-                    if (countryCode !== null) {
-                        return this._setFlag(countryCode);
-                    }
-                    return false;
-                }
-            }, {
-                key: "_isRegionlessNanp",
-                value: function _isRegionlessNanp(number) {
-                    var numeric = this._getNumeric(number);
-                    if (numeric.charAt(0) === "1") {
-                        var areaCode = numeric.substr(1, 3);
-                        return regionlessNanpNumbers.indexOf(areaCode) !== -1;
-                    }
-                    return false;
-                }
-            }, {
-                key: "_highlightListItem",
-                value: function _highlightListItem(listItem, shouldFocus) {
-                    var prevItem = this.highlightedItem;
-                    if (prevItem) prevItem.classList.remove("iti__highlight");
-                    this.highlightedItem = listItem;
-                    this.highlightedItem.classList.add("iti__highlight");
-                    if (shouldFocus) this.highlightedItem.focus();
-                }
-            }, {
-                key: "_getCountryData",
-                value: function _getCountryData(countryCode, ignoreOnlyCountriesOption, allowFail) {
-                    var countryList = ignoreOnlyCountriesOption ? allCountries : this.countries;
-                    for (var i = 0; i < countryList.length; i++) {
-                        if (countryList[i].iso2 === countryCode) {
-                            return countryList[i];
-                        }
-                    }
-                    if (allowFail) {
-                        return null;
-                    }
-                    throw new Error("No country data for '".concat(countryCode, "'"));
-                }
-            }, {
-                key: "_setFlag",
-                value: function _setFlag(countryCode) {
-                    var prevCountry = this.selectedCountryData.iso2 ? this.selectedCountryData : {};
-                    // do this first as it will throw an error and stop if countryCode is invalid
-                    this.selectedCountryData = countryCode ? this._getCountryData(countryCode, false, false) : {};
-                    // update the defaultCountry - we only need the iso2 from now on, so just store that
-                    if (this.selectedCountryData.iso2) {
-                        this.defaultCountry = this.selectedCountryData.iso2;
-                    }
-                    this.selectedFlagInner.setAttribute("class", "iti__flag iti__".concat(countryCode));
-                    // update the selected country's title attribute
-                    var title = countryCode ? "".concat(this.selectedCountryData.name, ": +").concat(this.selectedCountryData.dialCode) : "Unknown";
-                    this.selectedFlag.setAttribute("title", title);
-                    if (this.options.separateDialCode) {
-                        var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
-                        this.selectedDialCode.innerHTML = dialCode;
-                        // offsetWidth is zero if input is in a hidden container during initialisation
-                        var selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
-                        // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
-                        this.telInput.style.paddingLeft = "".concat(selectedFlagWidth + 6, "px");
-                    }
-                    // and the input's placeholder
-                    this._updatePlaceholder();
-                    // update the active list item
-                    if (this.options.allowDropdown) {
-                        var prevItem = this.activeItem;
-                        if (prevItem) {
-                            prevItem.classList.remove("iti__active");
-                            prevItem.setAttribute("aria-selected", "false");
-                        }
-                        if (countryCode) {
-                            // check if there is a preferred item first, else fall back to standard
-                            var nextItem = this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(countryCode, "-preferred")) || this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(countryCode));
-                            nextItem.setAttribute("aria-selected", "true");
-                            nextItem.classList.add("iti__active");
-                            this.activeItem = nextItem;
-                            this.selectedFlag.setAttribute("aria-activedescendant", nextItem.getAttribute("id"));
-                        }
-                    }
-                    // return if the flag has changed or not
-                    return prevCountry.iso2 !== countryCode;
-                }
-            }, {
-                key: "_getHiddenSelectedFlagWidth",
-                value: function _getHiddenSelectedFlagWidth() {
-                    // to get the right styling to apply, all we need is a shallow clone of the container,
-                    // and then to inject a deep clone of the selectedFlag element
-                    var containerClone = this.telInput.parentNode.cloneNode();
-                    containerClone.style.visibility = "hidden";
-                    document.body.appendChild(containerClone);
-                    var flagsContainerClone = this.flagsContainer.cloneNode();
-                    containerClone.appendChild(flagsContainerClone);
-                    var selectedFlagClone = this.selectedFlag.cloneNode(true);
-                    flagsContainerClone.appendChild(selectedFlagClone);
-                    var width = selectedFlagClone.offsetWidth;
-                    containerClone.parentNode.removeChild(containerClone);
-                    return width;
-                }
-            }, {
-                key: "_updatePlaceholder",
-                value: function _updatePlaceholder() {
-                    var shouldSetPlaceholder = this.options.autoPlaceholder === "aggressive" || !this.hadInitialPlaceholder && this.options.autoPlaceholder === "polite";
-                    if (window.intlTelInputUtils && shouldSetPlaceholder) {
-                        var numberType = intlTelInputUtils.numberType[this.options.placeholderNumberType];
-                        var placeholder = this.selectedCountryData.iso2 ? intlTelInputUtils.getExampleNumber(this.selectedCountryData.iso2, this.options.nationalMode, numberType) : "";
-                        placeholder = this._beforeSetNumber(placeholder);
-                        if (typeof this.options.customPlaceholder === "function") {
-                            placeholder = this.options.customPlaceholder(placeholder, this.selectedCountryData);
-                        }
-                        this.telInput.setAttribute("placeholder", placeholder);
-                    }
-                }
-            }, {
-                key: "_selectListItem",
-                value: function _selectListItem(listItem) {
-                    // update selected flag and active list item
-                    var flagChanged = this._setFlag(listItem.getAttribute("data-country-code"));
-                    this._closeDropdown();
-                    this._updateDialCode(listItem.getAttribute("data-dial-code"), true);
-                    // focus the input
-                    this.telInput.focus();
-                    // put cursor at end - this fix is required for FF and IE11 (with nationalMode=false i.e. auto
-                    // inserting dial code), who try to put the cursor at the beginning the first time
-                    var len = this.telInput.value.length;
-                    this.telInput.setSelectionRange(len, len);
-                    if (flagChanged) {
-                        this._triggerCountryChange();
-                    }
-                }
-            }, {
-                key: "_closeDropdown",
-                value: function _closeDropdown() {
-                    this.countryList.classList.add("iti__hide");
-                    this.selectedFlag.setAttribute("aria-expanded", "false");
-                    // update the arrow
-                    this.dropdownArrow.classList.remove("iti__arrow--up");
-                    // unbind key events
-                    document.removeEventListener("keydown", this._handleKeydownOnDropdown);
-                    document.documentElement.removeEventListener("click", this._handleClickOffToClose);
-                    this.countryList.removeEventListener("mouseover", this._handleMouseoverCountryList);
-                    this.countryList.removeEventListener("click", this._handleClickCountryList);
-                    // remove menu from container
-                    if (this.options.dropdownContainer) {
-                        if (!this.isMobile) window.removeEventListener("scroll", this._handleWindowScroll);
-                        if (this.dropdown.parentNode) this.dropdown.parentNode.removeChild(this.dropdown);
-                    }
-                    this._trigger("close:countrydropdown");
-                }
-            }, {
-                key: "_scrollTo",
-                value: function _scrollTo(element, middle) {
-                    var container = this.countryList;
-                    // windowTop from https://stackoverflow.com/a/14384091/217866
-                    var windowTop = window.pageYOffset || document.documentElement.scrollTop;
-                    var containerHeight = container.offsetHeight;
-                    var containerTop = container.getBoundingClientRect().top + windowTop;
-                    var containerBottom = containerTop + containerHeight;
-                    var elementHeight = element.offsetHeight;
-                    var elementTop = element.getBoundingClientRect().top + windowTop;
-                    var elementBottom = elementTop + elementHeight;
-                    var newScrollTop = elementTop - containerTop + container.scrollTop;
-                    var middleOffset = containerHeight / 2 - elementHeight / 2;
-                    if (elementTop < containerTop) {
-                        // scroll up
-                        if (middle) newScrollTop -= middleOffset;
-                        container.scrollTop = newScrollTop;
-                    } else if (elementBottom > containerBottom) {
-                        // scroll down
-                        if (middle) newScrollTop += middleOffset;
-                        var heightDifference = containerHeight - elementHeight;
-                        container.scrollTop = newScrollTop - heightDifference;
-                    }
-                }
-            }, {
-                key: "_updateDialCode",
-                value: function _updateDialCode(newDialCodeBare, hasSelectedListItem) {
-                    var inputVal = this.telInput.value;
-                    // save having to pass this every time
-                    var newDialCode = "+".concat(newDialCodeBare);
-                    var newNumber;
-                    if (inputVal.charAt(0) === "+") {
-                        // there's a plus so we're dealing with a replacement (doesn't matter if nationalMode or not)
-                        var prevDialCode = this._getDialCode(inputVal);
-                        if (prevDialCode) {
-                            // current number contains a valid dial code, so replace it
-                            newNumber = inputVal.replace(prevDialCode, newDialCode);
-                        } else {
-                            // current number contains an invalid dial code, so ditch it
-                            // (no way to determine where the invalid dial code ends and the rest of the number begins)
-                            newNumber = newDialCode;
-                        }
-                    } else if (this.options.nationalMode || this.options.separateDialCode) {
-                        // don't do anything
-                        return;
-                    } else {
-                        // nationalMode is disabled
-                        if (inputVal) {
-                            // there is an existing value with no dial code: prefix the new dial code
-                            newNumber = newDialCode + inputVal;
-                        } else if (hasSelectedListItem || !this.options.autoHideDialCode) {
-                            // no existing value and either they've just selected a list item, or autoHideDialCode is
-                            // disabled: insert new dial code
-                            newNumber = newDialCode;
-                        } else {
-                            return;
-                        }
-                    }
-                    this.telInput.value = newNumber;
-                }
-            }, {
-                key: "_getDialCode",
-                value: function _getDialCode(number, includeAreaCode) {
-                    var dialCode = "";
-                    // only interested in international numbers (starting with a plus)
-                    if (number.charAt(0) === "+") {
-                        var numericChars = "";
-                        // iterate over chars
-                        for (var i = 0; i < number.length; i++) {
-                            var c = number.charAt(i);
-                            // if char is number (https://stackoverflow.com/a/8935649/217866)
-                            if (!isNaN(parseInt(c, 10))) {
-                                numericChars += c;
-                                // if current numericChars make a valid dial code
-                                if (includeAreaCode) {
-                                    if (this.countryCodes[numericChars]) {
-                                        // store the actual raw string (useful for matching later)
-                                        dialCode = number.substr(0, i + 1);
-                                    }
-                                } else {
-                                    if (this.dialCodes[numericChars]) {
-                                        dialCode = number.substr(0, i + 1);
-                                        // if we're just looking for a dial code, we can break as soon as we find one
-                                        break;
-                                    }
-                                }
-                                // stop searching as soon as we can - in this case when we hit max len
-                                if (numericChars.length === this.countryCodeMaxLen) {
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    return dialCode;
-                }
-            }, {
-                key: "_getFullNumber",
-                value: function _getFullNumber() {
-                    var val = this.telInput.value.trim();
-                    var dialCode = this.selectedCountryData.dialCode;
-                    var prefix;
-                    var numericVal = this._getNumeric(val);
-                    if (this.options.separateDialCode && val.charAt(0) !== "+" && dialCode && numericVal) {
-                        // when using separateDialCode, it is visible so is effectively part of the typed number
-                        prefix = "+".concat(dialCode);
-                    } else {
-                        prefix = "";
-                    }
-                    return prefix + val;
-                }
-            }, {
-                key: "_beforeSetNumber",
-                value: function _beforeSetNumber(originalNumber) {
-                    var number = originalNumber;
-                    if (this.options.separateDialCode) {
-                        var dialCode = this._getDialCode(number);
-                        // if there is a valid dial code
-                        if (dialCode) {
-                            // in case _getDialCode returned an area code as well
-                            dialCode = "+".concat(this.selectedCountryData.dialCode);
-                            // a lot of numbers will have a space separating the dial code and the main number, and
-                            // some NANP numbers will have a hyphen e.g. +1 684-733-1234 - in both cases we want to get
-                            // rid of it
-                            // NOTE: don't just trim all non-numerics as may want to preserve an open parenthesis etc
-                            var start = number[dialCode.length] === " " || number[dialCode.length] === "-" ? dialCode.length + 1 : dialCode.length;
-                            number = number.substr(start);
-                        }
-                    }
-                    return this._cap(number);
-                }
-            }, {
-                key: "_triggerCountryChange",
-                value: function _triggerCountryChange() {
-                    this._trigger("countrychange");
-                }
-            }, {
-                key: "handleAutoCountry",
-                value: function handleAutoCountry() {
-                    if (this.options.initialCountry === "auto") {
-                        // we must set this even if there is an initial val in the input: in case the initial val is
-                        // invalid and they delete it - they should see their auto country
-                        this.defaultCountry = window.intlTelInputGlobals.autoCountry;
-                        // if there's no initial value in the input, then update the flag
-                        if (!this.telInput.value) {
-                            this.setCountry(this.defaultCountry);
-                        }
-                        this.resolveAutoCountryPromise();
-                    }
-                }
-            }, {
-                key: "handleUtils",
-                value: function handleUtils() {
-                    // if the request was successful
-                    if (window.intlTelInputUtils) {
-                        // if there's an initial value in the input, then format it
-                        if (this.telInput.value) {
-                            this._updateValFromNumber(this.telInput.value);
-                        }
-                        this._updatePlaceholder();
-                    }
-                    this.resolveUtilsScriptPromise();
-                }
-            }, {
-                key: "destroy",
-                value: function destroy() {
-                    var form = this.telInput.form;
-                    if (this.options.allowDropdown) {
-                        // make sure the dropdown is closed (and unbind listeners)
-                        this._closeDropdown();
-                        this.selectedFlag.removeEventListener("click", this._handleClickSelectedFlag);
-                        this.flagsContainer.removeEventListener("keydown", this._handleFlagsContainerKeydown);
-                        // label click hack
-                        var label = this._getClosestLabel();
-                        if (label) label.removeEventListener("click", this._handleLabelClick);
-                    }
-                    // unbind hiddenInput listeners
-                    if (this.hiddenInput && form) form.removeEventListener("submit", this._handleHiddenInputSubmit);
-                    // unbind autoHideDialCode listeners
-                    if (this.options.autoHideDialCode) {
-                        if (form) form.removeEventListener("submit", this._handleSubmitOrBlurEvent);
-                        this.telInput.removeEventListener("blur", this._handleSubmitOrBlurEvent);
-                    }
-                    // unbind key events, and cut/paste events
-                    this.telInput.removeEventListener("keyup", this._handleKeyupEvent);
-                    this.telInput.removeEventListener("cut", this._handleClipboardEvent);
-                    this.telInput.removeEventListener("paste", this._handleClipboardEvent);
-                    // remove attribute of id instance: data-intl-tel-input-id
-                    this.telInput.removeAttribute("data-intl-tel-input-id");
-                    // remove markup (but leave the original input)
-                    var wrapper = this.telInput.parentNode;
-                    wrapper.parentNode.insertBefore(this.telInput, wrapper);
-                    wrapper.parentNode.removeChild(wrapper);
-                    delete window.intlTelInputGlobals.instances[this.id];
-                }
-            }, {
-                key: "getExtension",
-                value: function getExtension() {
-                    if (window.intlTelInputUtils) {
-                        return intlTelInputUtils.getExtension(this._getFullNumber(), this.selectedCountryData.iso2);
-                    }
-                    return "";
-                }
-            }, {
-                key: "getNumber",
-                value: function getNumber(format) {
-                    if (window.intlTelInputUtils) {
-                        var iso2 = this.selectedCountryData.iso2;
-                        return intlTelInputUtils.formatNumber(this._getFullNumber(), iso2, format);
-                    }
-                    return "";
-                }
-            }, {
-                key: "getNumberType",
-                value: function getNumberType() {
-                    if (window.intlTelInputUtils) {
-                        return intlTelInputUtils.getNumberType(this._getFullNumber(), this.selectedCountryData.iso2);
-                    }
-                    return -99;
-                }
-            }, {
-                key: "getSelectedCountryData",
-                value: function getSelectedCountryData() {
-                    return this.selectedCountryData;
-                }
-            }, {
-                key: "getValidationError",
-                value: function getValidationError() {
-                    if (window.intlTelInputUtils) {
-                        var iso2 = this.selectedCountryData.iso2;
-                        return intlTelInputUtils.getValidationError(this._getFullNumber(), iso2);
-                    }
-                    return -99;
-                }
-            }, {
-                key: "isValidNumber",
-                value: function isValidNumber() {
-                    var val = this._getFullNumber().trim();
-                    var countryCode = this.options.nationalMode ? this.selectedCountryData.iso2 : "";
-                    return window.intlTelInputUtils ? intlTelInputUtils.isValidNumber(val, countryCode) : null;
-                }
-            }, {
-                key: "setCountry",
-                value: function setCountry(originalCountryCode) {
-                    var countryCode = originalCountryCode.toLowerCase();
-                    // check if already selected
-                    if (!this.selectedFlagInner.classList.contains("iti__".concat(countryCode))) {
-                        this._setFlag(countryCode);
-                        this._updateDialCode(this.selectedCountryData.dialCode, false);
-                        this._triggerCountryChange();
-                    }
-                }
-            }, {
-                key: "setNumber",
-                value: function setNumber(number) {
-                    // we must update the flag first, which updates this.selectedCountryData, which is used for
-                    // formatting the number before displaying it
-                    var flagChanged = this._updateFlagFromNumber(number);
-                    this._updateValFromNumber(number);
-                    if (flagChanged) {
-                        this._triggerCountryChange();
-                    }
-                }
-            }, {
-                key: "setPlaceholderNumberType",
-                value: function setPlaceholderNumberType(type) {
-                    this.options.placeholderNumberType = type;
-                    this._updatePlaceholder();
-                }
-            } ]);
-            return Iti;
-        }();
-        /********************
- *  STATIC METHODS
- ********************/
-        // get the country data object
-        intlTelInputGlobals.getCountryData = function() {
-            return allCountries;
-        };
-        // inject a <script> element to load utils.js
-        var injectScript = function injectScript(path, handleSuccess, handleFailure) {
-            // inject a new script element into the page
-            var script = document.createElement("script");
-            script.onload = function() {
-                forEachInstance("handleUtils");
-                if (handleSuccess) handleSuccess();
-            };
-            script.onerror = function() {
-                forEachInstance("rejectUtilsScriptPromise");
-                if (handleFailure) handleFailure();
-            };
-            script.className = "iti-load-utils";
-            script.async = true;
-            script.src = path;
-            document.body.appendChild(script);
-        };
-        // load the utils script
-        intlTelInputGlobals.loadUtils = function(path) {
-            // 2 options:
-            // 1) not already started loading (start)
-            // 2) already started loading (do nothing - just wait for the onload callback to fire, which will
-            // trigger handleUtils on all instances, invoking their resolveUtilsScriptPromise functions)
-            if (!window.intlTelInputUtils && !window.intlTelInputGlobals.startedLoadingUtilsScript) {
-                // only do this once
-                window.intlTelInputGlobals.startedLoadingUtilsScript = true;
-                // if we have promises, then return a promise
-                if (typeof Promise !== "undefined") {
-                    return new Promise(function(resolve, reject) {
-                        return injectScript(path, resolve, reject);
-                    });
-                }
-                injectScript(path);
-            }
-            return null;
-        };
-        // default options
-        intlTelInputGlobals.defaults = defaults;
-        // version
-        intlTelInputGlobals.version = "17.0.6";
-        // convenience wrapper
-        return function(input, options) {
-            var iti = new Iti(input, options);
-            iti._init();
-            input.setAttribute("data-intl-tel-input-id", iti.id);
-            window.intlTelInputGlobals.instances[iti.id] = iti;
-            return iti;
-        };
-    }();
-});
-
-/***/ }),
-/* 25 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*! choices.js v9.0.1 | © 2019 Josh Johnson | https://github.com/jshjohnson/Choices#readme */
@@ -34230,7 +29858,7 @@ function () {
 });
 
 /***/ }),
-/* 26 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (root, factory) {
@@ -34588,14 +30216,7 @@ function () {
 
 
 /***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-function _slicedToArray(t,a){return _arrayWithHoles(t)||_iterableToArrayLimit(t,a)||_nonIterableRest()}function _nonIterableRest(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}function _iterableToArrayLimit(t,a){var n=[],e=!0,r=!1,o=void 0;try{for(var l,i=t[Symbol.iterator]();!(e=(l=i.next()).done)&&(n.push(l.value),!a||n.length!==a);e=!0);}catch(t){r=!0,o=t}finally{try{e||null==i.return||i.return()}finally{if(r)throw o}}return n}function _arrayWithHoles(t){if(Array.isArray(t))return t}!function(){var lax=function(){for(var lax={elements:[]},lastY=0,currentBreakpoint="default",breakpointsSeparator="_",transformFns={"data-lax-opacity":function(t,a){t.opacity=a},"data-lax-translate":function(t,a){t.transform+=" translate(".concat(a,"px, ").concat(a,"px)")},"data-lax-translate-x":function(t,a){t.transform+=" translateX(".concat(a,"px)")},"data-lax-translate-y":function(t,a){t.transform+=" translateY(".concat(a,"px)")},"data-lax-scale":function(t,a){t.transform+=" scale(".concat(a,")")},"data-lax-scale-x":function(t,a){t.transform+=" scaleX(".concat(a,")")},"data-lax-scale-y":function(t,a){t.transform+=" scaleY(".concat(a,")")},"data-lax-skew":function(t,a){t.transform+=" skew(".concat(a,"deg, ").concat(a,"deg)")},"data-lax-skew-x":function(t,a){t.transform+=" skewX(".concat(a,"deg)")},"data-lax-skew-y":function(t,a){t.transform+=" skewY(".concat(a,"deg)")},"data-lax-rotate":function(t,a){t.transform+=" rotate(".concat(a,"deg)")},"data-lax-rotate-x":function(t,a){t.transform+=" rotateX(".concat(a,"deg)")},"data-lax-rotate-y":function(t,a){t.transform+=" rotateY(".concat(a,"deg)")},"data-lax-brightness":function(t,a){t.filter+=" brightness(".concat(a,"%)")},"data-lax-contrast":function(t,a){t.filter+=" contrast(".concat(a,"%)")},"data-lax-hue-rotate":function(t,a){t.filter+=" hue-rotate(".concat(a,"deg)")},"data-lax-blur":function(t,a){t.filter+=" blur(".concat(a,"px)")},"data-lax-invert":function(t,a){t.filter+="  invert(".concat(a,"%)")},"data-lax-saturate":function(t,a){t.filter+="  saturate(".concat(a,"%)")},"data-lax-grayscale":function(t,a){t.filter+="  grayscale(".concat(a,"%)")},"data-lax-bg-pos":function(t,a){t.backgroundPosition="".concat(a,"px ").concat(a,"px")},"data-lax-bg-pos-x":function(t,a){t.backgroundPositionX="".concat(a,"px")},"data-lax-bg-pos-y":function(t,a){t.backgroundPositionY="".concat(a,"px")}},_crazy="",i=0;i<20;i++)_crazy+=" "+5*i+" "+47*i%360+", ";function intrp(t,a){for(var n=0;t[n][0]<=a&&void 0!==t[n+1];)n+=1;var e=t[n][0],r=void 0===t[n-1]?e:t[n-1][0],o=t[n][1],l=void 0===t[n-1]?o:t[n-1][1];return Math.min(Math.max((a-r)/(e-r),0),1)*(o-l)+l}function fnOrVal(s){return"("===s[0]?eval(s):parseFloat(s)}return lax.presets={linger:function(t){return{"data-lax-translate-y":"(vh*0.7) 0, 0 200, -500 0"}},lazy:function(t){return{"data-lax-translate-y":"(vh) 0, (-elh) ".concat(0<arguments.length&&void 0!==t?t:100)}},eager:function(t){return{"data-lax-translate-y":"(vh) 0, (-elh) -".concat(0<arguments.length&&void 0!==t?t:100)}},slalom:function(t){var a=0<arguments.length&&void 0!==t?t:50;return{"data-lax-translate-x":"vh ".concat(a,", (vh*0.8) ").concat(-a,", (vh*0.6) ").concat(a,", (vh*0.4) ").concat(-a,", (vh*0.2) ").concat(a,", (vh*0) ").concat(-a,", (-elh) ").concat(a)}},crazy:function(t){return{"data-lax-hue-rotate":"".concat(_crazy," | loop=20")}},spin:function(t){return{"data-lax-rotate":"(vh) 0, (-elh) ".concat(0<arguments.length&&void 0!==t?t:360)}},spinRev:function(t){return{"data-lax-rotate":"(vh) 0, (-elh) ".concat(-(0<arguments.length&&void 0!==t?t:360))}},spinIn:function(t){return{"data-lax-rotate":"vh ".concat(0<arguments.length&&void 0!==t?t:360,", (vh*0.5) 0")}},spinOut:function(t){return{"data-lax-rotate":"(vh*0.5) 0, -elh ".concat(0<arguments.length&&void 0!==t?t:360)}},blurInOut:function(t){var a=0<arguments.length&&void 0!==t?t:40;return{"data-lax-blur":"(vh) ".concat(a,", (vh*0.8) 0, (vh*0.2) 0, 0 ").concat(a)}},blurIn:function(t){return{"data-lax-blur":"(vh) ".concat(0<arguments.length&&void 0!==t?t:40,", (vh*0.7) 0")}},blurOut:function(t){return{"data-lax-blur":"(vh*0.3) 0, 0 ".concat(0<arguments.length&&void 0!==t?t:40)}},fadeInOut:function(){return{"data-lax-opacity":"(vh) 0, (vh*0.8) 1, (vh*0.2) 1, 0 0"}},fadeIn:function(){return{"data-lax-opacity":"(vh) 0, (vh*0.7) 1"}},fadeOut:function(){return{"data-lax-opacity":"(vh*0.3) 1, 0 0"}},driftLeft:function(t){var a=0<arguments.length&&void 0!==t?t:100;return{"data-lax-translate-x":"vh ".concat(a,", -elh ").concat(-a)}},driftRight:function(t){var a=0<arguments.length&&void 0!==t?t:100;return{"data-lax-translate-x":"vh ".concat(-a,", -elh ").concat(a)}},leftToRight:function(t){return{"data-lax-translate-x":"vh 0, -elh (vw*".concat(0<arguments.length&&void 0!==t?t:1,")")}},rightToLeft:function(t){return{"data-lax-translate-x":"vh 0, -elh (vw*".concat(-(0<arguments.length&&void 0!==t?t:1),")")}},zoomInOut:function(t){var a=0<arguments.length&&void 0!==t?t:.2;return{"data-lax-scale":"(vh) ".concat(a,", (vh*0.8) 1, (vh*0.2) 1, -elh ").concat(a)}},zoomIn:function(t){return{"data-lax-scale":"(vh) ".concat(0<arguments.length&&void 0!==t?t:.2,", (vh*0.7) 1")}},zoomOut:function(t){return{"data-lax-scale":"(vh*0.3) 1, -elh ".concat(0<arguments.length&&void 0!==t?t:.2)}},speedy:function(t){var a=0<arguments.length&&void 0!==t?t:30;return{"data-lax-skew-x":"(vh) ".concat(a,", -elh ").concat(-a)}},swing:function(t){var a=0<arguments.length&&void 0!==t?t:30;return{"data-lax-skew-y":"(vh) ".concat(a,", -elh ").concat(-a)}}},lax.addPreset=function(t,a){lax.presets[t]=a},lax.setup=function(){var t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};lax.breakpoints=t.breakpoints||{},lax.selector=t.selector||".lax",lax.populateElements()},lax.removeElement=function(a){var t=lax.elements.findIndex(function(t){return t.el=a});-1<t&&lax.elements.splice(t,1)},lax.createLaxObject=function(t){return{el:t,originalStyle:{transform:t.style.transform,filter:t.style.filter},transforms:{}}},lax.calcTransforms=function(l){for(var i=l.el,r=[],t=0;t<i.attributes.length;t++){var a=i.attributes[t];-1<a.name.indexOf("data-lax-preset")&&r.push(a)}for(var n=function(t){var a=r[t],n=a.name.split(breakpointsSeparator),o=n[1]?"".concat(breakpointsSeparator).concat(n[1]):"";a.value.split(" ").forEach(function(t){var a=t.split("-"),n=lax.presets[a[0]];if(n){var e=n(a[1]);for(var r in e)i.setAttribute("".concat(r).concat(o),e[r])}else console.log("lax error: preset ".concat(a[0]," is not defined"))});var e=i.getAttribute("data-lax-anchor");e&&""!==e||i.setAttribute("data-lax-anchor","self"),i.attributes.removeNamedItem(a.name)},e=0;e<r.length;e++)n(e);if(!(i.attributes["data-lax-use-gpu"]&&"false"===i.attributes["data-lax-use-gpu"].value)&&(i.style["backface-visibility"]="hidden",i.style["-webkit-backface-visibility"]="hidden"),i.attributes["data-lax-use-gpu"]&&i.attributes.removeNamedItem("data-lax-use-gpu"),l.optimise=!1,i.attributes["data-lax-optimize"]&&"true"===i.attributes["data-lax-optimize"].value){l.optimise=!0;var o=i.getBoundingClientRect();i.setAttribute("data-lax-opacity","".concat(-o.height-1," 0, ").concat(-o.height," 1, ").concat(window.innerHeight," 1, ").concat(window.innerHeight+1," 0")),i.attributes.removeNamedItem("data-lax-optimize")}for(var c=0;c<i.attributes.length;c++){var s=i.attributes[c];if(!(s.name.indexOf("data-lax")<0)){var u=s.name.split(breakpointsSeparator),f=u[0].split("-"),d=u[1]||"default";if("lax"===f[1])if("data-lax-anchor"===s.name){l["data-lax-anchor"]="self"===s.value?i:document.querySelector(s.value);var x=l["data-lax-anchor"].getBoundingClientRect();l.anchorTop=Math.floor(x.top)+window.scrollY}else!function(){var t=_slicedToArray(s.value.replace(/vw/g,window.innerWidth).replace(/vh/g,window.innerHeight).replace(/elh/g,i.clientHeight).replace(/elw/g,i.clientWidth).replace(/\s+/g," ").split("|"),2),a=t[0],n=t[1],r={};n&&n.split(" ").forEach(function(t){var a=_slicedToArray(t.split("="),2),n=a[0],e=a[1];r[n]=n&&fnOrVal(e)});var e=u[0],o=a.split(",").map(function(t){return t.trim().split(" ").map(fnOrVal)}).sort(function(t,a){return t[0]-a[0]});l.transforms[e]||(l.transforms[e]={}),l.transforms[e][d]={valueMap:o,options:r}}()}}var v=i.attributes["data-lax-sprite-data"]&&i.attributes["data-lax-sprite-data"].value;if(v){l.spriteData=v.split(",").map(function(t){return parseInt(t)}),i.style.height=l.spriteData[1]+"px",i.style.width=l.spriteData[0]+"px";var p=i.attributes["data-lax-sprite-image"]&&i.attributes["data-lax-sprite-image"].value;p&&(i.style.backgroundImage="url(".concat(p,")"))}return l},lax.addElement=function(t){var a=lax.calcTransforms(lax.createLaxObject(t));lax.elements.push(a),lax.updateElement(a)},lax.populateElements=function(){lax.elements=[],document.querySelectorAll(lax.selector).forEach(lax.addElement),currentBreakpoint=lax.getCurrentBreakPoint()},lax.updateElements=function(){lax.elements.forEach(function(t){lax.calcTransforms(t),lax.updateElement(t)}),currentBreakpoint=lax.getCurrentBreakPoint()},lax.getCurrentBreakPoint=function(){var t="default",a=window.innerWidth;for(var n in lax.breakpoints){if(!(parseFloat(lax.breakpoints[n])<=a))break;t=n}return t},lax.updateElement=function(t){var a=t.originalStyle,n=t.anchorTop,e=t.transforms,r=t.spriteData,o=t.el,l=n?n-lastY:lastY,i={transform:a.transform,filter:a.filter};for(var c in e){var s=e[c][currentBreakpoint]||e[c].default;if(s){var u=l;s.options.offset&&(u+=s.options.offset),s.options.speed&&(u*=s.options.speed),s.options.loop&&(u%=s.options.loop);var f=transformFns[c],d=intrp(s.valueMap,u);f&&f(i,d)}}if(r){var x=_slicedToArray(r,5),v=x[0],p=x[1],h=x[2],m=x[3],g=x[4],b=Math.floor(lastY/g)%h,y=b%m,k=Math.floor(b/m);i.backgroundPosition="-".concat(y*v,"px -").concat(k*p,"px")}if(0===i.opacity)o.style.opacity=0;else for(var w in i)o.style[w]=i[w]},lax.update=function(t){lastY!==t&&(lastY=t,lax.elements.forEach(lax.updateElement))},lax}(); true&&void 0!==module.exports?module.exports=lax:window.lax=lax}();
-
-/***/ }),
-/* 28 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, __webpack_provided_window_dot_jQuery, jQuery) {"object"==typeof navigator&&function(e,t){ true?module.exports=t():undefined}(this,(function(){"use strict";function e(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function t(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function i(e,i,n){return i&&t(e.prototype,i),n&&t(e,n),e}function n(e,t,i){return t in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}function a(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,n)}return i}function s(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?a(Object(i),!0).forEach((function(t){n(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):a(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}function r(e,t){if(null==e)return{};var i,n,a=function(e,t){if(null==e)return{};var i,n,a={},s=Object.keys(e);for(n=0;n<s.length;n++)i=s[n],t.indexOf(i)>=0||(a[i]=e[i]);return a}(e,t);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(e);for(n=0;n<s.length;n++)i=s[n],t.indexOf(i)>=0||Object.prototype.propertyIsEnumerable.call(e,i)&&(a[i]=e[i])}return a}function o(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if("undefined"==typeof Symbol||!(Symbol.iterator in Object(e)))return;var i=[],n=!0,a=!1,s=void 0;try{for(var r,o=e[Symbol.iterator]();!(n=(r=o.next()).done)&&(i.push(r.value),!t||i.length!==t);n=!0);}catch(e){a=!0,s=e}finally{try{n||null==o.return||o.return()}finally{if(a)throw s}}return i}(e,t)||c(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function l(e){return function(e){if(Array.isArray(e))return u(e)}(e)||function(e){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(e))return Array.from(e)}(e)||c(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function c(e,t){if(e){if("string"==typeof e)return u(e,t);var i=Object.prototype.toString.call(e).slice(8,-1);return"Object"===i&&e.constructor&&(i=e.constructor.name),"Map"===i||"Set"===i?Array.from(e):"Arguments"===i||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(i)?u(e,t):void 0}}function u(e,t){(null==t||t>e.length)&&(t=e.length);for(var i=0,n=new Array(t);i<t;i++)n[i]=e[i];return n}function d(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function h(e,t,i){return t in e?Object.defineProperty(e,t,{value:i,enumerable:!0,configurable:!0,writable:!0}):e[t]=i,e}function m(e,t){var i=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),i.push.apply(i,n)}return i}function p(e){for(var t=1;t<arguments.length;t++){var i=null!=arguments[t]?arguments[t]:{};t%2?m(Object(i),!0).forEach((function(t){h(e,t,i[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(i)):m(Object(i)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(i,t))}))}return e}var f={addCSS:!0,thumbWidth:15,watch:!0};function g(e,t){return function(){return Array.from(document.querySelectorAll(t)).includes(this)}.call(e,t)}var y=function(e){return null!=e?e.constructor:null},v=function(e,t){return!!(e&&t&&e instanceof t)},b=function(e){return null==e},w=function(e){return y(e)===Object},k=function(e){return y(e)===String},T=function(e){return Array.isArray(e)},C=function(e){return v(e,NodeList)},A=k,S=T,P=C,E=function(e){return v(e,Element)},N=function(e){return v(e,Event)},M=function(e){return b(e)||(k(e)||T(e)||C(e))&&!e.length||w(e)&&!Object.keys(e).length};function x(e,t){if(1>t){var i=function(e){var t="".concat(e).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);return t?Math.max(0,(t[1]?t[1].length:0)-(t[2]?+t[2]:0)):0}(t);return parseFloat(e.toFixed(i))}return Math.round(e/t)*t}var I,L,O,_=function(){function e(t,i){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e),E(t)?this.element=t:A(t)&&(this.element=document.querySelector(t)),E(this.element)&&M(this.element.rangeTouch)&&(this.config=p({},f,{},i),this.init())}return function(e,t,i){t&&d(e.prototype,t),i&&d(e,i)}(e,[{key:"init",value:function(){e.enabled&&(this.config.addCSS&&(this.element.style.userSelect="none",this.element.style.webKitUserSelect="none",this.element.style.touchAction="manipulation"),this.listeners(!0),this.element.rangeTouch=this)}},{key:"destroy",value:function(){e.enabled&&(this.config.addCSS&&(this.element.style.userSelect="",this.element.style.webKitUserSelect="",this.element.style.touchAction=""),this.listeners(!1),this.element.rangeTouch=null)}},{key:"listeners",value:function(e){var t=this,i=e?"addEventListener":"removeEventListener";["touchstart","touchmove","touchend"].forEach((function(e){t.element[i](e,(function(e){return t.set(e)}),!1)}))}},{key:"get",value:function(t){if(!e.enabled||!N(t))return null;var i,n=t.target,a=t.changedTouches[0],s=parseFloat(n.getAttribute("min"))||0,r=parseFloat(n.getAttribute("max"))||100,o=parseFloat(n.getAttribute("step"))||1,l=n.getBoundingClientRect(),c=100/l.width*(this.config.thumbWidth/2)/100;return 0>(i=100/l.width*(a.clientX-l.left))?i=0:100<i&&(i=100),50>i?i-=(100-2*i)*c:50<i&&(i+=2*(i-50)*c),s+x(i/100*(r-s),o)}},{key:"set",value:function(t){e.enabled&&N(t)&&!t.target.disabled&&(t.preventDefault(),t.target.value=this.get(t),function(e,t){if(e&&t){var i=new Event(t,{bubbles:!0});e.dispatchEvent(i)}}(t.target,"touchend"===t.type?"change":"input"))}}],[{key:"setup",value:function(t){var i=1<arguments.length&&void 0!==arguments[1]?arguments[1]:{},n=null;if(M(t)||A(t)?n=Array.from(document.querySelectorAll(A(t)?t:'input[type="range"]')):E(t)?n=[t]:P(t)?n=Array.from(t):S(t)&&(n=t.filter(E)),M(n))return null;var a=p({},f,{},i);if(A(t)&&a.watch){var s=new MutationObserver((function(i){Array.from(i).forEach((function(i){Array.from(i.addedNodes).forEach((function(i){E(i)&&g(i,t)&&new e(i,a)}))}))}));s.observe(document.body,{childList:!0,subtree:!0})}return n.map((function(t){return new e(t,i)}))}},{key:"enabled",get:function(){return"ontouchstart"in document.documentElement}}]),e}(),j=function(e){return null!=e?e.constructor:null},D=function(e,t){return Boolean(e&&t&&e instanceof t)},q=function(e){return null==e},H=function(e){return j(e)===Object},F=function(e){return j(e)===String},R=function(e){return j(e)===Function},V=function(e){return Array.isArray(e)},B=function(e){return D(e,NodeList)},U=function(e){return q(e)||(F(e)||V(e)||B(e))&&!e.length||H(e)&&!Object.keys(e).length},W=q,z=H,K=function(e){return j(e)===Number&&!Number.isNaN(e)},Y=F,Q=function(e){return j(e)===Boolean},X=R,$=V,J=B,G=function(e){return D(e,Element)},Z=function(e){return D(e,Event)},ee=function(e){return D(e,KeyboardEvent)},te=function(e){return D(e,TextTrack)||!q(e)&&F(e.kind)},ie=function(e){return D(e,Promise)&&R(e.then)},ne=function(e){if(D(e,window.URL))return!0;if(!F(e))return!1;var t=e;e.startsWith("http://")&&e.startsWith("https://")||(t="http://".concat(e));try{return!U(new URL(t).hostname)}catch(e){return!1}},ae=U,se=(I=document.createElement("span"),L={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"},O=Object.keys(L).find((function(e){return void 0!==I.style[e]})),!!Y(O)&&L[O]);function re(e,t){setTimeout((function(){try{e.hidden=!0,e.offsetHeight,e.hidden=!1}catch(e){}}),t)}var oe={isIE:
@@ -34603,10 +30224,10 @@ function _slicedToArray(t,a){return _arrayWithHoles(t)||_iterableToArrayLimit(t,
 !!document.documentMode,isEdge:window.navigator.userAgent.includes("Edge"),isWebkit:"WebkitAppearance"in document.documentElement.style&&!/Edge/.test(navigator.userAgent),isIPhone:/(iPhone|iPod)/gi.test(navigator.platform),isIos:/(iPad|iPhone|iPod)/gi.test(navigator.platform)};function le(e,t){return t.split(".").reduce((function(e,t){return e&&e[t]}),e)}function ce(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments.length,i=new Array(t>1?t-1:0),a=1;a<t;a++)i[a-1]=arguments[a];if(!i.length)return e;var s=i.shift();return z(s)?(Object.keys(s).forEach((function(t){z(s[t])?(Object.keys(e).includes(t)||Object.assign(e,n({},t,{})),ce(e[t],s[t])):Object.assign(e,n({},t,s[t]))})),ce.apply(void 0,[e].concat(i))):e}function ue(e,t){var i=e.length?e:[e];Array.from(i).reverse().forEach((function(e,i){var n=i>0?t.cloneNode(!0):t,a=e.parentNode,s=e.nextSibling;n.appendChild(e),s?a.insertBefore(n,s):a.appendChild(n)}))}function de(e,t){G(e)&&!ae(t)&&Object.entries(t).filter((function(e){var t=o(e,2)[1];return!W(t)})).forEach((function(t){var i=o(t,2),n=i[0],a=i[1];return e.setAttribute(n,a)}))}function he(e,t,i){var n=document.createElement(e);return z(t)&&de(n,t),Y(i)&&(n.innerText=i),n}function me(e,t,i,n){G(t)&&t.appendChild(he(e,i,n))}function pe(e){J(e)||$(e)?Array.from(e).forEach(pe):G(e)&&G(e.parentNode)&&e.parentNode.removeChild(e)}function fe(e){if(G(e))for(var t=e.childNodes.length;t>0;)e.removeChild(e.lastChild),t-=1}function ge(e,t){return G(t)&&G(t.parentNode)&&G(e)?(t.parentNode.replaceChild(e,t),e):null}function ye(e,t){if(!Y(e)||ae(e))return{};var i={},n=ce({},t);return e.split(",").forEach((function(e){var t=e.trim(),a=t.replace(".",""),s=t.replace(/[[\]]/g,"").split("="),r=o(s,1)[0],l=s.length>1?s[1].replace(/["']/g,""):"";switch(t.charAt(0)){case".":Y(n.class)?i.class="".concat(n.class," ").concat(a):i.class=a;break;case"#":i.id=t.replace("#","");break;case"[":i[r]=l}})),ce(n,i)}function ve(e,t){if(G(e)){var i=t;Q(i)||(i=!e.hidden),e.hidden=i}}function be(e,t,i){if(J(e))return Array.from(e).map((function(e){return be(e,t,i)}));if(G(e)){var n="toggle";return void 0!==i&&(n=i?"add":"remove"),e.classList[n](t),e.classList.contains(t)}return!1}function we(e,t){return G(e)&&e.classList.contains(t)}function ke(e,t){var i=Element.prototype;return(i.matches||i.webkitMatchesSelector||i.mozMatchesSelector||i.msMatchesSelector||function(){return Array.from(document.querySelectorAll(t)).includes(this)}).call(e,t)}function Te(e){return this.elements.container.querySelectorAll(e)}function Ce(e){return this.elements.container.querySelector(e)}function Ae(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];G(e)&&(e.focus({preventScroll:!0}),t&&be(e,this.config.classNames.tabFocus))}var Se,Pe={"audio/ogg":"vorbis","audio/wav":"1","video/webm":"vp8, vorbis","video/mp4":"avc1.42E01E, mp4a.40.2","video/ogg":"theora"},Ee={audio:"canPlayType"in document.createElement("audio"),video:"canPlayType"in document.createElement("video"),check:function(e,t,i){var n=oe.isIPhone&&i&&Ee.playsinline,a=Ee[e]||"html5"!==t;return{api:a,ui:a&&Ee.rangeInput&&("video"!==e||!oe.isIPhone||n)}},pip:!(oe.isIPhone||!X(he("video").webkitSetPresentationMode)&&(!document.pictureInPictureEnabled||he("video").disablePictureInPicture)),airplay:X(window.WebKitPlaybackTargetAvailabilityEvent),playsinline:"playsInline"in document.createElement("video"),mime:function(e){if(ae(e))return!1;var t=o(e.split("/"),1)[0],i=e;if(!this.isHTML5||t!==this.type)return!1;Object.keys(Pe).includes(i)&&(i+='; codecs="'.concat(Pe[e],'"'));try{return Boolean(i&&this.media.canPlayType(i).replace(/no/,""))}catch(e){return!1}},textTracks:"textTracks"in document.createElement("video"),rangeInput:(Se=document.createElement("input"),Se.type="range","range"===Se.type),touch:"ontouchstart"in document.documentElement,transitions:!1!==se,reducedMotion:"matchMedia"in window&&window.matchMedia("(prefers-reduced-motion)").matches},Ne=function(){var e=!1;try{var t=Object.defineProperty({},"passive",{get:function(){return e=!0,null}});window.addEventListener("test",null,t),window.removeEventListener("test",null,t)}catch(e){}return e}();function Me(e,t,i){var n=this,a=arguments.length>3&&void 0!==arguments[3]&&arguments[3],s=!(arguments.length>4&&void 0!==arguments[4])||arguments[4],r=arguments.length>5&&void 0!==arguments[5]&&arguments[5];if(e&&"addEventListener"in e&&!ae(t)&&X(i)){var o=t.split(" "),l=r;Ne&&(l={passive:s,capture:r}),o.forEach((function(t){n&&n.eventListeners&&a&&n.eventListeners.push({element:e,type:t,callback:i,options:l}),e[a?"addEventListener":"removeEventListener"](t,i,l)}))}}function xe(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",i=arguments.length>2?arguments[2]:void 0,n=!(arguments.length>3&&void 0!==arguments[3])||arguments[3],a=arguments.length>4&&void 0!==arguments[4]&&arguments[4];Me.call(this,e,t,i,!0,n,a)}function Ie(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",i=arguments.length>2?arguments[2]:void 0,n=!(arguments.length>3&&void 0!==arguments[3])||arguments[3],a=arguments.length>4&&void 0!==arguments[4]&&arguments[4];Me.call(this,e,t,i,!1,n,a)}function Le(e){var t=this,i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",n=arguments.length>2?arguments[2]:void 0,a=!(arguments.length>3&&void 0!==arguments[3])||arguments[3],s=arguments.length>4&&void 0!==arguments[4]&&arguments[4],r=function r(){Ie(e,i,r,a,s);for(var o=arguments.length,l=new Array(o),c=0;c<o;c++)l[c]=arguments[c];n.apply(t,l)};Me.call(this,e,i,r,!0,a,s)}function Oe(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",i=arguments.length>2&&void 0!==arguments[2]&&arguments[2],n=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{};if(G(e)&&!ae(t)){var a=new CustomEvent(t,{bubbles:i,detail:s(s({},n),{},{plyr:this})});e.dispatchEvent(a)}}function _e(){this&&this.eventListeners&&(this.eventListeners.forEach((function(e){var t=e.element,i=e.type,n=e.callback,a=e.options;t.removeEventListener(i,n,a)})),this.eventListeners=[])}function je(){var e=this;return new Promise((function(t){return e.ready?setTimeout(t,0):xe.call(e,e.elements.container,"ready",t)})).then((function(){}))}function De(e){ie(e)&&e.then(null,(function(){}))}function qe(e){return!!($(e)||Y(e)&&e.includes(":"))&&($(e)?e:e.split(":")).map(Number).every(K)}function He(e){if(!$(e)||!e.every(K))return null;var t=o(e,2),i=t[0],n=t[1],a=function e(t,i){return 0===i?t:e(i,t%i)}(i,n);return[i/a,n/a]}function Fe(e){var t=function(e){return qe(e)?e.split(":").map(Number):null},i=t(e);if(null===i&&(i=t(this.config.ratio)),null===i&&!ae(this.embed)&&$(this.embed.ratio)&&(i=this.embed.ratio),null===i&&this.isHTML5){var n=this.media;i=He([n.videoWidth,n.videoHeight])}return i}function Re(e){if(!this.isVideo)return{};var t=this.elements.wrapper,i=Fe.call(this,e),n=o($(i)?i:[0,0],2),a=100/n[0]*n[1];if(t.style.paddingBottom="".concat(a,"%"),this.isVimeo&&!this.config.vimeo.premium&&this.supported.ui){var s=100/this.media.offsetWidth*parseInt(window.getComputedStyle(this.media).paddingBottom,10),r=(s-a)/(s/50);this.fullscreen.active?t.style.paddingBottom=null:this.media.style.transform="translateY(-".concat(r,"%)")}else this.isHTML5&&t.classList.toggle(this.config.classNames.videoFixedRatio,null!==i);return{padding:a,ratio:i}}var Ve={getSources:function(){var e=this;return this.isHTML5?Array.from(this.media.querySelectorAll("source")).filter((function(t){var i=t.getAttribute("type");return!!ae(i)||Ee.mime.call(e,i)})):[]},getQualityOptions:function(){return this.config.quality.forced?this.config.quality.options:Ve.getSources.call(this).map((function(e){return Number(e.getAttribute("size"))})).filter(Boolean)},setup:function(){if(this.isHTML5){var e=this;e.options.speed=e.config.speed.options,ae(this.config.ratio)||Re.call(e),Object.defineProperty(e.media,"quality",{get:function(){var t=Ve.getSources.call(e).find((function(t){return t.getAttribute("src")===e.source}));return t&&Number(t.getAttribute("size"))},set:function(t){if(e.quality!==t){if(e.config.quality.forced&&X(e.config.quality.onChange))e.config.quality.onChange(t);else{var i=Ve.getSources.call(e).find((function(e){return Number(e.getAttribute("size"))===t}));if(!i)return;var n=e.media,a=n.currentTime,s=n.paused,r=n.preload,o=n.readyState,l=n.playbackRate;e.media.src=i.getAttribute("src"),("none"!==r||o)&&(e.once("loadedmetadata",(function(){e.speed=l,e.currentTime=a,s||De(e.play())})),e.media.load())}Oe.call(e,e.media,"qualitychange",!1,{quality:t})}}})}},cancelRequests:function(){this.isHTML5&&(pe(Ve.getSources.call(this)),this.media.setAttribute("src",this.config.blankVideo),this.media.load(),this.debug.log("Cancelled network requests"))}};function Be(e){return $(e)?e.filter((function(t,i){return e.indexOf(t)===i})):e}function Ue(e){for(var t=arguments.length,i=new Array(t>1?t-1:0),n=1;n<t;n++)i[n-1]=arguments[n];return ae(e)?e:e.toString().replace(/{(\d+)}/g,(function(e,t){return i[t].toString()}))}var We=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:"";return e.replace(new RegExp(t.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g,"\\$1"),"g"),i.toString())},ze=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";return e.toString().replace(/\w\S*/g,(function(e){return e.charAt(0).toUpperCase()+e.substr(1).toLowerCase()}))};function Ke(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=e.toString();return t=We(t,"-"," "),t=We(t,"_"," "),t=ze(t),We(t," ","")}function Ye(e){var t=document.createElement("div");return t.appendChild(e),t.innerHTML}var Qe={pip:"PIP",airplay:"AirPlay",html5:"HTML5",vimeo:"Vimeo",youtube:"YouTube"},Xe=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(ae(e)||ae(t))return"";var i=le(t.i18n,e);if(ae(i))return Object.keys(Qe).includes(e)?Qe[e]:"";var n={"{seektime}":t.seekTime,"{title}":t.title};return Object.entries(n).forEach((function(e){var t=o(e,2),n=t[0],a=t[1];i=We(i,n,a)})),i},$e=function(){function t(i){e(this,t),this.enabled=i.config.storage.enabled,this.key=i.config.storage.key}return i(t,[{key:"get",value:function(e){if(!t.supported||!this.enabled)return null;var i=window.localStorage.getItem(this.key);if(ae(i))return null;var n=JSON.parse(i);return Y(e)&&e.length?n[e]:n}},{key:"set",value:function(e){if(t.supported&&this.enabled&&z(e)){var i=this.get();ae(i)&&(i={}),ce(i,e),window.localStorage.setItem(this.key,JSON.stringify(i))}}}],[{key:"supported",get:function(){try{if(!("localStorage"in window))return!1;var e="___test";return window.localStorage.setItem(e,e),window.localStorage.removeItem(e),!0}catch(e){return!1}}}]),t}();function Je(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"text";return new Promise((function(i,n){try{var a=new XMLHttpRequest;if(!("withCredentials"in a))return;a.addEventListener("load",(function(){if("text"===t)try{i(JSON.parse(a.responseText))}catch(e){i(a.responseText)}else i(a.response)})),a.addEventListener("error",(function(){throw new Error(a.status)})),a.open("GET",e,!0),a.responseType=t,a.send()}catch(e){n(e)}}))}function Ge(e,t){if(Y(e)){var i="cache",n=Y(t),a=function(){return null!==document.getElementById(t)},s=function(e,t){e.innerHTML=t,n&&a()||document.body.insertAdjacentElement("afterbegin",e)};if(!n||!a()){var r=$e.supported,o=document.createElement("div");if(o.setAttribute("hidden",""),n&&o.setAttribute("id",t),r){var l=window.localStorage.getItem("".concat(i,"-").concat(t));if(null!==l){var c=JSON.parse(l);s(o,c.content)}}Je(e).then((function(e){ae(e)||(r&&window.localStorage.setItem("".concat(i,"-").concat(t),JSON.stringify({content:e})),s(o,e))})).catch((function(){}))}}}var Ze=function(e){return Math.trunc(e/60/60%60,10)},et=function(e){return Math.trunc(e/60%60,10)},tt=function(e){return Math.trunc(e%60,10)};function it(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],i=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if(!K(e))return it(void 0,t,i);var n=function(e){return"0".concat(e).slice(-2)},a=Ze(e),s=et(e),r=tt(e);return a=t||a>0?"".concat(a,":"):"","".concat(i&&e>0?"-":"").concat(a).concat(n(s),":").concat(n(r))}var nt={getIconUrl:function(){var e=new URL(this.config.iconUrl,window.location).host!==window.location.host||oe.isIE&&!window.svg4everybody;return{url:this.config.iconUrl,cors:e}},findElements:function(){try{return this.elements.controls=Ce.call(this,this.config.selectors.controls.wrapper),this.elements.buttons={play:Te.call(this,this.config.selectors.buttons.play),pause:Ce.call(this,this.config.selectors.buttons.pause),restart:Ce.call(this,this.config.selectors.buttons.restart),rewind:Ce.call(this,this.config.selectors.buttons.rewind),fastForward:Ce.call(this,this.config.selectors.buttons.fastForward),mute:Ce.call(this,this.config.selectors.buttons.mute),pip:Ce.call(this,this.config.selectors.buttons.pip),airplay:Ce.call(this,this.config.selectors.buttons.airplay),settings:Ce.call(this,this.config.selectors.buttons.settings),captions:Ce.call(this,this.config.selectors.buttons.captions),fullscreen:Ce.call(this,this.config.selectors.buttons.fullscreen)},this.elements.progress=Ce.call(this,this.config.selectors.progress),this.elements.inputs={seek:Ce.call(this,this.config.selectors.inputs.seek),volume:Ce.call(this,this.config.selectors.inputs.volume)},this.elements.display={buffer:Ce.call(this,this.config.selectors.display.buffer),currentTime:Ce.call(this,this.config.selectors.display.currentTime),duration:Ce.call(this,this.config.selectors.display.duration)},G(this.elements.progress)&&(this.elements.display.seekTooltip=this.elements.progress.querySelector(".".concat(this.config.classNames.tooltip))),!0}catch(e){return this.debug.warn("It looks like there is a problem with your custom controls HTML",e),this.toggleNativeControls(!0),!1}},createIcon:function(e,t){var i="http://www.w3.org/2000/svg",n=nt.getIconUrl.call(this),a="".concat(n.cors?"":n.url,"#").concat(this.config.iconPrefix),s=document.createElementNS(i,"svg");de(s,ce(t,{"aria-hidden":"true",focusable:"false"}));var r=document.createElementNS(i,"use"),o="".concat(a,"-").concat(e);return"href"in r&&r.setAttributeNS("http://www.w3.org/1999/xlink","href",o),r.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",o),s.appendChild(r),s},createLabel:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},i=Xe(e,this.config),n=s(s({},t),{},{class:[t.class,this.config.classNames.hidden].filter(Boolean).join(" ")});return he("span",n,i)},createBadge:function(e){if(ae(e))return null;var t=he("span",{class:this.config.classNames.menu.value});return t.appendChild(he("span",{class:this.config.classNames.menu.badge},e)),t},createButton:function(e,t){var i=this,n=ce({},t),a=function(){var e=(arguments.length>0&&void 0!==arguments[0]?arguments[0]:"").toString();return(e=Ke(e)).charAt(0).toLowerCase()+e.slice(1)}(e),s={element:"button",toggle:!1,label:null,icon:null,labelPressed:null,iconPressed:null};switch(["element","icon","label"].forEach((function(e){Object.keys(n).includes(e)&&(s[e]=n[e],delete n[e])})),"button"!==s.element||Object.keys(n).includes("type")||(n.type="button"),Object.keys(n).includes("class")?n.class.split(" ").some((function(e){return e===i.config.classNames.control}))||ce(n,{class:"".concat(n.class," ").concat(this.config.classNames.control)}):n.class=this.config.classNames.control,e){case"play":s.toggle=!0,s.label="play",s.labelPressed="pause",s.icon="play",s.iconPressed="pause";break;case"mute":s.toggle=!0,s.label="mute",s.labelPressed="unmute",s.icon="volume",s.iconPressed="muted";break;case"captions":s.toggle=!0,s.label="enableCaptions",s.labelPressed="disableCaptions",s.icon="captions-off",s.iconPressed="captions-on";break;case"fullscreen":s.toggle=!0,s.label="enterFullscreen",s.labelPressed="exitFullscreen",s.icon="enter-fullscreen",s.iconPressed="exit-fullscreen";break;case"play-large":n.class+=" ".concat(this.config.classNames.control,"--overlaid"),a="play",s.label="play",s.icon="play";break;default:ae(s.label)&&(s.label=a),ae(s.icon)&&(s.icon=e)}var r=he(s.element);return s.toggle?(r.appendChild(nt.createIcon.call(this,s.iconPressed,{class:"icon--pressed"})),r.appendChild(nt.createIcon.call(this,s.icon,{class:"icon--not-pressed"})),r.appendChild(nt.createLabel.call(this,s.labelPressed,{class:"label--pressed"})),r.appendChild(nt.createLabel.call(this,s.label,{class:"label--not-pressed"}))):(r.appendChild(nt.createIcon.call(this,s.icon)),r.appendChild(nt.createLabel.call(this,s.label))),ce(n,ye(this.config.selectors.buttons[a],n)),de(r,n),"play"===a?($(this.elements.buttons[a])||(this.elements.buttons[a]=[]),this.elements.buttons[a].push(r)):this.elements.buttons[a]=r,r},createRange:function(e,t){var i=he("input",ce(ye(this.config.selectors.inputs[e]),{type:"range",min:0,max:100,step:.01,value:0,autocomplete:"off",role:"slider","aria-label":Xe(e,this.config),"aria-valuemin":0,"aria-valuemax":100,"aria-valuenow":0},t));return this.elements.inputs[e]=i,nt.updateRangeFill.call(this,i),_.setup(i),i},createProgress:function(e,t){var i=he("progress",ce(ye(this.config.selectors.display[e]),{min:0,max:100,value:0,role:"progressbar","aria-hidden":!0},t));if("volume"!==e){i.appendChild(he("span",null,"0"));var n={played:"played",buffer:"buffered"}[e],a=n?Xe(n,this.config):"";i.innerText="% ".concat(a.toLowerCase())}return this.elements.display[e]=i,i},createTime:function(e,t){var i=ye(this.config.selectors.display[e],t),n=he("div",ce(i,{class:"".concat(i.class?i.class:""," ").concat(this.config.classNames.display.time," ").trim(),"aria-label":Xe(e,this.config)}),"00:00");return this.elements.display[e]=n,n},bindMenuItemShortcuts:function(e,t){var i=this;xe.call(this,e,"keydown keyup",(function(n){if([32,38,39,40].includes(n.which)&&(n.preventDefault(),n.stopPropagation(),"keydown"!==n.type)){var a,s=ke(e,'[role="menuitemradio"]');if(!s&&[32,39].includes(n.which))nt.showMenuPanel.call(i,t,!0);else 32!==n.which&&(40===n.which||s&&39===n.which?(a=e.nextElementSibling,G(a)||(a=e.parentNode.firstElementChild)):(a=e.previousElementSibling,G(a)||(a=e.parentNode.lastElementChild)),Ae.call(i,a,!0))}}),!1),xe.call(this,e,"keyup",(function(e){13===e.which&&nt.focusFirstMenuItem.call(i,null,!0)}))},createMenuItem:function(e){var t=this,i=e.value,n=e.list,a=e.type,s=e.title,r=e.badge,o=void 0===r?null:r,l=e.checked,c=void 0!==l&&l,u=ye(this.config.selectors.inputs[a]),d=he("button",ce(u,{type:"button",role:"menuitemradio",class:"".concat(this.config.classNames.control," ").concat(u.class?u.class:"").trim(),"aria-checked":c,value:i})),h=he("span");h.innerHTML=s,G(o)&&h.appendChild(o),d.appendChild(h),Object.defineProperty(d,"checked",{enumerable:!0,get:function(){return"true"===d.getAttribute("aria-checked")},set:function(e){e&&Array.from(d.parentNode.children).filter((function(e){return ke(e,'[role="menuitemradio"]')})).forEach((function(e){return e.setAttribute("aria-checked","false")})),d.setAttribute("aria-checked",e?"true":"false")}}),this.listeners.bind(d,"click keyup",(function(e){if(!ee(e)||32===e.which){switch(e.preventDefault(),e.stopPropagation(),d.checked=!0,a){case"language":t.currentTrack=Number(i);break;case"quality":t.quality=i;break;case"speed":t.speed=parseFloat(i)}nt.showMenuPanel.call(t,"home",ee(e))}}),a,!1),nt.bindMenuItemShortcuts.call(this,d,a),n.appendChild(d)},formatTime:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(!K(e))return e;var i=Ze(this.duration)>0;return it(e,i,t)},updateTimeDisplay:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:null,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,i=arguments.length>2&&void 0!==arguments[2]&&arguments[2];G(e)&&K(t)&&(e.innerText=nt.formatTime(t,i))},updateVolume:function(){this.supported.ui&&(G(this.elements.inputs.volume)&&nt.setRange.call(this,this.elements.inputs.volume,this.muted?0:this.volume),G(this.elements.buttons.mute)&&(this.elements.buttons.mute.pressed=this.muted||0===this.volume))},setRange:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0;G(e)&&(e.value=t,nt.updateRangeFill.call(this,e))},updateProgress:function(e){var t=this;if(this.supported.ui&&Z(e)){var i,n,a=0;if(e)switch(e.type){case"timeupdate":case"seeking":case"seeked":i=this.currentTime,n=this.duration,a=0===i||0===n||Number.isNaN(i)||Number.isNaN(n)?0:(i/n*100).toFixed(2),"timeupdate"===e.type&&nt.setRange.call(this,this.elements.inputs.seek,a);break;case"playing":case"progress":!function(e,i){var n=K(i)?i:0,a=G(e)?e:t.elements.display.buffer;if(G(a)){a.value=n;var s=a.getElementsByTagName("span")[0];G(s)&&(s.childNodes[0].nodeValue=n)}}(this.elements.display.buffer,100*this.buffered)}}},updateRangeFill:function(e){var t=Z(e)?e.target:e;if(G(t)&&"range"===t.getAttribute("type")){if(ke(t,this.config.selectors.inputs.seek)){t.setAttribute("aria-valuenow",this.currentTime);var i=nt.formatTime(this.currentTime),n=nt.formatTime(this.duration),a=Xe("seekLabel",this.config);t.setAttribute("aria-valuetext",a.replace("{currentTime}",i).replace("{duration}",n))}else if(ke(t,this.config.selectors.inputs.volume)){var s=100*t.value;t.setAttribute("aria-valuenow",s),t.setAttribute("aria-valuetext","".concat(s.toFixed(1),"%"))}else t.setAttribute("aria-valuenow",t.value);oe.isWebkit&&t.style.setProperty("--value","".concat(t.value/t.max*100,"%"))}},updateSeekTooltip:function(e){var t=this;if(this.config.tooltips.seek&&G(this.elements.inputs.seek)&&G(this.elements.display.seekTooltip)&&0!==this.duration){var i="".concat(this.config.classNames.tooltip,"--visible"),n=function(e){return be(t.elements.display.seekTooltip,i,e)};if(this.touch)n(!1);else{var a=0,s=this.elements.progress.getBoundingClientRect();if(Z(e))a=100/s.width*(e.pageX-s.left);else{if(!we(this.elements.display.seekTooltip,i))return;a=parseFloat(this.elements.display.seekTooltip.style.left,10)}a<0?a=0:a>100&&(a=100),nt.updateTimeDisplay.call(this,this.elements.display.seekTooltip,this.duration/100*a),this.elements.display.seekTooltip.style.left="".concat(a,"%"),Z(e)&&["mouseenter","mouseleave"].includes(e.type)&&n("mouseenter"===e.type)}}},timeUpdate:function(e){var t=!G(this.elements.display.duration)&&this.config.invertTime;nt.updateTimeDisplay.call(this,this.elements.display.currentTime,t?this.duration-this.currentTime:this.currentTime,t),e&&"timeupdate"===e.type&&this.media.seeking||nt.updateProgress.call(this,e)},durationUpdate:function(){if(this.supported.ui&&(this.config.invertTime||!this.currentTime)){if(this.duration>=Math.pow(2,32))return ve(this.elements.display.currentTime,!0),void ve(this.elements.progress,!0);G(this.elements.inputs.seek)&&this.elements.inputs.seek.setAttribute("aria-valuemax",this.duration);var e=G(this.elements.display.duration);!e&&this.config.displayDuration&&this.paused&&nt.updateTimeDisplay.call(this,this.elements.display.currentTime,this.duration),e&&nt.updateTimeDisplay.call(this,this.elements.display.duration,this.duration),nt.updateSeekTooltip.call(this)}},toggleMenuButton:function(e,t){ve(this.elements.settings.buttons[e],!t)},updateSetting:function(e,t,i){var n=this.elements.settings.panels[e],a=null,s=t;if("captions"===e)a=this.currentTrack;else{if(a=ae(i)?this[e]:i,ae(a)&&(a=this.config[e].default),!ae(this.options[e])&&!this.options[e].includes(a))return void this.debug.warn("Unsupported value of '".concat(a,"' for ").concat(e));if(!this.config[e].options.includes(a))return void this.debug.warn("Disabled value of '".concat(a,"' for ").concat(e))}if(G(s)||(s=n&&n.querySelector('[role="menu"]')),G(s)){this.elements.settings.buttons[e].querySelector(".".concat(this.config.classNames.menu.value)).innerHTML=nt.getLabel.call(this,e,a);var r=s&&s.querySelector('[value="'.concat(a,'"]'));G(r)&&(r.checked=!0)}},getLabel:function(e,t){switch(e){case"speed":return 1===t?Xe("normal",this.config):"".concat(t,"&times;");case"quality":if(K(t)){var i=Xe("qualityLabel.".concat(t),this.config);return i.length?i:"".concat(t,"p")}return ze(t);case"captions":return rt.getLabel.call(this);default:return null}},setQualityMenu:function(e){var t=this;if(G(this.elements.settings.panels.quality)){var i="quality",n=this.elements.settings.panels.quality.querySelector('[role="menu"]');$(e)&&(this.options.quality=Be(e).filter((function(e){return t.config.quality.options.includes(e)})));var a=!ae(this.options.quality)&&this.options.quality.length>1;if(nt.toggleMenuButton.call(this,i,a),fe(n),nt.checkMenu.call(this),a){var s=function(e){var i=Xe("qualityBadge.".concat(e),t.config);return i.length?nt.createBadge.call(t,i):null};this.options.quality.sort((function(e,i){var n=t.config.quality.options;return n.indexOf(e)>n.indexOf(i)?1:-1})).forEach((function(e){nt.createMenuItem.call(t,{value:e,list:n,type:i,title:nt.getLabel.call(t,"quality",e),badge:s(e)})})),nt.updateSetting.call(this,i,n)}}},setCaptionsMenu:function(){var e=this;if(G(this.elements.settings.panels.captions)){var t="captions",i=this.elements.settings.panels.captions.querySelector('[role="menu"]'),n=rt.getTracks.call(this),a=Boolean(n.length);if(nt.toggleMenuButton.call(this,t,a),fe(i),nt.checkMenu.call(this),a){var s=n.map((function(t,n){return{value:n,checked:e.captions.toggled&&e.currentTrack===n,title:rt.getLabel.call(e,t),badge:t.language&&nt.createBadge.call(e,t.language.toUpperCase()),list:i,type:"language"}}));s.unshift({value:-1,checked:!this.captions.toggled,title:Xe("disabled",this.config),list:i,type:"language"}),s.forEach(nt.createMenuItem.bind(this)),nt.updateSetting.call(this,t,i)}}},setSpeedMenu:function(){var e=this;if(G(this.elements.settings.panels.speed)){var t="speed",i=this.elements.settings.panels.speed.querySelector('[role="menu"]');this.options.speed=this.options.speed.filter((function(t){return t>=e.minimumSpeed&&t<=e.maximumSpeed}));var n=!ae(this.options.speed)&&this.options.speed.length>1;nt.toggleMenuButton.call(this,t,n),fe(i),nt.checkMenu.call(this),n&&(this.options.speed.forEach((function(n){nt.createMenuItem.call(e,{value:n,list:i,type:t,title:nt.getLabel.call(e,"speed",n)})})),nt.updateSetting.call(this,t,i))}},checkMenu:function(){var e=this.elements.settings.buttons,t=!ae(e)&&Object.values(e).some((function(e){return!e.hidden}));ve(this.elements.settings.menu,!t)},focusFirstMenuItem:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(!this.elements.settings.popup.hidden){var i=e;G(i)||(i=Object.values(this.elements.settings.panels).find((function(e){return!e.hidden})));var n=i.querySelector('[role^="menuitem"]');Ae.call(this,n,t)}},toggleMenu:function(e){var t=this.elements.settings.popup,i=this.elements.buttons.settings;if(G(t)&&G(i)){var n=t.hidden,a=n;if(Q(e))a=e;else if(ee(e)&&27===e.which)a=!1;else if(Z(e)){var s=X(e.composedPath)?e.composedPath()[0]:e.target,r=t.contains(s);if(r||!r&&e.target!==i&&a)return}i.setAttribute("aria-expanded",a),ve(t,!a),be(this.elements.container,this.config.classNames.menu.open,a),a&&ee(e)?nt.focusFirstMenuItem.call(this,null,!0):a||n||Ae.call(this,i,ee(e))}},getMenuSize:function(e){var t=e.cloneNode(!0);t.style.position="absolute",t.style.opacity=0,t.removeAttribute("hidden"),e.parentNode.appendChild(t);var i=t.scrollWidth,n=t.scrollHeight;return pe(t),{width:i,height:n}},showMenuPanel:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",i=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.elements.container.querySelector("#plyr-settings-".concat(this.id,"-").concat(t));if(G(n)){var a=n.parentNode,s=Array.from(a.children).find((function(e){return!e.hidden}));if(Ee.transitions&&!Ee.reducedMotion){a.style.width="".concat(s.scrollWidth,"px"),a.style.height="".concat(s.scrollHeight,"px");var r=nt.getMenuSize.call(this,n),o=function t(i){i.target===a&&["width","height"].includes(i.propertyName)&&(a.style.width="",a.style.height="",Ie.call(e,a,se,t))};xe.call(this,a,se,o),a.style.width="".concat(r.width,"px"),a.style.height="".concat(r.height,"px")}ve(s,!0),ve(n,!1),nt.focusFirstMenuItem.call(this,n,i)}},setDownloadUrl:function(){var e=this.elements.buttons.download;G(e)&&e.setAttribute("href",this.download)},create:function(e){var t=this,i=nt.bindMenuItemShortcuts,n=nt.createButton,a=nt.createProgress,s=nt.createRange,r=nt.createTime,o=nt.setQualityMenu,l=nt.setSpeedMenu,c=nt.showMenuPanel;this.elements.controls=null,$(this.config.controls)&&this.config.controls.includes("play-large")&&this.elements.container.appendChild(n.call(this,"play-large"));var u=he("div",ye(this.config.selectors.controls.wrapper));this.elements.controls=u;var d={class:"plyr__controls__item"};return Be($(this.config.controls)?this.config.controls:[]).forEach((function(o){if("restart"===o&&u.appendChild(n.call(t,"restart",d)),"rewind"===o&&u.appendChild(n.call(t,"rewind",d)),"play"===o&&u.appendChild(n.call(t,"play",d)),"fast-forward"===o&&u.appendChild(n.call(t,"fast-forward",d)),"progress"===o){var l=he("div",{class:"".concat(d.class," plyr__progress__container")}),h=he("div",ye(t.config.selectors.progress));if(h.appendChild(s.call(t,"seek",{id:"plyr-seek-".concat(e.id)})),h.appendChild(a.call(t,"buffer")),t.config.tooltips.seek){var m=he("span",{class:t.config.classNames.tooltip},"00:00");h.appendChild(m),t.elements.display.seekTooltip=m}t.elements.progress=h,l.appendChild(t.elements.progress),u.appendChild(l)}if("current-time"===o&&u.appendChild(r.call(t,"currentTime",d)),"duration"===o&&u.appendChild(r.call(t,"duration",d)),"mute"===o||"volume"===o){var p=t.elements.volume;if(G(p)&&u.contains(p)||(p=he("div",ce({},d,{class:"".concat(d.class," plyr__volume").trim()})),t.elements.volume=p,u.appendChild(p)),"mute"===o&&p.appendChild(n.call(t,"mute")),"volume"===o&&!oe.isIos){var f={max:1,step:.05,value:t.config.volume};p.appendChild(s.call(t,"volume",ce(f,{id:"plyr-volume-".concat(e.id)})))}}if("captions"===o&&u.appendChild(n.call(t,"captions",d)),"settings"===o&&!ae(t.config.settings)){var g=he("div",ce({},d,{class:"".concat(d.class," plyr__menu").trim(),hidden:""}));g.appendChild(n.call(t,"settings",{"aria-haspopup":!0,"aria-controls":"plyr-settings-".concat(e.id),"aria-expanded":!1}));var y=he("div",{class:"plyr__menu__container",id:"plyr-settings-".concat(e.id),hidden:""}),v=he("div"),b=he("div",{id:"plyr-settings-".concat(e.id,"-home")}),w=he("div",{role:"menu"});b.appendChild(w),v.appendChild(b),t.elements.settings.panels.home=b,t.config.settings.forEach((function(n){var a=he("button",ce(ye(t.config.selectors.buttons.settings),{type:"button",class:"".concat(t.config.classNames.control," ").concat(t.config.classNames.control,"--forward"),role:"menuitem","aria-haspopup":!0,hidden:""}));i.call(t,a,n),xe.call(t,a,"click",(function(){c.call(t,n,!1)}));var s=he("span",null,Xe(n,t.config)),r=he("span",{class:t.config.classNames.menu.value});r.innerHTML=e[n],s.appendChild(r),a.appendChild(s),w.appendChild(a);var o=he("div",{id:"plyr-settings-".concat(e.id,"-").concat(n),hidden:""}),l=he("button",{type:"button",class:"".concat(t.config.classNames.control," ").concat(t.config.classNames.control,"--back")});l.appendChild(he("span",{"aria-hidden":!0},Xe(n,t.config))),l.appendChild(he("span",{class:t.config.classNames.hidden},Xe("menuBack",t.config))),xe.call(t,o,"keydown",(function(e){37===e.which&&(e.preventDefault(),e.stopPropagation(),c.call(t,"home",!0))}),!1),xe.call(t,l,"click",(function(){c.call(t,"home",!1)})),o.appendChild(l),o.appendChild(he("div",{role:"menu"})),v.appendChild(o),t.elements.settings.buttons[n]=a,t.elements.settings.panels[n]=o})),y.appendChild(v),g.appendChild(y),u.appendChild(g),t.elements.settings.popup=y,t.elements.settings.menu=g}if("pip"===o&&Ee.pip&&u.appendChild(n.call(t,"pip",d)),"airplay"===o&&Ee.airplay&&u.appendChild(n.call(t,"airplay",d)),"download"===o){var k=ce({},d,{element:"a",href:t.download,target:"_blank"});t.isHTML5&&(k.download="");var T=t.config.urls.download;!ne(T)&&t.isEmbed&&ce(k,{icon:"logo-".concat(t.provider),label:t.provider}),u.appendChild(n.call(t,"download",k))}"fullscreen"===o&&u.appendChild(n.call(t,"fullscreen",d))})),this.isHTML5&&o.call(this,Ve.getQualityOptions.call(this)),l.call(this),u},inject:function(){var e=this;if(this.config.loadSprite){var t=nt.getIconUrl.call(this);t.cors&&Ge(t.url,"sprite-plyr")}this.id=Math.floor(1e4*Math.random());var i=null;this.elements.controls=null;var n={id:this.id,seektime:this.config.seekTime,title:this.config.title},a=!0;X(this.config.controls)&&(this.config.controls=this.config.controls.call(this,n)),this.config.controls||(this.config.controls=[]),G(this.config.controls)||Y(this.config.controls)?i=this.config.controls:(i=nt.create.call(this,{id:this.id,seektime:this.config.seekTime,speed:this.speed,quality:this.quality,captions:rt.getLabel.call(this)}),a=!1);var s,r;if(a&&Y(this.config.controls)&&(s=i,Object.entries(n).forEach((function(e){var t=o(e,2),i=t[0],n=t[1];s=We(s,"{".concat(i,"}"),n)})),i=s),Y(this.config.selectors.controls.container)&&(r=document.querySelector(this.config.selectors.controls.container)),G(r)||(r=this.elements.container),r[G(i)?"insertAdjacentElement":"insertAdjacentHTML"]("afterbegin",i),G(this.elements.controls)||nt.findElements.call(this),!ae(this.elements.buttons)){var l=function(t){var i=e.config.classNames.controlPressed;Object.defineProperty(t,"pressed",{enumerable:!0,get:function(){return we(t,i)},set:function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];be(t,i,e)}})};Object.values(this.elements.buttons).filter(Boolean).forEach((function(e){$(e)||J(e)?Array.from(e).filter(Boolean).forEach(l):l(e)}))}if(oe.isEdge&&re(r),this.config.tooltips.controls){var c=this.config,u=c.classNames,d=c.selectors,h="".concat(d.controls.wrapper," ").concat(d.labels," .").concat(u.hidden),m=Te.call(this,h);Array.from(m).forEach((function(t){be(t,e.config.classNames.hidden,!1),be(t,e.config.classNames.tooltip,!0)}))}}};function at(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=e;if(t){var n=document.createElement("a");n.href=i,i=n.href}try{return new URL(i)}catch(e){return null}}function st(e){var t=new URLSearchParams;return z(e)&&Object.entries(e).forEach((function(e){var i=o(e,2),n=i[0],a=i[1];t.set(n,a)})),t}var rt={setup:function(){if(this.supported.ui)if(!this.isVideo||this.isYouTube||this.isHTML5&&!Ee.textTracks)$(this.config.controls)&&this.config.controls.includes("settings")&&this.config.settings.includes("captions")&&nt.setCaptionsMenu.call(this);else{if(G(this.elements.captions)||(this.elements.captions=he("div",ye(this.config.selectors.captions)),function(e,t){G(e)&&G(t)&&t.parentNode.insertBefore(e,t.nextSibling)}(this.elements.captions,this.elements.wrapper)),oe.isIE&&window.URL){var e=this.media.querySelectorAll("track");Array.from(e).forEach((function(e){var t=e.getAttribute("src"),i=at(t);null!==i&&i.hostname!==window.location.href.hostname&&["http:","https:"].includes(i.protocol)&&Je(t,"blob").then((function(t){e.setAttribute("src",window.URL.createObjectURL(t))})).catch((function(){pe(e)}))}))}var t=Be((navigator.languages||[navigator.language||navigator.userLanguage||"en"]).map((function(e){return e.split("-")[0]}))),i=(this.storage.get("language")||this.config.captions.language||"auto").toLowerCase();if("auto"===i)i=o(t,1)[0];var n=this.storage.get("captions");if(Q(n)||(n=this.config.captions.active),Object.assign(this.captions,{toggled:!1,active:n,language:i,languages:t}),this.isHTML5){var a=this.config.captions.update?"addtrack removetrack":"removetrack";xe.call(this,this.media.textTracks,a,rt.update.bind(this))}setTimeout(rt.update.bind(this),0)}},update:function(){var e=this,t=rt.getTracks.call(this,!0),i=this.captions,n=i.active,a=i.language,s=i.meta,r=i.currentTrackNode,o=Boolean(t.find((function(e){return e.language===a})));this.isHTML5&&this.isVideo&&t.filter((function(e){return!s.get(e)})).forEach((function(t){e.debug.log("Track added",t),s.set(t,{default:"showing"===t.mode}),"showing"===t.mode&&(t.mode="hidden"),xe.call(e,t,"cuechange",(function(){return rt.updateCues.call(e)}))})),(o&&this.language!==a||!t.includes(r))&&(rt.setLanguage.call(this,a),rt.toggle.call(this,n&&o)),be(this.elements.container,this.config.classNames.captions.enabled,!ae(t)),$(this.config.controls)&&this.config.controls.includes("settings")&&this.config.settings.includes("captions")&&nt.setCaptionsMenu.call(this)},toggle:function(e){var t=this,i=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];if(this.supported.ui){var n=this.captions.toggled,a=this.config.classNames.captions.active,s=W(e)?!n:e;if(s!==n){if(i||(this.captions.active=s,this.storage.set({captions:s})),!this.language&&s&&!i){var r=rt.getTracks.call(this),o=rt.findTrack.call(this,[this.captions.language].concat(l(this.captions.languages)),!0);return this.captions.language=o.language,void rt.set.call(this,r.indexOf(o))}this.elements.buttons.captions&&(this.elements.buttons.captions.pressed=s),be(this.elements.container,a,s),this.captions.toggled=s,nt.updateSetting.call(this,"captions"),Oe.call(this,this.media,s?"captionsenabled":"captionsdisabled")}setTimeout((function(){s&&t.captions.toggled&&(t.captions.currentTrackNode.mode="hidden")}))}},set:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],i=rt.getTracks.call(this);if(-1!==e)if(K(e))if(e in i){if(this.captions.currentTrack!==e){this.captions.currentTrack=e;var n=i[e],a=n||{},s=a.language;this.captions.currentTrackNode=n,nt.updateSetting.call(this,"captions"),t||(this.captions.language=s,this.storage.set({language:s})),this.isVimeo&&this.embed.enableTextTrack(s),Oe.call(this,this.media,"languagechange")}rt.toggle.call(this,!0,t),this.isHTML5&&this.isVideo&&rt.updateCues.call(this)}else this.debug.warn("Track not found",e);else this.debug.warn("Invalid caption argument",e);else rt.toggle.call(this,!1,t)},setLanguage:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];if(Y(e)){var i=e.toLowerCase();this.captions.language=i;var n=rt.getTracks.call(this),a=rt.findTrack.call(this,[i]);rt.set.call(this,n.indexOf(a),t)}else this.debug.warn("Invalid language argument",e)},getTracks:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]&&arguments[0],i=Array.from((this.media||{}).textTracks||[]);return i.filter((function(i){return!e.isHTML5||t||e.captions.meta.has(i)})).filter((function(e){return["captions","subtitles"].includes(e.kind)}))},findTrack:function(e){var t,i=this,n=arguments.length>1&&void 0!==arguments[1]&&arguments[1],a=rt.getTracks.call(this),s=function(e){return Number((i.captions.meta.get(e)||{}).default)},r=Array.from(a).sort((function(e,t){return s(t)-s(e)}));return e.every((function(e){return!(t=r.find((function(t){return t.language===e})))})),t||(n?r[0]:void 0)},getCurrentTrack:function(){return rt.getTracks.call(this)[this.currentTrack]},getLabel:function(e){var t=e;return!te(t)&&Ee.textTracks&&this.captions.toggled&&(t=rt.getCurrentTrack.call(this)),te(t)?ae(t.label)?ae(t.language)?Xe("enabled",this.config):e.language.toUpperCase():t.label:Xe("disabled",this.config)},updateCues:function(e){if(this.supported.ui)if(G(this.elements.captions))if(W(e)||Array.isArray(e)){var t=e;if(!t){var i=rt.getCurrentTrack.call(this);t=Array.from((i||{}).activeCues||[]).map((function(e){return e.getCueAsHTML()})).map(Ye)}var n=t.map((function(e){return e.trim()})).join("\n");if(n!==this.elements.captions.innerHTML){fe(this.elements.captions);var a=he("span",ye(this.config.selectors.caption));a.innerHTML=n,this.elements.captions.appendChild(a),Oe.call(this,this.media,"cuechange")}}else this.debug.warn("updateCues: Invalid input",e);else this.debug.warn("No captions element to render to")}},ot={enabled:!0,title:"",debug:!1,autoplay:!1,autopause:!0,playsinline:!0,seekTime:10,volume:1,muted:!1,duration:null,displayDuration:!0,invertTime:!0,toggleInvert:!0,ratio:null,clickToPlay:!0,hideControls:!0,resetOnEnd:!1,disableContextMenu:!0,loadSprite:!0,iconPrefix:"plyr",iconUrl:"https://cdn.plyr.io/3.6.3/plyr.svg",blankVideo:"https://cdn.plyr.io/static/blank.mp4",quality:{default:576,options:[4320,2880,2160,1440,1080,720,576,480,360,240],forced:!1,onChange:null},loop:{active:!1},speed:{selected:1,options:[.5,.75,1,1.25,1.5,1.75,2,4]},keyboard:{focused:!0,global:!1},tooltips:{controls:!1,seek:!0},captions:{active:!1,language:"auto",update:!1},fullscreen:{enabled:!0,fallback:!0,iosNative:!1},storage:{enabled:!0,key:"plyr"},controls:["play-large","play","progress","current-time","mute","volume","captions","settings","pip","airplay","fullscreen"],settings:["captions","quality","speed"],i18n:{restart:"Restart",rewind:"Rewind {seektime}s",play:"Play",pause:"Pause",fastForward:"Forward {seektime}s",seek:"Seek",seekLabel:"{currentTime} of {duration}",played:"Played",buffered:"Buffered",currentTime:"Current time",duration:"Duration",volume:"Volume",mute:"Mute",unmute:"Unmute",enableCaptions:"Enable captions",disableCaptions:"Disable captions",download:"Download",enterFullscreen:"Enter fullscreen",exitFullscreen:"Exit fullscreen",frameTitle:"Player for {title}",captions:"Captions",settings:"Settings",pip:"PIP",menuBack:"Go back to previous menu",speed:"Speed",normal:"Normal",quality:"Quality",loop:"Loop",start:"Start",end:"End",all:"All",reset:"Reset",disabled:"Disabled",enabled:"Enabled",advertisement:"Ad",qualityBadge:{2160:"4K",1440:"HD",1080:"HD",720:"HD",576:"SD",480:"SD"}},urls:{download:null,vimeo:{sdk:"https://player.vimeo.com/api/player.js",iframe:"https://player.vimeo.com/video/{0}?{1}",api:"https://vimeo.com/api/oembed.json?url={0}"},youtube:{sdk:"https://www.youtube.com/iframe_api",api:"https://noembed.com/embed?url=https://www.youtube.com/watch?v={0}"},googleIMA:{sdk:"https://imasdk.googleapis.com/js/sdkloader/ima3.js"}},listeners:{seek:null,play:null,pause:null,restart:null,rewind:null,fastForward:null,mute:null,volume:null,captions:null,download:null,fullscreen:null,pip:null,airplay:null,speed:null,quality:null,loop:null,language:null},events:["ended","progress","stalled","playing","waiting","canplay","canplaythrough","loadstart","loadeddata","loadedmetadata","timeupdate","volumechange","play","pause","error","seeking","seeked","emptied","ratechange","cuechange","download","enterfullscreen","exitfullscreen","captionsenabled","captionsdisabled","languagechange","controlshidden","controlsshown","ready","statechange","qualitychange","adsloaded","adscontentpause","adscontentresume","adstarted","adsmidpoint","adscomplete","adsallcomplete","adsimpression","adsclick"],selectors:{editable:"input, textarea, select, [contenteditable]",container:".plyr",controls:{container:null,wrapper:".plyr__controls"},labels:"[data-plyr]",buttons:{play:'[data-plyr="play"]',pause:'[data-plyr="pause"]',restart:'[data-plyr="restart"]',rewind:'[data-plyr="rewind"]',fastForward:'[data-plyr="fast-forward"]',mute:'[data-plyr="mute"]',captions:'[data-plyr="captions"]',download:'[data-plyr="download"]',fullscreen:'[data-plyr="fullscreen"]',pip:'[data-plyr="pip"]',airplay:'[data-plyr="airplay"]',settings:'[data-plyr="settings"]',loop:'[data-plyr="loop"]'},inputs:{seek:'[data-plyr="seek"]',volume:'[data-plyr="volume"]',speed:'[data-plyr="speed"]',language:'[data-plyr="language"]',quality:'[data-plyr="quality"]'},display:{currentTime:".plyr__time--current",duration:".plyr__time--duration",buffer:".plyr__progress__buffer",loop:".plyr__progress__loop",volume:".plyr__volume--display"},progress:".plyr__progress",captions:".plyr__captions",caption:".plyr__caption"},classNames:{type:"plyr--{0}",provider:"plyr--{0}",video:"plyr__video-wrapper",embed:"plyr__video-embed",videoFixedRatio:"plyr__video-wrapper--fixed-ratio",embedContainer:"plyr__video-embed__container",poster:"plyr__poster",posterEnabled:"plyr__poster-enabled",ads:"plyr__ads",control:"plyr__control",controlPressed:"plyr__control--pressed",playing:"plyr--playing",paused:"plyr--paused",stopped:"plyr--stopped",loading:"plyr--loading",hover:"plyr--hover",tooltip:"plyr__tooltip",cues:"plyr__cues",hidden:"plyr__sr-only",hideControls:"plyr--hide-controls",isIos:"plyr--is-ios",isTouch:"plyr--is-touch",uiSupported:"plyr--full-ui",noTransition:"plyr--no-transition",display:{time:"plyr__time"},menu:{value:"plyr__menu__value",badge:"plyr__badge",open:"plyr--menu-open"},captions:{enabled:"plyr--captions-enabled",active:"plyr--captions-active"},fullscreen:{enabled:"plyr--fullscreen-enabled",fallback:"plyr--fullscreen-fallback"},pip:{supported:"plyr--pip-supported",active:"plyr--pip-active"},airplay:{supported:"plyr--airplay-supported",active:"plyr--airplay-active"},tabFocus:"plyr__tab-focus",previewThumbnails:{thumbContainer:"plyr__preview-thumb",thumbContainerShown:"plyr__preview-thumb--is-shown",imageContainer:"plyr__preview-thumb__image-container",timeContainer:"plyr__preview-thumb__time-container",scrubbingContainer:"plyr__preview-scrubbing",scrubbingContainerShown:"plyr__preview-scrubbing--is-shown"}},attributes:{embed:{provider:"data-plyr-provider",id:"data-plyr-embed-id"}},ads:{enabled:!1,publisherId:"",tagUrl:""},previewThumbnails:{enabled:!1,src:""},vimeo:{byline:!1,portrait:!1,title:!1,speed:!0,transparent:!1,customControls:!0,referrerPolicy:null,premium:!1},youtube:{rel:0,showinfo:0,iv_load_policy:3,modestbranding:1,customControls:!0,noCookie:!1}},lt="picture-in-picture",ct="inline",ut={html5:"html5",youtube:"youtube",vimeo:"vimeo"},dt="audio",ht="video";var mt=function(){},pt=function(){function t(){var i=arguments.length>0&&void 0!==arguments[0]&&arguments[0];e(this,t),this.enabled=window.console&&i,this.enabled&&this.log("Debugging enabled")}return i(t,[{key:"log",get:function(){return this.enabled?Function.prototype.bind.call(console.log,console):mt}},{key:"warn",get:function(){return this.enabled?Function.prototype.bind.call(console.warn,console):mt}},{key:"error",get:function(){return this.enabled?Function.prototype.bind.call(console.error,console):mt}}]),t}(),ft=function(){function t(i){var n=this;e(this,t),this.player=i,this.prefix=t.prefix,this.property=t.property,this.scrollPosition={x:0,y:0},this.forceFallback="force"===i.config.fullscreen.fallback,this.player.elements.fullscreen=i.config.fullscreen.container&&function(e,t){return(Element.prototype.closest||function(){var e=this;do{if(ke.matches(e,t))return e;e=e.parentElement||e.parentNode}while(null!==e&&1===e.nodeType);return null}).call(e,t)}(this.player.elements.container,i.config.fullscreen.container),xe.call(this.player,document,"ms"===this.prefix?"MSFullscreenChange":"".concat(this.prefix,"fullscreenchange"),(function(){n.onChange()})),xe.call(this.player,this.player.elements.container,"dblclick",(function(e){G(n.player.elements.controls)&&n.player.elements.controls.contains(e.target)||n.player.listeners.proxy(e,n.toggle,"fullscreen")})),xe.call(this,this.player.elements.container,"keydown",(function(e){return n.trapFocus(e)})),this.update()}return i(t,[{key:"onChange",value:function(){if(this.enabled){var e=this.player.elements.buttons.fullscreen;G(e)&&(e.pressed=this.active);var t=this.target===this.player.media?this.target:this.player.elements.container;Oe.call(this.player,t,this.active?"enterfullscreen":"exitfullscreen",!0)}}},{key:"toggleFallback",value:function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];if(e?this.scrollPosition={x:window.scrollX||0,y:window.scrollY||0}:window.scrollTo(this.scrollPosition.x,this.scrollPosition.y),document.body.style.overflow=e?"hidden":"",be(this.target,this.player.config.classNames.fullscreen.fallback,e),oe.isIos){var t=document.head.querySelector('meta[name="viewport"]'),i="viewport-fit=cover";t||(t=document.createElement("meta")).setAttribute("name","viewport");var n=Y(t.content)&&t.content.includes(i);e?(this.cleanupViewport=!n,n||(t.content+=",".concat(i))):this.cleanupViewport&&(t.content=t.content.split(",").filter((function(e){return e.trim()!==i})).join(","))}this.onChange()}},{key:"trapFocus",value:function(e){if(!oe.isIos&&this.active&&"Tab"===e.key&&9===e.keyCode){var t=document.activeElement,i=Te.call(this.player,"a[href], button:not(:disabled), input:not(:disabled), [tabindex]"),n=o(i,1)[0],a=i[i.length-1];t!==a||e.shiftKey?t===n&&e.shiftKey&&(a.focus(),e.preventDefault()):(n.focus(),e.preventDefault())}}},{key:"update",value:function(){var e;this.enabled?(e=this.forceFallback?"Fallback (forced)":t.native?"Native":"Fallback",this.player.debug.log("".concat(e," fullscreen enabled"))):this.player.debug.log("Fullscreen not supported and fallback disabled");be(this.player.elements.container,this.player.config.classNames.fullscreen.enabled,this.enabled)}},{key:"enter",value:function(){this.enabled&&(oe.isIos&&this.player.config.fullscreen.iosNative?this.target.webkitEnterFullscreen():!t.native||this.forceFallback?this.toggleFallback(!0):this.prefix?ae(this.prefix)||this.target["".concat(this.prefix,"Request").concat(this.property)]():this.target.requestFullscreen({navigationUI:"hide"}))}},{key:"exit",value:function(){if(this.enabled)if(oe.isIos&&this.player.config.fullscreen.iosNative)this.target.webkitExitFullscreen(),De(this.player.play());else if(!t.native||this.forceFallback)this.toggleFallback(!1);else if(this.prefix){if(!ae(this.prefix)){var e="moz"===this.prefix?"Cancel":"Exit";document["".concat(this.prefix).concat(e).concat(this.property)]()}}else(document.cancelFullScreen||document.exitFullscreen).call(document)}},{key:"toggle",value:function(){this.active?this.exit():this.enter()}},{key:"usingNative",get:function(){return t.native&&!this.forceFallback}},{key:"enabled",get:function(){return(t.native||this.player.config.fullscreen.fallback)&&this.player.config.fullscreen.enabled&&this.player.supported.ui&&this.player.isVideo}},{key:"active",get:function(){if(!this.enabled)return!1;if(!t.native||this.forceFallback)return we(this.target,this.player.config.classNames.fullscreen.fallback);var e=this.prefix?document["".concat(this.prefix).concat(this.property,"Element")]:document.fullscreenElement;return e&&e.shadowRoot?e===this.target.getRootNode().host:e===this.target}},{key:"target",get:function(){return oe.isIos&&this.player.config.fullscreen.iosNative?this.player.media:this.player.elements.fullscreen||this.player.elements.container}}],[{key:"native",get:function(){return!!(document.fullscreenEnabled||document.webkitFullscreenEnabled||document.mozFullScreenEnabled||document.msFullscreenEnabled)}},{key:"prefix",get:function(){if(X(document.exitFullscreen))return"";var e="";return["webkit","moz","ms"].some((function(t){return!(!X(document["".concat(t,"ExitFullscreen")])&&!X(document["".concat(t,"CancelFullScreen")]))&&(e=t,!0)})),e}},{key:"property",get:function(){return"moz"===this.prefix?"FullScreen":"Fullscreen"}}]),t}();function gt(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1;return new Promise((function(i,n){var a=new Image,s=function(){delete a.onload,delete a.onerror,(a.naturalWidth>=t?i:n)(a)};Object.assign(a,{onload:s,onerror:s,src:e})}))}var yt={addStyleHook:function(){be(this.elements.container,this.config.selectors.container.replace(".",""),!0),be(this.elements.container,this.config.classNames.uiSupported,this.supported.ui)},toggleNativeControls:function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];e&&this.isHTML5?this.media.setAttribute("controls",""):this.media.removeAttribute("controls")},build:function(){var e=this;if(this.listeners.media(),!this.supported.ui)return this.debug.warn("Basic support only for ".concat(this.provider," ").concat(this.type)),void yt.toggleNativeControls.call(this,!0);G(this.elements.controls)||(nt.inject.call(this),this.listeners.controls()),yt.toggleNativeControls.call(this),this.isHTML5&&rt.setup.call(this),this.volume=null,this.muted=null,this.loop=null,this.quality=null,this.speed=null,nt.updateVolume.call(this),nt.timeUpdate.call(this),yt.checkPlaying.call(this),be(this.elements.container,this.config.classNames.pip.supported,Ee.pip&&this.isHTML5&&this.isVideo),be(this.elements.container,this.config.classNames.airplay.supported,Ee.airplay&&this.isHTML5),be(this.elements.container,this.config.classNames.isIos,oe.isIos),be(this.elements.container,this.config.classNames.isTouch,this.touch),this.ready=!0,setTimeout((function(){Oe.call(e,e.media,"ready")}),0),yt.setTitle.call(this),this.poster&&yt.setPoster.call(this,this.poster,!1).catch((function(){})),this.config.duration&&nt.durationUpdate.call(this)},setTitle:function(){var e=Xe("play",this.config);if(Y(this.config.title)&&!ae(this.config.title)&&(e+=", ".concat(this.config.title)),Array.from(this.elements.buttons.play||[]).forEach((function(t){t.setAttribute("aria-label",e)})),this.isEmbed){var t=Ce.call(this,"iframe");if(!G(t))return;var i=ae(this.config.title)?"video":this.config.title,n=Xe("frameTitle",this.config);t.setAttribute("title",n.replace("{title}",i))}},togglePoster:function(e){be(this.elements.container,this.config.classNames.posterEnabled,e)},setPoster:function(e){var t=this,i=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];return i&&this.poster?Promise.reject(new Error("Poster already set")):(this.media.setAttribute("data-poster",e),this.elements.poster.removeAttribute("hidden"),je.call(this).then((function(){return gt(e)})).catch((function(i){throw e===t.poster&&yt.togglePoster.call(t,!1),i})).then((function(){if(e!==t.poster)throw new Error("setPoster cancelled by later call to setPoster")})).then((function(){return Object.assign(t.elements.poster.style,{backgroundImage:"url('".concat(e,"')"),backgroundSize:""}),yt.togglePoster.call(t,!0),e})))},checkPlaying:function(e){var t=this;be(this.elements.container,this.config.classNames.playing,this.playing),be(this.elements.container,this.config.classNames.paused,this.paused),be(this.elements.container,this.config.classNames.stopped,this.stopped),Array.from(this.elements.buttons.play||[]).forEach((function(e){Object.assign(e,{pressed:t.playing}),e.setAttribute("aria-label",Xe(t.playing?"pause":"play",t.config))})),Z(e)&&"timeupdate"===e.type||yt.toggleControls.call(this)},checkLoading:function(e){var t=this;this.loading=["stalled","waiting"].includes(e.type),clearTimeout(this.timers.loading),this.timers.loading=setTimeout((function(){be(t.elements.container,t.config.classNames.loading,t.loading),yt.toggleControls.call(t)}),this.loading?250:0)},toggleControls:function(e){var t=this.elements.controls;if(t&&this.config.hideControls){var i=this.touch&&this.lastSeekTime+2e3>Date.now();this.toggleControls(Boolean(e||this.loading||this.paused||t.pressed||t.hover||i))}},migrateStyles:function(){var e=this;Object.values(s({},this.media.style)).filter((function(e){return!ae(e)&&Y(e)&&e.startsWith("--plyr")})).forEach((function(t){e.elements.container.style.setProperty(t,e.media.style.getPropertyValue(t)),e.media.style.removeProperty(t)})),ae(this.media.style)&&this.media.removeAttribute("style")}},vt=function(){function t(i){e(this,t),this.player=i,this.lastKey=null,this.focusTimer=null,this.lastKeyDown=null,this.handleKey=this.handleKey.bind(this),this.toggleMenu=this.toggleMenu.bind(this),this.setTabFocus=this.setTabFocus.bind(this),this.firstTouch=this.firstTouch.bind(this)}return i(t,[{key:"handleKey",value:function(e){var t=this.player,i=t.elements,n=e.keyCode?e.keyCode:e.which,a="keydown"===e.type,s=a&&n===this.lastKey;if(!(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)&&K(n)){if(a){var r=document.activeElement;if(G(r)){var o=t.config.selectors.editable;if(r!==i.inputs.seek&&ke(r,o))return;if(32===e.which&&ke(r,'button, [role^="menuitem"]'))return}switch([32,37,38,39,40,48,49,50,51,52,53,54,56,57,67,70,73,75,76,77,79].includes(n)&&(e.preventDefault(),e.stopPropagation()),n){case 48:case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:s||(t.currentTime=t.duration/10*(n-48));break;case 32:case 75:s||De(t.togglePlay());break;case 38:t.increaseVolume(.1);break;case 40:t.decreaseVolume(.1);break;case 77:s||(t.muted=!t.muted);break;case 39:t.forward();break;case 37:t.rewind();break;case 70:t.fullscreen.toggle();break;case 67:s||t.toggleCaptions();break;case 76:t.loop=!t.loop}27===n&&!t.fullscreen.usingNative&&t.fullscreen.active&&t.fullscreen.toggle(),this.lastKey=n}else this.lastKey=null}}},{key:"toggleMenu",value:function(e){nt.toggleMenu.call(this.player,e)}},{key:"firstTouch",value:function(){var e=this.player,t=e.elements;e.touch=!0,be(t.container,e.config.classNames.isTouch,!0)}},{key:"setTabFocus",value:function(e){var t=this.player,i=t.elements;if(clearTimeout(this.focusTimer),"keydown"!==e.type||9===e.which){"keydown"===e.type&&(this.lastKeyDown=e.timeStamp);var n,a=e.timeStamp-this.lastKeyDown<=20;if("focus"!==e.type||a)n=t.config.classNames.tabFocus,be(Te.call(t,".".concat(n)),n,!1),"focusout"!==e.type&&(this.focusTimer=setTimeout((function(){var e=document.activeElement;i.container.contains(e)&&be(document.activeElement,t.config.classNames.tabFocus,!0)}),10))}}},{key:"global",value:function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0],t=this.player;t.config.keyboard.global&&Me.call(t,window,"keydown keyup",this.handleKey,e,!1),Me.call(t,document.body,"click",this.toggleMenu,e),Le.call(t,document.body,"touchstart",this.firstTouch),Me.call(t,document.body,"keydown focus blur focusout",this.setTabFocus,e,!1,!0)}},{key:"container",value:function(){var e=this.player,t=e.config,i=e.elements,n=e.timers;!t.keyboard.global&&t.keyboard.focused&&xe.call(e,i.container,"keydown keyup",this.handleKey,!1),xe.call(e,i.container,"mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen",(function(t){var a=i.controls;a&&"enterfullscreen"===t.type&&(a.pressed=!1,a.hover=!1);var s=0;["touchstart","touchmove","mousemove"].includes(t.type)&&(yt.toggleControls.call(e,!0),s=e.touch?3e3:2e3),clearTimeout(n.controls),n.controls=setTimeout((function(){return yt.toggleControls.call(e,!1)}),s)}));var a=function(t){if(!t)return Re.call(e);var n=i.container.getBoundingClientRect(),a=n.width,s=n.height;return Re.call(e,"".concat(a,":").concat(s))},s=function(){clearTimeout(n.resized),n.resized=setTimeout(a,50)};xe.call(e,i.container,"enterfullscreen exitfullscreen",(function(t){var n=e.fullscreen,r=n.target,l=n.usingNative;if(r===i.container&&(e.isEmbed||!ae(e.config.ratio))){var c="enterfullscreen"===t.type,u=a(c);u.padding;!function(t,i,n){if(e.isVimeo&&!e.config.vimeo.premium){var a=e.elements.wrapper.firstChild,s=o(t,2)[1],r=o(Fe.call(e),2),l=r[0],c=r[1];a.style.maxWidth=n?"".concat(s/c*l,"px"):null,a.style.margin=n?"0 auto":null}}(u.ratio,0,c),c&&setTimeout((function(){return re(i.container)}),100),l||(c?xe.call(e,window,"resize",s):Ie.call(e,window,"resize",s))}}))}},{key:"media",value:function(){var e=this,t=this.player,i=t.elements;if(xe.call(t,t.media,"timeupdate seeking seeked",(function(e){return nt.timeUpdate.call(t,e)})),xe.call(t,t.media,"durationchange loadeddata loadedmetadata",(function(e){return nt.durationUpdate.call(t,e)})),xe.call(t,t.media,"ended",(function(){t.isHTML5&&t.isVideo&&t.config.resetOnEnd&&(t.restart(),t.pause())})),xe.call(t,t.media,"progress playing seeking seeked",(function(e){return nt.updateProgress.call(t,e)})),xe.call(t,t.media,"volumechange",(function(e){return nt.updateVolume.call(t,e)})),xe.call(t,t.media,"playing play pause ended emptied timeupdate",(function(e){return yt.checkPlaying.call(t,e)})),xe.call(t,t.media,"waiting canplay seeked playing",(function(e){return yt.checkLoading.call(t,e)})),t.supported.ui&&t.config.clickToPlay&&!t.isAudio){var n=Ce.call(t,".".concat(t.config.classNames.video));if(!G(n))return;xe.call(t,i.container,"click",(function(a){([i.container,n].includes(a.target)||n.contains(a.target))&&(t.touch&&t.config.hideControls||(t.ended?(e.proxy(a,t.restart,"restart"),e.proxy(a,(function(){De(t.play())}),"play")):e.proxy(a,(function(){De(t.togglePlay())}),"play")))}))}t.supported.ui&&t.config.disableContextMenu&&xe.call(t,i.wrapper,"contextmenu",(function(e){e.preventDefault()}),!1),xe.call(t,t.media,"volumechange",(function(){t.storage.set({volume:t.volume,muted:t.muted})})),xe.call(t,t.media,"ratechange",(function(){nt.updateSetting.call(t,"speed"),t.storage.set({speed:t.speed})})),xe.call(t,t.media,"qualitychange",(function(e){nt.updateSetting.call(t,"quality",null,e.detail.quality)})),xe.call(t,t.media,"ready qualitychange",(function(){nt.setDownloadUrl.call(t)}));var a=t.config.events.concat(["keyup","keydown"]).join(" ");xe.call(t,t.media,a,(function(e){var n=e.detail,a=void 0===n?{}:n;"error"===e.type&&(a=t.media.error),Oe.call(t,i.container,e.type,!0,a)}))}},{key:"proxy",value:function(e,t,i){var n=this.player,a=n.config.listeners[i],s=!0;X(a)&&(s=a.call(n,e)),!1!==s&&X(t)&&t.call(n,e)}},{key:"bind",value:function(e,t,i,n){var a=this,s=!(arguments.length>4&&void 0!==arguments[4])||arguments[4],r=this.player,o=r.config.listeners[n],l=X(o);xe.call(r,e,t,(function(e){return a.proxy(e,i,n)}),s&&!l)}},{key:"controls",value:function(){var e=this,t=this.player,i=t.elements,n=oe.isIE?"change":"input";if(i.buttons.play&&Array.from(i.buttons.play).forEach((function(i){e.bind(i,"click",(function(){De(t.togglePlay())}),"play")})),this.bind(i.buttons.restart,"click",t.restart,"restart"),this.bind(i.buttons.rewind,"click",(function(){t.lastSeekTime=Date.now(),t.rewind()}),"rewind"),this.bind(i.buttons.fastForward,"click",(function(){t.lastSeekTime=Date.now(),t.forward()}),"fastForward"),this.bind(i.buttons.mute,"click",(function(){t.muted=!t.muted}),"mute"),this.bind(i.buttons.captions,"click",(function(){return t.toggleCaptions()})),this.bind(i.buttons.download,"click",(function(){Oe.call(t,t.media,"download")}),"download"),this.bind(i.buttons.fullscreen,"click",(function(){t.fullscreen.toggle()}),"fullscreen"),this.bind(i.buttons.pip,"click",(function(){t.pip="toggle"}),"pip"),this.bind(i.buttons.airplay,"click",t.airplay,"airplay"),this.bind(i.buttons.settings,"click",(function(e){e.stopPropagation(),e.preventDefault(),nt.toggleMenu.call(t,e)}),null,!1),this.bind(i.buttons.settings,"keyup",(function(e){var i=e.which;[13,32].includes(i)&&(13!==i?(e.preventDefault(),e.stopPropagation(),nt.toggleMenu.call(t,e)):nt.focusFirstMenuItem.call(t,null,!0))}),null,!1),this.bind(i.settings.menu,"keydown",(function(e){27===e.which&&nt.toggleMenu.call(t,e)})),this.bind(i.inputs.seek,"mousedown mousemove",(function(e){var t=i.progress.getBoundingClientRect(),n=100/t.width*(e.pageX-t.left);e.currentTarget.setAttribute("seek-value",n)})),this.bind(i.inputs.seek,"mousedown mouseup keydown keyup touchstart touchend",(function(e){var i=e.currentTarget,n=e.keyCode?e.keyCode:e.which,a="play-on-seeked";if(!ee(e)||39===n||37===n){t.lastSeekTime=Date.now();var s=i.hasAttribute(a),r=["mouseup","touchend","keyup"].includes(e.type);s&&r?(i.removeAttribute(a),De(t.play())):!r&&t.playing&&(i.setAttribute(a,""),t.pause())}})),oe.isIos){var a=Te.call(t,'input[type="range"]');Array.from(a).forEach((function(t){return e.bind(t,n,(function(e){return re(e.target)}))}))}this.bind(i.inputs.seek,n,(function(e){var i=e.currentTarget,n=i.getAttribute("seek-value");ae(n)&&(n=i.value),i.removeAttribute("seek-value"),t.currentTime=n/i.max*t.duration}),"seek"),this.bind(i.progress,"mouseenter mouseleave mousemove",(function(e){return nt.updateSeekTooltip.call(t,e)})),this.bind(i.progress,"mousemove touchmove",(function(e){var i=t.previewThumbnails;i&&i.loaded&&i.startMove(e)})),this.bind(i.progress,"mouseleave touchend click",(function(){var e=t.previewThumbnails;e&&e.loaded&&e.endMove(!1,!0)})),this.bind(i.progress,"mousedown touchstart",(function(e){var i=t.previewThumbnails;i&&i.loaded&&i.startScrubbing(e)})),this.bind(i.progress,"mouseup touchend",(function(e){var i=t.previewThumbnails;i&&i.loaded&&i.endScrubbing(e)})),oe.isWebkit&&Array.from(Te.call(t,'input[type="range"]')).forEach((function(i){e.bind(i,"input",(function(e){return nt.updateRangeFill.call(t,e.target)}))})),t.config.toggleInvert&&!G(i.display.duration)&&this.bind(i.display.currentTime,"click",(function(){0!==t.currentTime&&(t.config.invertTime=!t.config.invertTime,nt.timeUpdate.call(t))})),this.bind(i.inputs.volume,n,(function(e){t.volume=e.target.value}),"volume"),this.bind(i.controls,"mouseenter mouseleave",(function(e){i.controls.hover=!t.touch&&"mouseenter"===e.type})),i.fullscreen&&Array.from(i.fullscreen.children).filter((function(e){return!e.contains(i.container)})).forEach((function(n){e.bind(n,"mouseenter mouseleave",(function(e){i.controls.hover=!t.touch&&"mouseenter"===e.type}))})),this.bind(i.controls,"mousedown mouseup touchstart touchend touchcancel",(function(e){i.controls.pressed=["mousedown","touchstart"].includes(e.type)})),this.bind(i.controls,"focusin",(function(){var n=t.config,a=t.timers;be(i.controls,n.classNames.noTransition,!0),yt.toggleControls.call(t,!0),setTimeout((function(){be(i.controls,n.classNames.noTransition,!1)}),0);var s=e.touch?3e3:4e3;clearTimeout(a.controls),a.controls=setTimeout((function(){return yt.toggleControls.call(t,!1)}),s)})),this.bind(i.inputs.volume,"wheel",(function(e){var i=e.webkitDirectionInvertedFromDevice,n=o([e.deltaX,-e.deltaY].map((function(e){return i?-e:e})),2),a=n[0],s=n[1],r=Math.sign(Math.abs(a)>Math.abs(s)?a:s);t.increaseVolume(r/50);var l=t.media.volume;(1===r&&l<1||-1===r&&l>0)&&e.preventDefault()}),"volume",!1)}}]),t}();"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;var bt=function(e,t){return e(t={exports:{}},t.exports),t.exports}((function(e,t){e.exports=function(){var e=function(){},t={},i={},n={};function a(e,t){e=e.push?e:[e];var a,s,r,o=[],l=e.length,c=l;for(a=function(e,i){i.length&&o.push(e),--c||t(o)};l--;)s=e[l],(r=i[s])?a(s,r):(n[s]=n[s]||[]).push(a)}function s(e,t){if(e){var a=n[e];if(i[e]=t,a)for(;a.length;)a[0](e,t),a.splice(0,1)}}function r(t,i){t.call&&(t={success:t}),i.length?(t.error||e)(i):(t.success||e)(t)}function o(t,i,n,a){var s,r,l=document,c=n.async,u=(n.numRetries||0)+1,d=n.before||e,h=t.replace(/[\?|#].*$/,""),m=t.replace(/^(css|img)!/,"");a=a||0,/(^css!|\.css$)/.test(h)?((r=l.createElement("link")).rel="stylesheet",r.href=m,(s="hideFocus"in r)&&r.relList&&(s=0,r.rel="preload",r.as="style")):/(^img!|\.(png|gif|jpg|svg|webp)$)/.test(h)?(r=l.createElement("img")).src=m:((r=l.createElement("script")).src=t,r.async=void 0===c||c),r.onload=r.onerror=r.onbeforeload=function(e){var l=e.type[0];if(s)try{r.sheet.cssText.length||(l="e")}catch(e){18!=e.code&&(l="e")}if("e"==l){if((a+=1)<u)return o(t,i,n,a)}else if("preload"==r.rel&&"style"==r.as)return r.rel="stylesheet";i(t,l,e.defaultPrevented)},!1!==d(t,r)&&l.head.appendChild(r)}function l(e,t,i){var n,a,s=(e=e.push?e:[e]).length,r=s,l=[];for(n=function(e,i,n){if("e"==i&&l.push(e),"b"==i){if(!n)return;l.push(e)}--s||t(l)},a=0;a<r;a++)o(e[a],n,i)}function c(e,i,n){var a,o;if(i&&i.trim&&(a=i),o=(a?n:i)||{},a){if(a in t)throw"LoadJS";t[a]=!0}function c(t,i){l(e,(function(e){r(o,e),t&&r({success:t,error:i},e),s(a,e)}),o)}if(o.returnPromise)return new Promise(c);c()}return c.ready=function(e,t){return a(e,(function(e){r(t,e)})),c},c.done=function(e){s(e,[])},c.reset=function(){t={},i={},n={}},c.isDefined=function(e){return e in t},c}()}));function wt(e){return new Promise((function(t,i){bt(e,{success:t,error:i})}))}function kt(e){e&&!this.embed.hasPlayed&&(this.embed.hasPlayed=!0),this.media.paused===e&&(this.media.paused=!e,Oe.call(this,this.media,e?"play":"pause"))}var Tt={setup:function(){var e=this;be(e.elements.wrapper,e.config.classNames.embed,!0),e.options.speed=e.config.speed.options,Re.call(e),z(window.Vimeo)?Tt.ready.call(e):wt(e.config.urls.vimeo.sdk).then((function(){Tt.ready.call(e)})).catch((function(t){e.debug.warn("Vimeo SDK (player.js) failed to load",t)}))},ready:function(){var e=this,t=this,i=t.config.vimeo,n=i.premium,a=i.referrerPolicy,l=r(i,["premium","referrerPolicy"]);n&&Object.assign(l,{controls:!1,sidedock:!1});var c=st(s({loop:t.config.loop.active,autoplay:t.autoplay,muted:t.muted,gesture:"media",playsinline:!this.config.fullscreen.iosNative},l)),u=t.media.getAttribute("src");ae(u)&&(u=t.media.getAttribute(t.config.attributes.embed.id));var d,h=ae(d=u)?null:K(Number(d))?d:d.match(/^.*(vimeo.com\/|video\/)(\d+).*/)?RegExp.$2:d,m=he("iframe"),p=Ue(t.config.urls.vimeo.iframe,h,c);if(m.setAttribute("src",p),m.setAttribute("allowfullscreen",""),m.setAttribute("allow","autoplay,fullscreen,picture-in-picture"),ae(a)||m.setAttribute("referrerPolicy",a),n||!i.customControls)m.setAttribute("data-poster",t.poster),t.media=ge(m,t.media);else{var f=he("div",{class:t.config.classNames.embedContainer,"data-poster":t.poster});f.appendChild(m),t.media=ge(f,t.media)}i.customControls||Je(Ue(t.config.urls.vimeo.api,p)).then((function(e){!ae(e)&&e.thumbnail_url&&yt.setPoster.call(t,e.thumbnail_url).catch((function(){}))})),t.embed=new window.Vimeo.Player(m,{autopause:t.config.autopause,muted:t.muted}),t.media.paused=!0,t.media.currentTime=0,t.supported.ui&&t.embed.disableTextTrack(),t.media.play=function(){return kt.call(t,!0),t.embed.play()},t.media.pause=function(){return kt.call(t,!1),t.embed.pause()},t.media.stop=function(){t.pause(),t.currentTime=0};var g=t.media.currentTime;Object.defineProperty(t.media,"currentTime",{get:function(){return g},set:function(e){var i=t.embed,n=t.media,a=t.paused,s=t.volume,r=a&&!i.hasPlayed;n.seeking=!0,Oe.call(t,n,"seeking"),Promise.resolve(r&&i.setVolume(0)).then((function(){return i.setCurrentTime(e)})).then((function(){return r&&i.pause()})).then((function(){return r&&i.setVolume(s)})).catch((function(){}))}});var y=t.config.speed.selected;Object.defineProperty(t.media,"playbackRate",{get:function(){return y},set:function(e){t.embed.setPlaybackRate(e).then((function(){y=e,Oe.call(t,t.media,"ratechange")})).catch((function(){t.options.speed=[1]}))}});var v=t.config.volume;Object.defineProperty(t.media,"volume",{get:function(){return v},set:function(e){t.embed.setVolume(e).then((function(){v=e,Oe.call(t,t.media,"volumechange")}))}});var b=t.config.muted;Object.defineProperty(t.media,"muted",{get:function(){return b},set:function(e){var i=!!Q(e)&&e;t.embed.setVolume(i?0:t.config.volume).then((function(){b=i,Oe.call(t,t.media,"volumechange")}))}});var w,k=t.config.loop;Object.defineProperty(t.media,"loop",{get:function(){return k},set:function(e){var i=Q(e)?e:t.config.loop.active;t.embed.setLoop(i).then((function(){k=i}))}}),t.embed.getVideoUrl().then((function(e){w=e,nt.setDownloadUrl.call(t)})).catch((function(t){e.debug.warn(t)})),Object.defineProperty(t.media,"currentSrc",{get:function(){return w}}),Object.defineProperty(t.media,"ended",{get:function(){return t.currentTime===t.duration}}),Promise.all([t.embed.getVideoWidth(),t.embed.getVideoHeight()]).then((function(i){var n=o(i,2),a=n[0],s=n[1];t.embed.ratio=[a,s],Re.call(e)})),t.embed.setAutopause(t.config.autopause).then((function(e){t.config.autopause=e})),t.embed.getVideoTitle().then((function(i){t.config.title=i,yt.setTitle.call(e)})),t.embed.getCurrentTime().then((function(e){g=e,Oe.call(t,t.media,"timeupdate")})),t.embed.getDuration().then((function(e){t.media.duration=e,Oe.call(t,t.media,"durationchange")})),t.embed.getTextTracks().then((function(e){t.media.textTracks=e,rt.setup.call(t)})),t.embed.on("cuechange",(function(e){var i=e.cues,n=(void 0===i?[]:i).map((function(e){return function(e){var t=document.createDocumentFragment(),i=document.createElement("div");return t.appendChild(i),i.innerHTML=e,t.firstChild.innerText}(e.text)}));rt.updateCues.call(t,n)})),t.embed.on("loaded",(function(){(t.embed.getPaused().then((function(e){kt.call(t,!e),e||Oe.call(t,t.media,"playing")})),G(t.embed.element)&&t.supported.ui)&&t.embed.element.setAttribute("tabindex",-1)})),t.embed.on("bufferstart",(function(){Oe.call(t,t.media,"waiting")})),t.embed.on("bufferend",(function(){Oe.call(t,t.media,"playing")})),t.embed.on("play",(function(){kt.call(t,!0),Oe.call(t,t.media,"playing")})),t.embed.on("pause",(function(){kt.call(t,!1)})),t.embed.on("timeupdate",(function(e){t.media.seeking=!1,g=e.seconds,Oe.call(t,t.media,"timeupdate")})),t.embed.on("progress",(function(e){t.media.buffered=e.percent,Oe.call(t,t.media,"progress"),1===parseInt(e.percent,10)&&Oe.call(t,t.media,"canplaythrough"),t.embed.getDuration().then((function(e){e!==t.media.duration&&(t.media.duration=e,Oe.call(t,t.media,"durationchange"))}))})),t.embed.on("seeked",(function(){t.media.seeking=!1,Oe.call(t,t.media,"seeked")})),t.embed.on("ended",(function(){t.media.paused=!0,Oe.call(t,t.media,"ended")})),t.embed.on("error",(function(e){t.media.error=e,Oe.call(t,t.media,"error")})),i.customControls&&setTimeout((function(){return yt.build.call(t)}),0)}};function Ct(e){e&&!this.embed.hasPlayed&&(this.embed.hasPlayed=!0),this.media.paused===e&&(this.media.paused=!e,Oe.call(this,this.media,e?"play":"pause"))}function At(e){return e.noCookie?"https://www.youtube-nocookie.com":"http:"===window.location.protocol?"http://www.youtube.com":void 0}var St={setup:function(){var e=this;if(be(this.elements.wrapper,this.config.classNames.embed,!0),z(window.YT)&&X(window.YT.Player))St.ready.call(this);else{var t=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=function(){X(t)&&t(),St.ready.call(e)},wt(this.config.urls.youtube.sdk).catch((function(t){e.debug.warn("YouTube API failed to load",t)}))}},getTitle:function(e){var t=this;Je(Ue(this.config.urls.youtube.api,e)).then((function(e){if(z(e)){var i=e.title,n=e.height,a=e.width;t.config.title=i,yt.setTitle.call(t),t.embed.ratio=[a,n]}Re.call(t)})).catch((function(){Re.call(t)}))},ready:function(){var e=this,t=e.config.youtube,i=e.media&&e.media.getAttribute("id");if(ae(i)||!i.startsWith("youtube-")){var n=e.media.getAttribute("src");ae(n)&&(n=e.media.getAttribute(this.config.attributes.embed.id));var a,s,r=ae(a=n)?null:a.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/)?RegExp.$2:a,o=he("div",{id:(s=e.provider,"".concat(s,"-").concat(Math.floor(1e4*Math.random()))),"data-poster":t.customControls?e.poster:void 0});if(e.media=ge(o,e.media),t.customControls){var l=function(e){return"https://i.ytimg.com/vi/".concat(r,"/").concat(e,"default.jpg")};gt(l("maxres"),121).catch((function(){return gt(l("sd"),121)})).catch((function(){return gt(l("hq"))})).then((function(t){return yt.setPoster.call(e,t.src)})).then((function(t){t.includes("maxres")||(e.elements.poster.style.backgroundSize="cover")})).catch((function(){}))}e.embed=new window.YT.Player(e.media,{videoId:r,host:At(t),playerVars:ce({},{autoplay:e.config.autoplay?1:0,hl:e.config.hl,controls:e.supported.ui&&t.customControls?0:1,disablekb:1,playsinline:e.config.fullscreen.iosNative?0:1,cc_load_policy:e.captions.active?1:0,cc_lang_pref:e.config.captions.language,widget_referrer:window?window.location.href:null},t),events:{onError:function(t){if(!e.media.error){var i=t.data,n={2:"The request contains an invalid parameter value. For example, this error occurs if you specify a video ID that does not have 11 characters, or if the video ID contains invalid characters, such as exclamation points or asterisks.",5:"The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.",100:"The video requested was not found. This error occurs when a video has been removed (for any reason) or has been marked as private.",101:"The owner of the requested video does not allow it to be played in embedded players.",150:"The owner of the requested video does not allow it to be played in embedded players."}[i]||"An unknown error occured";e.media.error={code:i,message:n},Oe.call(e,e.media,"error")}},onPlaybackRateChange:function(t){var i=t.target;e.media.playbackRate=i.getPlaybackRate(),Oe.call(e,e.media,"ratechange")},onReady:function(i){if(!X(e.media.play)){var n=i.target;St.getTitle.call(e,r),e.media.play=function(){Ct.call(e,!0),n.playVideo()},e.media.pause=function(){Ct.call(e,!1),n.pauseVideo()},e.media.stop=function(){n.stopVideo()},e.media.duration=n.getDuration(),e.media.paused=!0,e.media.currentTime=0,Object.defineProperty(e.media,"currentTime",{get:function(){return Number(n.getCurrentTime())},set:function(t){e.paused&&!e.embed.hasPlayed&&e.embed.mute(),e.media.seeking=!0,Oe.call(e,e.media,"seeking"),n.seekTo(t)}}),Object.defineProperty(e.media,"playbackRate",{get:function(){return n.getPlaybackRate()},set:function(e){n.setPlaybackRate(e)}});var a=e.config.volume;Object.defineProperty(e.media,"volume",{get:function(){return a},set:function(t){a=t,n.setVolume(100*a),Oe.call(e,e.media,"volumechange")}});var s=e.config.muted;Object.defineProperty(e.media,"muted",{get:function(){return s},set:function(t){var i=Q(t)?t:s;s=i,n[i?"mute":"unMute"](),n.setVolume(100*a),Oe.call(e,e.media,"volumechange")}}),Object.defineProperty(e.media,"currentSrc",{get:function(){return n.getVideoUrl()}}),Object.defineProperty(e.media,"ended",{get:function(){return e.currentTime===e.duration}});var o=n.getAvailablePlaybackRates();e.options.speed=o.filter((function(t){return e.config.speed.options.includes(t)})),e.supported.ui&&t.customControls&&e.media.setAttribute("tabindex",-1),Oe.call(e,e.media,"timeupdate"),Oe.call(e,e.media,"durationchange"),clearInterval(e.timers.buffering),e.timers.buffering=setInterval((function(){e.media.buffered=n.getVideoLoadedFraction(),(null===e.media.lastBuffered||e.media.lastBuffered<e.media.buffered)&&Oe.call(e,e.media,"progress"),e.media.lastBuffered=e.media.buffered,1===e.media.buffered&&(clearInterval(e.timers.buffering),Oe.call(e,e.media,"canplaythrough"))}),200),t.customControls&&setTimeout((function(){return yt.build.call(e)}),50)}},onStateChange:function(i){var n=i.target;switch(clearInterval(e.timers.playing),e.media.seeking&&[1,2].includes(i.data)&&(e.media.seeking=!1,Oe.call(e,e.media,"seeked")),i.data){case-1:Oe.call(e,e.media,"timeupdate"),e.media.buffered=n.getVideoLoadedFraction(),Oe.call(e,e.media,"progress");break;case 0:Ct.call(e,!1),e.media.loop?(n.stopVideo(),n.playVideo()):Oe.call(e,e.media,"ended");break;case 1:t.customControls&&!e.config.autoplay&&e.media.paused&&!e.embed.hasPlayed?e.media.pause():(Ct.call(e,!0),Oe.call(e,e.media,"playing"),e.timers.playing=setInterval((function(){Oe.call(e,e.media,"timeupdate")}),50),e.media.duration!==n.getDuration()&&(e.media.duration=n.getDuration(),Oe.call(e,e.media,"durationchange")));break;case 2:e.muted||e.embed.unMute(),Ct.call(e,!1);break;case 3:Oe.call(e,e.media,"waiting")}Oe.call(e,e.elements.container,"statechange",!1,{code:i.data})}}})}}},Pt={setup:function(){this.media?(be(this.elements.container,this.config.classNames.type.replace("{0}",this.type),!0),be(this.elements.container,this.config.classNames.provider.replace("{0}",this.provider),!0),this.isEmbed&&be(this.elements.container,this.config.classNames.type.replace("{0}","video"),!0),this.isVideo&&(this.elements.wrapper=he("div",{class:this.config.classNames.video}),ue(this.media,this.elements.wrapper),this.elements.poster=he("div",{class:this.config.classNames.poster,hidden:""}),this.elements.wrapper.appendChild(this.elements.poster)),this.isHTML5?Ve.setup.call(this):this.isYouTube?St.setup.call(this):this.isVimeo&&Tt.setup.call(this)):this.debug.warn("No media element found!")}},Et=function(){function t(i){var n=this;e(this,t),this.player=i,this.config=i.config.ads,this.playing=!1,this.initialized=!1,this.elements={container:null,displayContainer:null},this.manager=null,this.loader=null,this.cuePoints=null,this.events={},this.safetyTimer=null,this.countdownTimer=null,this.managerPromise=new Promise((function(e,t){n.on("loaded",e),n.on("error",t)})),this.load()}return i(t,[{key:"load",value:function(){var e=this;this.enabled&&(z(window.google)&&z(window.google.ima)?this.ready():wt(this.player.config.urls.googleIMA.sdk).then((function(){e.ready()})).catch((function(){e.trigger("error",new Error("Google IMA SDK failed to load"))})))}},{key:"ready",value:function(){var e,t=this;this.enabled||((e=this).manager&&e.manager.destroy(),e.elements.displayContainer&&e.elements.displayContainer.destroy(),e.elements.container.remove()),this.startSafetyTimer(12e3,"ready()"),this.managerPromise.then((function(){t.clearSafetyTimer("onAdsManagerLoaded()")})),this.listeners(),this.setupIMA()}},{key:"setupIMA",value:function(){var e=this;this.elements.container=he("div",{class:this.player.config.classNames.ads}),this.player.elements.container.appendChild(this.elements.container),google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.ENABLED),google.ima.settings.setLocale(this.player.config.ads.language),google.ima.settings.setDisableCustomPlaybackForIOS10Plus(this.player.config.playsinline),this.elements.displayContainer=new google.ima.AdDisplayContainer(this.elements.container,this.player.media),this.loader=new google.ima.AdsLoader(this.elements.displayContainer),this.loader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,(function(t){return e.onAdsManagerLoaded(t)}),!1),this.loader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR,(function(t){return e.onAdError(t)}),!1),this.requestAds()}},{key:"requestAds",value:function(){var e=this.player.elements.container;try{var t=new google.ima.AdsRequest;t.adTagUrl=this.tagUrl,t.linearAdSlotWidth=e.offsetWidth,t.linearAdSlotHeight=e.offsetHeight,t.nonLinearAdSlotWidth=e.offsetWidth,t.nonLinearAdSlotHeight=e.offsetHeight,t.forceNonLinearFullSlot=!1,t.setAdWillPlayMuted(!this.player.muted),this.loader.requestAds(t)}catch(e){this.onAdError(e)}}},{key:"pollCountdown",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]&&arguments[0];if(!t)return clearInterval(this.countdownTimer),void this.elements.container.removeAttribute("data-badge-text");var i=function(){var t=it(Math.max(e.manager.getRemainingTime(),0)),i="".concat(Xe("advertisement",e.player.config)," - ").concat(t);e.elements.container.setAttribute("data-badge-text",i)};this.countdownTimer=setInterval(i,100)}},{key:"onAdsManagerLoaded",value:function(e){var t=this;if(this.enabled){var i=new google.ima.AdsRenderingSettings;i.restoreCustomPlaybackStateOnAdBreakComplete=!0,i.enablePreloading=!0,this.manager=e.getAdsManager(this.player,i),this.cuePoints=this.manager.getCuePoints(),this.manager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR,(function(e){return t.onAdError(e)})),Object.keys(google.ima.AdEvent.Type).forEach((function(e){t.manager.addEventListener(google.ima.AdEvent.Type[e],(function(e){return t.onAdEvent(e)}))})),this.trigger("loaded")}}},{key:"addCuePoints",value:function(){var e=this;ae(this.cuePoints)||this.cuePoints.forEach((function(t){if(0!==t&&-1!==t&&t<e.player.duration){var i=e.player.elements.progress;if(G(i)){var n=100/e.player.duration*t,a=he("span",{class:e.player.config.classNames.cues});a.style.left="".concat(n.toString(),"%"),i.appendChild(a)}}}))}},{key:"onAdEvent",value:function(e){var t=this,i=this.player.elements.container,n=e.getAd(),a=e.getAdData();switch(function(e){Oe.call(t.player,t.player.media,"ads".concat(e.replace(/_/g,"").toLowerCase()))}(e.type),e.type){case google.ima.AdEvent.Type.LOADED:this.trigger("loaded"),this.pollCountdown(!0),n.isLinear()||(n.width=i.offsetWidth,n.height=i.offsetHeight);break;case google.ima.AdEvent.Type.STARTED:this.manager.setVolume(this.player.volume);break;case google.ima.AdEvent.Type.ALL_ADS_COMPLETED:this.player.ended?this.loadAds():this.loader.contentComplete();break;case google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED:this.pauseContent();break;case google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED:this.pollCountdown(),this.resumeContent();break;case google.ima.AdEvent.Type.LOG:a.adError&&this.player.debug.warn("Non-fatal ad error: ".concat(a.adError.getMessage()))}}},{key:"onAdError",value:function(e){this.cancel(),this.player.debug.warn("Ads error",e)}},{key:"listeners",value:function(){var e,t=this,i=this.player.elements.container;this.player.on("canplay",(function(){t.addCuePoints()})),this.player.on("ended",(function(){t.loader.contentComplete()})),this.player.on("timeupdate",(function(){e=t.player.currentTime})),this.player.on("seeked",(function(){var i=t.player.currentTime;ae(t.cuePoints)||t.cuePoints.forEach((function(n,a){e<n&&n<i&&(t.manager.discardAdBreak(),t.cuePoints.splice(a,1))}))})),window.addEventListener("resize",(function(){t.manager&&t.manager.resize(i.offsetWidth,i.offsetHeight,google.ima.ViewMode.NORMAL)}))}},{key:"play",value:function(){var e=this,t=this.player.elements.container;this.managerPromise||this.resumeContent(),this.managerPromise.then((function(){e.manager.setVolume(e.player.volume),e.elements.displayContainer.initialize();try{e.initialized||(e.manager.init(t.offsetWidth,t.offsetHeight,google.ima.ViewMode.NORMAL),e.manager.start()),e.initialized=!0}catch(t){e.onAdError(t)}})).catch((function(){}))}},{key:"resumeContent",value:function(){this.elements.container.style.zIndex="",this.playing=!1,De(this.player.media.play())}},{key:"pauseContent",value:function(){this.elements.container.style.zIndex=3,this.playing=!0,this.player.media.pause()}},{key:"cancel",value:function(){this.initialized&&this.resumeContent(),this.trigger("error"),this.loadAds()}},{key:"loadAds",value:function(){var e=this;this.managerPromise.then((function(){e.manager&&e.manager.destroy(),e.managerPromise=new Promise((function(t){e.on("loaded",t),e.player.debug.log(e.manager)})),e.initialized=!1,e.requestAds()})).catch((function(){}))}},{key:"trigger",value:function(e){for(var t=this,i=arguments.length,n=new Array(i>1?i-1:0),a=1;a<i;a++)n[a-1]=arguments[a];var s=this.events[e];$(s)&&s.forEach((function(e){X(e)&&e.apply(t,n)}))}},{key:"on",value:function(e,t){return $(this.events[e])||(this.events[e]=[]),this.events[e].push(t),this}},{key:"startSafetyTimer",value:function(e,t){var i=this;this.player.debug.log("Safety timer invoked from: ".concat(t)),this.safetyTimer=setTimeout((function(){i.cancel(),i.clearSafetyTimer("startSafetyTimer()")}),e)}},{key:"clearSafetyTimer",value:function(e){W(this.safetyTimer)||(this.player.debug.log("Safety timer cleared from: ".concat(e)),clearTimeout(this.safetyTimer),this.safetyTimer=null)}},{key:"enabled",get:function(){var e=this.config;return this.player.isHTML5&&this.player.isVideo&&e.enabled&&(!ae(e.publisherId)||ne(e.tagUrl))}},{key:"tagUrl",get:function(){var e=this.config;if(ne(e.tagUrl))return e.tagUrl;var t={AV_PUBLISHERID:"58c25bb0073ef448b1087ad6",AV_CHANNELID:"5a0458dc28a06145e4519d21",AV_URL:window.location.hostname,cb:Date.now(),AV_WIDTH:640,AV_HEIGHT:480,AV_CDIM2:e.publisherId};return"".concat("https://go.aniview.com/api/adserver6/vast/","?").concat(st(t))}}]),t}(),Nt=function(e,t){var i={};return e>t.width/t.height?(i.width=t.width,i.height=1/e*t.width):(i.height=t.height,i.width=e*t.height),i},Mt=function(){function t(i){e(this,t),this.player=i,this.thumbnails=[],this.loaded=!1,this.lastMouseMoveTime=Date.now(),this.mouseDown=!1,this.loadedImages=[],this.elements={thumb:{},scrubbing:{}},this.load()}return i(t,[{key:"load",value:function(){var e=this;this.player.elements.display.seekTooltip&&(this.player.elements.display.seekTooltip.hidden=this.enabled),this.enabled&&this.getThumbnails().then((function(){e.enabled&&(e.render(),e.determineContainerAutoSizing(),e.loaded=!0)}))}},{key:"getThumbnails",value:function(){var e=this;return new Promise((function(t){var i=e.player.config.previewThumbnails.src;if(ae(i))throw new Error("Missing previewThumbnails.src config attribute");var n=function(){e.thumbnails.sort((function(e,t){return e.height-t.height})),e.player.debug.log("Preview thumbnails",e.thumbnails),t()};if(X(i))i((function(t){e.thumbnails=t,n()}));else{var a=(Y(i)?[i]:i).map((function(t){return e.getThumbnail(t)}));Promise.all(a).then(n)}}))}},{key:"getThumbnail",value:function(e){var t=this;return new Promise((function(i){Je(e).then((function(n){var a,s,r={frames:(a=n,s=[],a.split(/\r\n\r\n|\n\n|\r\r/).forEach((function(e){var t={};e.split(/\r\n|\n|\r/).forEach((function(e){if(K(t.startTime)){if(!ae(e.trim())&&ae(t.text)){var i=e.trim().split("#xywh="),n=o(i,1);if(t.text=n[0],i[1]){var a=o(i[1].split(","),4);t.x=a[0],t.y=a[1],t.w=a[2],t.h=a[3]}}}else{var s=e.match(/([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})( ?--> ?)([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})/);s&&(t.startTime=60*Number(s[1]||0)*60+60*Number(s[2])+Number(s[3])+Number("0.".concat(s[4])),t.endTime=60*Number(s[6]||0)*60+60*Number(s[7])+Number(s[8])+Number("0.".concat(s[9])))}})),t.text&&s.push(t)})),s),height:null,urlPrefix:""};r.frames[0].text.startsWith("/")||r.frames[0].text.startsWith("http://")||r.frames[0].text.startsWith("https://")||(r.urlPrefix=e.substring(0,e.lastIndexOf("/")+1));var l=new Image;l.onload=function(){r.height=l.naturalHeight,r.width=l.naturalWidth,t.thumbnails.push(r),i()},l.src=r.urlPrefix+r.frames[0].text}))}))}},{key:"startMove",value:function(e){if(this.loaded&&Z(e)&&["touchmove","mousemove"].includes(e.type)&&this.player.media.duration){if("touchmove"===e.type)this.seekTime=this.player.media.duration*(this.player.elements.inputs.seek.value/100);else{var t=this.player.elements.progress.getBoundingClientRect(),i=100/t.width*(e.pageX-t.left);this.seekTime=this.player.media.duration*(i/100),this.seekTime<0&&(this.seekTime=0),this.seekTime>this.player.media.duration-1&&(this.seekTime=this.player.media.duration-1),this.mousePosX=e.pageX,this.elements.thumb.time.innerText=it(this.seekTime)}this.showImageAtCurrentTime()}}},{key:"endMove",value:function(){this.toggleThumbContainer(!1,!0)}},{key:"startScrubbing",value:function(e){(W(e.button)||!1===e.button||0===e.button)&&(this.mouseDown=!0,this.player.media.duration&&(this.toggleScrubbingContainer(!0),this.toggleThumbContainer(!1,!0),this.showImageAtCurrentTime()))}},{key:"endScrubbing",value:function(){var e=this;this.mouseDown=!1,Math.ceil(this.lastTime)===Math.ceil(this.player.media.currentTime)?this.toggleScrubbingContainer(!1):Le.call(this.player,this.player.media,"timeupdate",(function(){e.mouseDown||e.toggleScrubbingContainer(!1)}))}},{key:"listeners",value:function(){var e=this;this.player.on("play",(function(){e.toggleThumbContainer(!1,!0)})),this.player.on("seeked",(function(){e.toggleThumbContainer(!1)})),this.player.on("timeupdate",(function(){e.lastTime=e.player.media.currentTime}))}},{key:"render",value:function(){this.elements.thumb.container=he("div",{class:this.player.config.classNames.previewThumbnails.thumbContainer}),this.elements.thumb.imageContainer=he("div",{class:this.player.config.classNames.previewThumbnails.imageContainer}),this.elements.thumb.container.appendChild(this.elements.thumb.imageContainer);var e=he("div",{class:this.player.config.classNames.previewThumbnails.timeContainer});this.elements.thumb.time=he("span",{},"00:00"),e.appendChild(this.elements.thumb.time),this.elements.thumb.container.appendChild(e),G(this.player.elements.progress)&&this.player.elements.progress.appendChild(this.elements.thumb.container),this.elements.scrubbing.container=he("div",{class:this.player.config.classNames.previewThumbnails.scrubbingContainer}),this.player.elements.wrapper.appendChild(this.elements.scrubbing.container)}},{key:"destroy",value:function(){this.elements.thumb.container&&this.elements.thumb.container.remove(),this.elements.scrubbing.container&&this.elements.scrubbing.container.remove()}},{key:"showImageAtCurrentTime",value:function(){var e=this;this.mouseDown?this.setScrubbingContainerSize():this.setThumbContainerSizeAndPos();var t=this.thumbnails[0].frames.findIndex((function(t){return e.seekTime>=t.startTime&&e.seekTime<=t.endTime})),i=t>=0,n=0;this.mouseDown||this.toggleThumbContainer(i),i&&(this.thumbnails.forEach((function(i,a){e.loadedImages.includes(i.frames[t].text)&&(n=a)})),t!==this.showingThumb&&(this.showingThumb=t,this.loadImage(n)))}},{key:"loadImage",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,i=this.showingThumb,n=this.thumbnails[t],a=n.urlPrefix,s=n.frames[i],r=n.frames[i].text,o=a+r;if(this.currentImageElement&&this.currentImageElement.dataset.filename===r)this.showImage(this.currentImageElement,s,t,i,r,!1),this.currentImageElement.dataset.index=i,this.removeOldImages(this.currentImageElement);else{this.loadingImage&&this.usingSprites&&(this.loadingImage.onload=null);var l=new Image;l.src=o,l.dataset.index=i,l.dataset.filename=r,this.showingThumbFilename=r,this.player.debug.log("Loading image: ".concat(o)),l.onload=function(){return e.showImage(l,s,t,i,r,!0)},this.loadingImage=l,this.removeOldImages(l)}}},{key:"showImage",value:function(e,t,i,n,a){var s=!(arguments.length>5&&void 0!==arguments[5])||arguments[5];this.player.debug.log("Showing thumb: ".concat(a,". num: ").concat(n,". qual: ").concat(i,". newimg: ").concat(s)),this.setImageSizeAndOffset(e,t),s&&(this.currentImageContainer.appendChild(e),this.currentImageElement=e,this.loadedImages.includes(a)||this.loadedImages.push(a)),this.preloadNearby(n,!0).then(this.preloadNearby(n,!1)).then(this.getHigherQuality(i,e,t,a))}},{key:"removeOldImages",value:function(e){var t=this;Array.from(this.currentImageContainer.children).forEach((function(i){if("img"===i.tagName.toLowerCase()){var n=t.usingSprites?500:1e3;if(i.dataset.index!==e.dataset.index&&!i.dataset.deleting){i.dataset.deleting=!0;var a=t.currentImageContainer;setTimeout((function(){a.removeChild(i),t.player.debug.log("Removing thumb: ".concat(i.dataset.filename))}),n)}}}))}},{key:"preloadNearby",value:function(e){var t=this,i=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];return new Promise((function(n){setTimeout((function(){var a=t.thumbnails[0].frames[e].text;if(t.showingThumbFilename===a){var s;s=i?t.thumbnails[0].frames.slice(e):t.thumbnails[0].frames.slice(0,e).reverse();var r=!1;s.forEach((function(e){var i=e.text;if(i!==a&&!t.loadedImages.includes(i)){r=!0,t.player.debug.log("Preloading thumb filename: ".concat(i));var s=t.thumbnails[0].urlPrefix+i,o=new Image;o.src=s,o.onload=function(){t.player.debug.log("Preloaded thumb filename: ".concat(i)),t.loadedImages.includes(i)||t.loadedImages.push(i),n()}}})),r||n()}}),300)}))}},{key:"getHigherQuality",value:function(e,t,i,n){var a=this;if(e<this.thumbnails.length-1){var s=t.naturalHeight;this.usingSprites&&(s=i.h),s<this.thumbContainerHeight&&setTimeout((function(){a.showingThumbFilename===n&&(a.player.debug.log("Showing higher quality thumb for: ".concat(n)),a.loadImage(e+1))}),300)}}},{key:"toggleThumbContainer",value:function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0],t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],i=this.player.config.classNames.previewThumbnails.thumbContainerShown;this.elements.thumb.container.classList.toggle(i,e),!e&&t&&(this.showingThumb=null,this.showingThumbFilename=null)}},{key:"toggleScrubbingContainer",value:function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0],t=this.player.config.classNames.previewThumbnails.scrubbingContainerShown;this.elements.scrubbing.container.classList.toggle(t,e),e||(this.showingThumb=null,this.showingThumbFilename=null)}},{key:"determineContainerAutoSizing",value:function(){(this.elements.thumb.imageContainer.clientHeight>20||this.elements.thumb.imageContainer.clientWidth>20)&&(this.sizeSpecifiedInCSS=!0)}},{key:"setThumbContainerSizeAndPos",value:function(){if(this.sizeSpecifiedInCSS){if(this.elements.thumb.imageContainer.clientHeight>20&&this.elements.thumb.imageContainer.clientWidth<20){var e=Math.floor(this.elements.thumb.imageContainer.clientHeight*this.thumbAspectRatio);this.elements.thumb.imageContainer.style.width="".concat(e,"px")}else if(this.elements.thumb.imageContainer.clientHeight<20&&this.elements.thumb.imageContainer.clientWidth>20){var t=Math.floor(this.elements.thumb.imageContainer.clientWidth/this.thumbAspectRatio);this.elements.thumb.imageContainer.style.height="".concat(t,"px")}}else{var i=Math.floor(this.thumbContainerHeight*this.thumbAspectRatio);this.elements.thumb.imageContainer.style.height="".concat(this.thumbContainerHeight,"px"),this.elements.thumb.imageContainer.style.width="".concat(i,"px")}this.setThumbContainerPos()}},{key:"setThumbContainerPos",value:function(){var e=this.player.elements.progress.getBoundingClientRect(),t=this.player.elements.container.getBoundingClientRect(),i=this.elements.thumb.container,n=t.left-e.left+10,a=t.right-e.left-i.clientWidth-10,s=this.mousePosX-e.left-i.clientWidth/2;s<n&&(s=n),s>a&&(s=a),i.style.left="".concat(s,"px")}},{key:"setScrubbingContainerSize",value:function(){var e=Nt(this.thumbAspectRatio,{width:this.player.media.clientWidth,height:this.player.media.clientHeight}),t=e.width,i=e.height;this.elements.scrubbing.container.style.width="".concat(t,"px"),this.elements.scrubbing.container.style.height="".concat(i,"px")}},{key:"setImageSizeAndOffset",value:function(e,t){if(this.usingSprites){var i=this.thumbContainerHeight/t.h;e.style.height="".concat(e.naturalHeight*i,"px"),e.style.width="".concat(e.naturalWidth*i,"px"),e.style.left="-".concat(t.x*i,"px"),e.style.top="-".concat(t.y*i,"px")}}},{key:"enabled",get:function(){return this.player.isHTML5&&this.player.isVideo&&this.player.config.previewThumbnails.enabled}},{key:"currentImageContainer",get:function(){return this.mouseDown?this.elements.scrubbing.container:this.elements.thumb.imageContainer}},{key:"usingSprites",get:function(){return Object.keys(this.thumbnails[0].frames[0]).includes("w")}},{key:"thumbAspectRatio",get:function(){return this.usingSprites?this.thumbnails[0].frames[0].w/this.thumbnails[0].frames[0].h:this.thumbnails[0].width/this.thumbnails[0].height}},{key:"thumbContainerHeight",get:function(){return this.mouseDown?Nt(this.thumbAspectRatio,{width:this.player.media.clientWidth,height:this.player.media.clientHeight}).height:this.sizeSpecifiedInCSS?this.elements.thumb.imageContainer.clientHeight:Math.floor(this.player.media.clientWidth/this.thumbAspectRatio/4)}},{key:"currentImageElement",get:function(){return this.mouseDown?this.currentScrubbingImageElement:this.currentThumbnailImageElement},set:function(e){this.mouseDown?this.currentScrubbingImageElement=e:this.currentThumbnailImageElement=e}}]),t}(),xt={insertElements:function(e,t){var i=this;Y(t)?me(e,this.media,{src:t}):$(t)&&t.forEach((function(t){me(e,i.media,t)}))},change:function(e){var t=this;le(e,"sources.length")?(Ve.cancelRequests.call(this),this.destroy.call(this,(function(){t.options.quality=[],pe(t.media),t.media=null,G(t.elements.container)&&t.elements.container.removeAttribute("class");var i=e.sources,n=e.type,a=o(i,1)[0],s=a.provider,r=void 0===s?ut.html5:s,l=a.src,c="html5"===r?n:"div",u="html5"===r?{}:{src:l};Object.assign(t,{provider:r,type:n,supported:Ee.check(n,r,t.config.playsinline),media:he(c,u)}),t.elements.container.appendChild(t.media),Q(e.autoplay)&&(t.config.autoplay=e.autoplay),t.isHTML5&&(t.config.crossorigin&&t.media.setAttribute("crossorigin",""),t.config.autoplay&&t.media.setAttribute("autoplay",""),ae(e.poster)||(t.poster=e.poster),t.config.loop.active&&t.media.setAttribute("loop",""),t.config.muted&&t.media.setAttribute("muted",""),t.config.playsinline&&t.media.setAttribute("playsinline","")),yt.addStyleHook.call(t),t.isHTML5&&xt.insertElements.call(t,"source",i),t.config.title=e.title,Pt.setup.call(t),t.isHTML5&&Object.keys(e).includes("tracks")&&xt.insertElements.call(t,"track",e.tracks),(t.isHTML5||t.isEmbed&&!t.supported.ui)&&yt.build.call(t),t.isHTML5&&t.media.load(),ae(e.previewThumbnails)||(Object.assign(t.config.previewThumbnails,e.previewThumbnails),t.previewThumbnails&&t.previewThumbnails.loaded&&(t.previewThumbnails.destroy(),t.previewThumbnails=null),t.config.previewThumbnails.enabled&&(t.previewThumbnails=new Mt(t))),t.fullscreen.update()}),!0)):this.debug.warn("Invalid source format")}};var It,Lt=function(){function t(i,n){var a=this;if(e(this,t),this.timers={},this.ready=!1,this.loading=!1,this.failed=!1,this.touch=Ee.touch,this.media=i,Y(this.media)&&(this.media=document.querySelectorAll(this.media)),(__webpack_provided_window_dot_jQuery&&this.media instanceof jQuery||J(this.media)||$(this.media))&&(this.media=this.media[0]),this.config=ce({},ot,t.defaults,n||{},function(){try{return JSON.parse(a.media.getAttribute("data-plyr-config"))}catch(e){return{}}}()),this.elements={container:null,fullscreen:null,captions:null,buttons:{},display:{},progress:{},inputs:{},settings:{popup:null,menu:null,panels:{},buttons:{}}},this.captions={active:null,currentTrack:-1,meta:new WeakMap},this.fullscreen={active:!1},this.options={speed:[],quality:[]},this.debug=new pt(this.config.debug),this.debug.log("Config",this.config),this.debug.log("Support",Ee),!W(this.media)&&G(this.media))if(this.media.plyr)this.debug.warn("Target already setup");else if(this.config.enabled)if(Ee.check().api){var s=this.media.cloneNode(!0);s.autoplay=!1,this.elements.original=s;var r=this.media.tagName.toLowerCase(),o=null,l=null;switch(r){case"div":if(o=this.media.querySelector("iframe"),G(o)){if(l=at(o.getAttribute("src")),this.provider=function(e){return/^(https?:\/\/)?(www\.)?(youtube\.com|youtube-nocookie\.com|youtu\.?be)\/.+$/.test(e)?ut.youtube:/^https?:\/\/player.vimeo.com\/video\/\d{0,9}(?=\b|\/)/.test(e)?ut.vimeo:null}(l.toString()),this.elements.container=this.media,this.media=o,this.elements.container.className="",l.search.length){var c=["1","true"];c.includes(l.searchParams.get("autoplay"))&&(this.config.autoplay=!0),c.includes(l.searchParams.get("loop"))&&(this.config.loop.active=!0),this.isYouTube?(this.config.playsinline=c.includes(l.searchParams.get("playsinline")),this.config.youtube.hl=l.searchParams.get("hl")):this.config.playsinline=!0}}else this.provider=this.media.getAttribute(this.config.attributes.embed.provider),this.media.removeAttribute(this.config.attributes.embed.provider);if(ae(this.provider)||!Object.keys(ut).includes(this.provider))return void this.debug.error("Setup failed: Invalid provider");this.type=ht;break;case"video":case"audio":this.type=r,this.provider=ut.html5,this.media.hasAttribute("crossorigin")&&(this.config.crossorigin=!0),this.media.hasAttribute("autoplay")&&(this.config.autoplay=!0),(this.media.hasAttribute("playsinline")||this.media.hasAttribute("webkit-playsinline"))&&(this.config.playsinline=!0),this.media.hasAttribute("muted")&&(this.config.muted=!0),this.media.hasAttribute("loop")&&(this.config.loop.active=!0);break;default:return void this.debug.error("Setup failed: unsupported type")}this.supported=Ee.check(this.type,this.provider,this.config.playsinline),this.supported.api?(this.eventListeners=[],this.listeners=new vt(this),this.storage=new $e(this),this.media.plyr=this,G(this.elements.container)||(this.elements.container=he("div",{tabindex:0}),ue(this.media,this.elements.container)),yt.migrateStyles.call(this),yt.addStyleHook.call(this),Pt.setup.call(this),this.config.debug&&xe.call(this,this.elements.container,this.config.events.join(" "),(function(e){a.debug.log("event: ".concat(e.type))})),this.fullscreen=new ft(this),(this.isHTML5||this.isEmbed&&!this.supported.ui)&&yt.build.call(this),this.listeners.container(),this.listeners.global(),this.config.ads.enabled&&(this.ads=new Et(this)),this.isHTML5&&this.config.autoplay&&this.once("canplay",(function(){return De(a.play())})),this.lastSeekTime=0,this.config.previewThumbnails.enabled&&(this.previewThumbnails=new Mt(this))):this.debug.error("Setup failed: no support")}else this.debug.error("Setup failed: no support");else this.debug.error("Setup failed: disabled by config");else this.debug.error("Setup failed: no suitable element passed")}return i(t,[{key:"play",value:function(){var e=this;return X(this.media.play)?(this.ads&&this.ads.enabled&&this.ads.managerPromise.then((function(){return e.ads.play()})).catch((function(){return De(e.media.play())})),this.media.play()):null}},{key:"pause",value:function(){return this.playing&&X(this.media.pause)?this.media.pause():null}},{key:"togglePlay",value:function(e){return(Q(e)?e:!this.playing)?this.play():this.pause()}},{key:"stop",value:function(){this.isHTML5?(this.pause(),this.restart()):X(this.media.stop)&&this.media.stop()}},{key:"restart",value:function(){this.currentTime=0}},{key:"rewind",value:function(e){this.currentTime-=K(e)?e:this.config.seekTime}},{key:"forward",value:function(e){this.currentTime+=K(e)?e:this.config.seekTime}},{key:"increaseVolume",value:function(e){var t=this.media.muted?0:this.volume;this.volume=t+(K(e)?e:0)}},{key:"decreaseVolume",value:function(e){this.increaseVolume(-e)}},{key:"toggleCaptions",value:function(e){rt.toggle.call(this,e,!1)}},{key:"airplay",value:function(){Ee.airplay&&this.media.webkitShowPlaybackTargetPicker()}},{key:"toggleControls",value:function(e){if(this.supported.ui&&!this.isAudio){var t=we(this.elements.container,this.config.classNames.hideControls),i=void 0===e?void 0:!e,n=be(this.elements.container,this.config.classNames.hideControls,i);if(n&&$(this.config.controls)&&this.config.controls.includes("settings")&&!ae(this.config.settings)&&nt.toggleMenu.call(this,!1),n!==t){var a=n?"controlshidden":"controlsshown";Oe.call(this,this.media,a)}return!n}return!1}},{key:"on",value:function(e,t){xe.call(this,this.elements.container,e,t)}},{key:"once",value:function(e,t){Le.call(this,this.elements.container,e,t)}},{key:"off",value:function(e,t){Ie(this.elements.container,e,t)}},{key:"destroy",value:function(e){var t=this,i=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(this.ready){var n=function(){document.body.style.overflow="",t.embed=null,i?(Object.keys(t.elements).length&&(pe(t.elements.buttons.play),pe(t.elements.captions),pe(t.elements.controls),pe(t.elements.wrapper),t.elements.buttons.play=null,t.elements.captions=null,t.elements.controls=null,t.elements.wrapper=null),X(e)&&e()):(_e.call(t),Ve.cancelRequests.call(t),ge(t.elements.original,t.elements.container),Oe.call(t,t.elements.original,"destroyed",!0),X(e)&&e.call(t.elements.original),t.ready=!1,setTimeout((function(){t.elements=null,t.media=null}),200))};this.stop(),clearTimeout(this.timers.loading),clearTimeout(this.timers.controls),clearTimeout(this.timers.resized),this.isHTML5?(yt.toggleNativeControls.call(this,!0),n()):this.isYouTube?(clearInterval(this.timers.buffering),clearInterval(this.timers.playing),null!==this.embed&&X(this.embed.destroy)&&this.embed.destroy(),n()):this.isVimeo&&(null!==this.embed&&this.embed.unload().then(n),setTimeout(n,200))}}},{key:"supports",value:function(e){return Ee.mime.call(this,e)}},{key:"isHTML5",get:function(){return this.provider===ut.html5}},{key:"isEmbed",get:function(){return this.isYouTube||this.isVimeo}},{key:"isYouTube",get:function(){return this.provider===ut.youtube}},{key:"isVimeo",get:function(){return this.provider===ut.vimeo}},{key:"isVideo",get:function(){return this.type===ht}},{key:"isAudio",get:function(){return this.type===dt}},{key:"playing",get:function(){return Boolean(this.ready&&!this.paused&&!this.ended)}},{key:"paused",get:function(){return Boolean(this.media.paused)}},{key:"stopped",get:function(){return Boolean(this.paused&&0===this.currentTime)}},{key:"ended",get:function(){return Boolean(this.media.ended)}},{key:"currentTime",set:function(e){if(this.duration){var t=K(e)&&e>0;this.media.currentTime=t?Math.min(e,this.duration):0,this.debug.log("Seeking to ".concat(this.currentTime," seconds"))}},get:function(){return Number(this.media.currentTime)}},{key:"buffered",get:function(){var e=this.media.buffered;return K(e)?e:e&&e.length&&this.duration>0?e.end(0)/this.duration:0}},{key:"seeking",get:function(){return Boolean(this.media.seeking)}},{key:"duration",get:function(){var e=parseFloat(this.config.duration),t=(this.media||{}).duration,i=K(t)&&t!==1/0?t:0;return e||i}},{key:"volume",set:function(e){var t=e;Y(t)&&(t=Number(t)),K(t)||(t=this.storage.get("volume")),K(t)||(t=this.config.volume),t>1&&(t=1),t<0&&(t=0),this.config.volume=t,this.media.volume=t,!ae(e)&&this.muted&&t>0&&(this.muted=!1)},get:function(){return Number(this.media.volume)}},{key:"muted",set:function(e){var t=e;Q(t)||(t=this.storage.get("muted")),Q(t)||(t=this.config.muted),this.config.muted=t,this.media.muted=t},get:function(){return Boolean(this.media.muted)}},{key:"hasAudio",get:function(){return!this.isHTML5||(!!this.isAudio||(Boolean(this.media.mozHasAudio)||Boolean(this.media.webkitAudioDecodedByteCount)||Boolean(this.media.audioTracks&&this.media.audioTracks.length)))}},{key:"speed",set:function(e){var t=this,i=null;K(e)&&(i=e),K(i)||(i=this.storage.get("speed")),K(i)||(i=this.config.speed.selected);var n=this.minimumSpeed,a=this.maximumSpeed;i=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:255;return Math.min(Math.max(e,t),i)}(i,n,a),this.config.speed.selected=i,setTimeout((function(){t.media.playbackRate=i}),0)},get:function(){return Number(this.media.playbackRate)}},{key:"minimumSpeed",get:function(){return this.isYouTube?Math.min.apply(Math,l(this.options.speed)):this.isVimeo?.5:.0625}},{key:"maximumSpeed",get:function(){return this.isYouTube?Math.max.apply(Math,l(this.options.speed)):this.isVimeo?2:16}},{key:"quality",set:function(e){var t=this.config.quality,i=this.options.quality;if(i.length){var n=[!ae(e)&&Number(e),this.storage.get("quality"),t.selected,t.default].find(K),a=!0;if(!i.includes(n)){var s=function(e,t){return $(e)&&e.length?e.reduce((function(e,i){return Math.abs(i-t)<Math.abs(e-t)?i:e})):null}(i,n);this.debug.warn("Unsupported quality option: ".concat(n,", using ").concat(s," instead")),n=s,a=!1}t.selected=n,this.media.quality=n,a&&this.storage.set({quality:n})}},get:function(){return this.media.quality}},{key:"loop",set:function(e){var t=Q(e)?e:this.config.loop.active;this.config.loop.active=t,this.media.loop=t},get:function(){return Boolean(this.media.loop)}},{key:"source",set:function(e){xt.change.call(this,e)},get:function(){return this.media.currentSrc}},{key:"download",get:function(){var e=this.config.urls.download;return ne(e)?e:this.source},set:function(e){ne(e)&&(this.config.urls.download=e,nt.setDownloadUrl.call(this))}},{key:"poster",set:function(e){this.isVideo?yt.setPoster.call(this,e,!1).catch((function(){})):this.debug.warn("Poster can only be set for video")},get:function(){return this.isVideo?this.media.getAttribute("poster")||this.media.getAttribute("data-poster"):null}},{key:"ratio",get:function(){if(!this.isVideo)return null;var e=He(Fe.call(this));return $(e)?e.join(":"):e},set:function(e){this.isVideo?Y(e)&&qe(e)?(this.config.ratio=e,Re.call(this)):this.debug.error("Invalid aspect ratio specified (".concat(e,")")):this.debug.warn("Aspect ratio can only be set for video")}},{key:"autoplay",set:function(e){var t=Q(e)?e:this.config.autoplay;this.config.autoplay=t},get:function(){return Boolean(this.config.autoplay)}},{key:"currentTrack",set:function(e){rt.set.call(this,e,!1)},get:function(){var e=this.captions,t=e.toggled,i=e.currentTrack;return t?i:-1}},{key:"language",set:function(e){rt.setLanguage.call(this,e,!1)},get:function(){return(rt.getCurrentTrack.call(this)||{}).language}},{key:"pip",set:function(e){if(Ee.pip){var t=Q(e)?e:!this.pip;X(this.media.webkitSetPresentationMode)&&this.media.webkitSetPresentationMode(t?lt:ct),X(this.media.requestPictureInPicture)&&(!this.pip&&t?this.media.requestPictureInPicture():this.pip&&!t&&document.exitPictureInPicture())}},get:function(){return Ee.pip?ae(this.media.webkitPresentationMode)?this.media===document.pictureInPictureElement:this.media.webkitPresentationMode===lt:null}}],[{key:"supported",value:function(e,t,i){return Ee.check(e,t,i)}},{key:"loadSprite",value:function(e,t){return Ge(e,t)}},{key:"setup",value:function(e){var i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=null;return Y(e)?n=Array.from(document.querySelectorAll(e)):J(e)?n=Array.from(e):$(e)&&(n=e.filter(G)),ae(n)?null:n.map((function(e){return new t(e,i)}))}}]),t}();return Lt.defaults=(It=ot,JSON.parse(JSON.stringify(It))),Lt}));
 //# sourceMappingURL=plyr.min.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4), __webpack_require__(1), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(7), __webpack_require__(1), __webpack_require__(1)))
 
 /***/ }),
-/* 29 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! nouislider - 14.6.2 - 9/16/2020 */
@@ -37285,7 +32906,8532 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 30 */
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(44);
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stringify = __webpack_require__(61);
+var parse = __webpack_require__(62);
+var formats = __webpack_require__(17);
+
+module.exports = {
+    formats: formats,
+    parse: parse,
+    stringify: stringify
+};
+
+
+/***/ }),
+/* 26 */,
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// UNUSED EXPORTS: animateFill, createSingleton, delegate, followCursor, hideAll, inlinePositioning, roundArrow, sticky
+
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js
+function getBoundingClientRect(element) {
+  var rect = element.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height,
+    top: rect.top,
+    right: rect.right,
+    bottom: rect.bottom,
+    left: rect.left,
+    x: rect.left,
+    y: rect.top
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getWindow.js
+/*:: import type { Window } from '../types'; */
+
+/*:: declare function getWindow(node: Node | Window): Window; */
+function getWindow(node) {
+  if (node.toString() !== '[object Window]') {
+    var ownerDocument = node.ownerDocument;
+    return ownerDocument ? ownerDocument.defaultView || window : window;
+  }
+
+  return node;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js
+
+function getWindowScroll(node) {
+  var win = getWindow(node);
+  var scrollLeft = win.pageXOffset;
+  var scrollTop = win.pageYOffset;
+  return {
+    scrollLeft: scrollLeft,
+    scrollTop: scrollTop
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/instanceOf.js
+
+/*:: declare function isElement(node: mixed): boolean %checks(node instanceof
+  Element); */
+
+function isElement(node) {
+  var OwnElement = getWindow(node).Element;
+  return node instanceof OwnElement || node instanceof Element;
+}
+/*:: declare function isHTMLElement(node: mixed): boolean %checks(node instanceof
+  HTMLElement); */
+
+
+function isHTMLElement(node) {
+  var OwnElement = getWindow(node).HTMLElement;
+  return node instanceof OwnElement || node instanceof HTMLElement;
+}
+/*:: declare function isShadowRoot(node: mixed): boolean %checks(node instanceof
+  ShadowRoot); */
+
+
+function isShadowRoot(node) {
+  var OwnElement = getWindow(node).ShadowRoot;
+  return node instanceof OwnElement || node instanceof ShadowRoot;
+}
+
+
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js
+function getHTMLElementScroll(element) {
+  return {
+    scrollLeft: element.scrollLeft,
+    scrollTop: element.scrollTop
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js
+
+
+
+
+function getNodeScroll(node) {
+  if (node === getWindow(node) || !isHTMLElement(node)) {
+    return getWindowScroll(node);
+  } else {
+    return getHTMLElementScroll(node);
+  }
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getNodeName.js
+function getNodeName(element) {
+  return element ? (element.nodeName || '').toLowerCase() : null;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js
+
+function getDocumentElement(element) {
+  // $FlowFixMe: assume body is always available
+  return ((isElement(element) ? element.ownerDocument : element.document) || window.document).documentElement;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js
+
+
+
+function getWindowScrollBarX(element) {
+  // If <html> has a CSS width greater than the viewport, then this will be
+  // incorrect for RTL.
+  // Popper 1 is broken in this case and never had a bug report so let's assume
+  // it's not an issue. I don't think anyone ever specifies width on <html>
+  // anyway.
+  // Browsers where the left scrollbar doesn't cause an issue report `0` for
+  // this (e.g. Edge 2019, IE11, Safari)
+  return getBoundingClientRect(getDocumentElement(element)).left + getWindowScroll(element).scrollLeft;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js
+
+function getComputedStyle(element) {
+  return getWindow(element).getComputedStyle(element);
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js
+
+function isScrollParent(element) {
+  // Firefox wants us to check `-x` and `-y` variations as well
+  var _getComputedStyle = getComputedStyle(element),
+      overflow = _getComputedStyle.overflow,
+      overflowX = _getComputedStyle.overflowX,
+      overflowY = _getComputedStyle.overflowY;
+
+  return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js
+
+
+
+
+
+
+ // Returns the composite rect of an element relative to its offsetParent.
+// Composite means it takes into account transforms as well as layout.
+
+function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
+  if (isFixed === void 0) {
+    isFixed = false;
+  }
+
+  var documentElement = getDocumentElement(offsetParent);
+  var rect = getBoundingClientRect(elementOrVirtualElement);
+  var isOffsetParentAnElement = isHTMLElement(offsetParent);
+  var scroll = {
+    scrollLeft: 0,
+    scrollTop: 0
+  };
+  var offsets = {
+    x: 0,
+    y: 0
+  };
+
+  if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
+    if (getNodeName(offsetParent) !== 'body' || // https://github.com/popperjs/popper-core/issues/1078
+    isScrollParent(documentElement)) {
+      scroll = getNodeScroll(offsetParent);
+    }
+
+    if (isHTMLElement(offsetParent)) {
+      offsets = getBoundingClientRect(offsetParent);
+      offsets.x += offsetParent.clientLeft;
+      offsets.y += offsetParent.clientTop;
+    } else if (documentElement) {
+      offsets.x = getWindowScrollBarX(documentElement);
+    }
+  }
+
+  return {
+    x: rect.left + scroll.scrollLeft - offsets.x,
+    y: rect.top + scroll.scrollTop - offsets.y,
+    width: rect.width,
+    height: rect.height
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js
+// Returns the layout rect of an element relative to its offsetParent. Layout
+// means it doesn't take into account transforms.
+function getLayoutRect(element) {
+  return {
+    x: element.offsetLeft,
+    y: element.offsetTop,
+    width: element.offsetWidth,
+    height: element.offsetHeight
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getParentNode.js
+
+
+function getParentNode(element) {
+  if (getNodeName(element) === 'html') {
+    return element;
+  }
+
+  return (// $FlowFixMe: this is a quicker (but less type safe) way to save quite some bytes from the bundle
+    element.assignedSlot || // step into the shadow DOM of the parent of a slotted node
+    element.parentNode || // DOM Element detected
+    // $FlowFixMe: need a better way to handle this...
+    element.host || // ShadowRoot detected
+    // $FlowFixMe: HTMLElement is a Node
+    getDocumentElement(element) // fallback
+
+  );
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js
+
+
+
+
+function getScrollParent(node) {
+  if (['html', 'body', '#document'].indexOf(getNodeName(node)) >= 0) {
+    // $FlowFixMe: assume body is always available
+    return node.ownerDocument.body;
+  }
+
+  if (isHTMLElement(node) && isScrollParent(node)) {
+    return node;
+  }
+
+  return getScrollParent(getParentNode(node));
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js
+
+
+
+
+
+/*
+given a DOM element, return the list of all scroll parents, up the list of ancesors
+until we get to the top window object. This list is what we attach scroll listeners
+to, because if any of these parent elements scroll, we'll need to re-calculate the 
+reference element's position.
+*/
+
+function listScrollParents(element, list) {
+  if (list === void 0) {
+    list = [];
+  }
+
+  var scrollParent = getScrollParent(element);
+  var isBody = getNodeName(scrollParent) === 'body';
+  var win = getWindow(scrollParent);
+  var target = isBody ? [win].concat(win.visualViewport || [], isScrollParent(scrollParent) ? scrollParent : []) : scrollParent;
+  var updatedList = list.concat(target);
+  return isBody ? updatedList : // $FlowFixMe: isBody tells us target will be an HTMLElement here
+  updatedList.concat(listScrollParents(getParentNode(target)));
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/isTableElement.js
+
+function isTableElement(element) {
+  return ['table', 'td', 'th'].indexOf(getNodeName(element)) >= 0;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js
+
+
+
+
+
+
+
+
+function getTrueOffsetParent(element) {
+  if (!isHTMLElement(element) || // https://github.com/popperjs/popper-core/issues/837
+  getComputedStyle(element).position === 'fixed') {
+    return null;
+  }
+
+  var offsetParent = element.offsetParent;
+
+  if (offsetParent) {
+    var html = getDocumentElement(offsetParent);
+
+    if (getNodeName(offsetParent) === 'body' && getComputedStyle(offsetParent).position === 'static' && getComputedStyle(html).position !== 'static') {
+      return html;
+    }
+  }
+
+  return offsetParent;
+} // `.offsetParent` reports `null` for fixed elements, while absolute elements
+// return the containing block
+
+
+function getContainingBlock(element) {
+  var currentNode = getParentNode(element);
+
+  while (isHTMLElement(currentNode) && ['html', 'body'].indexOf(getNodeName(currentNode)) < 0) {
+    var css = getComputedStyle(currentNode); // This is non-exhaustive but covers the most common CSS properties that
+    // create a containing block.
+
+    if (css.transform !== 'none' || css.perspective !== 'none' || css.willChange && css.willChange !== 'auto') {
+      return currentNode;
+    } else {
+      currentNode = currentNode.parentNode;
+    }
+  }
+
+  return null;
+} // Gets the closest ancestor positioned element. Handles some edge cases,
+// such as table ancestors and cross browser bugs.
+
+
+function getOffsetParent(element) {
+  var window = getWindow(element);
+  var offsetParent = getTrueOffsetParent(element);
+
+  while (offsetParent && isTableElement(offsetParent) && getComputedStyle(offsetParent).position === 'static') {
+    offsetParent = getTrueOffsetParent(offsetParent);
+  }
+
+  if (offsetParent && getNodeName(offsetParent) === 'body' && getComputedStyle(offsetParent).position === 'static') {
+    return window;
+  }
+
+  return offsetParent || getContainingBlock(element) || window;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/enums.js
+var enums_top = 'top';
+var bottom = 'bottom';
+var right = 'right';
+var left = 'left';
+var auto = 'auto';
+var basePlacements = [enums_top, bottom, right, left];
+var start = 'start';
+var end = 'end';
+var enums_clippingParents = 'clippingParents';
+var viewport = 'viewport';
+var enums_popper = 'popper';
+var enums_reference = 'reference';
+var variationPlacements = /*#__PURE__*/basePlacements.reduce(function (acc, placement) {
+  return acc.concat([placement + "-" + start, placement + "-" + end]);
+}, []);
+var enums_placements = /*#__PURE__*/[].concat(basePlacements, [auto]).reduce(function (acc, placement) {
+  return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
+}, []); // modifiers that need to read the DOM
+
+var beforeRead = 'beforeRead';
+var read = 'read';
+var afterRead = 'afterRead'; // pure-logic modifiers
+
+var beforeMain = 'beforeMain';
+var main = 'main';
+var afterMain = 'afterMain'; // modifier with the purpose to write to the DOM (or write into a framework state)
+
+var beforeWrite = 'beforeWrite';
+var write = 'write';
+var afterWrite = 'afterWrite';
+var modifierPhases = [beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite];
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/orderModifiers.js
+ // source: https://stackoverflow.com/questions/49875255
+
+function order(modifiers) {
+  var map = new Map();
+  var visited = new Set();
+  var result = [];
+  modifiers.forEach(function (modifier) {
+    map.set(modifier.name, modifier);
+  }); // On visiting object, check for its dependencies and visit them recursively
+
+  function sort(modifier) {
+    visited.add(modifier.name);
+    var requires = [].concat(modifier.requires || [], modifier.requiresIfExists || []);
+    requires.forEach(function (dep) {
+      if (!visited.has(dep)) {
+        var depModifier = map.get(dep);
+
+        if (depModifier) {
+          sort(depModifier);
+        }
+      }
+    });
+    result.push(modifier);
+  }
+
+  modifiers.forEach(function (modifier) {
+    if (!visited.has(modifier.name)) {
+      // check for visited object
+      sort(modifier);
+    }
+  });
+  return result;
+}
+
+function orderModifiers(modifiers) {
+  // order based on dependencies
+  var orderedModifiers = order(modifiers); // order based on phase
+
+  return modifierPhases.reduce(function (acc, phase) {
+    return acc.concat(orderedModifiers.filter(function (modifier) {
+      return modifier.phase === phase;
+    }));
+  }, []);
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/debounce.js
+function debounce(fn) {
+  var pending;
+  return function () {
+    if (!pending) {
+      pending = new Promise(function (resolve) {
+        Promise.resolve().then(function () {
+          pending = undefined;
+          resolve(fn());
+        });
+      });
+    }
+
+    return pending;
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/mergeByName.js
+function mergeByName(modifiers) {
+  var merged = modifiers.reduce(function (merged, current) {
+    var existing = merged[current.name];
+    merged[current.name] = existing ? Object.assign(Object.assign(Object.assign({}, existing), current), {}, {
+      options: Object.assign(Object.assign({}, existing.options), current.options),
+      data: Object.assign(Object.assign({}, existing.data), current.data)
+    }) : current;
+    return merged;
+  }, {}); // IE11 does not support Object.values
+
+  return Object.keys(merged).map(function (key) {
+    return merged[key];
+  });
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/createPopper.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var INVALID_ELEMENT_ERROR = 'Popper: Invalid reference or popper argument provided. They must be either a DOM element or virtual element.';
+var INFINITE_LOOP_ERROR = 'Popper: An infinite loop in the modifiers cycle has been detected! The cycle has been interrupted to prevent a browser crash.';
+var DEFAULT_OPTIONS = {
+  placement: 'bottom',
+  modifiers: [],
+  strategy: 'absolute'
+};
+
+function areValidElements() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return !args.some(function (element) {
+    return !(element && typeof element.getBoundingClientRect === 'function');
+  });
+}
+
+function popperGenerator(generatorOptions) {
+  if (generatorOptions === void 0) {
+    generatorOptions = {};
+  }
+
+  var _generatorOptions = generatorOptions,
+      _generatorOptions$def = _generatorOptions.defaultModifiers,
+      defaultModifiers = _generatorOptions$def === void 0 ? [] : _generatorOptions$def,
+      _generatorOptions$def2 = _generatorOptions.defaultOptions,
+      defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+  return function createPopper(reference, popper, options) {
+    if (options === void 0) {
+      options = defaultOptions;
+    }
+
+    var state = {
+      placement: 'bottom',
+      orderedModifiers: [],
+      options: Object.assign(Object.assign({}, DEFAULT_OPTIONS), defaultOptions),
+      modifiersData: {},
+      elements: {
+        reference: reference,
+        popper: popper
+      },
+      attributes: {},
+      styles: {}
+    };
+    var effectCleanupFns = [];
+    var isDestroyed = false;
+    var instance = {
+      state: state,
+      setOptions: function setOptions(options) {
+        cleanupModifierEffects();
+        state.options = Object.assign(Object.assign(Object.assign({}, defaultOptions), state.options), options);
+        state.scrollParents = {
+          reference: isElement(reference) ? listScrollParents(reference) : reference.contextElement ? listScrollParents(reference.contextElement) : [],
+          popper: listScrollParents(popper)
+        }; // Orders the modifiers based on their dependencies and `phase`
+        // properties
+
+        var orderedModifiers = orderModifiers(mergeByName([].concat(defaultModifiers, state.options.modifiers))); // Strip out disabled modifiers
+
+        state.orderedModifiers = orderedModifiers.filter(function (m) {
+          return m.enabled;
+        }); // Validate the provided modifiers so that the consumer will get warned
+        // if one of the modifiers is invalid for any reason
+
+        if (false) { var _getComputedStyle, marginTop, marginRight, marginBottom, marginLeft, flipModifier, modifiers; }
+
+        runModifierEffects();
+        return instance.update();
+      },
+      // Sync update – it will always be executed, even if not necessary. This
+      // is useful for low frequency updates where sync behavior simplifies the
+      // logic.
+      // For high frequency updates (e.g. `resize` and `scroll` events), always
+      // prefer the async Popper#update method
+      forceUpdate: function forceUpdate() {
+        if (isDestroyed) {
+          return;
+        }
+
+        var _state$elements = state.elements,
+            reference = _state$elements.reference,
+            popper = _state$elements.popper; // Don't proceed if `reference` or `popper` are not valid elements
+        // anymore
+
+        if (!areValidElements(reference, popper)) {
+          if (false) {}
+
+          return;
+        } // Store the reference and popper rects to be read by modifiers
+
+
+        state.rects = {
+          reference: getCompositeRect(reference, getOffsetParent(popper), state.options.strategy === 'fixed'),
+          popper: getLayoutRect(popper)
+        }; // Modifiers have the ability to reset the current update cycle. The
+        // most common use case for this is the `flip` modifier changing the
+        // placement, which then needs to re-run all the modifiers, because the
+        // logic was previously ran for the previous placement and is therefore
+        // stale/incorrect
+
+        state.reset = false;
+        state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+        // is filled with the initial data specified by the modifier. This means
+        // it doesn't persist and is fresh on each update.
+        // To ensure persistent data, use `${name}#persistent`
+
+        state.orderedModifiers.forEach(function (modifier) {
+          return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
+        });
+        var __debug_loops__ = 0;
+
+        for (var index = 0; index < state.orderedModifiers.length; index++) {
+          if (false) {}
+
+          if (state.reset === true) {
+            state.reset = false;
+            index = -1;
+            continue;
+          }
+
+          var _state$orderedModifie = state.orderedModifiers[index],
+              fn = _state$orderedModifie.fn,
+              _state$orderedModifie2 = _state$orderedModifie.options,
+              _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2,
+              name = _state$orderedModifie.name;
+
+          if (typeof fn === 'function') {
+            state = fn({
+              state: state,
+              options: _options,
+              name: name,
+              instance: instance
+            }) || state;
+          }
+        }
+      },
+      // Async and optimistically optimized update – it will not be executed if
+      // not necessary (debounced to run at most once-per-tick)
+      update: debounce(function () {
+        return new Promise(function (resolve) {
+          instance.forceUpdate();
+          resolve(state);
+        });
+      }),
+      destroy: function destroy() {
+        cleanupModifierEffects();
+        isDestroyed = true;
+      }
+    };
+
+    if (!areValidElements(reference, popper)) {
+      if (false) {}
+
+      return instance;
+    }
+
+    instance.setOptions(options).then(function (state) {
+      if (!isDestroyed && options.onFirstUpdate) {
+        options.onFirstUpdate(state);
+      }
+    }); // Modifiers have the ability to execute arbitrary code before the first
+    // update cycle runs. They will be executed in the same order as the update
+    // cycle. This is useful when a modifier adds some persistent data that
+    // other modifiers need to use, but the modifier is run after the dependent
+    // one.
+
+    function runModifierEffects() {
+      state.orderedModifiers.forEach(function (_ref3) {
+        var name = _ref3.name,
+            _ref3$options = _ref3.options,
+            options = _ref3$options === void 0 ? {} : _ref3$options,
+            effect = _ref3.effect;
+
+        if (typeof effect === 'function') {
+          var cleanupFn = effect({
+            state: state,
+            name: name,
+            instance: instance,
+            options: options
+          });
+
+          var noopFn = function noopFn() {};
+
+          effectCleanupFns.push(cleanupFn || noopFn);
+        }
+      });
+    }
+
+    function cleanupModifierEffects() {
+      effectCleanupFns.forEach(function (fn) {
+        return fn();
+      });
+      effectCleanupFns = [];
+    }
+
+    return instance;
+  };
+}
+var createPopper_createPopper = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line import/no-unused-modules
+
+
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/eventListeners.js
+ // eslint-disable-next-line import/no-unused-modules
+
+var passive = {
+  passive: true
+};
+
+function effect(_ref) {
+  var state = _ref.state,
+      instance = _ref.instance,
+      options = _ref.options;
+  var _options$scroll = options.scroll,
+      scroll = _options$scroll === void 0 ? true : _options$scroll,
+      _options$resize = options.resize,
+      resize = _options$resize === void 0 ? true : _options$resize;
+  var window = getWindow(state.elements.popper);
+  var scrollParents = [].concat(state.scrollParents.reference, state.scrollParents.popper);
+
+  if (scroll) {
+    scrollParents.forEach(function (scrollParent) {
+      scrollParent.addEventListener('scroll', instance.update, passive);
+    });
+  }
+
+  if (resize) {
+    window.addEventListener('resize', instance.update, passive);
+  }
+
+  return function () {
+    if (scroll) {
+      scrollParents.forEach(function (scrollParent) {
+        scrollParent.removeEventListener('scroll', instance.update, passive);
+      });
+    }
+
+    if (resize) {
+      window.removeEventListener('resize', instance.update, passive);
+    }
+  };
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var eventListeners = ({
+  name: 'eventListeners',
+  enabled: true,
+  phase: 'write',
+  fn: function fn() {},
+  effect: effect,
+  data: {}
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getBasePlacement.js
+
+function getBasePlacement(placement) {
+  return placement.split('-')[0];
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getVariation.js
+function getVariation(placement) {
+  return placement.split('-')[1];
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js
+function getMainAxisFromPlacement(placement) {
+  return ['top', 'bottom'].indexOf(placement) >= 0 ? 'x' : 'y';
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/computeOffsets.js
+
+
+
+
+function computeOffsets(_ref) {
+  var reference = _ref.reference,
+      element = _ref.element,
+      placement = _ref.placement;
+  var basePlacement = placement ? getBasePlacement(placement) : null;
+  var variation = placement ? getVariation(placement) : null;
+  var commonX = reference.x + reference.width / 2 - element.width / 2;
+  var commonY = reference.y + reference.height / 2 - element.height / 2;
+  var offsets;
+
+  switch (basePlacement) {
+    case enums_top:
+      offsets = {
+        x: commonX,
+        y: reference.y - element.height
+      };
+      break;
+
+    case bottom:
+      offsets = {
+        x: commonX,
+        y: reference.y + reference.height
+      };
+      break;
+
+    case right:
+      offsets = {
+        x: reference.x + reference.width,
+        y: commonY
+      };
+      break;
+
+    case left:
+      offsets = {
+        x: reference.x - element.width,
+        y: commonY
+      };
+      break;
+
+    default:
+      offsets = {
+        x: reference.x,
+        y: reference.y
+      };
+  }
+
+  var mainAxis = basePlacement ? getMainAxisFromPlacement(basePlacement) : null;
+
+  if (mainAxis != null) {
+    var len = mainAxis === 'y' ? 'height' : 'width';
+
+    switch (variation) {
+      case start:
+        offsets[mainAxis] = Math.floor(offsets[mainAxis]) - Math.floor(reference[len] / 2 - element[len] / 2);
+        break;
+
+      case end:
+        offsets[mainAxis] = Math.floor(offsets[mainAxis]) + Math.ceil(reference[len] / 2 - element[len] / 2);
+        break;
+
+      default:
+    }
+  }
+
+  return offsets;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/popperOffsets.js
+
+
+function popperOffsets_popperOffsets(_ref) {
+  var state = _ref.state,
+      name = _ref.name;
+  // Offsets are the actual position the popper needs to have to be
+  // properly positioned near its reference element
+  // This is the most basic placement, and will be adjusted by
+  // the modifiers in the next step
+  state.modifiersData[name] = computeOffsets({
+    reference: state.rects.reference,
+    element: state.rects.popper,
+    strategy: 'absolute',
+    placement: state.placement
+  });
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_popperOffsets = ({
+  name: 'popperOffsets',
+  enabled: true,
+  phase: 'read',
+  fn: popperOffsets_popperOffsets,
+  data: {}
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/computeStyles.js
+
+
+
+
+
+ // eslint-disable-next-line import/no-unused-modules
+
+var unsetSides = {
+  top: 'auto',
+  right: 'auto',
+  bottom: 'auto',
+  left: 'auto'
+}; // Round the offsets to the nearest suitable subpixel based on the DPR.
+// Zooming can change the DPR, but it seems to report a value that will
+// cleanly divide the values into the appropriate subpixels.
+
+function roundOffsets(_ref) {
+  var x = _ref.x,
+      y = _ref.y;
+  var win = window;
+  var dpr = win.devicePixelRatio || 1;
+  return {
+    x: Math.round(x * dpr) / dpr || 0,
+    y: Math.round(y * dpr) / dpr || 0
+  };
+}
+
+function mapToStyles(_ref2) {
+  var _Object$assign2;
+
+  var popper = _ref2.popper,
+      popperRect = _ref2.popperRect,
+      placement = _ref2.placement,
+      offsets = _ref2.offsets,
+      position = _ref2.position,
+      gpuAcceleration = _ref2.gpuAcceleration,
+      adaptive = _ref2.adaptive;
+
+  var _roundOffsets = roundOffsets(offsets),
+      x = _roundOffsets.x,
+      y = _roundOffsets.y;
+
+  var hasX = offsets.hasOwnProperty('x');
+  var hasY = offsets.hasOwnProperty('y');
+  var sideX = left;
+  var sideY = enums_top;
+  var win = window;
+
+  if (adaptive) {
+    var offsetParent = getOffsetParent(popper);
+
+    if (offsetParent === getWindow(popper)) {
+      offsetParent = getDocumentElement(popper);
+    } // $FlowFixMe: force type refinement, we compare offsetParent with window above, but Flow doesn't detect it
+
+    /*:: offsetParent = (offsetParent: Element); */
+
+
+    if (placement === enums_top) {
+      sideY = bottom;
+      y -= offsetParent.clientHeight - popperRect.height;
+      y *= gpuAcceleration ? 1 : -1;
+    }
+
+    if (placement === left) {
+      sideX = right;
+      x -= offsetParent.clientWidth - popperRect.width;
+      x *= gpuAcceleration ? 1 : -1;
+    }
+  }
+
+  var commonStyles = Object.assign({
+    position: position
+  }, adaptive && unsetSides);
+
+  if (gpuAcceleration) {
+    var _Object$assign;
+
+    return Object.assign(Object.assign({}, commonStyles), {}, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+  }
+
+  return Object.assign(Object.assign({}, commonStyles), {}, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
+}
+
+function computeStyles(_ref3) {
+  var state = _ref3.state,
+      options = _ref3.options;
+  var _options$gpuAccelerat = options.gpuAcceleration,
+      gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat,
+      _options$adaptive = options.adaptive,
+      adaptive = _options$adaptive === void 0 ? true : _options$adaptive;
+
+  if (false) { var transitionProperty; }
+
+  var commonStyles = {
+    placement: getBasePlacement(state.placement),
+    popper: state.elements.popper,
+    popperRect: state.rects.popper,
+    gpuAcceleration: gpuAcceleration
+  };
+
+  if (state.modifiersData.popperOffsets != null) {
+    state.styles.popper = Object.assign(Object.assign({}, state.styles.popper), mapToStyles(Object.assign(Object.assign({}, commonStyles), {}, {
+      offsets: state.modifiersData.popperOffsets,
+      position: state.options.strategy,
+      adaptive: adaptive
+    })));
+  }
+
+  if (state.modifiersData.arrow != null) {
+    state.styles.arrow = Object.assign(Object.assign({}, state.styles.arrow), mapToStyles(Object.assign(Object.assign({}, commonStyles), {}, {
+      offsets: state.modifiersData.arrow,
+      position: 'absolute',
+      adaptive: false
+    })));
+  }
+
+  state.attributes.popper = Object.assign(Object.assign({}, state.attributes.popper), {}, {
+    'data-popper-placement': state.placement
+  });
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_computeStyles = ({
+  name: 'computeStyles',
+  enabled: true,
+  phase: 'beforeWrite',
+  fn: computeStyles,
+  data: {}
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/applyStyles.js
+
+ // This modifier takes the styles prepared by the `computeStyles` modifier
+// and applies them to the HTMLElements such as popper and arrow
+
+function applyStyles(_ref) {
+  var state = _ref.state;
+  Object.keys(state.elements).forEach(function (name) {
+    var style = state.styles[name] || {};
+    var attributes = state.attributes[name] || {};
+    var element = state.elements[name]; // arrow is optional + virtual elements
+
+    if (!isHTMLElement(element) || !getNodeName(element)) {
+      return;
+    } // Flow doesn't support to extend this property, but it's the most
+    // effective way to apply styles to an HTMLElement
+    // $FlowFixMe
+
+
+    Object.assign(element.style, style);
+    Object.keys(attributes).forEach(function (name) {
+      var value = attributes[name];
+
+      if (value === false) {
+        element.removeAttribute(name);
+      } else {
+        element.setAttribute(name, value === true ? '' : value);
+      }
+    });
+  });
+}
+
+function applyStyles_effect(_ref2) {
+  var state = _ref2.state;
+  var initialStyles = {
+    popper: {
+      position: state.options.strategy,
+      left: '0',
+      top: '0',
+      margin: '0'
+    },
+    arrow: {
+      position: 'absolute'
+    },
+    reference: {}
+  };
+  Object.assign(state.elements.popper.style, initialStyles.popper);
+
+  if (state.elements.arrow) {
+    Object.assign(state.elements.arrow.style, initialStyles.arrow);
+  }
+
+  return function () {
+    Object.keys(state.elements).forEach(function (name) {
+      var element = state.elements[name];
+      var attributes = state.attributes[name] || {};
+      var styleProperties = Object.keys(state.styles.hasOwnProperty(name) ? state.styles[name] : initialStyles[name]); // Set all values to an empty string to unset them
+
+      var style = styleProperties.reduce(function (style, property) {
+        style[property] = '';
+        return style;
+      }, {}); // arrow is optional + virtual elements
+
+      if (!isHTMLElement(element) || !getNodeName(element)) {
+        return;
+      } // Flow doesn't support to extend this property, but it's the most
+      // effective way to apply styles to an HTMLElement
+      // $FlowFixMe
+
+
+      Object.assign(element.style, style);
+      Object.keys(attributes).forEach(function (attribute) {
+        element.removeAttribute(attribute);
+      });
+    });
+  };
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_applyStyles = ({
+  name: 'applyStyles',
+  enabled: true,
+  phase: 'write',
+  fn: applyStyles,
+  effect: applyStyles_effect,
+  requires: ['computeStyles']
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/offset.js
+
+
+function distanceAndSkiddingToXY(placement, rects, offset) {
+  var basePlacement = getBasePlacement(placement);
+  var invertDistance = [left, enums_top].indexOf(basePlacement) >= 0 ? -1 : 1;
+
+  var _ref = typeof offset === 'function' ? offset(Object.assign(Object.assign({}, rects), {}, {
+    placement: placement
+  })) : offset,
+      skidding = _ref[0],
+      distance = _ref[1];
+
+  skidding = skidding || 0;
+  distance = (distance || 0) * invertDistance;
+  return [left, right].indexOf(basePlacement) >= 0 ? {
+    x: distance,
+    y: skidding
+  } : {
+    x: skidding,
+    y: distance
+  };
+}
+
+function offset_offset(_ref2) {
+  var state = _ref2.state,
+      options = _ref2.options,
+      name = _ref2.name;
+  var _options$offset = options.offset,
+      offset = _options$offset === void 0 ? [0, 0] : _options$offset;
+  var data = enums_placements.reduce(function (acc, placement) {
+    acc[placement] = distanceAndSkiddingToXY(placement, state.rects, offset);
+    return acc;
+  }, {});
+  var _data$state$placement = data[state.placement],
+      x = _data$state$placement.x,
+      y = _data$state$placement.y;
+
+  if (state.modifiersData.popperOffsets != null) {
+    state.modifiersData.popperOffsets.x += x;
+    state.modifiersData.popperOffsets.y += y;
+  }
+
+  state.modifiersData[name] = data;
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_offset = ({
+  name: 'offset',
+  enabled: true,
+  phase: 'main',
+  requires: ['popperOffsets'],
+  fn: offset_offset
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getOppositePlacement.js
+var hash = {
+  left: 'right',
+  right: 'left',
+  bottom: 'top',
+  top: 'bottom'
+};
+function getOppositePlacement(placement) {
+  return placement.replace(/left|right|bottom|top/g, function (matched) {
+    return hash[matched];
+  });
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js
+var getOppositeVariationPlacement_hash = {
+  start: 'end',
+  end: 'start'
+};
+function getOppositeVariationPlacement(placement) {
+  return placement.replace(/start|end/g, function (matched) {
+    return getOppositeVariationPlacement_hash[matched];
+  });
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js
+
+
+
+function getViewportRect(element) {
+  var win = getWindow(element);
+  var html = getDocumentElement(element);
+  var visualViewport = win.visualViewport;
+  var width = html.clientWidth;
+  var height = html.clientHeight;
+  var x = 0;
+  var y = 0; // NB: This isn't supported on iOS <= 12. If the keyboard is open, the popper
+  // can be obscured underneath it.
+  // Also, `html.clientHeight` adds the bottom bar height in Safari iOS, even
+  // if it isn't open, so if this isn't available, the popper will be detected
+  // to overflow the bottom of the screen too early.
+
+  if (visualViewport) {
+    width = visualViewport.width;
+    height = visualViewport.height; // Uses Layout Viewport (like Chrome; Safari does not currently)
+    // In Chrome, it returns a value very close to 0 (+/-) but contains rounding
+    // errors due to floating point numbers, so we need to check precision.
+    // Safari returns a number <= 0, usually < -1 when pinch-zoomed
+    // Feature detection fails in mobile emulation mode in Chrome.
+    // Math.abs(win.innerWidth / visualViewport.scale - visualViewport.width) <
+    // 0.001
+    // Fallback here: "Not Safari" userAgent
+
+    if (!/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+      x = visualViewport.offsetLeft;
+      y = visualViewport.offsetTop;
+    }
+  }
+
+  return {
+    width: width,
+    height: height,
+    x: x + getWindowScrollBarX(element),
+    y: y
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js
+
+
+
+ // Gets the entire size of the scrollable document area, even extending outside
+// of the `<html>` and `<body>` rect bounds if horizontally scrollable
+
+function getDocumentRect(element) {
+  var html = getDocumentElement(element);
+  var winScroll = getWindowScroll(element);
+  var body = element.ownerDocument.body;
+  var width = Math.max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
+  var height = Math.max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
+  var x = -winScroll.scrollLeft + getWindowScrollBarX(element);
+  var y = -winScroll.scrollTop;
+
+  if (getComputedStyle(body || html).direction === 'rtl') {
+    x += Math.max(html.clientWidth, body ? body.clientWidth : 0) - width;
+  }
+
+  return {
+    width: width,
+    height: height,
+    x: x,
+    y: y
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/contains.js
+
+function contains(parent, child) {
+  var rootNode = child.getRootNode && child.getRootNode(); // First, attempt with faster native method
+
+  if (parent.contains(child)) {
+    return true;
+  } // then fallback to custom implementation with Shadow DOM support
+  else if (isShadowRoot(rootNode)) {
+      var next = child;
+
+      do {
+        if (next && parent.isSameNode(next)) {
+          return true;
+        } // $FlowFixMe: need a better way to handle this...
+
+
+        next = next.parentNode || next.host;
+      } while (next);
+    } // Give up, the result is false
+
+
+  return false;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/rectToClientRect.js
+function rectToClientRect(rect) {
+  return Object.assign(Object.assign({}, rect), {}, {
+    left: rect.x,
+    top: rect.y,
+    right: rect.x + rect.width,
+    bottom: rect.y + rect.height
+  });
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getInnerBoundingClientRect(element) {
+  var rect = getBoundingClientRect(element);
+  rect.top = rect.top + element.clientTop;
+  rect.left = rect.left + element.clientLeft;
+  rect.bottom = rect.top + element.clientHeight;
+  rect.right = rect.left + element.clientWidth;
+  rect.width = element.clientWidth;
+  rect.height = element.clientHeight;
+  rect.x = rect.left;
+  rect.y = rect.top;
+  return rect;
+}
+
+function getClientRectFromMixedType(element, clippingParent) {
+  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isHTMLElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+} // A "clipping parent" is an overflowable container with the characteristic of
+// clipping (or hiding) overflowing elements with a position different from
+// `initial`
+
+
+function getClippingParents(element) {
+  var clippingParents = listScrollParents(getParentNode(element));
+  var canEscapeClipping = ['absolute', 'fixed'].indexOf(getComputedStyle(element).position) >= 0;
+  var clipperElement = canEscapeClipping && isHTMLElement(element) ? getOffsetParent(element) : element;
+
+  if (!isElement(clipperElement)) {
+    return [];
+  } // $FlowFixMe: https://github.com/facebook/flow/issues/1414
+
+
+  return clippingParents.filter(function (clippingParent) {
+    return isElement(clippingParent) && contains(clippingParent, clipperElement) && getNodeName(clippingParent) !== 'body';
+  });
+} // Gets the maximum area that the element is visible in due to any number of
+// clipping parents
+
+
+function getClippingRect(element, boundary, rootBoundary) {
+  var mainClippingParents = boundary === 'clippingParents' ? getClippingParents(element) : [].concat(boundary);
+  var clippingParents = [].concat(mainClippingParents, [rootBoundary]);
+  var firstClippingParent = clippingParents[0];
+  var clippingRect = clippingParents.reduce(function (accRect, clippingParent) {
+    var rect = getClientRectFromMixedType(element, clippingParent);
+    accRect.top = Math.max(rect.top, accRect.top);
+    accRect.right = Math.min(rect.right, accRect.right);
+    accRect.bottom = Math.min(rect.bottom, accRect.bottom);
+    accRect.left = Math.max(rect.left, accRect.left);
+    return accRect;
+  }, getClientRectFromMixedType(element, firstClippingParent));
+  clippingRect.width = clippingRect.right - clippingRect.left;
+  clippingRect.height = clippingRect.bottom - clippingRect.top;
+  clippingRect.x = clippingRect.left;
+  clippingRect.y = clippingRect.top;
+  return clippingRect;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getFreshSideObject.js
+function getFreshSideObject() {
+  return {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  };
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/mergePaddingObject.js
+
+function mergePaddingObject(paddingObject) {
+  return Object.assign(Object.assign({}, getFreshSideObject()), paddingObject);
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/expandToHashMap.js
+function expandToHashMap(value, keys) {
+  return keys.reduce(function (hashMap, key) {
+    hashMap[key] = value;
+    return hashMap;
+  }, {});
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/detectOverflow.js
+
+
+
+
+
+
+
+
+ // eslint-disable-next-line import/no-unused-modules
+
+function detectOverflow(state, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options = options,
+      _options$placement = _options.placement,
+      placement = _options$placement === void 0 ? state.placement : _options$placement,
+      _options$boundary = _options.boundary,
+      boundary = _options$boundary === void 0 ? enums_clippingParents : _options$boundary,
+      _options$rootBoundary = _options.rootBoundary,
+      rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary,
+      _options$elementConte = _options.elementContext,
+      elementContext = _options$elementConte === void 0 ? enums_popper : _options$elementConte,
+      _options$altBoundary = _options.altBoundary,
+      altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary,
+      _options$padding = _options.padding,
+      padding = _options$padding === void 0 ? 0 : _options$padding;
+  var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
+  var altContext = elementContext === enums_popper ? enums_reference : enums_popper;
+  var referenceElement = state.elements.reference;
+  var popperRect = state.rects.popper;
+  var element = state.elements[altBoundary ? altContext : elementContext];
+  var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
+  var referenceClientRect = getBoundingClientRect(referenceElement);
+  var popperOffsets = computeOffsets({
+    reference: referenceClientRect,
+    element: popperRect,
+    strategy: 'absolute',
+    placement: placement
+  });
+  var popperClientRect = rectToClientRect(Object.assign(Object.assign({}, popperRect), popperOffsets));
+  var elementClientRect = elementContext === enums_popper ? popperClientRect : referenceClientRect; // positive = overflowing the clipping rect
+  // 0 or negative = within the clipping rect
+
+  var overflowOffsets = {
+    top: clippingClientRect.top - elementClientRect.top + paddingObject.top,
+    bottom: elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom,
+    left: clippingClientRect.left - elementClientRect.left + paddingObject.left,
+    right: elementClientRect.right - clippingClientRect.right + paddingObject.right
+  };
+  var offsetData = state.modifiersData.offset; // Offsets can be applied only to the popper element
+
+  if (elementContext === enums_popper && offsetData) {
+    var offset = offsetData[placement];
+    Object.keys(overflowOffsets).forEach(function (key) {
+      var multiply = [right, bottom].indexOf(key) >= 0 ? 1 : -1;
+      var axis = [enums_top, bottom].indexOf(key) >= 0 ? 'y' : 'x';
+      overflowOffsets[key] += offset[axis] * multiply;
+    });
+  }
+
+  return overflowOffsets;
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js
+
+
+
+
+
+/*:: type OverflowsMap = { [ComputedPlacement]: number }; */
+
+/*;; type OverflowsMap = { [key in ComputedPlacement]: number }; */
+function computeAutoPlacement(state, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var _options = options,
+      placement = _options.placement,
+      boundary = _options.boundary,
+      rootBoundary = _options.rootBoundary,
+      padding = _options.padding,
+      flipVariations = _options.flipVariations,
+      _options$allowedAutoP = _options.allowedAutoPlacements,
+      allowedAutoPlacements = _options$allowedAutoP === void 0 ? enums_placements : _options$allowedAutoP;
+  var variation = getVariation(placement);
+  var placements = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function (placement) {
+    return getVariation(placement) === variation;
+  }) : basePlacements; // $FlowFixMe
+
+  var allowedPlacements = placements.filter(function (placement) {
+    return allowedAutoPlacements.indexOf(placement) >= 0;
+  });
+
+  if (allowedPlacements.length === 0) {
+    allowedPlacements = placements;
+
+    if (false) {}
+  } // $FlowFixMe: Flow seems to have problems with two array unions...
+
+
+  var overflows = allowedPlacements.reduce(function (acc, placement) {
+    acc[placement] = detectOverflow(state, {
+      placement: placement,
+      boundary: boundary,
+      rootBoundary: rootBoundary,
+      padding: padding
+    })[getBasePlacement(placement)];
+    return acc;
+  }, {});
+  return Object.keys(overflows).sort(function (a, b) {
+    return overflows[a] - overflows[b];
+  });
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/flip.js
+
+
+
+
+
+
+ // eslint-disable-next-line import/no-unused-modules
+
+function getExpandedFallbackPlacements(placement) {
+  if (getBasePlacement(placement) === auto) {
+    return [];
+  }
+
+  var oppositePlacement = getOppositePlacement(placement);
+  return [getOppositeVariationPlacement(placement), oppositePlacement, getOppositeVariationPlacement(oppositePlacement)];
+}
+
+function flip(_ref) {
+  var state = _ref.state,
+      options = _ref.options,
+      name = _ref.name;
+
+  if (state.modifiersData[name]._skip) {
+    return;
+  }
+
+  var _options$mainAxis = options.mainAxis,
+      checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+      _options$altAxis = options.altAxis,
+      checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis,
+      specifiedFallbackPlacements = options.fallbackPlacements,
+      padding = options.padding,
+      boundary = options.boundary,
+      rootBoundary = options.rootBoundary,
+      altBoundary = options.altBoundary,
+      _options$flipVariatio = options.flipVariations,
+      flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio,
+      allowedAutoPlacements = options.allowedAutoPlacements;
+  var preferredPlacement = state.options.placement;
+  var basePlacement = getBasePlacement(preferredPlacement);
+  var isBasePlacement = basePlacement === preferredPlacement;
+  var fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipVariations ? [getOppositePlacement(preferredPlacement)] : getExpandedFallbackPlacements(preferredPlacement));
+  var placements = [preferredPlacement].concat(fallbackPlacements).reduce(function (acc, placement) {
+    return acc.concat(getBasePlacement(placement) === auto ? computeAutoPlacement(state, {
+      placement: placement,
+      boundary: boundary,
+      rootBoundary: rootBoundary,
+      padding: padding,
+      flipVariations: flipVariations,
+      allowedAutoPlacements: allowedAutoPlacements
+    }) : placement);
+  }, []);
+  var referenceRect = state.rects.reference;
+  var popperRect = state.rects.popper;
+  var checksMap = new Map();
+  var makeFallbackChecks = true;
+  var firstFittingPlacement = placements[0];
+
+  for (var i = 0; i < placements.length; i++) {
+    var placement = placements[i];
+
+    var _basePlacement = getBasePlacement(placement);
+
+    var isStartVariation = getVariation(placement) === start;
+    var isVertical = [enums_top, bottom].indexOf(_basePlacement) >= 0;
+    var len = isVertical ? 'width' : 'height';
+    var overflow = detectOverflow(state, {
+      placement: placement,
+      boundary: boundary,
+      rootBoundary: rootBoundary,
+      altBoundary: altBoundary,
+      padding: padding
+    });
+    var mainVariationSide = isVertical ? isStartVariation ? right : left : isStartVariation ? bottom : enums_top;
+
+    if (referenceRect[len] > popperRect[len]) {
+      mainVariationSide = getOppositePlacement(mainVariationSide);
+    }
+
+    var altVariationSide = getOppositePlacement(mainVariationSide);
+    var checks = [];
+
+    if (checkMainAxis) {
+      checks.push(overflow[_basePlacement] <= 0);
+    }
+
+    if (checkAltAxis) {
+      checks.push(overflow[mainVariationSide] <= 0, overflow[altVariationSide] <= 0);
+    }
+
+    if (checks.every(function (check) {
+      return check;
+    })) {
+      firstFittingPlacement = placement;
+      makeFallbackChecks = false;
+      break;
+    }
+
+    checksMap.set(placement, checks);
+  }
+
+  if (makeFallbackChecks) {
+    // `2` may be desired in some cases – research later
+    var numberOfChecks = flipVariations ? 3 : 1;
+
+    var _loop = function _loop(_i) {
+      var fittingPlacement = placements.find(function (placement) {
+        var checks = checksMap.get(placement);
+
+        if (checks) {
+          return checks.slice(0, _i).every(function (check) {
+            return check;
+          });
+        }
+      });
+
+      if (fittingPlacement) {
+        firstFittingPlacement = fittingPlacement;
+        return "break";
+      }
+    };
+
+    for (var _i = numberOfChecks; _i > 0; _i--) {
+      var _ret = _loop(_i);
+
+      if (_ret === "break") break;
+    }
+  }
+
+  if (state.placement !== firstFittingPlacement) {
+    state.modifiersData[name]._skip = true;
+    state.placement = firstFittingPlacement;
+    state.reset = true;
+  }
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_flip = ({
+  name: 'flip',
+  enabled: true,
+  phase: 'main',
+  fn: flip,
+  requiresIfExists: ['offset'],
+  data: {
+    _skip: false
+  }
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/getAltAxis.js
+function getAltAxis(axis) {
+  return axis === 'x' ? 'y' : 'x';
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/within.js
+function within(min, value, max) {
+  return Math.max(min, Math.min(value, max));
+}
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
+
+
+
+
+
+
+
+
+
+
+
+function preventOverflow(_ref) {
+  var state = _ref.state,
+      options = _ref.options,
+      name = _ref.name;
+  var _options$mainAxis = options.mainAxis,
+      checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+      _options$altAxis = options.altAxis,
+      checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis,
+      boundary = options.boundary,
+      rootBoundary = options.rootBoundary,
+      altBoundary = options.altBoundary,
+      padding = options.padding,
+      _options$tether = options.tether,
+      tether = _options$tether === void 0 ? true : _options$tether,
+      _options$tetherOffset = options.tetherOffset,
+      tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
+  var overflow = detectOverflow(state, {
+    boundary: boundary,
+    rootBoundary: rootBoundary,
+    padding: padding,
+    altBoundary: altBoundary
+  });
+  var basePlacement = getBasePlacement(state.placement);
+  var variation = getVariation(state.placement);
+  var isBasePlacement = !variation;
+  var mainAxis = getMainAxisFromPlacement(basePlacement);
+  var altAxis = getAltAxis(mainAxis);
+  var popperOffsets = state.modifiersData.popperOffsets;
+  var referenceRect = state.rects.reference;
+  var popperRect = state.rects.popper;
+  var tetherOffsetValue = typeof tetherOffset === 'function' ? tetherOffset(Object.assign(Object.assign({}, state.rects), {}, {
+    placement: state.placement
+  })) : tetherOffset;
+  var data = {
+    x: 0,
+    y: 0
+  };
+
+  if (!popperOffsets) {
+    return;
+  }
+
+  if (checkMainAxis) {
+    var mainSide = mainAxis === 'y' ? enums_top : left;
+    var altSide = mainAxis === 'y' ? bottom : right;
+    var len = mainAxis === 'y' ? 'height' : 'width';
+    var offset = popperOffsets[mainAxis];
+    var min = popperOffsets[mainAxis] + overflow[mainSide];
+    var max = popperOffsets[mainAxis] - overflow[altSide];
+    var additive = tether ? -popperRect[len] / 2 : 0;
+    var minLen = variation === start ? referenceRect[len] : popperRect[len];
+    var maxLen = variation === start ? -popperRect[len] : -referenceRect[len]; // We need to include the arrow in the calculation so the arrow doesn't go
+    // outside the reference bounds
+
+    var arrowElement = state.elements.arrow;
+    var arrowRect = tether && arrowElement ? getLayoutRect(arrowElement) : {
+      width: 0,
+      height: 0
+    };
+    var arrowPaddingObject = state.modifiersData['arrow#persistent'] ? state.modifiersData['arrow#persistent'].padding : getFreshSideObject();
+    var arrowPaddingMin = arrowPaddingObject[mainSide];
+    var arrowPaddingMax = arrowPaddingObject[altSide]; // If the reference length is smaller than the arrow length, we don't want
+    // to include its full size in the calculation. If the reference is small
+    // and near the edge of a boundary, the popper can overflow even if the
+    // reference is not overflowing as well (e.g. virtual elements with no
+    // width or height)
+
+    var arrowLen = within(0, referenceRect[len], arrowRect[len]);
+    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - tetherOffsetValue : minLen - arrowLen - arrowPaddingMin - tetherOffsetValue;
+    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + tetherOffsetValue : maxLen + arrowLen + arrowPaddingMax + tetherOffsetValue;
+    var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
+    var clientOffset = arrowOffsetParent ? mainAxis === 'y' ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
+    var offsetModifierValue = state.modifiersData.offset ? state.modifiersData.offset[state.placement][mainAxis] : 0;
+    var tetherMin = popperOffsets[mainAxis] + minOffset - offsetModifierValue - clientOffset;
+    var tetherMax = popperOffsets[mainAxis] + maxOffset - offsetModifierValue;
+    var preventedOffset = within(tether ? Math.min(min, tetherMin) : min, offset, tether ? Math.max(max, tetherMax) : max);
+    popperOffsets[mainAxis] = preventedOffset;
+    data[mainAxis] = preventedOffset - offset;
+  }
+
+  if (checkAltAxis) {
+    var _mainSide = mainAxis === 'x' ? enums_top : left;
+
+    var _altSide = mainAxis === 'x' ? bottom : right;
+
+    var _offset = popperOffsets[altAxis];
+
+    var _min = _offset + overflow[_mainSide];
+
+    var _max = _offset - overflow[_altSide];
+
+    var _preventedOffset = within(_min, _offset, _max);
+
+    popperOffsets[altAxis] = _preventedOffset;
+    data[altAxis] = _preventedOffset - _offset;
+  }
+
+  state.modifiersData[name] = data;
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_preventOverflow = ({
+  name: 'preventOverflow',
+  enabled: true,
+  phase: 'main',
+  fn: preventOverflow,
+  requiresIfExists: ['offset']
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/arrow.js
+
+
+
+
+
+
+
+
+
+ // eslint-disable-next-line import/no-unused-modules
+
+function arrow_arrow(_ref) {
+  var _state$modifiersData$;
+
+  var state = _ref.state,
+      name = _ref.name;
+  var arrowElement = state.elements.arrow;
+  var popperOffsets = state.modifiersData.popperOffsets;
+  var basePlacement = getBasePlacement(state.placement);
+  var axis = getMainAxisFromPlacement(basePlacement);
+  var isVertical = [left, right].indexOf(basePlacement) >= 0;
+  var len = isVertical ? 'height' : 'width';
+
+  if (!arrowElement || !popperOffsets) {
+    return;
+  }
+
+  var paddingObject = state.modifiersData[name + "#persistent"].padding;
+  var arrowRect = getLayoutRect(arrowElement);
+  var minProp = axis === 'y' ? enums_top : left;
+  var maxProp = axis === 'y' ? bottom : right;
+  var endDiff = state.rects.reference[len] + state.rects.reference[axis] - popperOffsets[axis] - state.rects.popper[len];
+  var startDiff = popperOffsets[axis] - state.rects.reference[axis];
+  var arrowOffsetParent = getOffsetParent(arrowElement);
+  var clientSize = arrowOffsetParent ? axis === 'y' ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
+  var centerToReference = endDiff / 2 - startDiff / 2; // Make sure the arrow doesn't overflow the popper if the center point is
+  // outside of the popper bounds
+
+  var min = paddingObject[minProp];
+  var max = clientSize - arrowRect[len] - paddingObject[maxProp];
+  var center = clientSize / 2 - arrowRect[len] / 2 + centerToReference;
+  var offset = within(min, center, max); // Prevents breaking syntax highlighting...
+
+  var axisProp = axis;
+  state.modifiersData[name] = (_state$modifiersData$ = {}, _state$modifiersData$[axisProp] = offset, _state$modifiersData$.centerOffset = offset - center, _state$modifiersData$);
+}
+
+function arrow_effect(_ref2) {
+  var state = _ref2.state,
+      options = _ref2.options,
+      name = _ref2.name;
+  var _options$element = options.element,
+      arrowElement = _options$element === void 0 ? '[data-popper-arrow]' : _options$element,
+      _options$padding = options.padding,
+      padding = _options$padding === void 0 ? 0 : _options$padding;
+
+  if (arrowElement == null) {
+    return;
+  } // CSS selector
+
+
+  if (typeof arrowElement === 'string') {
+    arrowElement = state.elements.popper.querySelector(arrowElement);
+
+    if (!arrowElement) {
+      return;
+    }
+  }
+
+  if (false) {}
+
+  if (!contains(state.elements.popper, arrowElement)) {
+    if (false) {}
+
+    return;
+  }
+
+  state.elements.arrow = arrowElement;
+  state.modifiersData[name + "#persistent"] = {
+    padding: mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements))
+  };
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_arrow = ({
+  name: 'arrow',
+  enabled: true,
+  phase: 'main',
+  fn: arrow_arrow,
+  effect: arrow_effect,
+  requires: ['popperOffsets'],
+  requiresIfExists: ['preventOverflow']
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/hide.js
+
+
+
+function getSideOffsets(overflow, rect, preventedOffsets) {
+  if (preventedOffsets === void 0) {
+    preventedOffsets = {
+      x: 0,
+      y: 0
+    };
+  }
+
+  return {
+    top: overflow.top - rect.height - preventedOffsets.y,
+    right: overflow.right - rect.width + preventedOffsets.x,
+    bottom: overflow.bottom - rect.height + preventedOffsets.y,
+    left: overflow.left - rect.width - preventedOffsets.x
+  };
+}
+
+function isAnySideFullyClipped(overflow) {
+  return [enums_top, right, bottom, left].some(function (side) {
+    return overflow[side] >= 0;
+  });
+}
+
+function hide_hide(_ref) {
+  var state = _ref.state,
+      name = _ref.name;
+  var referenceRect = state.rects.reference;
+  var popperRect = state.rects.popper;
+  var preventedOffsets = state.modifiersData.preventOverflow;
+  var referenceOverflow = detectOverflow(state, {
+    elementContext: 'reference'
+  });
+  var popperAltOverflow = detectOverflow(state, {
+    altBoundary: true
+  });
+  var referenceClippingOffsets = getSideOffsets(referenceOverflow, referenceRect);
+  var popperEscapeOffsets = getSideOffsets(popperAltOverflow, popperRect, preventedOffsets);
+  var isReferenceHidden = isAnySideFullyClipped(referenceClippingOffsets);
+  var hasPopperEscaped = isAnySideFullyClipped(popperEscapeOffsets);
+  state.modifiersData[name] = {
+    referenceClippingOffsets: referenceClippingOffsets,
+    popperEscapeOffsets: popperEscapeOffsets,
+    isReferenceHidden: isReferenceHidden,
+    hasPopperEscaped: hasPopperEscaped
+  };
+  state.attributes.popper = Object.assign(Object.assign({}, state.attributes.popper), {}, {
+    'data-popper-reference-hidden': isReferenceHidden,
+    'data-popper-escaped': hasPopperEscaped
+  });
+} // eslint-disable-next-line import/no-unused-modules
+
+
+/* harmony default export */ var modifiers_hide = ({
+  name: 'hide',
+  enabled: true,
+  phase: 'main',
+  requiresIfExists: ['preventOverflow'],
+  fn: hide_hide
+});
+// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/popper.js
+
+
+
+
+
+
+
+
+
+
+var popper_defaultModifiers = [eventListeners, modifiers_popperOffsets, modifiers_computeStyles, modifiers_applyStyles, modifiers_offset, modifiers_flip, modifiers_preventOverflow, modifiers_arrow, modifiers_hide];
+var popper_createPopper = /*#__PURE__*/popperGenerator({
+  defaultModifiers: popper_defaultModifiers
+}); // eslint-disable-next-line import/no-unused-modules
+
+ // eslint-disable-next-line import/no-unused-modules
+
+ // eslint-disable-next-line import/no-unused-modules
+
+
+// CONCATENATED MODULE: ./node_modules/tippy.js/dist/tippy.esm.js
+/**!
+* tippy.js v6.2.7
+* (c) 2017-2020 atomiks
+* MIT License
+*/
+
+
+var ROUND_ARROW = '<svg width="16" height="6" xmlns="http://www.w3.org/2000/svg"><path d="M0 6s1.796-.013 4.67-3.615C5.851.9 6.93.006 8 0c1.07-.006 2.148.887 3.343 2.385C14.233 6.005 16 6 16 6H0z"></svg>';
+var BOX_CLASS = "tippy-box";
+var CONTENT_CLASS = "tippy-content";
+var BACKDROP_CLASS = "tippy-backdrop";
+var ARROW_CLASS = "tippy-arrow";
+var SVG_ARROW_CLASS = "tippy-svg-arrow";
+var TOUCH_OPTIONS = {
+  passive: true,
+  capture: true
+};
+
+function tippy_esm_hasOwnProperty(obj, key) {
+  return {}.hasOwnProperty.call(obj, key);
+}
+function getValueAtIndexOrReturn(value, index, defaultValue) {
+  if (Array.isArray(value)) {
+    var v = value[index];
+    return v == null ? Array.isArray(defaultValue) ? defaultValue[index] : defaultValue : v;
+  }
+
+  return value;
+}
+function isType(value, type) {
+  var str = {}.toString.call(value);
+  return str.indexOf('[object') === 0 && str.indexOf(type + "]") > -1;
+}
+function invokeWithArgsOrReturn(value, args) {
+  return typeof value === 'function' ? value.apply(void 0, args) : value;
+}
+function tippy_esm_debounce(fn, ms) {
+  // Avoid wrapping in `setTimeout` if ms is 0 anyway
+  if (ms === 0) {
+    return fn;
+  }
+
+  var timeout;
+  return function (arg) {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      fn(arg);
+    }, ms);
+  };
+}
+function removeProperties(obj, keys) {
+  var clone = Object.assign({}, obj);
+  keys.forEach(function (key) {
+    delete clone[key];
+  });
+  return clone;
+}
+function splitBySpaces(value) {
+  return value.split(/\s+/).filter(Boolean);
+}
+function normalizeToArray(value) {
+  return [].concat(value);
+}
+function pushIfUnique(arr, value) {
+  if (arr.indexOf(value) === -1) {
+    arr.push(value);
+  }
+}
+function unique(arr) {
+  return arr.filter(function (item, index) {
+    return arr.indexOf(item) === index;
+  });
+}
+function tippy_esm_getBasePlacement(placement) {
+  return placement.split('-')[0];
+}
+function arrayFrom(value) {
+  return [].slice.call(value);
+}
+function removeUndefinedProps(obj) {
+  return Object.keys(obj).reduce(function (acc, key) {
+    if (obj[key] !== undefined) {
+      acc[key] = obj[key];
+    }
+
+    return acc;
+  }, {});
+}
+
+function div() {
+  return document.createElement('div');
+}
+function tippy_esm_isElement(value) {
+  return ['Element', 'Fragment'].some(function (type) {
+    return isType(value, type);
+  });
+}
+function isNodeList(value) {
+  return isType(value, 'NodeList');
+}
+function isMouseEvent(value) {
+  return isType(value, 'MouseEvent');
+}
+function isReferenceElement(value) {
+  return !!(value && value._tippy && value._tippy.reference === value);
+}
+function getArrayOfElements(value) {
+  if (tippy_esm_isElement(value)) {
+    return [value];
+  }
+
+  if (isNodeList(value)) {
+    return arrayFrom(value);
+  }
+
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return arrayFrom(document.querySelectorAll(value));
+}
+function setTransitionDuration(els, value) {
+  els.forEach(function (el) {
+    if (el) {
+      el.style.transitionDuration = value + "ms";
+    }
+  });
+}
+function setVisibilityState(els, state) {
+  els.forEach(function (el) {
+    if (el) {
+      el.setAttribute('data-state', state);
+    }
+  });
+}
+function getOwnerDocument(elementOrElements) {
+  var _normalizeToArray = normalizeToArray(elementOrElements),
+      element = _normalizeToArray[0];
+
+  return element ? element.ownerDocument || document : document;
+}
+function isCursorOutsideInteractiveBorder(popperTreeData, event) {
+  var clientX = event.clientX,
+      clientY = event.clientY;
+  return popperTreeData.every(function (_ref) {
+    var popperRect = _ref.popperRect,
+        popperState = _ref.popperState,
+        props = _ref.props;
+    var interactiveBorder = props.interactiveBorder;
+    var basePlacement = tippy_esm_getBasePlacement(popperState.placement);
+    var offsetData = popperState.modifiersData.offset;
+
+    if (!offsetData) {
+      return true;
+    }
+
+    var topDistance = basePlacement === 'bottom' ? offsetData.top.y : 0;
+    var bottomDistance = basePlacement === 'top' ? offsetData.bottom.y : 0;
+    var leftDistance = basePlacement === 'right' ? offsetData.left.x : 0;
+    var rightDistance = basePlacement === 'left' ? offsetData.right.x : 0;
+    var exceedsTop = popperRect.top - clientY + topDistance > interactiveBorder;
+    var exceedsBottom = clientY - popperRect.bottom - bottomDistance > interactiveBorder;
+    var exceedsLeft = popperRect.left - clientX + leftDistance > interactiveBorder;
+    var exceedsRight = clientX - popperRect.right - rightDistance > interactiveBorder;
+    return exceedsTop || exceedsBottom || exceedsLeft || exceedsRight;
+  });
+}
+function updateTransitionEndListener(box, action, listener) {
+  var method = action + "EventListener"; // some browsers apparently support `transition` (unprefixed) but only fire
+  // `webkitTransitionEnd`...
+
+  ['transitionend', 'webkitTransitionEnd'].forEach(function (event) {
+    box[method](event, listener);
+  });
+}
+
+var currentInput = {
+  isTouch: false
+};
+var lastMouseMoveTime = 0;
+/**
+ * When a `touchstart` event is fired, it's assumed the user is using touch
+ * input. We'll bind a `mousemove` event listener to listen for mouse input in
+ * the future. This way, the `isTouch` property is fully dynamic and will handle
+ * hybrid devices that use a mix of touch + mouse input.
+ */
+
+function onDocumentTouchStart() {
+  if (currentInput.isTouch) {
+    return;
+  }
+
+  currentInput.isTouch = true;
+
+  if (window.performance) {
+    document.addEventListener('mousemove', onDocumentMouseMove);
+  }
+}
+/**
+ * When two `mousemove` event are fired consecutively within 20ms, it's assumed
+ * the user is using mouse input again. `mousemove` can fire on touch devices as
+ * well, but very rarely that quickly.
+ */
+
+function onDocumentMouseMove() {
+  var now = performance.now();
+
+  if (now - lastMouseMoveTime < 20) {
+    currentInput.isTouch = false;
+    document.removeEventListener('mousemove', onDocumentMouseMove);
+  }
+
+  lastMouseMoveTime = now;
+}
+/**
+ * When an element is in focus and has a tippy, leaving the tab/window and
+ * returning causes it to show again. For mouse users this is unexpected, but
+ * for keyboard use it makes sense.
+ * TODO: find a better technique to solve this problem
+ */
+
+function onWindowBlur() {
+  var activeElement = document.activeElement;
+
+  if (isReferenceElement(activeElement)) {
+    var instance = activeElement._tippy;
+
+    if (activeElement.blur && !instance.state.isVisible) {
+      activeElement.blur();
+    }
+  }
+}
+function bindGlobalEventListeners() {
+  document.addEventListener('touchstart', onDocumentTouchStart, TOUCH_OPTIONS);
+  window.addEventListener('blur', onWindowBlur);
+}
+
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+var ua = isBrowser ? navigator.userAgent : '';
+var isIE = /MSIE |Trident\//.test(ua);
+
+function createMemoryLeakWarning(method) {
+  var txt = method === 'destroy' ? 'n already-' : ' ';
+  return [method + "() was called on a" + txt + "destroyed instance. This is a no-op but", 'indicates a potential memory leak.'].join(' ');
+}
+function clean(value) {
+  var spacesAndTabs = /[ \t]{2,}/g;
+  var lineStartWithSpaces = /^[ \t]*/gm;
+  return value.replace(spacesAndTabs, ' ').replace(lineStartWithSpaces, '').trim();
+}
+
+function getDevMessage(message) {
+  return clean("\n  %ctippy.js\n\n  %c" + clean(message) + "\n\n  %c\uD83D\uDC77\u200D This is a development-only message. It will be removed in production.\n  ");
+}
+
+function getFormattedMessage(message) {
+  return [getDevMessage(message), // title
+  'color: #00C584; font-size: 1.3em; font-weight: bold;', // message
+  'line-height: 1.5', // footer
+  'color: #a6a095;'];
+} // Assume warnings and errors never have the same message
+
+var visitedMessages;
+
+if (false) {}
+
+function resetVisitedMessages() {
+  visitedMessages = new Set();
+}
+function warnWhen(condition, message) {
+  if (condition && !visitedMessages.has(message)) {
+    var _console;
+
+    visitedMessages.add(message);
+
+    (_console = console).warn.apply(_console, getFormattedMessage(message));
+  }
+}
+function errorWhen(condition, message) {
+  if (condition && !visitedMessages.has(message)) {
+    var _console2;
+
+    visitedMessages.add(message);
+
+    (_console2 = console).error.apply(_console2, getFormattedMessage(message));
+  }
+}
+function validateTargets(targets) {
+  var didPassFalsyValue = !targets;
+  var didPassPlainObject = Object.prototype.toString.call(targets) === '[object Object]' && !targets.addEventListener;
+  errorWhen(didPassFalsyValue, ['tippy() was passed', '`' + String(targets) + '`', 'as its targets (first) argument. Valid types are: String, Element,', 'Element[], or NodeList.'].join(' '));
+  errorWhen(didPassPlainObject, ['tippy() was passed a plain object which is not supported as an argument', 'for virtual positioning. Use props.getReferenceClientRect instead.'].join(' '));
+}
+
+var pluginProps = {
+  animateFill: false,
+  followCursor: false,
+  inlinePositioning: false,
+  sticky: false
+};
+var renderProps = {
+  allowHTML: false,
+  animation: 'fade',
+  arrow: true,
+  content: '',
+  inertia: false,
+  maxWidth: 350,
+  role: 'tooltip',
+  theme: '',
+  zIndex: 9999
+};
+var defaultProps = Object.assign({
+  appendTo: function appendTo() {
+    return document.body;
+  },
+  aria: {
+    content: 'auto',
+    expanded: 'auto'
+  },
+  delay: 0,
+  duration: [300, 250],
+  getReferenceClientRect: null,
+  hideOnClick: true,
+  ignoreAttributes: false,
+  interactive: false,
+  interactiveBorder: 2,
+  interactiveDebounce: 0,
+  moveTransition: '',
+  offset: [0, 10],
+  onAfterUpdate: function onAfterUpdate() {},
+  onBeforeUpdate: function onBeforeUpdate() {},
+  onCreate: function onCreate() {},
+  onDestroy: function onDestroy() {},
+  onHidden: function onHidden() {},
+  onHide: function onHide() {},
+  onMount: function onMount() {},
+  onShow: function onShow() {},
+  onShown: function onShown() {},
+  onTrigger: function onTrigger() {},
+  onUntrigger: function onUntrigger() {},
+  onClickOutside: function onClickOutside() {},
+  placement: 'top',
+  plugins: [],
+  popperOptions: {},
+  render: null,
+  showOnCreate: false,
+  touch: true,
+  trigger: 'mouseenter focus',
+  triggerTarget: null
+}, pluginProps, {}, renderProps);
+var defaultKeys = Object.keys(defaultProps);
+var setDefaultProps = function setDefaultProps(partialProps) {
+  /* istanbul ignore else */
+  if (false) {}
+
+  var keys = Object.keys(partialProps);
+  keys.forEach(function (key) {
+    defaultProps[key] = partialProps[key];
+  });
+};
+function getExtendedPassedProps(passedProps) {
+  var plugins = passedProps.plugins || [];
+  var pluginProps = plugins.reduce(function (acc, plugin) {
+    var name = plugin.name,
+        defaultValue = plugin.defaultValue;
+
+    if (name) {
+      acc[name] = passedProps[name] !== undefined ? passedProps[name] : defaultValue;
+    }
+
+    return acc;
+  }, {});
+  return Object.assign({}, passedProps, {}, pluginProps);
+}
+function getDataAttributeProps(reference, plugins) {
+  var propKeys = plugins ? Object.keys(getExtendedPassedProps(Object.assign({}, defaultProps, {
+    plugins: plugins
+  }))) : defaultKeys;
+  var props = propKeys.reduce(function (acc, key) {
+    var valueAsString = (reference.getAttribute("data-tippy-" + key) || '').trim();
+
+    if (!valueAsString) {
+      return acc;
+    }
+
+    if (key === 'content') {
+      acc[key] = valueAsString;
+    } else {
+      try {
+        acc[key] = JSON.parse(valueAsString);
+      } catch (e) {
+        acc[key] = valueAsString;
+      }
+    }
+
+    return acc;
+  }, {});
+  return props;
+}
+function evaluateProps(reference, props) {
+  var out = Object.assign({}, props, {
+    content: invokeWithArgsOrReturn(props.content, [reference])
+  }, props.ignoreAttributes ? {} : getDataAttributeProps(reference, props.plugins));
+  out.aria = Object.assign({}, defaultProps.aria, {}, out.aria);
+  out.aria = {
+    expanded: out.aria.expanded === 'auto' ? props.interactive : out.aria.expanded,
+    content: out.aria.content === 'auto' ? props.interactive ? null : 'describedby' : out.aria.content
+  };
+  return out;
+}
+function validateProps(partialProps, plugins) {
+  if (partialProps === void 0) {
+    partialProps = {};
+  }
+
+  if (plugins === void 0) {
+    plugins = [];
+  }
+
+  var keys = Object.keys(partialProps);
+  keys.forEach(function (prop) {
+    var nonPluginProps = removeProperties(defaultProps, Object.keys(pluginProps));
+    var didPassUnknownProp = !tippy_esm_hasOwnProperty(nonPluginProps, prop); // Check if the prop exists in `plugins`
+
+    if (didPassUnknownProp) {
+      didPassUnknownProp = plugins.filter(function (plugin) {
+        return plugin.name === prop;
+      }).length === 0;
+    }
+
+    warnWhen(didPassUnknownProp, ["`" + prop + "`", "is not a valid prop. You may have spelled it incorrectly, or if it's", 'a plugin, forgot to pass it in an array as props.plugins.', '\n\n', 'All props: https://atomiks.github.io/tippyjs/v6/all-props/\n', 'Plugins: https://atomiks.github.io/tippyjs/v6/plugins/'].join(' '));
+  });
+}
+
+var innerHTML = function innerHTML() {
+  return 'innerHTML';
+};
+
+function dangerouslySetInnerHTML(element, html) {
+  element[innerHTML()] = html;
+}
+
+function createArrowElement(value) {
+  var arrow = div();
+
+  if (value === true) {
+    arrow.className = ARROW_CLASS;
+  } else {
+    arrow.className = SVG_ARROW_CLASS;
+
+    if (tippy_esm_isElement(value)) {
+      arrow.appendChild(value);
+    } else {
+      dangerouslySetInnerHTML(arrow, value);
+    }
+  }
+
+  return arrow;
+}
+
+function tippy_esm_setContent(content, props) {
+  if (tippy_esm_isElement(props.content)) {
+    dangerouslySetInnerHTML(content, '');
+    content.appendChild(props.content);
+  } else if (typeof props.content !== 'function') {
+    if (props.allowHTML) {
+      dangerouslySetInnerHTML(content, props.content);
+    } else {
+      content.textContent = props.content;
+    }
+  }
+}
+function getChildren(popper) {
+  var box = popper.firstElementChild;
+  var boxChildren = arrayFrom(box.children);
+  return {
+    box: box,
+    content: boxChildren.find(function (node) {
+      return node.classList.contains(CONTENT_CLASS);
+    }),
+    arrow: boxChildren.find(function (node) {
+      return node.classList.contains(ARROW_CLASS) || node.classList.contains(SVG_ARROW_CLASS);
+    }),
+    backdrop: boxChildren.find(function (node) {
+      return node.classList.contains(BACKDROP_CLASS);
+    })
+  };
+}
+function render(instance) {
+  var popper = div();
+  var box = div();
+  box.className = BOX_CLASS;
+  box.setAttribute('data-state', 'hidden');
+  box.setAttribute('tabindex', '-1');
+  var content = div();
+  content.className = CONTENT_CLASS;
+  content.setAttribute('data-state', 'hidden');
+  tippy_esm_setContent(content, instance.props);
+  popper.appendChild(box);
+  box.appendChild(content);
+  onUpdate(instance.props, instance.props);
+
+  function onUpdate(prevProps, nextProps) {
+    var _getChildren = getChildren(popper),
+        box = _getChildren.box,
+        content = _getChildren.content,
+        arrow = _getChildren.arrow;
+
+    if (nextProps.theme) {
+      box.setAttribute('data-theme', nextProps.theme);
+    } else {
+      box.removeAttribute('data-theme');
+    }
+
+    if (typeof nextProps.animation === 'string') {
+      box.setAttribute('data-animation', nextProps.animation);
+    } else {
+      box.removeAttribute('data-animation');
+    }
+
+    if (nextProps.inertia) {
+      box.setAttribute('data-inertia', '');
+    } else {
+      box.removeAttribute('data-inertia');
+    }
+
+    box.style.maxWidth = typeof nextProps.maxWidth === 'number' ? nextProps.maxWidth + "px" : nextProps.maxWidth;
+
+    if (nextProps.role) {
+      box.setAttribute('role', nextProps.role);
+    } else {
+      box.removeAttribute('role');
+    }
+
+    if (prevProps.content !== nextProps.content || prevProps.allowHTML !== nextProps.allowHTML) {
+      tippy_esm_setContent(content, instance.props);
+    }
+
+    if (nextProps.arrow) {
+      if (!arrow) {
+        box.appendChild(createArrowElement(nextProps.arrow));
+      } else if (prevProps.arrow !== nextProps.arrow) {
+        box.removeChild(arrow);
+        box.appendChild(createArrowElement(nextProps.arrow));
+      }
+    } else if (arrow) {
+      box.removeChild(arrow);
+    }
+  }
+
+  return {
+    popper: popper,
+    onUpdate: onUpdate
+  };
+} // Runtime check to identify if the render function is the default one; this
+// way we can apply default CSS transitions logic and it can be tree-shaken away
+
+render.$$tippy = true;
+
+var idCounter = 1;
+var mouseMoveListeners = []; // Used by `hideAll()`
+
+var mountedInstances = [];
+function createTippy(reference, passedProps) {
+  var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
+  // 🔒 Private members
+  // ===========================================================================
+
+  var showTimeout;
+  var hideTimeout;
+  var scheduleHideAnimationFrame;
+  var isVisibleFromClick = false;
+  var didHideDueToDocumentMouseDown = false;
+  var didTouchMove = false;
+  var ignoreOnFirstUpdate = false;
+  var lastTriggerEvent;
+  var currentTransitionEndListener;
+  var onFirstUpdate;
+  var listeners = [];
+  var debouncedOnMouseMove = tippy_esm_debounce(onMouseMove, props.interactiveDebounce);
+  var currentTarget; // ===========================================================================
+  // 🔑 Public members
+  // ===========================================================================
+
+  var id = idCounter++;
+  var popperInstance = null;
+  var plugins = unique(props.plugins);
+  var state = {
+    // Is the instance currently enabled?
+    isEnabled: true,
+    // Is the tippy currently showing and not transitioning out?
+    isVisible: false,
+    // Has the instance been destroyed?
+    isDestroyed: false,
+    // Is the tippy currently mounted to the DOM?
+    isMounted: false,
+    // Has the tippy finished transitioning in?
+    isShown: false
+  };
+  var instance = {
+    // properties
+    id: id,
+    reference: reference,
+    popper: div(),
+    popperInstance: popperInstance,
+    props: props,
+    state: state,
+    plugins: plugins,
+    // methods
+    clearDelayTimeouts: clearDelayTimeouts,
+    setProps: setProps,
+    setContent: setContent,
+    show: show,
+    hide: hide,
+    hideWithInteractivity: hideWithInteractivity,
+    enable: enable,
+    disable: disable,
+    unmount: unmount,
+    destroy: destroy
+  }; // TODO: Investigate why this early return causes a TDZ error in the tests —
+  // it doesn't seem to happen in the browser
+
+  /* istanbul ignore if */
+
+  if (!props.render) {
+    if (false) {}
+
+    return instance;
+  } // ===========================================================================
+  // Initial mutations
+  // ===========================================================================
+
+
+  var _props$render = props.render(instance),
+      popper = _props$render.popper,
+      onUpdate = _props$render.onUpdate;
+
+  popper.setAttribute('data-tippy-root', '');
+  popper.id = "tippy-" + instance.id;
+  instance.popper = popper;
+  reference._tippy = instance;
+  popper._tippy = instance;
+  var pluginsHooks = plugins.map(function (plugin) {
+    return plugin.fn(instance);
+  });
+  var hasAriaExpanded = reference.hasAttribute('aria-expanded');
+  addListeners();
+  handleAriaExpandedAttribute();
+  handleStyles();
+  invokeHook('onCreate', [instance]);
+
+  if (props.showOnCreate) {
+    scheduleShow();
+  } // Prevent a tippy with a delay from hiding if the cursor left then returned
+  // before it started hiding
+
+
+  popper.addEventListener('mouseenter', function () {
+    if (instance.props.interactive && instance.state.isVisible) {
+      instance.clearDelayTimeouts();
+    }
+  });
+  popper.addEventListener('mouseleave', function (event) {
+    if (instance.props.interactive && instance.props.trigger.indexOf('mouseenter') >= 0) {
+      getDocument().addEventListener('mousemove', debouncedOnMouseMove);
+      debouncedOnMouseMove(event);
+    }
+  });
+  return instance; // ===========================================================================
+  // 🔒 Private methods
+  // ===========================================================================
+
+  function getNormalizedTouchSettings() {
+    var touch = instance.props.touch;
+    return Array.isArray(touch) ? touch : [touch, 0];
+  }
+
+  function getIsCustomTouchBehavior() {
+    return getNormalizedTouchSettings()[0] === 'hold';
+  }
+
+  function getIsDefaultRenderFn() {
+    var _instance$props$rende;
+
+    // @ts-ignore
+    return !!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy);
+  }
+
+  function getCurrentTarget() {
+    return currentTarget || reference;
+  }
+
+  function getDocument() {
+    var parent = getCurrentTarget().parentNode;
+    return parent ? getOwnerDocument(parent) : document;
+  }
+
+  function getDefaultTemplateChildren() {
+    return getChildren(popper);
+  }
+
+  function getDelay(isShow) {
+    // For touch or keyboard input, force `0` delay for UX reasons
+    // Also if the instance is mounted but not visible (transitioning out),
+    // ignore delay
+    if (instance.state.isMounted && !instance.state.isVisible || currentInput.isTouch || lastTriggerEvent && lastTriggerEvent.type === 'focus') {
+      return 0;
+    }
+
+    return getValueAtIndexOrReturn(instance.props.delay, isShow ? 0 : 1, defaultProps.delay);
+  }
+
+  function handleStyles() {
+    popper.style.pointerEvents = instance.props.interactive && instance.state.isVisible ? '' : 'none';
+    popper.style.zIndex = "" + instance.props.zIndex;
+  }
+
+  function invokeHook(hook, args, shouldInvokePropsHook) {
+    if (shouldInvokePropsHook === void 0) {
+      shouldInvokePropsHook = true;
+    }
+
+    pluginsHooks.forEach(function (pluginHooks) {
+      if (pluginHooks[hook]) {
+        pluginHooks[hook].apply(void 0, args);
+      }
+    });
+
+    if (shouldInvokePropsHook) {
+      var _instance$props;
+
+      (_instance$props = instance.props)[hook].apply(_instance$props, args);
+    }
+  }
+
+  function handleAriaContentAttribute() {
+    var aria = instance.props.aria;
+
+    if (!aria.content) {
+      return;
+    }
+
+    var attr = "aria-" + aria.content;
+    var id = popper.id;
+    var nodes = normalizeToArray(instance.props.triggerTarget || reference);
+    nodes.forEach(function (node) {
+      var currentValue = node.getAttribute(attr);
+
+      if (instance.state.isVisible) {
+        node.setAttribute(attr, currentValue ? currentValue + " " + id : id);
+      } else {
+        var nextValue = currentValue && currentValue.replace(id, '').trim();
+
+        if (nextValue) {
+          node.setAttribute(attr, nextValue);
+        } else {
+          node.removeAttribute(attr);
+        }
+      }
+    });
+  }
+
+  function handleAriaExpandedAttribute() {
+    if (hasAriaExpanded || !instance.props.aria.expanded) {
+      return;
+    }
+
+    var nodes = normalizeToArray(instance.props.triggerTarget || reference);
+    nodes.forEach(function (node) {
+      if (instance.props.interactive) {
+        node.setAttribute('aria-expanded', instance.state.isVisible && node === getCurrentTarget() ? 'true' : 'false');
+      } else {
+        node.removeAttribute('aria-expanded');
+      }
+    });
+  }
+
+  function cleanupInteractiveMouseListeners() {
+    getDocument().removeEventListener('mousemove', debouncedOnMouseMove);
+    mouseMoveListeners = mouseMoveListeners.filter(function (listener) {
+      return listener !== debouncedOnMouseMove;
+    });
+  }
+
+  function onDocumentPress(event) {
+    // Moved finger to scroll instead of an intentional tap outside
+    if (currentInput.isTouch) {
+      if (didTouchMove || event.type === 'mousedown') {
+        return;
+      }
+    } // Clicked on interactive popper
+
+
+    if (instance.props.interactive && popper.contains(event.target)) {
+      return;
+    } // Clicked on the event listeners target
+
+
+    if (getCurrentTarget().contains(event.target)) {
+      if (currentInput.isTouch) {
+        return;
+      }
+
+      if (instance.state.isVisible && instance.props.trigger.indexOf('click') >= 0) {
+        return;
+      }
+    } else {
+      invokeHook('onClickOutside', [instance, event]);
+    }
+
+    if (instance.props.hideOnClick === true) {
+      instance.clearDelayTimeouts();
+      instance.hide(); // `mousedown` event is fired right before `focus` if pressing the
+      // currentTarget. This lets a tippy with `focus` trigger know that it
+      // should not show
+
+      didHideDueToDocumentMouseDown = true;
+      setTimeout(function () {
+        didHideDueToDocumentMouseDown = false;
+      }); // The listener gets added in `scheduleShow()`, but this may be hiding it
+      // before it shows, and hide()'s early bail-out behavior can prevent it
+      // from being cleaned up
+
+      if (!instance.state.isMounted) {
+        removeDocumentPress();
+      }
+    }
+  }
+
+  function onTouchMove() {
+    didTouchMove = true;
+  }
+
+  function onTouchStart() {
+    didTouchMove = false;
+  }
+
+  function addDocumentPress() {
+    var doc = getDocument();
+    doc.addEventListener('mousedown', onDocumentPress, true);
+    doc.addEventListener('touchend', onDocumentPress, TOUCH_OPTIONS);
+    doc.addEventListener('touchstart', onTouchStart, TOUCH_OPTIONS);
+    doc.addEventListener('touchmove', onTouchMove, TOUCH_OPTIONS);
+  }
+
+  function removeDocumentPress() {
+    var doc = getDocument();
+    doc.removeEventListener('mousedown', onDocumentPress, true);
+    doc.removeEventListener('touchend', onDocumentPress, TOUCH_OPTIONS);
+    doc.removeEventListener('touchstart', onTouchStart, TOUCH_OPTIONS);
+    doc.removeEventListener('touchmove', onTouchMove, TOUCH_OPTIONS);
+  }
+
+  function onTransitionedOut(duration, callback) {
+    onTransitionEnd(duration, function () {
+      if (!instance.state.isVisible && popper.parentNode && popper.parentNode.contains(popper)) {
+        callback();
+      }
+    });
+  }
+
+  function onTransitionedIn(duration, callback) {
+    onTransitionEnd(duration, callback);
+  }
+
+  function onTransitionEnd(duration, callback) {
+    var box = getDefaultTemplateChildren().box;
+
+    function listener(event) {
+      if (event.target === box) {
+        updateTransitionEndListener(box, 'remove', listener);
+        callback();
+      }
+    } // Make callback synchronous if duration is 0
+    // `transitionend` won't fire otherwise
+
+
+    if (duration === 0) {
+      return callback();
+    }
+
+    updateTransitionEndListener(box, 'remove', currentTransitionEndListener);
+    updateTransitionEndListener(box, 'add', listener);
+    currentTransitionEndListener = listener;
+  }
+
+  function on(eventType, handler, options) {
+    if (options === void 0) {
+      options = false;
+    }
+
+    var nodes = normalizeToArray(instance.props.triggerTarget || reference);
+    nodes.forEach(function (node) {
+      node.addEventListener(eventType, handler, options);
+      listeners.push({
+        node: node,
+        eventType: eventType,
+        handler: handler,
+        options: options
+      });
+    });
+  }
+
+  function addListeners() {
+    if (getIsCustomTouchBehavior()) {
+      on('touchstart', onTrigger, {
+        passive: true
+      });
+      on('touchend', onMouseLeave, {
+        passive: true
+      });
+    }
+
+    splitBySpaces(instance.props.trigger).forEach(function (eventType) {
+      if (eventType === 'manual') {
+        return;
+      }
+
+      on(eventType, onTrigger);
+
+      switch (eventType) {
+        case 'mouseenter':
+          on('mouseleave', onMouseLeave);
+          break;
+
+        case 'focus':
+          on(isIE ? 'focusout' : 'blur', onBlurOrFocusOut);
+          break;
+
+        case 'focusin':
+          on('focusout', onBlurOrFocusOut);
+          break;
+      }
+    });
+  }
+
+  function removeListeners() {
+    listeners.forEach(function (_ref) {
+      var node = _ref.node,
+          eventType = _ref.eventType,
+          handler = _ref.handler,
+          options = _ref.options;
+      node.removeEventListener(eventType, handler, options);
+    });
+    listeners = [];
+  }
+
+  function onTrigger(event) {
+    var _lastTriggerEvent;
+
+    var shouldScheduleClickHide = false;
+
+    if (!instance.state.isEnabled || isEventListenerStopped(event) || didHideDueToDocumentMouseDown) {
+      return;
+    }
+
+    var wasFocused = ((_lastTriggerEvent = lastTriggerEvent) == null ? void 0 : _lastTriggerEvent.type) === 'focus';
+    lastTriggerEvent = event;
+    currentTarget = event.currentTarget;
+    handleAriaExpandedAttribute();
+
+    if (!instance.state.isVisible && isMouseEvent(event)) {
+      // If scrolling, `mouseenter` events can be fired if the cursor lands
+      // over a new target, but `mousemove` events don't get fired. This
+      // causes interactive tooltips to get stuck open until the cursor is
+      // moved
+      mouseMoveListeners.forEach(function (listener) {
+        return listener(event);
+      });
+    } // Toggle show/hide when clicking click-triggered tooltips
+
+
+    if (event.type === 'click' && (instance.props.trigger.indexOf('mouseenter') < 0 || isVisibleFromClick) && instance.props.hideOnClick !== false && instance.state.isVisible) {
+      shouldScheduleClickHide = true;
+    } else {
+      scheduleShow(event);
+    }
+
+    if (event.type === 'click') {
+      isVisibleFromClick = !shouldScheduleClickHide;
+    }
+
+    if (shouldScheduleClickHide && !wasFocused) {
+      scheduleHide(event);
+    }
+  }
+
+  function onMouseMove(event) {
+    var target = event.target;
+    var isCursorOverReferenceOrPopper = getCurrentTarget().contains(target) || popper.contains(target);
+
+    if (event.type === 'mousemove' && isCursorOverReferenceOrPopper) {
+      return;
+    }
+
+    var popperTreeData = getNestedPopperTree().concat(popper).map(function (popper) {
+      var _instance$popperInsta;
+
+      var instance = popper._tippy;
+      var state = (_instance$popperInsta = instance.popperInstance) == null ? void 0 : _instance$popperInsta.state;
+
+      if (state) {
+        return {
+          popperRect: popper.getBoundingClientRect(),
+          popperState: state,
+          props: props
+        };
+      }
+
+      return null;
+    }).filter(Boolean);
+
+    if (isCursorOutsideInteractiveBorder(popperTreeData, event)) {
+      cleanupInteractiveMouseListeners();
+      scheduleHide(event);
+    }
+  }
+
+  function onMouseLeave(event) {
+    var shouldBail = isEventListenerStopped(event) || instance.props.trigger.indexOf('click') >= 0 && isVisibleFromClick;
+
+    if (shouldBail) {
+      return;
+    }
+
+    if (instance.props.interactive) {
+      instance.hideWithInteractivity(event);
+      return;
+    }
+
+    scheduleHide(event);
+  }
+
+  function onBlurOrFocusOut(event) {
+    if (instance.props.trigger.indexOf('focusin') < 0 && event.target !== getCurrentTarget()) {
+      return;
+    } // If focus was moved to within the popper
+
+
+    if (instance.props.interactive && event.relatedTarget && popper.contains(event.relatedTarget)) {
+      return;
+    }
+
+    scheduleHide(event);
+  }
+
+  function isEventListenerStopped(event) {
+    return currentInput.isTouch ? getIsCustomTouchBehavior() !== event.type.indexOf('touch') >= 0 : false;
+  }
+
+  function createPopperInstance() {
+    destroyPopperInstance();
+    var _instance$props2 = instance.props,
+        popperOptions = _instance$props2.popperOptions,
+        placement = _instance$props2.placement,
+        offset = _instance$props2.offset,
+        getReferenceClientRect = _instance$props2.getReferenceClientRect,
+        moveTransition = _instance$props2.moveTransition;
+    var arrow = getIsDefaultRenderFn() ? getChildren(popper).arrow : null;
+    var computedReference = getReferenceClientRect ? {
+      getBoundingClientRect: getReferenceClientRect,
+      contextElement: getReferenceClientRect.contextElement || getCurrentTarget()
+    } : reference;
+    var tippyModifier = {
+      name: '$$tippy',
+      enabled: true,
+      phase: 'beforeWrite',
+      requires: ['computeStyles'],
+      fn: function fn(_ref2) {
+        var state = _ref2.state;
+
+        if (getIsDefaultRenderFn()) {
+          var _getDefaultTemplateCh = getDefaultTemplateChildren(),
+              box = _getDefaultTemplateCh.box;
+
+          ['placement', 'reference-hidden', 'escaped'].forEach(function (attr) {
+            if (attr === 'placement') {
+              box.setAttribute('data-placement', state.placement);
+            } else {
+              if (state.attributes.popper["data-popper-" + attr]) {
+                box.setAttribute("data-" + attr, '');
+              } else {
+                box.removeAttribute("data-" + attr);
+              }
+            }
+          });
+          state.attributes.popper = {};
+        }
+      }
+    };
+    var modifiers = [{
+      name: 'offset',
+      options: {
+        offset: offset
+      }
+    }, {
+      name: 'preventOverflow',
+      options: {
+        padding: {
+          top: 2,
+          bottom: 2,
+          left: 5,
+          right: 5
+        }
+      }
+    }, {
+      name: 'flip',
+      options: {
+        padding: 5
+      }
+    }, {
+      name: 'computeStyles',
+      options: {
+        adaptive: !moveTransition
+      }
+    }, tippyModifier];
+
+    if (getIsDefaultRenderFn() && arrow) {
+      modifiers.push({
+        name: 'arrow',
+        options: {
+          element: arrow,
+          padding: 3
+        }
+      });
+    }
+
+    modifiers.push.apply(modifiers, (popperOptions == null ? void 0 : popperOptions.modifiers) || []);
+    instance.popperInstance = popper_createPopper(computedReference, popper, Object.assign({}, popperOptions, {
+      placement: placement,
+      onFirstUpdate: onFirstUpdate,
+      modifiers: modifiers
+    }));
+  }
+
+  function destroyPopperInstance() {
+    if (instance.popperInstance) {
+      instance.popperInstance.destroy();
+      instance.popperInstance = null;
+    }
+  }
+
+  function mount() {
+    var appendTo = instance.props.appendTo;
+    var parentNode; // By default, we'll append the popper to the triggerTargets's parentNode so
+    // it's directly after the reference element so the elements inside the
+    // tippy can be tabbed to
+    // If there are clipping issues, the user can specify a different appendTo
+    // and ensure focus management is handled correctly manually
+
+    var node = getCurrentTarget();
+
+    if (instance.props.interactive && appendTo === defaultProps.appendTo || appendTo === 'parent') {
+      parentNode = node.parentNode;
+    } else {
+      parentNode = invokeWithArgsOrReturn(appendTo, [node]);
+    } // The popper element needs to exist on the DOM before its position can be
+    // updated as Popper needs to read its dimensions
+
+
+    if (!parentNode.contains(popper)) {
+      parentNode.appendChild(popper);
+    }
+
+    createPopperInstance();
+    /* istanbul ignore else */
+
+    if (false) {}
+  }
+
+  function getNestedPopperTree() {
+    return arrayFrom(popper.querySelectorAll('[data-tippy-root]'));
+  }
+
+  function scheduleShow(event) {
+    instance.clearDelayTimeouts();
+
+    if (event) {
+      invokeHook('onTrigger', [instance, event]);
+    }
+
+    addDocumentPress();
+    var delay = getDelay(true);
+
+    var _getNormalizedTouchSe = getNormalizedTouchSettings(),
+        touchValue = _getNormalizedTouchSe[0],
+        touchDelay = _getNormalizedTouchSe[1];
+
+    if (currentInput.isTouch && touchValue === 'hold' && touchDelay) {
+      delay = touchDelay;
+    }
+
+    if (delay) {
+      showTimeout = setTimeout(function () {
+        instance.show();
+      }, delay);
+    } else {
+      instance.show();
+    }
+  }
+
+  function scheduleHide(event) {
+    instance.clearDelayTimeouts();
+    invokeHook('onUntrigger', [instance, event]);
+
+    if (!instance.state.isVisible) {
+      removeDocumentPress();
+      return;
+    } // For interactive tippies, scheduleHide is added to a document.body handler
+    // from onMouseLeave so must intercept scheduled hides from mousemove/leave
+    // events when trigger contains mouseenter and click, and the tip is
+    // currently shown as a result of a click.
+
+
+    if (instance.props.trigger.indexOf('mouseenter') >= 0 && instance.props.trigger.indexOf('click') >= 0 && ['mouseleave', 'mousemove'].indexOf(event.type) >= 0 && isVisibleFromClick) {
+      return;
+    }
+
+    var delay = getDelay(false);
+
+    if (delay) {
+      hideTimeout = setTimeout(function () {
+        if (instance.state.isVisible) {
+          instance.hide();
+        }
+      }, delay);
+    } else {
+      // Fixes a `transitionend` problem when it fires 1 frame too
+      // late sometimes, we don't want hide() to be called.
+      scheduleHideAnimationFrame = requestAnimationFrame(function () {
+        instance.hide();
+      });
+    }
+  } // ===========================================================================
+  // 🔑 Public methods
+  // ===========================================================================
+
+
+  function enable() {
+    instance.state.isEnabled = true;
+  }
+
+  function disable() {
+    // Disabling the instance should also hide it
+    // https://github.com/atomiks/tippy.js-react/issues/106
+    instance.hide();
+    instance.state.isEnabled = false;
+  }
+
+  function clearDelayTimeouts() {
+    clearTimeout(showTimeout);
+    clearTimeout(hideTimeout);
+    cancelAnimationFrame(scheduleHideAnimationFrame);
+  }
+
+  function setProps(partialProps) {
+    /* istanbul ignore else */
+    if (false) {}
+
+    if (instance.state.isDestroyed) {
+      return;
+    }
+
+    invokeHook('onBeforeUpdate', [instance, partialProps]);
+    removeListeners();
+    var prevProps = instance.props;
+    var nextProps = evaluateProps(reference, Object.assign({}, instance.props, {}, partialProps, {
+      ignoreAttributes: true
+    }));
+    instance.props = nextProps;
+    addListeners();
+
+    if (prevProps.interactiveDebounce !== nextProps.interactiveDebounce) {
+      cleanupInteractiveMouseListeners();
+      debouncedOnMouseMove = tippy_esm_debounce(onMouseMove, nextProps.interactiveDebounce);
+    } // Ensure stale aria-expanded attributes are removed
+
+
+    if (prevProps.triggerTarget && !nextProps.triggerTarget) {
+      normalizeToArray(prevProps.triggerTarget).forEach(function (node) {
+        node.removeAttribute('aria-expanded');
+      });
+    } else if (nextProps.triggerTarget) {
+      reference.removeAttribute('aria-expanded');
+    }
+
+    handleAriaExpandedAttribute();
+    handleStyles();
+
+    if (onUpdate) {
+      onUpdate(prevProps, nextProps);
+    }
+
+    if (instance.popperInstance) {
+      createPopperInstance(); // Fixes an issue with nested tippies if they are all getting re-rendered,
+      // and the nested ones get re-rendered first.
+      // https://github.com/atomiks/tippyjs-react/issues/177
+      // TODO: find a cleaner / more efficient solution(!)
+
+      getNestedPopperTree().forEach(function (nestedPopper) {
+        // React (and other UI libs likely) requires a rAF wrapper as it flushes
+        // its work in one
+        requestAnimationFrame(nestedPopper._tippy.popperInstance.forceUpdate);
+      });
+    }
+
+    invokeHook('onAfterUpdate', [instance, partialProps]);
+  }
+
+  function setContent(content) {
+    instance.setProps({
+      content: content
+    });
+  }
+
+  function show() {
+    /* istanbul ignore else */
+    if (false) {} // Early bail-out
+
+
+    var isAlreadyVisible = instance.state.isVisible;
+    var isDestroyed = instance.state.isDestroyed;
+    var isDisabled = !instance.state.isEnabled;
+    var isTouchAndTouchDisabled = currentInput.isTouch && !instance.props.touch;
+    var duration = getValueAtIndexOrReturn(instance.props.duration, 0, defaultProps.duration);
+
+    if (isAlreadyVisible || isDestroyed || isDisabled || isTouchAndTouchDisabled) {
+      return;
+    } // Normalize `disabled` behavior across browsers.
+    // Firefox allows events on disabled elements, but Chrome doesn't.
+    // Using a wrapper element (i.e. <span>) is recommended.
+
+
+    if (getCurrentTarget().hasAttribute('disabled')) {
+      return;
+    }
+
+    invokeHook('onShow', [instance], false);
+
+    if (instance.props.onShow(instance) === false) {
+      return;
+    }
+
+    instance.state.isVisible = true;
+
+    if (getIsDefaultRenderFn()) {
+      popper.style.visibility = 'visible';
+    }
+
+    handleStyles();
+    addDocumentPress();
+
+    if (!instance.state.isMounted) {
+      popper.style.transition = 'none';
+    } // If flipping to the opposite side after hiding at least once, the
+    // animation will use the wrong placement without resetting the duration
+
+
+    if (getIsDefaultRenderFn()) {
+      var _getDefaultTemplateCh2 = getDefaultTemplateChildren(),
+          box = _getDefaultTemplateCh2.box,
+          content = _getDefaultTemplateCh2.content;
+
+      setTransitionDuration([box, content], 0);
+    }
+
+    onFirstUpdate = function onFirstUpdate() {
+      if (!instance.state.isVisible || ignoreOnFirstUpdate) {
+        return;
+      }
+
+      ignoreOnFirstUpdate = true; // reflow
+
+      void popper.offsetHeight;
+      popper.style.transition = instance.props.moveTransition;
+
+      if (getIsDefaultRenderFn() && instance.props.animation) {
+        var _getDefaultTemplateCh3 = getDefaultTemplateChildren(),
+            _box = _getDefaultTemplateCh3.box,
+            _content = _getDefaultTemplateCh3.content;
+
+        setTransitionDuration([_box, _content], duration);
+        setVisibilityState([_box, _content], 'visible');
+      }
+
+      handleAriaContentAttribute();
+      handleAriaExpandedAttribute();
+      pushIfUnique(mountedInstances, instance);
+      instance.state.isMounted = true;
+      invokeHook('onMount', [instance]);
+
+      if (instance.props.animation && getIsDefaultRenderFn()) {
+        onTransitionedIn(duration, function () {
+          instance.state.isShown = true;
+          invokeHook('onShown', [instance]);
+        });
+      }
+    };
+
+    mount();
+  }
+
+  function hide() {
+    /* istanbul ignore else */
+    if (false) {} // Early bail-out
+
+
+    var isAlreadyHidden = !instance.state.isVisible;
+    var isDestroyed = instance.state.isDestroyed;
+    var isDisabled = !instance.state.isEnabled;
+    var duration = getValueAtIndexOrReturn(instance.props.duration, 1, defaultProps.duration);
+
+    if (isAlreadyHidden || isDestroyed || isDisabled) {
+      return;
+    }
+
+    invokeHook('onHide', [instance], false);
+
+    if (instance.props.onHide(instance) === false) {
+      return;
+    }
+
+    instance.state.isVisible = false;
+    instance.state.isShown = false;
+    ignoreOnFirstUpdate = false;
+    isVisibleFromClick = false;
+
+    if (getIsDefaultRenderFn()) {
+      popper.style.visibility = 'hidden';
+    }
+
+    cleanupInteractiveMouseListeners();
+    removeDocumentPress();
+    handleStyles();
+
+    if (getIsDefaultRenderFn()) {
+      var _getDefaultTemplateCh4 = getDefaultTemplateChildren(),
+          box = _getDefaultTemplateCh4.box,
+          content = _getDefaultTemplateCh4.content;
+
+      if (instance.props.animation) {
+        setTransitionDuration([box, content], duration);
+        setVisibilityState([box, content], 'hidden');
+      }
+    }
+
+    handleAriaContentAttribute();
+    handleAriaExpandedAttribute();
+
+    if (instance.props.animation) {
+      if (getIsDefaultRenderFn()) {
+        onTransitionedOut(duration, instance.unmount);
+      }
+    } else {
+      instance.unmount();
+    }
+  }
+
+  function hideWithInteractivity(event) {
+    /* istanbul ignore else */
+    if (false) {}
+
+    getDocument().addEventListener('mousemove', debouncedOnMouseMove);
+    pushIfUnique(mouseMoveListeners, debouncedOnMouseMove);
+    debouncedOnMouseMove(event);
+  }
+
+  function unmount() {
+    /* istanbul ignore else */
+    if (false) {}
+
+    if (instance.state.isVisible) {
+      instance.hide();
+    }
+
+    if (!instance.state.isMounted) {
+      return;
+    }
+
+    destroyPopperInstance(); // If a popper is not interactive, it will be appended outside the popper
+    // tree by default. This seems mainly for interactive tippies, but we should
+    // find a workaround if possible
+
+    getNestedPopperTree().forEach(function (nestedPopper) {
+      nestedPopper._tippy.unmount();
+    });
+
+    if (popper.parentNode) {
+      popper.parentNode.removeChild(popper);
+    }
+
+    mountedInstances = mountedInstances.filter(function (i) {
+      return i !== instance;
+    });
+    instance.state.isMounted = false;
+    invokeHook('onHidden', [instance]);
+  }
+
+  function destroy() {
+    /* istanbul ignore else */
+    if (false) {}
+
+    if (instance.state.isDestroyed) {
+      return;
+    }
+
+    instance.clearDelayTimeouts();
+    instance.unmount();
+    removeListeners();
+    delete reference._tippy;
+    instance.state.isDestroyed = true;
+    invokeHook('onDestroy', [instance]);
+  }
+}
+
+function tippy(targets, optionalProps) {
+  if (optionalProps === void 0) {
+    optionalProps = {};
+  }
+
+  var plugins = defaultProps.plugins.concat(optionalProps.plugins || []);
+  /* istanbul ignore else */
+
+  if (false) {}
+
+  bindGlobalEventListeners();
+  var passedProps = Object.assign({}, optionalProps, {
+    plugins: plugins
+  });
+  var elements = getArrayOfElements(targets);
+  /* istanbul ignore else */
+
+  if (false) { var isMoreThanOneReferenceElement, isSingleContentElement; }
+
+  var instances = elements.reduce(function (acc, reference) {
+    var instance = reference && createTippy(reference, passedProps);
+
+    if (instance) {
+      acc.push(instance);
+    }
+
+    return acc;
+  }, []);
+  return tippy_esm_isElement(targets) ? instances[0] : instances;
+}
+
+tippy.defaultProps = defaultProps;
+tippy.setDefaultProps = setDefaultProps;
+tippy.currentInput = currentInput;
+var hideAll = function hideAll(_temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      excludedReferenceOrInstance = _ref.exclude,
+      duration = _ref.duration;
+
+  mountedInstances.forEach(function (instance) {
+    var isExcluded = false;
+
+    if (excludedReferenceOrInstance) {
+      isExcluded = isReferenceElement(excludedReferenceOrInstance) ? instance.reference === excludedReferenceOrInstance : instance.popper === excludedReferenceOrInstance.popper;
+    }
+
+    if (!isExcluded) {
+      var originalDuration = instance.props.duration;
+      instance.setProps({
+        duration: duration
+      });
+      instance.hide();
+
+      if (!instance.state.isDestroyed) {
+        instance.setProps({
+          duration: originalDuration
+        });
+      }
+    }
+  });
+};
+
+var createSingleton = function createSingleton(tippyInstances, optionalProps) {
+  if (optionalProps === void 0) {
+    optionalProps = {};
+  }
+
+  /* istanbul ignore else */
+  if (false) {}
+
+  var individualInstances = tippyInstances;
+  var references = [];
+  var currentTarget;
+  var overrides = optionalProps.overrides;
+  var interceptSetPropsCleanups = [];
+
+  function setReferences() {
+    references = individualInstances.map(function (instance) {
+      return instance.reference;
+    });
+  }
+
+  function enableInstances(isEnabled) {
+    individualInstances.forEach(function (instance) {
+      if (isEnabled) {
+        instance.enable();
+      } else {
+        instance.disable();
+      }
+    });
+  }
+
+  function interceptSetProps(singleton) {
+    return individualInstances.map(function (instance) {
+      var originalSetProps = instance.setProps;
+
+      instance.setProps = function (props) {
+        originalSetProps(props);
+
+        if (instance.reference === currentTarget) {
+          singleton.setProps(props);
+        }
+      };
+
+      return function () {
+        instance.setProps = originalSetProps;
+      };
+    });
+  }
+
+  enableInstances(false);
+  setReferences();
+  var plugin = {
+    fn: function fn() {
+      return {
+        onDestroy: function onDestroy() {
+          enableInstances(true);
+        },
+        onTrigger: function onTrigger(instance, event) {
+          var target = event.currentTarget;
+          var index = references.indexOf(target); // bail-out
+
+          if (target === currentTarget) {
+            return;
+          }
+
+          currentTarget = target;
+          var overrideProps = (overrides || []).concat('content').reduce(function (acc, prop) {
+            acc[prop] = individualInstances[index].props[prop];
+            return acc;
+          }, {});
+          instance.setProps(Object.assign({}, overrideProps, {
+            getReferenceClientRect: typeof overrideProps.getReferenceClientRect === 'function' ? overrideProps.getReferenceClientRect : function () {
+              return target.getBoundingClientRect();
+            }
+          }));
+        }
+      };
+    }
+  };
+  var singleton = tippy(div(), Object.assign({}, removeProperties(optionalProps, ['overrides']), {
+    plugins: [plugin].concat(optionalProps.plugins || []),
+    triggerTarget: references
+  }));
+  var originalSetProps = singleton.setProps;
+
+  singleton.setProps = function (props) {
+    overrides = props.overrides || overrides;
+    originalSetProps(props);
+  };
+
+  singleton.setInstances = function (nextInstances) {
+    enableInstances(true);
+    interceptSetPropsCleanups.forEach(function (fn) {
+      return fn();
+    });
+    individualInstances = nextInstances;
+    enableInstances(false);
+    setReferences();
+    interceptSetProps(singleton);
+    singleton.setProps({
+      triggerTarget: references
+    });
+  };
+
+  interceptSetPropsCleanups = interceptSetProps(singleton);
+  return singleton;
+};
+
+var BUBBLING_EVENTS_MAP = {
+  mouseover: 'mouseenter',
+  focusin: 'focus',
+  click: 'click'
+};
+/**
+ * Creates a delegate instance that controls the creation of tippy instances
+ * for child elements (`target` CSS selector).
+ */
+
+function delegate(targets, props) {
+  /* istanbul ignore else */
+  if (false) {}
+
+  var listeners = [];
+  var childTippyInstances = [];
+  var disabled = false;
+  var target = props.target;
+  var nativeProps = removeProperties(props, ['target']);
+  var parentProps = Object.assign({}, nativeProps, {
+    trigger: 'manual',
+    touch: false
+  });
+  var childProps = Object.assign({}, nativeProps, {
+    showOnCreate: true
+  });
+  var returnValue = tippy(targets, parentProps);
+  var normalizedReturnValue = normalizeToArray(returnValue);
+
+  function onTrigger(event) {
+    if (!event.target || disabled) {
+      return;
+    }
+
+    var targetNode = event.target.closest(target);
+
+    if (!targetNode) {
+      return;
+    } // Get relevant trigger with fallbacks:
+    // 1. Check `data-tippy-trigger` attribute on target node
+    // 2. Fallback to `trigger` passed to `delegate()`
+    // 3. Fallback to `defaultProps.trigger`
+
+
+    var trigger = targetNode.getAttribute('data-tippy-trigger') || props.trigger || defaultProps.trigger; // @ts-ignore
+
+    if (targetNode._tippy) {
+      return;
+    }
+
+    if (event.type === 'touchstart' && typeof childProps.touch === 'boolean') {
+      return;
+    }
+
+    if (event.type !== 'touchstart' && trigger.indexOf(BUBBLING_EVENTS_MAP[event.type]) < 0) {
+      return;
+    }
+
+    var instance = tippy(targetNode, childProps);
+
+    if (instance) {
+      childTippyInstances = childTippyInstances.concat(instance);
+    }
+  }
+
+  function on(node, eventType, handler, options) {
+    if (options === void 0) {
+      options = false;
+    }
+
+    node.addEventListener(eventType, handler, options);
+    listeners.push({
+      node: node,
+      eventType: eventType,
+      handler: handler,
+      options: options
+    });
+  }
+
+  function addEventListeners(instance) {
+    var reference = instance.reference;
+    on(reference, 'touchstart', onTrigger);
+    on(reference, 'mouseover', onTrigger);
+    on(reference, 'focusin', onTrigger);
+    on(reference, 'click', onTrigger);
+  }
+
+  function removeEventListeners() {
+    listeners.forEach(function (_ref) {
+      var node = _ref.node,
+          eventType = _ref.eventType,
+          handler = _ref.handler,
+          options = _ref.options;
+      node.removeEventListener(eventType, handler, options);
+    });
+    listeners = [];
+  }
+
+  function applyMutations(instance) {
+    var originalDestroy = instance.destroy;
+    var originalEnable = instance.enable;
+    var originalDisable = instance.disable;
+
+    instance.destroy = function (shouldDestroyChildInstances) {
+      if (shouldDestroyChildInstances === void 0) {
+        shouldDestroyChildInstances = true;
+      }
+
+      if (shouldDestroyChildInstances) {
+        childTippyInstances.forEach(function (instance) {
+          instance.destroy();
+        });
+      }
+
+      childTippyInstances = [];
+      removeEventListeners();
+      originalDestroy();
+    };
+
+    instance.enable = function () {
+      originalEnable();
+      childTippyInstances.forEach(function (instance) {
+        return instance.enable();
+      });
+      disabled = false;
+    };
+
+    instance.disable = function () {
+      originalDisable();
+      childTippyInstances.forEach(function (instance) {
+        return instance.disable();
+      });
+      disabled = true;
+    };
+
+    addEventListeners(instance);
+  }
+
+  normalizedReturnValue.forEach(applyMutations);
+  return returnValue;
+}
+
+var animateFill = {
+  name: 'animateFill',
+  defaultValue: false,
+  fn: function fn(instance) {
+    var _instance$props$rende;
+
+    // @ts-ignore
+    if (!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy)) {
+      if (false) {}
+
+      return {};
+    }
+
+    var _getChildren = getChildren(instance.popper),
+        box = _getChildren.box,
+        content = _getChildren.content;
+
+    var backdrop = instance.props.animateFill ? createBackdropElement() : null;
+    return {
+      onCreate: function onCreate() {
+        if (backdrop) {
+          box.insertBefore(backdrop, box.firstElementChild);
+          box.setAttribute('data-animatefill', '');
+          box.style.overflow = 'hidden';
+          instance.setProps({
+            arrow: false,
+            animation: 'shift-away'
+          });
+        }
+      },
+      onMount: function onMount() {
+        if (backdrop) {
+          var transitionDuration = box.style.transitionDuration;
+          var duration = Number(transitionDuration.replace('ms', '')); // The content should fade in after the backdrop has mostly filled the
+          // tooltip element. `clip-path` is the other alternative but is not
+          // well-supported and is buggy on some devices.
+
+          content.style.transitionDelay = Math.round(duration / 10) + "ms";
+          backdrop.style.transitionDuration = transitionDuration;
+          setVisibilityState([backdrop], 'visible');
+        }
+      },
+      onShow: function onShow() {
+        if (backdrop) {
+          backdrop.style.transitionDuration = '0ms';
+        }
+      },
+      onHide: function onHide() {
+        if (backdrop) {
+          setVisibilityState([backdrop], 'hidden');
+        }
+      }
+    };
+  }
+};
+
+function createBackdropElement() {
+  var backdrop = div();
+  backdrop.className = BACKDROP_CLASS;
+  setVisibilityState([backdrop], 'hidden');
+  return backdrop;
+}
+
+var mouseCoords = {
+  clientX: 0,
+  clientY: 0
+};
+var activeInstances = [];
+
+function storeMouseCoords(_ref) {
+  var clientX = _ref.clientX,
+      clientY = _ref.clientY;
+  mouseCoords = {
+    clientX: clientX,
+    clientY: clientY
+  };
+}
+
+function addMouseCoordsListener(doc) {
+  doc.addEventListener('mousemove', storeMouseCoords);
+}
+
+function removeMouseCoordsListener(doc) {
+  doc.removeEventListener('mousemove', storeMouseCoords);
+}
+
+var followCursor = {
+  name: 'followCursor',
+  defaultValue: false,
+  fn: function fn(instance) {
+    var reference = instance.reference;
+    var doc = getOwnerDocument(instance.props.triggerTarget || reference);
+    var isInternalUpdate = false;
+    var wasFocusEvent = false;
+    var isUnmounted = true;
+    var prevProps = instance.props;
+
+    function getIsInitialBehavior() {
+      return instance.props.followCursor === 'initial' && instance.state.isVisible;
+    }
+
+    function addListener() {
+      doc.addEventListener('mousemove', onMouseMove);
+    }
+
+    function removeListener() {
+      doc.removeEventListener('mousemove', onMouseMove);
+    }
+
+    function unsetGetReferenceClientRect() {
+      isInternalUpdate = true;
+      instance.setProps({
+        getReferenceClientRect: null
+      });
+      isInternalUpdate = false;
+    }
+
+    function onMouseMove(event) {
+      // If the instance is interactive, avoid updating the position unless it's
+      // over the reference element
+      var isCursorOverReference = event.target ? reference.contains(event.target) : true;
+      var followCursor = instance.props.followCursor;
+      var clientX = event.clientX,
+          clientY = event.clientY;
+      var rect = reference.getBoundingClientRect();
+      var relativeX = clientX - rect.left;
+      var relativeY = clientY - rect.top;
+
+      if (isCursorOverReference || !instance.props.interactive) {
+        instance.setProps({
+          getReferenceClientRect: function getReferenceClientRect() {
+            var rect = reference.getBoundingClientRect();
+            var x = clientX;
+            var y = clientY;
+
+            if (followCursor === 'initial') {
+              x = rect.left + relativeX;
+              y = rect.top + relativeY;
+            }
+
+            var top = followCursor === 'horizontal' ? rect.top : y;
+            var right = followCursor === 'vertical' ? rect.right : x;
+            var bottom = followCursor === 'horizontal' ? rect.bottom : y;
+            var left = followCursor === 'vertical' ? rect.left : x;
+            return {
+              width: right - left,
+              height: bottom - top,
+              top: top,
+              right: right,
+              bottom: bottom,
+              left: left
+            };
+          }
+        });
+      }
+    }
+
+    function create() {
+      if (instance.props.followCursor) {
+        activeInstances.push({
+          instance: instance,
+          doc: doc
+        });
+        addMouseCoordsListener(doc);
+      }
+    }
+
+    function destroy() {
+      activeInstances = activeInstances.filter(function (data) {
+        return data.instance !== instance;
+      });
+
+      if (activeInstances.filter(function (data) {
+        return data.doc === doc;
+      }).length === 0) {
+        removeMouseCoordsListener(doc);
+      }
+    }
+
+    return {
+      onCreate: create,
+      onDestroy: destroy,
+      onBeforeUpdate: function onBeforeUpdate() {
+        prevProps = instance.props;
+      },
+      onAfterUpdate: function onAfterUpdate(_, _ref2) {
+        var followCursor = _ref2.followCursor;
+
+        if (isInternalUpdate) {
+          return;
+        }
+
+        if (followCursor !== undefined && prevProps.followCursor !== followCursor) {
+          destroy();
+
+          if (followCursor) {
+            create();
+
+            if (instance.state.isMounted && !wasFocusEvent && !getIsInitialBehavior()) {
+              addListener();
+            }
+          } else {
+            removeListener();
+            unsetGetReferenceClientRect();
+          }
+        }
+      },
+      onMount: function onMount() {
+        if (instance.props.followCursor && !wasFocusEvent) {
+          if (isUnmounted) {
+            onMouseMove(mouseCoords);
+            isUnmounted = false;
+          }
+
+          if (!getIsInitialBehavior()) {
+            addListener();
+          }
+        }
+      },
+      onTrigger: function onTrigger(_, event) {
+        if (isMouseEvent(event)) {
+          mouseCoords = {
+            clientX: event.clientX,
+            clientY: event.clientY
+          };
+        }
+
+        wasFocusEvent = event.type === 'focus';
+      },
+      onHidden: function onHidden() {
+        if (instance.props.followCursor) {
+          unsetGetReferenceClientRect();
+          removeListener();
+          isUnmounted = true;
+        }
+      }
+    };
+  }
+};
+
+function getProps(props, modifier) {
+  var _props$popperOptions;
+
+  return {
+    popperOptions: Object.assign({}, props.popperOptions, {
+      modifiers: [].concat((((_props$popperOptions = props.popperOptions) == null ? void 0 : _props$popperOptions.modifiers) || []).filter(function (_ref) {
+        var name = _ref.name;
+        return name !== modifier.name;
+      }), [modifier])
+    })
+  };
+}
+
+var inlinePositioning = {
+  name: 'inlinePositioning',
+  defaultValue: false,
+  fn: function fn(instance) {
+    var reference = instance.reference;
+
+    function isEnabled() {
+      return !!instance.props.inlinePositioning;
+    }
+
+    var placement;
+    var cursorRectIndex = -1;
+    var isInternalUpdate = false;
+    var modifier = {
+      name: 'tippyInlinePositioning',
+      enabled: true,
+      phase: 'afterWrite',
+      fn: function fn(_ref2) {
+        var state = _ref2.state;
+
+        if (isEnabled()) {
+          if (placement !== state.placement) {
+            instance.setProps({
+              getReferenceClientRect: function getReferenceClientRect() {
+                return _getReferenceClientRect(state.placement);
+              }
+            });
+          }
+
+          placement = state.placement;
+        }
+      }
+    };
+
+    function _getReferenceClientRect(placement) {
+      return getInlineBoundingClientRect(tippy_esm_getBasePlacement(placement), reference.getBoundingClientRect(), arrayFrom(reference.getClientRects()), cursorRectIndex);
+    }
+
+    function setInternalProps(partialProps) {
+      isInternalUpdate = true;
+      instance.setProps(partialProps);
+      isInternalUpdate = false;
+    }
+
+    function addModifier() {
+      if (!isInternalUpdate) {
+        setInternalProps(getProps(instance.props, modifier));
+      }
+    }
+
+    return {
+      onCreate: addModifier,
+      onAfterUpdate: addModifier,
+      onTrigger: function onTrigger(_, event) {
+        if (isMouseEvent(event)) {
+          var rects = arrayFrom(instance.reference.getClientRects());
+          var cursorRect = rects.find(function (rect) {
+            return rect.left - 2 <= event.clientX && rect.right + 2 >= event.clientX && rect.top - 2 <= event.clientY && rect.bottom + 2 >= event.clientY;
+          });
+          cursorRectIndex = rects.indexOf(cursorRect);
+        }
+      },
+      onUntrigger: function onUntrigger() {
+        cursorRectIndex = -1;
+      }
+    };
+  }
+};
+function getInlineBoundingClientRect(currentBasePlacement, boundingRect, clientRects, cursorRectIndex) {
+  // Not an inline element, or placement is not yet known
+  if (clientRects.length < 2 || currentBasePlacement === null) {
+    return boundingRect;
+  } // There are two rects and they are disjoined
+
+
+  if (clientRects.length === 2 && cursorRectIndex >= 0 && clientRects[0].left > clientRects[1].right) {
+    return clientRects[cursorRectIndex] || boundingRect;
+  }
+
+  switch (currentBasePlacement) {
+    case 'top':
+    case 'bottom':
+      {
+        var firstRect = clientRects[0];
+        var lastRect = clientRects[clientRects.length - 1];
+        var isTop = currentBasePlacement === 'top';
+        var top = firstRect.top;
+        var bottom = lastRect.bottom;
+        var left = isTop ? firstRect.left : lastRect.left;
+        var right = isTop ? firstRect.right : lastRect.right;
+        var width = right - left;
+        var height = bottom - top;
+        return {
+          top: top,
+          bottom: bottom,
+          left: left,
+          right: right,
+          width: width,
+          height: height
+        };
+      }
+
+    case 'left':
+    case 'right':
+      {
+        var minLeft = Math.min.apply(Math, clientRects.map(function (rects) {
+          return rects.left;
+        }));
+        var maxRight = Math.max.apply(Math, clientRects.map(function (rects) {
+          return rects.right;
+        }));
+        var measureRects = clientRects.filter(function (rect) {
+          return currentBasePlacement === 'left' ? rect.left === minLeft : rect.right === maxRight;
+        });
+        var _top = measureRects[0].top;
+        var _bottom = measureRects[measureRects.length - 1].bottom;
+        var _left = minLeft;
+        var _right = maxRight;
+
+        var _width = _right - _left;
+
+        var _height = _bottom - _top;
+
+        return {
+          top: _top,
+          bottom: _bottom,
+          left: _left,
+          right: _right,
+          width: _width,
+          height: _height
+        };
+      }
+
+    default:
+      {
+        return boundingRect;
+      }
+  }
+}
+
+var sticky = {
+  name: 'sticky',
+  defaultValue: false,
+  fn: function fn(instance) {
+    var reference = instance.reference,
+        popper = instance.popper;
+
+    function getReference() {
+      return instance.popperInstance ? instance.popperInstance.state.elements.reference : reference;
+    }
+
+    function shouldCheck(value) {
+      return instance.props.sticky === true || instance.props.sticky === value;
+    }
+
+    var prevRefRect = null;
+    var prevPopRect = null;
+
+    function updatePosition() {
+      var currentRefRect = shouldCheck('reference') ? getReference().getBoundingClientRect() : null;
+      var currentPopRect = shouldCheck('popper') ? popper.getBoundingClientRect() : null;
+
+      if (currentRefRect && areRectsDifferent(prevRefRect, currentRefRect) || currentPopRect && areRectsDifferent(prevPopRect, currentPopRect)) {
+        if (instance.popperInstance) {
+          instance.popperInstance.update();
+        }
+      }
+
+      prevRefRect = currentRefRect;
+      prevPopRect = currentPopRect;
+
+      if (instance.state.isMounted) {
+        requestAnimationFrame(updatePosition);
+      }
+    }
+
+    return {
+      onMount: function onMount() {
+        if (instance.props.sticky) {
+          updatePosition();
+        }
+      }
+    };
+  }
+};
+
+function areRectsDifferent(rectA, rectB) {
+  if (rectA && rectB) {
+    return rectA.top !== rectB.top || rectA.right !== rectB.right || rectA.bottom !== rectB.bottom || rectA.left !== rectB.left;
+  }
+
+  return true;
+}
+
+tippy.setDefaultProps({
+  render: render
+});
+
+/* harmony default export */ var tippy_esm = __webpack_exports__["a"] = (tippy);
+
+//# sourceMappingURL=tippy.esm.js.map
+
+
+/***/ }),
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * dist/inputmask
+ * https://github.com/RobinHerbots/Inputmask
+ * Copyright (c) 2010 - 2020 Robin Herbots
+ * Licensed under the MIT license
+ * Version: 5.0.5-beta.0
+ */
+!function webpackUniversalModuleDefinition(root, factory) {
+    if (true) module.exports = factory(); else { var i, a; }
+}(window, function() {
+    return modules = [ function(module) {
+        module.exports = JSON.parse('{"BACKSPACE":8,"BACKSPACE_SAFARI":127,"DELETE":46,"DOWN":40,"END":35,"ENTER":13,"ESCAPE":27,"HOME":36,"INSERT":45,"LEFT":37,"PAGE_DOWN":34,"PAGE_UP":33,"RIGHT":39,"SPACE":32,"TAB":9,"UP":38,"X":88,"CONTROL":17,"KEY_229":229}');
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0, __webpack_require__(10);
+        var _mask = __webpack_require__(11), _inputmask = _interopRequireDefault(__webpack_require__(9)), _window = _interopRequireDefault(__webpack_require__(6)), _maskLexer = __webpack_require__(19), _validationTests = __webpack_require__(3), _positioning = __webpack_require__(2), _validation = __webpack_require__(4), _inputHandling = __webpack_require__(5), _eventruler = __webpack_require__(12), _definitions = _interopRequireDefault(__webpack_require__(20)), _defaults = _interopRequireDefault(__webpack_require__(21));
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var document = _window.default.document, dataKey = "_inputmask_opts";
+        function Inputmask(alias, options, internal) {
+            if (!(this instanceof Inputmask)) return new Inputmask(alias, options, internal);
+            this.dependencyLib = _inputmask.default, this.el = void 0, this.events = {}, this.maskset = void 0, 
+            !0 !== internal && ("[object Object]" === Object.prototype.toString.call(alias) ? options = alias : (options = options || {}, 
+            alias && (options.alias = alias)), this.opts = _inputmask.default.extend(!0, {}, this.defaults, options), 
+            this.noMasksCache = options && void 0 !== options.definitions, this.userOptions = options || {}, 
+            resolveAlias(this.opts.alias, options, this.opts)), this.refreshValue = !1, this.undoValue = void 0, 
+            this.$el = void 0, this.skipKeyPressEvent = !1, this.skipInputEvent = !1, this.validationEvent = !1, 
+            this.ignorable = !1, this.maxLength, this.mouseEnter = !1, this.originalPlaceholder = void 0, 
+            this.isComposing = !1;
+        }
+        function resolveAlias(aliasStr, options, opts) {
+            var aliasDefinition = Inputmask.prototype.aliases[aliasStr];
+            return aliasDefinition ? (aliasDefinition.alias && resolveAlias(aliasDefinition.alias, void 0, opts), 
+            _inputmask.default.extend(!0, opts, aliasDefinition), _inputmask.default.extend(!0, opts, options), 
+            !0) : (null === opts.mask && (opts.mask = aliasStr), !1);
+        }
+        function importAttributeOptions(npt, opts, userOptions, dataAttribute) {
+            function importOption(option, optionData) {
+                var attrOption = "" === dataAttribute ? option : dataAttribute + "-" + option;
+                optionData = void 0 !== optionData ? optionData : npt.getAttribute(attrOption), 
+                null !== optionData && ("string" == typeof optionData && (0 === option.indexOf("on") ? optionData = _window.default[optionData] : "false" === optionData ? optionData = !1 : "true" === optionData && (optionData = !0)), 
+                userOptions[option] = optionData);
+            }
+            if (!0 === opts.importDataAttributes) {
+                var attrOptions = npt.getAttribute(dataAttribute), option, dataoptions, optionData, p;
+                if (attrOptions && "" !== attrOptions && (attrOptions = attrOptions.replace(/'/g, '"'), 
+                dataoptions = JSON.parse("{" + attrOptions + "}")), dataoptions) for (p in optionData = void 0, 
+                dataoptions) if ("alias" === p.toLowerCase()) {
+                    optionData = dataoptions[p];
+                    break;
+                }
+                for (option in importOption("alias", optionData), userOptions.alias && resolveAlias(userOptions.alias, userOptions, opts), 
+                opts) {
+                    if (dataoptions) for (p in optionData = void 0, dataoptions) if (p.toLowerCase() === option.toLowerCase()) {
+                        optionData = dataoptions[p];
+                        break;
+                    }
+                    importOption(option, optionData);
+                }
+            }
+            return _inputmask.default.extend(!0, opts, userOptions), "rtl" !== npt.dir && !opts.rightAlign || (npt.style.textAlign = "right"), 
+            "rtl" !== npt.dir && !opts.numericInput || (npt.dir = "ltr", npt.removeAttribute("dir"), 
+            opts.isRTL = !0), Object.keys(userOptions).length;
+        }
+        Inputmask.prototype = {
+            dataAttribute: "data-inputmask",
+            defaults: _defaults.default,
+            definitions: _definitions.default,
+            aliases: {},
+            masksCache: {},
+            get isRTL() {
+                return this.opts.isRTL || this.opts.numericInput;
+            },
+            mask: function mask(elems) {
+                var that = this;
+                return "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
+                elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el, ndx) {
+                    var scopedOpts = _inputmask.default.extend(!0, {}, that.opts);
+                    if (importAttributeOptions(el, scopedOpts, _inputmask.default.extend(!0, {}, that.userOptions), that.dataAttribute)) {
+                        var maskset = (0, _maskLexer.generateMaskSet)(scopedOpts, that.noMasksCache);
+                        void 0 !== maskset && (void 0 !== el.inputmask && (el.inputmask.opts.autoUnmask = !0, 
+                        el.inputmask.remove()), el.inputmask = new Inputmask(void 0, void 0, !0), el.inputmask.opts = scopedOpts, 
+                        el.inputmask.noMasksCache = that.noMasksCache, el.inputmask.userOptions = _inputmask.default.extend(!0, {}, that.userOptions), 
+                        el.inputmask.el = el, el.inputmask.$el = (0, _inputmask.default)(el), el.inputmask.maskset = maskset, 
+                        _inputmask.default.data(el, dataKey, that.userOptions), _mask.mask.call(el.inputmask));
+                    }
+                }), elems && elems[0] && elems[0].inputmask || this;
+            },
+            option: function option(options, noremask) {
+                return "string" == typeof options ? this.opts[options] : "object" === _typeof(options) ? (_inputmask.default.extend(this.userOptions, options), 
+                this.el && !0 !== noremask && this.mask(this.el), this) : void 0;
+            },
+            unmaskedvalue: function unmaskedvalue(value) {
+                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
+                void 0 === this.el || void 0 !== value) {
+                    var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
+                    _inputHandling.checkVal.call(this, void 0, !1, !1, valueBuffer), "function" == typeof this.opts.onBeforeWrite && this.opts.onBeforeWrite.call(this, void 0, _positioning.getBuffer.call(this), 0, this.opts);
+                }
+                return _inputHandling.unmaskedvalue.call(this, this.el);
+            },
+            remove: function remove() {
+                if (this.el) {
+                    _inputmask.default.data(this.el, dataKey, null);
+                    var cv = this.opts.autoUnmask ? (0, _inputHandling.unmaskedvalue)(this.el) : this._valueGet(this.opts.autoUnmask), valueProperty;
+                    cv !== _positioning.getBufferTemplate.call(this).join("") ? this._valueSet(cv, this.opts.autoUnmask) : this._valueSet(""), 
+                    _eventruler.EventRuler.off(this.el), Object.getOwnPropertyDescriptor && Object.getPrototypeOf ? (valueProperty = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(this.el), "value"), 
+                    valueProperty && this.__valueGet && Object.defineProperty(this.el, "value", {
+                        get: this.__valueGet,
+                        set: this.__valueSet,
+                        configurable: !0
+                    })) : document.__lookupGetter__ && this.el.__lookupGetter__("value") && this.__valueGet && (this.el.__defineGetter__("value", this.__valueGet), 
+                    this.el.__defineSetter__("value", this.__valueSet)), this.el.inputmask = void 0;
+                }
+                return this.el;
+            },
+            getemptymask: function getemptymask() {
+                return this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
+                _positioning.getBufferTemplate.call(this).join("");
+            },
+            hasMaskedValue: function hasMaskedValue() {
+                return !this.opts.autoUnmask;
+            },
+            isComplete: function isComplete() {
+                return this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
+                _validation.isComplete.call(this, _positioning.getBuffer.call(this));
+            },
+            getmetadata: function getmetadata() {
+                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
+                Array.isArray(this.maskset.metadata)) {
+                    var maskTarget = _validationTests.getMaskTemplate.call(this, !0, 0, !1).join("");
+                    return this.maskset.metadata.forEach(function(mtdt) {
+                        return mtdt.mask !== maskTarget || (maskTarget = mtdt, !1);
+                    }), maskTarget;
+                }
+                return this.maskset.metadata;
+            },
+            isValid: function isValid(value) {
+                if (this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache), 
+                value) {
+                    var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
+                    _inputHandling.checkVal.call(this, void 0, !0, !1, valueBuffer);
+                } else value = this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join("");
+                for (var buffer = _positioning.getBuffer.call(this), rl = _positioning.determineLastRequiredPosition.call(this), lmib = buffer.length - 1; rl < lmib && !_positioning.isMask.call(this, lmib); lmib--) ;
+                return buffer.splice(rl, lmib + 1 - rl), _validation.isComplete.call(this, buffer) && value === (this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join(""));
+            },
+            format: function format(value, metadata) {
+                this.maskset = this.maskset || (0, _maskLexer.generateMaskSet)(this.opts, this.noMasksCache);
+                var valueBuffer = ("function" == typeof this.opts.onBeforeMask && this.opts.onBeforeMask.call(this, value, this.opts) || value).split("");
+                _inputHandling.checkVal.call(this, void 0, !0, !1, valueBuffer);
+                var formattedValue = this.isRTL ? _positioning.getBuffer.call(this).slice().reverse().join("") : _positioning.getBuffer.call(this).join("");
+                return metadata ? {
+                    value: formattedValue,
+                    metadata: this.getmetadata()
+                } : formattedValue;
+            },
+            setValue: function setValue(value) {
+                this.el && (0, _inputmask.default)(this.el).trigger("setvalue", [ value ]);
+            },
+            analyseMask: _maskLexer.analyseMask
+        }, Inputmask.extendDefaults = function(options) {
+            _inputmask.default.extend(!0, Inputmask.prototype.defaults, options);
+        }, Inputmask.extendDefinitions = function(definition) {
+            _inputmask.default.extend(!0, Inputmask.prototype.definitions, definition);
+        }, Inputmask.extendAliases = function(alias) {
+            _inputmask.default.extend(!0, Inputmask.prototype.aliases, alias);
+        }, Inputmask.format = function(value, options, metadata) {
+            return Inputmask(options).format(value, metadata);
+        }, Inputmask.unmask = function(value, options) {
+            return Inputmask(options).unmaskedvalue(value);
+        }, Inputmask.isValid = function(value, options) {
+            return Inputmask(options).isValid(value);
+        }, Inputmask.remove = function(elems) {
+            "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
+            elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el) {
+                el.inputmask && el.inputmask.remove();
+            });
+        }, Inputmask.setValue = function(elems, value) {
+            "string" == typeof elems && (elems = document.getElementById(elems) || document.querySelectorAll(elems)), 
+            elems = elems.nodeName ? [ elems ] : elems, elems.forEach(function(el) {
+                el.inputmask ? el.inputmask.setValue(value) : (0, _inputmask.default)(el).trigger("setvalue", [ value ]);
+            });
+        }, Inputmask.dependencyLib = _inputmask.default, _window.default.Inputmask = Inputmask;
+        var _default = Inputmask;
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.caret = caret, exports.determineLastRequiredPosition = determineLastRequiredPosition, 
+        exports.determineNewCaretPosition = determineNewCaretPosition, exports.getBuffer = getBuffer, 
+        exports.getBufferTemplate = getBufferTemplate, exports.getLastValidPosition = getLastValidPosition, 
+        exports.isMask = isMask, exports.resetMaskSet = resetMaskSet, exports.seekNext = seekNext, 
+        exports.seekPrevious = seekPrevious, exports.translatePosition = translatePosition;
+        var _validationTests = __webpack_require__(3), _validation = __webpack_require__(4), _mask = __webpack_require__(11);
+        function caret(input, begin, end, notranslate, isDelete) {
+            var inputmask = this, opts = this.opts, range;
+            if (void 0 === begin) return "selectionStart" in input && "selectionEnd" in input ? (begin = input.selectionStart, 
+            end = input.selectionEnd) : window.getSelection ? (range = window.getSelection().getRangeAt(0), 
+            range.commonAncestorContainer.parentNode !== input && range.commonAncestorContainer !== input || (begin = range.startOffset, 
+            end = range.endOffset)) : document.selection && document.selection.createRange && (range = document.selection.createRange(), 
+            begin = 0 - range.duplicate().moveStart("character", -input.inputmask._valueGet().length), 
+            end = begin + range.text.length), {
+                begin: notranslate ? begin : translatePosition.call(this, begin),
+                end: notranslate ? end : translatePosition.call(this, end)
+            };
+            if (Array.isArray(begin) && (end = this.isRTL ? begin[0] : begin[1], begin = this.isRTL ? begin[1] : begin[0]), 
+            void 0 !== begin.begin && (end = this.isRTL ? begin.begin : begin.end, begin = this.isRTL ? begin.end : begin.begin), 
+            "number" == typeof begin) {
+                begin = notranslate ? begin : translatePosition.call(this, begin), end = notranslate ? end : translatePosition.call(this, end), 
+                end = "number" == typeof end ? end : begin;
+                var scrollCalc = parseInt(((input.ownerDocument.defaultView || window).getComputedStyle ? (input.ownerDocument.defaultView || window).getComputedStyle(input, null) : input.currentStyle).fontSize) * end;
+                if (input.scrollLeft = scrollCalc > input.scrollWidth ? scrollCalc : 0, input.inputmask.caretPos = {
+                    begin: begin,
+                    end: end
+                }, opts.insertModeVisual && !1 === opts.insertMode && begin === end && (isDelete || end++), 
+                input === (input.inputmask.shadowRoot || document).activeElement) if ("setSelectionRange" in input) input.setSelectionRange(begin, end); else if (window.getSelection) {
+                    if (range = document.createRange(), void 0 === input.firstChild || null === input.firstChild) {
+                        var textNode = document.createTextNode("");
+                        input.appendChild(textNode);
+                    }
+                    range.setStart(input.firstChild, begin < input.inputmask._valueGet().length ? begin : input.inputmask._valueGet().length), 
+                    range.setEnd(input.firstChild, end < input.inputmask._valueGet().length ? end : input.inputmask._valueGet().length), 
+                    range.collapse(!0);
+                    var sel = window.getSelection();
+                    sel.removeAllRanges(), sel.addRange(range);
+                } else input.createTextRange && (range = input.createTextRange(), range.collapse(!0), 
+                range.moveEnd("character", end), range.moveStart("character", begin), range.select());
+            }
+        }
+        function determineLastRequiredPosition(returnDefinition) {
+            var inputmask = this, maskset = this.maskset, $ = this.dependencyLib, buffer = _validationTests.getMaskTemplate.call(this, !0, getLastValidPosition.call(this), !0, !0), bl = buffer.length, pos, lvp = getLastValidPosition.call(this), positions = {}, lvTest = maskset.validPositions[lvp], ndxIntlzr = void 0 !== lvTest ? lvTest.locator.slice() : void 0, testPos;
+            for (pos = lvp + 1; pos < buffer.length; pos++) testPos = _validationTests.getTestTemplate.call(this, pos, ndxIntlzr, pos - 1), 
+            ndxIntlzr = testPos.locator.slice(), positions[pos] = $.extend(!0, {}, testPos);
+            var lvTestAlt = lvTest && void 0 !== lvTest.alternation ? lvTest.locator[lvTest.alternation] : void 0;
+            for (pos = bl - 1; lvp < pos && (testPos = positions[pos], (testPos.match.optionality || testPos.match.optionalQuantifier && testPos.match.newBlockMarker || lvTestAlt && (lvTestAlt !== positions[pos].locator[lvTest.alternation] && 1 != testPos.match.static || !0 === testPos.match.static && testPos.locator[lvTest.alternation] && _validation.checkAlternationMatch.call(this, testPos.locator[lvTest.alternation].toString().split(","), lvTestAlt.toString().split(",")) && "" !== _validationTests.getTests.call(this, pos)[0].def)) && buffer[pos] === _validationTests.getPlaceholder.call(this, pos, testPos.match)); pos--) bl--;
+            return returnDefinition ? {
+                l: bl,
+                def: positions[bl] ? positions[bl].match : void 0
+            } : bl;
+        }
+        function determineNewCaretPosition(selectedCaret, tabbed) {
+            var inputmask = this, maskset = this.maskset, opts = this.opts;
+            function doRadixFocus(clickPos) {
+                if ("" !== opts.radixPoint && 0 !== opts.digits) {
+                    var vps = maskset.validPositions;
+                    if (void 0 === vps[clickPos] || vps[clickPos].input === _validationTests.getPlaceholder.call(inputmask, clickPos)) {
+                        if (clickPos < seekNext.call(inputmask, -1)) return !0;
+                        var radixPos = getBuffer.call(inputmask).indexOf(opts.radixPoint);
+                        if (-1 !== radixPos) {
+                            for (var vp in vps) if (vps[vp] && radixPos < vp && vps[vp].input !== _validationTests.getPlaceholder.call(inputmask, vp)) return !1;
+                            return !0;
+                        }
+                    }
+                }
+                return !1;
+            }
+            if (tabbed && (inputmask.isRTL ? selectedCaret.end = selectedCaret.begin : selectedCaret.begin = selectedCaret.end), 
+            selectedCaret.begin === selectedCaret.end) {
+                switch (opts.positionCaretOnClick) {
+                  case "none":
+                    break;
+
+                  case "select":
+                    selectedCaret = {
+                        begin: 0,
+                        end: getBuffer.call(inputmask).length
+                    };
+                    break;
+
+                  case "ignore":
+                    selectedCaret.end = selectedCaret.begin = seekNext.call(inputmask, getLastValidPosition.call(inputmask));
+                    break;
+
+                  case "radixFocus":
+                    if (doRadixFocus(selectedCaret.begin)) {
+                        var radixPos = getBuffer.call(inputmask).join("").indexOf(opts.radixPoint);
+                        selectedCaret.end = selectedCaret.begin = opts.numericInput ? seekNext.call(inputmask, radixPos) : radixPos;
+                        break;
+                    }
+
+                  default:
+                    var clickPosition = selectedCaret.begin, lvclickPosition = getLastValidPosition.call(inputmask, clickPosition, !0), lastPosition = seekNext.call(inputmask, -1 !== lvclickPosition || isMask.call(inputmask, 0) ? lvclickPosition : -1);
+                    if (clickPosition <= lastPosition) selectedCaret.end = selectedCaret.begin = isMask.call(inputmask, clickPosition, !1, !0) ? clickPosition : seekNext.call(inputmask, clickPosition); else {
+                        var lvp = maskset.validPositions[lvclickPosition], tt = _validationTests.getTestTemplate.call(inputmask, lastPosition, lvp ? lvp.match.locator : void 0, lvp), placeholder = _validationTests.getPlaceholder.call(inputmask, lastPosition, tt.match);
+                        if ("" !== placeholder && getBuffer.call(inputmask)[lastPosition] !== placeholder && !0 !== tt.match.optionalQuantifier && !0 !== tt.match.newBlockMarker || !isMask.call(inputmask, lastPosition, opts.keepStatic, !0) && tt.match.def === placeholder) {
+                            var newPos = seekNext.call(inputmask, lastPosition);
+                            (newPos <= clickPosition || clickPosition === lastPosition) && (lastPosition = newPos);
+                        }
+                        selectedCaret.end = selectedCaret.begin = lastPosition;
+                    }
+                }
+                return selectedCaret;
+            }
+        }
+        function getBuffer(noCache) {
+            var inputmask = this, maskset = this.maskset;
+            return void 0 !== maskset.buffer && !0 !== noCache || (maskset.buffer = _validationTests.getMaskTemplate.call(this, !0, getLastValidPosition.call(this), !0), 
+            void 0 === maskset._buffer && (maskset._buffer = maskset.buffer.slice())), maskset.buffer;
+        }
+        function getBufferTemplate() {
+            var inputmask = this, maskset = this.maskset;
+            return void 0 === maskset._buffer && (maskset._buffer = _validationTests.getMaskTemplate.call(this, !1, 1), 
+            void 0 === maskset.buffer && (maskset.buffer = maskset._buffer.slice())), maskset._buffer;
+        }
+        function getLastValidPosition(closestTo, strict, validPositions) {
+            var maskset = this.maskset, before = -1, after = -1, valids = validPositions || maskset.validPositions;
+            for (var posNdx in void 0 === closestTo && (closestTo = -1), valids) {
+                var psNdx = parseInt(posNdx);
+                valids[psNdx] && (strict || !0 !== valids[psNdx].generatedInput) && (psNdx <= closestTo && (before = psNdx), 
+                closestTo <= psNdx && (after = psNdx));
+            }
+            return -1 === before || before == closestTo ? after : -1 == after ? before : closestTo - before < after - closestTo ? before : after;
+        }
+        function isMask(pos, strict, fuzzy) {
+            var inputmask = this, maskset = this.maskset, test = _validationTests.getTestTemplate.call(this, pos).match;
+            if ("" === test.def && (test = _validationTests.getTest.call(this, pos).match), 
+            !0 !== test.static) return test.fn;
+            if (!0 === fuzzy && void 0 !== maskset.validPositions[pos] && !0 !== maskset.validPositions[pos].generatedInput) return !0;
+            if (!0 !== strict && -1 < pos) {
+                if (fuzzy) {
+                    var tests = _validationTests.getTests.call(this, pos);
+                    return tests.length > 1 + ("" === tests[tests.length - 1].match.def ? 1 : 0);
+                }
+                var testTemplate = _validationTests.determineTestTemplate.call(this, pos, _validationTests.getTests.call(this, pos)), testPlaceHolder = _validationTests.getPlaceholder.call(this, pos, testTemplate.match);
+                return testTemplate.match.def !== testPlaceHolder;
+            }
+            return !1;
+        }
+        function resetMaskSet(soft) {
+            var maskset = this.maskset;
+            maskset.buffer = void 0, !0 !== soft && (maskset.validPositions = {}, maskset.p = 0);
+        }
+        function seekNext(pos, newBlock, fuzzy) {
+            var inputmask = this;
+            void 0 === fuzzy && (fuzzy = !0);
+            for (var position = pos + 1; "" !== _validationTests.getTest.call(this, position).match.def && (!0 === newBlock && (!0 !== _validationTests.getTest.call(this, position).match.newBlockMarker || !isMask.call(this, position, void 0, !0)) || !0 !== newBlock && !isMask.call(this, position, void 0, fuzzy)); ) position++;
+            return position;
+        }
+        function seekPrevious(pos, newBlock) {
+            var inputmask = this, position = pos - 1;
+            if (pos <= 0) return 0;
+            for (;0 < position && (!0 === newBlock && (!0 !== _validationTests.getTest.call(this, position).match.newBlockMarker || !isMask.call(this, position, void 0, !0)) || !0 !== newBlock && !isMask.call(this, position, void 0, !0)); ) position--;
+            return position;
+        }
+        function translatePosition(pos) {
+            var inputmask = this, opts = this.opts, el = this.el;
+            return !this.isRTL || "number" != typeof pos || opts.greedy && "" === opts.placeholder || !el || (pos = this._valueGet().length - pos), 
+            pos;
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function getLocator(tst, align) {
+            var locator = (null != tst.alternation ? tst.mloc[getDecisionTaker(tst)] : tst.locator).join("");
+            if ("" !== locator) for (;locator.length < align; ) locator += "0";
+            return locator;
+        }
+        function getDecisionTaker(tst) {
+            var decisionTaker = tst.locator[tst.alternation];
+            return "string" == typeof decisionTaker && 0 < decisionTaker.length && (decisionTaker = decisionTaker.split(",")[0]), 
+            void 0 !== decisionTaker ? decisionTaker.toString() : "";
+        }
+        function getPlaceholder(pos, test, returnPL) {
+            var inputmask = this, opts = this.opts, maskset = this.maskset;
+            if (test = test || getTest.call(this, pos).match, void 0 !== test.placeholder || !0 === returnPL) return "function" == typeof test.placeholder ? test.placeholder(opts) : test.placeholder;
+            if (!0 !== test.static) return opts.placeholder.charAt(pos % opts.placeholder.length);
+            if (-1 < pos && void 0 === maskset.validPositions[pos]) {
+                var tests = getTests.call(this, pos), staticAlternations = [], prevTest;
+                if (tests.length > 1 + ("" === tests[tests.length - 1].match.def ? 1 : 0)) for (var i = 0; i < tests.length; i++) if ("" !== tests[i].match.def && !0 !== tests[i].match.optionality && !0 !== tests[i].match.optionalQuantifier && (!0 === tests[i].match.static || void 0 === prevTest || !1 !== tests[i].match.fn.test(prevTest.match.def, maskset, pos, !0, opts)) && (staticAlternations.push(tests[i]), 
+                !0 === tests[i].match.static && (prevTest = tests[i]), 1 < staticAlternations.length && /[0-9a-bA-Z]/.test(staticAlternations[0].match.def))) return opts.placeholder.charAt(pos % opts.placeholder.length);
+            }
+            return test.def;
+        }
+        function getMaskTemplate(baseOnInput, minimalPos, includeMode, noJit, clearOptionalTail) {
+            var inputmask = this, opts = this.opts, maskset = this.maskset, greedy = opts.greedy;
+            clearOptionalTail && (opts.greedy = !1), minimalPos = minimalPos || 0;
+            var maskTemplate = [], ndxIntlzr, pos = 0, test, testPos, jitRenderStatic;
+            do {
+                if (!0 === baseOnInput && maskset.validPositions[pos]) testPos = clearOptionalTail && !0 === maskset.validPositions[pos].match.optionality && void 0 === maskset.validPositions[pos + 1] && (!0 === maskset.validPositions[pos].generatedInput || maskset.validPositions[pos].input == opts.skipOptionalPartCharacter && 0 < pos) ? determineTestTemplate.call(this, pos, getTests.call(this, pos, ndxIntlzr, pos - 1)) : maskset.validPositions[pos], 
+                test = testPos.match, ndxIntlzr = testPos.locator.slice(), maskTemplate.push(!0 === includeMode ? testPos.input : !1 === includeMode ? test.nativeDef : getPlaceholder.call(this, pos, test)); else {
+                    testPos = getTestTemplate.call(this, pos, ndxIntlzr, pos - 1), test = testPos.match, 
+                    ndxIntlzr = testPos.locator.slice();
+                    var jitMasking = !0 !== noJit && (!1 !== opts.jitMasking ? opts.jitMasking : test.jit);
+                    jitRenderStatic = jitRenderStatic && test.static && test.def !== opts.groupSeparator && null === test.fn || maskset.validPositions[pos - 1] && test.static && test.def !== opts.groupSeparator && null === test.fn, 
+                    jitRenderStatic || !1 === jitMasking || void 0 === jitMasking || "number" == typeof jitMasking && isFinite(jitMasking) && pos < jitMasking ? maskTemplate.push(!1 === includeMode ? test.nativeDef : getPlaceholder.call(this, pos, test)) : jitRenderStatic = !1;
+                }
+                pos++;
+            } while ((void 0 === this.maxLength || pos < this.maxLength) && (!0 !== test.static || "" !== test.def) || pos < minimalPos);
+            return "" === maskTemplate[maskTemplate.length - 1] && maskTemplate.pop(), !1 === includeMode && void 0 !== maskset.maskLength || (maskset.maskLength = pos - 1), 
+            opts.greedy = greedy, maskTemplate;
+        }
+        function getTestTemplate(pos, ndxIntlzr, tstPs) {
+            var inputmask = this, maskset = this.maskset;
+            return maskset.validPositions[pos] || determineTestTemplate.call(this, pos, getTests.call(this, pos, ndxIntlzr ? ndxIntlzr.slice() : ndxIntlzr, tstPs));
+        }
+        function determineTestTemplate(pos, tests) {
+            var inputmask = this, opts = this.opts;
+            pos = 0 < pos ? pos - 1 : 0;
+            for (var altTest = getTest.call(this, pos), targetLocator = getLocator(altTest), tstLocator, closest, bestMatch, ndx = 0; ndx < tests.length; ndx++) {
+                var tst = tests[ndx];
+                tstLocator = getLocator(tst, targetLocator.length);
+                var distance = Math.abs(tstLocator - targetLocator);
+                (void 0 === closest || "" !== tstLocator && distance < closest || bestMatch && !opts.greedy && bestMatch.match.optionality && "master" === bestMatch.match.newBlockMarker && (!tst.match.optionality || !tst.match.newBlockMarker) || bestMatch && bestMatch.match.optionalQuantifier && !tst.match.optionalQuantifier) && (closest = distance, 
+                bestMatch = tst);
+            }
+            return bestMatch;
+        }
+        function getTest(pos, tests) {
+            var inputmask = this, maskset = this.maskset;
+            return maskset.validPositions[pos] ? maskset.validPositions[pos] : (tests || getTests.call(this, pos))[0];
+        }
+        function getTests(pos, ndxIntlzr, tstPs) {
+            var inputmask = this, $ = this.dependencyLib, maskset = this.maskset, opts = this.opts, el = this.el, maskTokens = maskset.maskToken, testPos = ndxIntlzr ? tstPs : 0, ndxInitializer = ndxIntlzr ? ndxIntlzr.slice() : [ 0 ], matches = [], insertStop = !1, latestMatch, cacheDependency = ndxIntlzr ? ndxIntlzr.join("") : "";
+            function resolveTestFromToken(maskToken, ndxInitializer, loopNdx, quantifierRecurse) {
+                function handleMatch(match, loopNdx, quantifierRecurse) {
+                    function isFirstMatch(latestMatch, tokenGroup) {
+                        var firstMatch = 0 === tokenGroup.matches.indexOf(latestMatch);
+                        return firstMatch || tokenGroup.matches.every(function(match, ndx) {
+                            return !0 === match.isQuantifier ? firstMatch = isFirstMatch(latestMatch, tokenGroup.matches[ndx - 1]) : Object.prototype.hasOwnProperty.call(match, "matches") && (firstMatch = isFirstMatch(latestMatch, match)), 
+                            !firstMatch;
+                        }), firstMatch;
+                    }
+                    function resolveNdxInitializer(pos, alternateNdx, targetAlternation) {
+                        var bestMatch, indexPos;
+                        if ((maskset.tests[pos] || maskset.validPositions[pos]) && (maskset.tests[pos] || [ maskset.validPositions[pos] ]).every(function(lmnt, ndx) {
+                            if (lmnt.mloc[alternateNdx]) return bestMatch = lmnt, !1;
+                            var alternation = void 0 !== targetAlternation ? targetAlternation : lmnt.alternation, ndxPos = void 0 !== lmnt.locator[alternation] ? lmnt.locator[alternation].toString().indexOf(alternateNdx) : -1;
+                            return (void 0 === indexPos || ndxPos < indexPos) && -1 !== ndxPos && (bestMatch = lmnt, 
+                            indexPos = ndxPos), !0;
+                        }), bestMatch) {
+                            var bestMatchAltIndex = bestMatch.locator[bestMatch.alternation], locator = bestMatch.mloc[alternateNdx] || bestMatch.mloc[bestMatchAltIndex] || bestMatch.locator;
+                            return locator.slice((void 0 !== targetAlternation ? targetAlternation : bestMatch.alternation) + 1);
+                        }
+                        return void 0 !== targetAlternation ? resolveNdxInitializer(pos, alternateNdx) : void 0;
+                    }
+                    function isSubsetOf(source, target) {
+                        function expand(pattern) {
+                            for (var expanded = [], start = -1, end, i = 0, l = pattern.length; i < l; i++) if ("-" === pattern.charAt(i)) for (end = pattern.charCodeAt(i + 1); ++start < end; ) expanded.push(String.fromCharCode(start)); else start = pattern.charCodeAt(i), 
+                            expanded.push(pattern.charAt(i));
+                            return expanded.join("");
+                        }
+                        return source.match.def === target.match.nativeDef || !(!(opts.regex || source.match.fn instanceof RegExp && target.match.fn instanceof RegExp) || !0 === source.match.static || !0 === target.match.static) && -1 !== expand(target.match.fn.toString().replace(/[[\]/]/g, "")).indexOf(expand(source.match.fn.toString().replace(/[[\]/]/g, "")));
+                    }
+                    function staticCanMatchDefinition(source, target) {
+                        return !0 === source.match.static && !0 !== target.match.static && target.match.fn.test(source.match.def, maskset, pos, !1, opts, !1);
+                    }
+                    function setMergeLocators(targetMatch, altMatch) {
+                        var alternationNdx = targetMatch.alternation, shouldMerge = void 0 === altMatch || alternationNdx === altMatch.alternation && -1 === targetMatch.locator[alternationNdx].toString().indexOf(altMatch.locator[alternationNdx]);
+                        if (!shouldMerge && alternationNdx > altMatch.alternation) for (var i = altMatch.alternation; i < alternationNdx; i++) if (targetMatch.locator[i] !== altMatch.locator[i]) {
+                            alternationNdx = i, shouldMerge = !0;
+                            break;
+                        }
+                        if (shouldMerge) {
+                            targetMatch.mloc = targetMatch.mloc || {};
+                            var locNdx = targetMatch.locator[alternationNdx];
+                            if (void 0 !== locNdx) {
+                                if ("string" == typeof locNdx && (locNdx = locNdx.split(",")[0]), void 0 === targetMatch.mloc[locNdx] && (targetMatch.mloc[locNdx] = targetMatch.locator.slice()), 
+                                void 0 !== altMatch) {
+                                    for (var ndx in altMatch.mloc) "string" == typeof ndx && (ndx = ndx.split(",")[0]), 
+                                    void 0 === targetMatch.mloc[ndx] && (targetMatch.mloc[ndx] = altMatch.mloc[ndx]);
+                                    targetMatch.locator[alternationNdx] = Object.keys(targetMatch.mloc).join(",");
+                                }
+                                return !0;
+                            }
+                            targetMatch.alternation = void 0;
+                        }
+                        return !1;
+                    }
+                    function isSameLevel(targetMatch, altMatch) {
+                        if (targetMatch.locator.length !== altMatch.locator.length) return !1;
+                        for (var locNdx = targetMatch.alternation + 1; locNdx < targetMatch.locator.length; locNdx++) if (targetMatch.locator[locNdx] !== altMatch.locator[locNdx]) return !1;
+                        return !0;
+                    }
+                    if (testPos > pos + opts._maxTestPos) throw "Inputmask: There is probably an error in your mask definition or in the code. Create an issue on github with an example of the mask you are using. " + maskset.mask;
+                    if (testPos === pos && void 0 === match.matches) return matches.push({
+                        match: match,
+                        locator: loopNdx.reverse(),
+                        cd: cacheDependency,
+                        mloc: {}
+                    }), !0;
+                    if (void 0 !== match.matches) {
+                        if (match.isGroup && quantifierRecurse !== match) {
+                            if (match = handleMatch(maskToken.matches[maskToken.matches.indexOf(match) + 1], loopNdx, quantifierRecurse), 
+                            match) return !0;
+                        } else if (match.isOptional) {
+                            var optionalToken = match, mtchsNdx = matches.length;
+                            if (match = resolveTestFromToken(match, ndxInitializer, loopNdx, quantifierRecurse), 
+                            match) {
+                                if (matches.forEach(function(mtch, ndx) {
+                                    mtchsNdx <= ndx && (mtch.match.optionality = !0);
+                                }), latestMatch = matches[matches.length - 1].match, void 0 !== quantifierRecurse || !isFirstMatch(latestMatch, optionalToken)) return !0;
+                                insertStop = !0, testPos = pos;
+                            }
+                        } else if (match.isAlternator) {
+                            var alternateToken = match, malternateMatches = [], maltMatches, currentMatches = matches.slice(), loopNdxCnt = loopNdx.length, altIndex = 0 < ndxInitializer.length ? ndxInitializer.shift() : -1;
+                            if (-1 === altIndex || "string" == typeof altIndex) {
+                                var currentPos = testPos, ndxInitializerClone = ndxInitializer.slice(), altIndexArr = [], amndx;
+                                if ("string" == typeof altIndex) altIndexArr = altIndex.split(","); else for (amndx = 0; amndx < alternateToken.matches.length; amndx++) altIndexArr.push(amndx.toString());
+                                if (void 0 !== maskset.excludes[pos]) {
+                                    for (var altIndexArrClone = altIndexArr.slice(), i = 0, exl = maskset.excludes[pos].length; i < exl; i++) {
+                                        var excludeSet = maskset.excludes[pos][i].toString().split(":");
+                                        loopNdx.length == excludeSet[1] && altIndexArr.splice(altIndexArr.indexOf(excludeSet[0]), 1);
+                                    }
+                                    0 === altIndexArr.length && (delete maskset.excludes[pos], altIndexArr = altIndexArrClone);
+                                }
+                                (!0 === opts.keepStatic || isFinite(parseInt(opts.keepStatic)) && currentPos >= opts.keepStatic) && (altIndexArr = altIndexArr.slice(0, 1));
+                                for (var unMatchedAlternation = !1, ndx = 0; ndx < altIndexArr.length; ndx++) {
+                                    amndx = parseInt(altIndexArr[ndx]), matches = [], ndxInitializer = "string" == typeof altIndex && resolveNdxInitializer(testPos, amndx, loopNdxCnt) || ndxInitializerClone.slice(), 
+                                    alternateToken.matches[amndx] && handleMatch(alternateToken.matches[amndx], [ amndx ].concat(loopNdx), quantifierRecurse) ? match = !0 : 0 === ndx && (unMatchedAlternation = !0), 
+                                    maltMatches = matches.slice(), testPos = currentPos, matches = [];
+                                    for (var ndx1 = 0; ndx1 < maltMatches.length; ndx1++) {
+                                        var altMatch = maltMatches[ndx1], dropMatch = !1;
+                                        altMatch.match.jit = altMatch.match.jit || unMatchedAlternation, altMatch.alternation = altMatch.alternation || loopNdxCnt, 
+                                        setMergeLocators(altMatch);
+                                        for (var ndx2 = 0; ndx2 < malternateMatches.length; ndx2++) {
+                                            var altMatch2 = malternateMatches[ndx2];
+                                            if ("string" != typeof altIndex || void 0 !== altMatch.alternation && altIndexArr.includes(altMatch.locator[altMatch.alternation].toString())) {
+                                                if (altMatch.match.nativeDef === altMatch2.match.nativeDef) {
+                                                    dropMatch = !0, setMergeLocators(altMatch2, altMatch);
+                                                    break;
+                                                }
+                                                if (isSubsetOf(altMatch, altMatch2)) {
+                                                    setMergeLocators(altMatch, altMatch2) && (dropMatch = !0, malternateMatches.splice(malternateMatches.indexOf(altMatch2), 0, altMatch));
+                                                    break;
+                                                }
+                                                if (isSubsetOf(altMatch2, altMatch)) {
+                                                    setMergeLocators(altMatch2, altMatch);
+                                                    break;
+                                                }
+                                                if (staticCanMatchDefinition(altMatch, altMatch2)) {
+                                                    isSameLevel(altMatch, altMatch2) || void 0 !== el.inputmask.userOptions.keepStatic ? setMergeLocators(altMatch, altMatch2) && (dropMatch = !0, 
+                                                    malternateMatches.splice(malternateMatches.indexOf(altMatch2), 0, altMatch)) : opts.keepStatic = !0;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        dropMatch || malternateMatches.push(altMatch);
+                                    }
+                                }
+                                matches = currentMatches.concat(malternateMatches), testPos = pos, insertStop = 0 < matches.length, 
+                                match = 0 < malternateMatches.length, ndxInitializer = ndxInitializerClone.slice();
+                            } else match = handleMatch(alternateToken.matches[altIndex] || maskToken.matches[altIndex], [ altIndex ].concat(loopNdx), quantifierRecurse);
+                            if (match) return !0;
+                        } else if (match.isQuantifier && quantifierRecurse !== maskToken.matches[maskToken.matches.indexOf(match) - 1]) for (var qt = match, qndx = 0 < ndxInitializer.length ? ndxInitializer.shift() : 0; qndx < (isNaN(qt.quantifier.max) ? qndx + 1 : qt.quantifier.max) && testPos <= pos; qndx++) {
+                            var tokenGroup = maskToken.matches[maskToken.matches.indexOf(qt) - 1];
+                            if (match = handleMatch(tokenGroup, [ qndx ].concat(loopNdx), tokenGroup), match) {
+                                if (latestMatch = matches[matches.length - 1].match, latestMatch.optionalQuantifier = qndx >= qt.quantifier.min, 
+                                latestMatch.jit = (qndx || 1) * tokenGroup.matches.indexOf(latestMatch) >= qt.quantifier.jit, 
+                                latestMatch.optionalQuantifier && isFirstMatch(latestMatch, tokenGroup)) {
+                                    insertStop = !0, testPos = pos;
+                                    break;
+                                }
+                                return latestMatch.jit && (maskset.jitOffset[pos] = tokenGroup.matches.length - tokenGroup.matches.indexOf(latestMatch)), 
+                                !0;
+                            }
+                        } else if (match = resolveTestFromToken(match, ndxInitializer, loopNdx, quantifierRecurse), 
+                        match) return !0;
+                    } else testPos++;
+                }
+                for (var tndx = 0 < ndxInitializer.length ? ndxInitializer.shift() : 0; tndx < maskToken.matches.length; tndx++) if (!0 !== maskToken.matches[tndx].isQuantifier) {
+                    var match = handleMatch(maskToken.matches[tndx], [ tndx ].concat(loopNdx), quantifierRecurse);
+                    if (match && testPos === pos) return match;
+                    if (pos < testPos) break;
+                }
+            }
+            function mergeLocators(pos, tests) {
+                var locator = [], alternation;
+                return Array.isArray(tests) || (tests = [ tests ]), 0 < tests.length && (void 0 === tests[0].alternation || !0 === opts.keepStatic ? (locator = determineTestTemplate.call(inputmask, pos, tests.slice()).locator.slice(), 
+                0 === locator.length && (locator = tests[0].locator.slice())) : tests.forEach(function(tst) {
+                    "" !== tst.def && (0 === locator.length ? (alternation = tst.alternation, locator = tst.locator.slice()) : tst.locator[alternation] && -1 === locator[alternation].toString().indexOf(tst.locator[alternation]) && (locator[alternation] += "," + tst.locator[alternation]));
+                })), locator;
+            }
+            if (-1 < pos && (void 0 === inputmask.maxLength || pos < inputmask.maxLength)) {
+                if (void 0 === ndxIntlzr) {
+                    for (var previousPos = pos - 1, test; void 0 === (test = maskset.validPositions[previousPos] || maskset.tests[previousPos]) && -1 < previousPos; ) previousPos--;
+                    void 0 !== test && -1 < previousPos && (ndxInitializer = mergeLocators(previousPos, test), 
+                    cacheDependency = ndxInitializer.join(""), testPos = previousPos);
+                }
+                if (maskset.tests[pos] && maskset.tests[pos][0].cd === cacheDependency) return maskset.tests[pos];
+                for (var mtndx = ndxInitializer.shift(); mtndx < maskTokens.length; mtndx++) {
+                    var match = resolveTestFromToken(maskTokens[mtndx], ndxInitializer, [ mtndx ]);
+                    if (match && testPos === pos || pos < testPos) break;
+                }
+            }
+            return 0 !== matches.length && !insertStop || matches.push({
+                match: {
+                    fn: null,
+                    static: !0,
+                    optionality: !1,
+                    casing: null,
+                    def: "",
+                    placeholder: ""
+                },
+                locator: [],
+                mloc: {},
+                cd: cacheDependency
+            }), void 0 !== ndxIntlzr && maskset.tests[pos] ? $.extend(!0, [], matches) : (maskset.tests[pos] = $.extend(!0, [], matches), 
+            maskset.tests[pos]);
+        }
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.determineTestTemplate = determineTestTemplate, exports.getDecisionTaker = getDecisionTaker, 
+        exports.getMaskTemplate = getMaskTemplate, exports.getPlaceholder = getPlaceholder, 
+        exports.getTest = getTest, exports.getTests = getTests, exports.getTestTemplate = getTestTemplate;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.alternate = alternate, exports.checkAlternationMatch = checkAlternationMatch, 
+        exports.isComplete = isComplete, exports.isValid = isValid, exports.refreshFromBuffer = refreshFromBuffer, 
+        exports.revalidateMask = revalidateMask, exports.handleRemove = handleRemove;
+        var _validationTests = __webpack_require__(3), _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _eventhandlers = __webpack_require__(7);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function alternate(maskPos, c, strict, fromIsValid, rAltPos, selection) {
+            var inputmask = this, $ = this.dependencyLib, opts = this.opts, maskset = this.maskset, validPsClone = $.extend(!0, {}, maskset.validPositions), tstClone = $.extend(!0, {}, maskset.tests), lastAlt, alternation, isValidRslt = !1, returnRslt = !1, altPos, prevAltPos, i, validPos, decisionPos, lAltPos = void 0 !== rAltPos ? rAltPos : _positioning.getLastValidPosition.call(this), nextPos, input, begin, end;
+            if (selection && (begin = selection.begin, end = selection.end, selection.begin > selection.end && (begin = selection.end, 
+            end = selection.begin)), -1 === lAltPos && void 0 === rAltPos) lastAlt = 0, prevAltPos = _validationTests.getTest.call(this, lastAlt), 
+            alternation = prevAltPos.alternation; else for (;0 <= lAltPos; lAltPos--) if (altPos = maskset.validPositions[lAltPos], 
+            altPos && void 0 !== altPos.alternation) {
+                if (prevAltPos && prevAltPos.locator[altPos.alternation] !== altPos.locator[altPos.alternation]) break;
+                lastAlt = lAltPos, alternation = maskset.validPositions[lastAlt].alternation, prevAltPos = altPos;
+            }
+            if (void 0 !== alternation) {
+                decisionPos = parseInt(lastAlt), maskset.excludes[decisionPos] = maskset.excludes[decisionPos] || [], 
+                !0 !== maskPos && maskset.excludes[decisionPos].push((0, _validationTests.getDecisionTaker)(prevAltPos) + ":" + prevAltPos.alternation);
+                var validInputs = [], resultPos = -1;
+                for (i = decisionPos; i < _positioning.getLastValidPosition.call(this, void 0, !0) + 1; i++) -1 === resultPos && maskPos <= i && void 0 !== c && (validInputs.push(c), 
+                resultPos = validInputs.length - 1), validPos = maskset.validPositions[i], validPos && !0 !== validPos.generatedInput && (void 0 === selection || i < begin || end <= i) && validInputs.push(validPos.input), 
+                delete maskset.validPositions[i];
+                for (-1 === resultPos && void 0 !== c && (validInputs.push(c), resultPos = validInputs.length - 1); void 0 !== maskset.excludes[decisionPos] && maskset.excludes[decisionPos].length < 10; ) {
+                    for (maskset.tests = {}, _positioning.resetMaskSet.call(this, !0), isValidRslt = !0, 
+                    i = 0; i < validInputs.length && (nextPos = isValidRslt.caret || _positioning.getLastValidPosition.call(this, void 0, !0) + 1, 
+                    input = validInputs[i], isValidRslt = isValid.call(this, nextPos, input, !1, fromIsValid, !0)); i++) i === resultPos && (returnRslt = isValidRslt), 
+                    1 == maskPos && isValidRslt && (returnRslt = {
+                        caretPos: i
+                    });
+                    if (isValidRslt) break;
+                    if (_positioning.resetMaskSet.call(this), prevAltPos = _validationTests.getTest.call(this, decisionPos), 
+                    maskset.validPositions = $.extend(!0, {}, validPsClone), maskset.tests = $.extend(!0, {}, tstClone), 
+                    !maskset.excludes[decisionPos]) {
+                        returnRslt = alternate.call(this, maskPos, c, strict, fromIsValid, decisionPos - 1, selection);
+                        break;
+                    }
+                    var decisionTaker = (0, _validationTests.getDecisionTaker)(prevAltPos);
+                    if (-1 !== maskset.excludes[decisionPos].indexOf(decisionTaker + ":" + prevAltPos.alternation)) {
+                        returnRslt = alternate.call(this, maskPos, c, strict, fromIsValid, decisionPos - 1, selection);
+                        break;
+                    }
+                    for (maskset.excludes[decisionPos].push(decisionTaker + ":" + prevAltPos.alternation), 
+                    i = decisionPos; i < _positioning.getLastValidPosition.call(this, void 0, !0) + 1; i++) delete maskset.validPositions[i];
+                }
+            }
+            return returnRslt && !1 === opts.keepStatic || delete maskset.excludes[decisionPos], 
+            returnRslt;
+        }
+        function casing(elem, test, pos) {
+            var opts = this.opts, maskset = this.maskset;
+            switch (opts.casing || test.casing) {
+              case "upper":
+                elem = elem.toUpperCase();
+                break;
+
+              case "lower":
+                elem = elem.toLowerCase();
+                break;
+
+              case "title":
+                var posBefore = maskset.validPositions[pos - 1];
+                elem = 0 === pos || posBefore && posBefore.input === String.fromCharCode(_keycode.default.SPACE) ? elem.toUpperCase() : elem.toLowerCase();
+                break;
+
+              default:
+                if ("function" == typeof opts.casing) {
+                    var args = Array.prototype.slice.call(arguments);
+                    args.push(maskset.validPositions), elem = opts.casing.apply(this, args);
+                }
+            }
+            return elem;
+        }
+        function checkAlternationMatch(altArr1, altArr2, na) {
+            for (var opts = this.opts, altArrC = opts.greedy ? altArr2 : altArr2.slice(0, 1), isMatch = !1, naArr = void 0 !== na ? na.split(",") : [], naNdx, i = 0; i < naArr.length; i++) -1 !== (naNdx = altArr1.indexOf(naArr[i])) && altArr1.splice(naNdx, 1);
+            for (var alndx = 0; alndx < altArr1.length; alndx++) if (altArrC.includes(altArr1[alndx])) {
+                isMatch = !0;
+                break;
+            }
+            return isMatch;
+        }
+        function handleRemove(input, k, pos, strict, fromIsValid) {
+            var inputmask = this, maskset = this.maskset, opts = this.opts;
+            if ((opts.numericInput || this.isRTL) && (k === _keycode.default.BACKSPACE ? k = _keycode.default.DELETE : k === _keycode.default.DELETE && (k = _keycode.default.BACKSPACE), 
+            this.isRTL)) {
+                var pend = pos.end;
+                pos.end = pos.begin, pos.begin = pend;
+            }
+            var lvp = _positioning.getLastValidPosition.call(this, void 0, !0), offset;
+            if (pos.end >= _positioning.getBuffer.call(this).length && lvp >= pos.end && (pos.end = lvp + 1), 
+            k === _keycode.default.BACKSPACE ? pos.end - pos.begin < 1 && (pos.begin = _positioning.seekPrevious.call(this, pos.begin)) : k === _keycode.default.DELETE && pos.begin === pos.end && (pos.end = _positioning.isMask.call(this, pos.end, !0, !0) ? pos.end + 1 : _positioning.seekNext.call(this, pos.end) + 1), 
+            !1 !== (offset = revalidateMask.call(this, pos))) {
+                if (!0 !== strict && !1 !== opts.keepStatic || null !== opts.regex && -1 !== _validationTests.getTest.call(this, pos.begin).match.def.indexOf("|")) {
+                    var result = alternate.call(this, !0);
+                    if (result) {
+                        var newPos = void 0 !== result.caret ? result.caret : result.pos ? _positioning.seekNext.call(this, result.pos.begin ? result.pos.begin : result.pos) : _positioning.getLastValidPosition.call(this, -1, !0);
+                        (k !== _keycode.default.DELETE || pos.begin > newPos) && pos.begin;
+                    }
+                }
+                !0 !== strict && (maskset.p = k === _keycode.default.DELETE ? pos.begin + offset : pos.begin);
+            }
+        }
+        function isComplete(buffer) {
+            var inputmask = this, opts = this.opts, maskset = this.maskset;
+            if ("function" == typeof opts.isComplete) return opts.isComplete(buffer, opts);
+            if ("*" !== opts.repeat) {
+                var complete = !1, lrp = _positioning.determineLastRequiredPosition.call(this, !0), aml = _positioning.seekPrevious.call(this, lrp.l);
+                if (void 0 === lrp.def || lrp.def.newBlockMarker || lrp.def.optionality || lrp.def.optionalQuantifier) {
+                    complete = !0;
+                    for (var i = 0; i <= aml; i++) {
+                        var test = _validationTests.getTestTemplate.call(this, i).match;
+                        if (!0 !== test.static && void 0 === maskset.validPositions[i] && !0 !== test.optionality && !0 !== test.optionalQuantifier || !0 === test.static && buffer[i] !== _validationTests.getPlaceholder.call(this, i, test)) {
+                            complete = !1;
+                            break;
+                        }
+                    }
+                }
+                return complete;
+            }
+        }
+        function isValid(pos, c, strict, fromIsValid, fromAlternate, validateOnly, fromCheckval) {
+            var inputmask = this, $ = this.dependencyLib, opts = this.opts, el = inputmask.el, maskset = inputmask.maskset;
+            function isSelection(posObj) {
+                return inputmask.isRTL ? 1 < posObj.begin - posObj.end || posObj.begin - posObj.end == 1 : 1 < posObj.end - posObj.begin || posObj.end - posObj.begin == 1;
+            }
+            strict = !0 === strict;
+            var maskPos = pos;
+            function processCommandObject(commandObj) {
+                if (void 0 !== commandObj) {
+                    if (void 0 !== commandObj.remove && (Array.isArray(commandObj.remove) || (commandObj.remove = [ commandObj.remove ]), 
+                    commandObj.remove.sort(function(a, b) {
+                        return b.pos - a.pos;
+                    }).forEach(function(lmnt) {
+                        revalidateMask.call(inputmask, {
+                            begin: lmnt,
+                            end: lmnt + 1
+                        });
+                    }), commandObj.remove = void 0), void 0 !== commandObj.insert && (Array.isArray(commandObj.insert) || (commandObj.insert = [ commandObj.insert ]), 
+                    commandObj.insert.sort(function(a, b) {
+                        return a.pos - b.pos;
+                    }).forEach(function(lmnt) {
+                        "" !== lmnt.c && isValid.call(inputmask, lmnt.pos, lmnt.c, void 0 === lmnt.strict || lmnt.strict, void 0 !== lmnt.fromIsValid ? lmnt.fromIsValid : fromIsValid);
+                    }), commandObj.insert = void 0), commandObj.refreshFromBuffer && commandObj.buffer) {
+                        var refresh = commandObj.refreshFromBuffer;
+                        refreshFromBuffer.call(inputmask, !0 === refresh ? refresh : refresh.start, refresh.end, commandObj.buffer), 
+                        commandObj.refreshFromBuffer = void 0;
+                    }
+                    void 0 !== commandObj.rewritePosition && (maskPos = commandObj.rewritePosition, 
+                    commandObj = !0);
+                }
+                return commandObj;
+            }
+            function _isValid(position, c, strict) {
+                var rslt = !1;
+                return _validationTests.getTests.call(inputmask, position).every(function(tst, ndx) {
+                    var test = tst.match;
+                    if (_positioning.getBuffer.call(inputmask, !0), rslt = null != test.fn ? test.fn.test(c, maskset, position, strict, opts, isSelection(pos)) : (c === test.def || c === opts.skipOptionalPartCharacter) && "" !== test.def && {
+                        c: _validationTests.getPlaceholder.call(inputmask, position, test, !0) || test.def,
+                        pos: position
+                    }, !1 === rslt) return !0;
+                    var elem = void 0 !== rslt.c ? rslt.c : c, validatedPos = position;
+                    return elem = elem === opts.skipOptionalPartCharacter && !0 === test.static ? _validationTests.getPlaceholder.call(inputmask, position, test, !0) || test.def : elem, 
+                    rslt = processCommandObject(rslt), !0 !== rslt && void 0 !== rslt.pos && rslt.pos !== position && (validatedPos = rslt.pos), 
+                    !0 !== rslt && void 0 === rslt.pos && void 0 === rslt.c || !1 === revalidateMask.call(inputmask, pos, $.extend({}, tst, {
+                        input: casing.call(inputmask, elem, test, validatedPos)
+                    }), fromIsValid, validatedPos) && (rslt = !1), !1;
+                }), rslt;
+            }
+            void 0 !== pos.begin && (maskPos = inputmask.isRTL ? pos.end : pos.begin);
+            var result = !0, positionsClone = $.extend(!0, {}, maskset.validPositions);
+            if (!1 === opts.keepStatic && void 0 !== maskset.excludes[maskPos] && !0 !== fromAlternate && !0 !== fromIsValid) for (var i = maskPos; i < (inputmask.isRTL ? pos.begin : pos.end); i++) void 0 !== maskset.excludes[i] && (maskset.excludes[i] = void 0, 
+            delete maskset.tests[i]);
+            if ("function" == typeof opts.preValidation && !0 !== fromIsValid && !0 !== validateOnly && (result = opts.preValidation.call(el, _positioning.getBuffer.call(inputmask), maskPos, c, isSelection(pos), opts, maskset, pos, strict || fromAlternate), 
+            result = processCommandObject(result)), !0 === result) {
+                if (void 0 === inputmask.maxLength || maskPos < inputmask.maxLength) {
+                    if (result = _isValid(maskPos, c, strict), (!strict || !0 === fromIsValid) && !1 === result && !0 !== validateOnly) {
+                        var currentPosValid = maskset.validPositions[maskPos];
+                        if (!currentPosValid || !0 !== currentPosValid.match.static || currentPosValid.match.def !== c && c !== opts.skipOptionalPartCharacter) {
+                            if (opts.insertMode || void 0 === maskset.validPositions[_positioning.seekNext.call(inputmask, maskPos)] || pos.end > maskPos) {
+                                var skip = !1;
+                                if (maskset.jitOffset[maskPos] && void 0 === maskset.validPositions[_positioning.seekNext.call(inputmask, maskPos)] && (result = isValid.call(inputmask, maskPos + maskset.jitOffset[maskPos], c, !0), 
+                                !1 !== result && (!0 !== fromAlternate && (result.caret = maskPos), skip = !0)), 
+                                pos.end > maskPos && (maskset.validPositions[maskPos] = void 0), !skip && !_positioning.isMask.call(inputmask, maskPos, opts.keepStatic && 0 === maskPos)) for (var nPos = maskPos + 1, snPos = _positioning.seekNext.call(inputmask, maskPos, !1, 0 !== maskPos); nPos <= snPos; nPos++) if (result = _isValid(nPos, c, strict), 
+                                !1 !== result) {
+                                    result = trackbackPositions.call(inputmask, maskPos, void 0 !== result.pos ? result.pos : nPos) || result, 
+                                    maskPos = nPos;
+                                    break;
+                                }
+                            }
+                        } else result = {
+                            caret: _positioning.seekNext.call(inputmask, maskPos)
+                        };
+                    }
+                } else result = !1;
+                !1 !== result || !opts.keepStatic || !isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && 0 !== maskPos || strict || !0 === fromAlternate ? isSelection(pos) && maskset.tests[maskPos] && 1 < maskset.tests[maskPos].length && opts.keepStatic && !strict && !0 !== fromAlternate && (result = alternate.call(inputmask, !0)) : result = alternate.call(inputmask, maskPos, c, strict, fromIsValid, void 0, pos), 
+                !0 === result && (result = {
+                    pos: maskPos
+                });
+            }
+            if ("function" == typeof opts.postValidation && !0 !== fromIsValid && !0 !== validateOnly) {
+                var postResult = opts.postValidation.call(el, _positioning.getBuffer.call(inputmask, !0), void 0 !== pos.begin ? inputmask.isRTL ? pos.end : pos.begin : pos, c, result, opts, maskset, strict, fromCheckval);
+                void 0 !== postResult && (result = !0 === postResult ? result : postResult);
+            }
+            result && void 0 === result.pos && (result.pos = maskPos), !1 === result || !0 === validateOnly ? (_positioning.resetMaskSet.call(inputmask, !0), 
+            maskset.validPositions = $.extend(!0, {}, positionsClone)) : trackbackPositions.call(inputmask, void 0, maskPos, !0);
+            var endResult = processCommandObject(result);
+            return endResult;
+        }
+        function positionCanMatchDefinition(pos, testDefinition, opts) {
+            for (var inputmask = this, maskset = this.maskset, valid = !1, tests = _validationTests.getTests.call(this, pos), tndx = 0; tndx < tests.length; tndx++) {
+                if (tests[tndx].match && (!(tests[tndx].match.nativeDef !== testDefinition.match[opts.shiftPositions ? "def" : "nativeDef"] || opts.shiftPositions && testDefinition.match.static) || tests[tndx].match.nativeDef === testDefinition.match.nativeDef)) {
+                    valid = !0;
+                    break;
+                }
+                if (tests[tndx].match && tests[tndx].match.def === testDefinition.match.nativeDef) {
+                    valid = void 0;
+                    break;
+                }
+            }
+            return !1 === valid && void 0 !== maskset.jitOffset[pos] && (valid = positionCanMatchDefinition.call(this, pos + maskset.jitOffset[pos], testDefinition, opts)), 
+            valid;
+        }
+        function refreshFromBuffer(start, end, buffer) {
+            var inputmask = this, maskset = this.maskset, opts = this.opts, $ = this.dependencyLib, el = this.el, i, p, skipOptionalPartCharacter = opts.skipOptionalPartCharacter, bffr = this.isRTL ? buffer.slice().reverse() : buffer;
+            if (opts.skipOptionalPartCharacter = "", !0 === start) _positioning.resetMaskSet.call(this), 
+            maskset.tests = {}, start = 0, end = buffer.length, p = _positioning.determineNewCaretPosition.call(this, {
+                begin: 0,
+                end: 0
+            }, !1).begin; else {
+                for (i = start; i < end; i++) delete maskset.validPositions[i];
+                p = start;
+            }
+            var keypress = new $.Event("keypress");
+            for (i = start; i < end; i++) {
+                keypress.which = bffr[i].toString().charCodeAt(0), this.ignorable = !1;
+                var valResult = _eventhandlers.EventHandlers.keypressEvent.call(el, keypress, !0, !1, !1, p);
+                !1 !== valResult && (p = valResult.forwardPosition);
+            }
+            opts.skipOptionalPartCharacter = skipOptionalPartCharacter;
+        }
+        function trackbackPositions(originalPos, newPos, fillOnly) {
+            var inputmask = this, maskset = this.maskset, $ = this.dependencyLib;
+            if (void 0 === originalPos) for (originalPos = newPos - 1; 0 < originalPos && !maskset.validPositions[originalPos]; originalPos--) ;
+            for (var ps = originalPos; ps < newPos; ps++) if (void 0 === maskset.validPositions[ps] && !_positioning.isMask.call(this, ps, !0)) {
+                var vp = 0 == ps ? _validationTests.getTest.call(this, ps) : maskset.validPositions[ps - 1];
+                if (vp) {
+                    var tests = _validationTests.getTests.call(this, ps).slice();
+                    "" === tests[tests.length - 1].match.def && tests.pop();
+                    var bestMatch = _validationTests.determineTestTemplate.call(this, ps, tests), np;
+                    if (bestMatch && (!0 !== bestMatch.match.jit || "master" === bestMatch.match.newBlockMarker && (np = maskset.validPositions[ps + 1]) && !0 === np.match.optionalQuantifier) && (bestMatch = $.extend({}, bestMatch, {
+                        input: _validationTests.getPlaceholder.call(this, ps, bestMatch.match, !0) || bestMatch.match.def
+                    }), bestMatch.generatedInput = !0, revalidateMask.call(this, ps, bestMatch, !0), 
+                    !0 !== fillOnly)) {
+                        var cvpInput = maskset.validPositions[newPos].input;
+                        return maskset.validPositions[newPos] = void 0, isValid.call(this, newPos, cvpInput, !0, !0);
+                    }
+                }
+            }
+        }
+        function revalidateMask(pos, validTest, fromIsValid, validatedPos) {
+            var inputmask = this, maskset = this.maskset, opts = this.opts, $ = this.dependencyLib;
+            function IsEnclosedStatic(pos, valids, selection) {
+                var posMatch = valids[pos];
+                if (void 0 === posMatch || !0 !== posMatch.match.static || !0 === posMatch.match.optionality || void 0 !== valids[0] && void 0 !== valids[0].alternation) return !1;
+                var prevMatch = selection.begin <= pos - 1 ? valids[pos - 1] && !0 === valids[pos - 1].match.static && valids[pos - 1] : valids[pos - 1], nextMatch = selection.end > pos + 1 ? valids[pos + 1] && !0 === valids[pos + 1].match.static && valids[pos + 1] : valids[pos + 1];
+                return prevMatch && nextMatch;
+            }
+            var offset = 0, begin = void 0 !== pos.begin ? pos.begin : pos, end = void 0 !== pos.end ? pos.end : pos;
+            if (pos.begin > pos.end && (begin = pos.end, end = pos.begin), validatedPos = void 0 !== validatedPos ? validatedPos : begin, 
+            begin !== end || opts.insertMode && void 0 !== maskset.validPositions[validatedPos] && void 0 === fromIsValid || void 0 === validTest) {
+                var positionsClone = $.extend(!0, {}, maskset.validPositions), lvp = _positioning.getLastValidPosition.call(this, void 0, !0), i;
+                for (maskset.p = begin, i = lvp; begin <= i; i--) delete maskset.validPositions[i], 
+                void 0 === validTest && delete maskset.tests[i + 1];
+                var valid = !0, j = validatedPos, posMatch = j, t, canMatch;
+                for (validTest && (maskset.validPositions[validatedPos] = $.extend(!0, {}, validTest), 
+                posMatch++, j++), i = validTest ? end : end - 1; i <= lvp; i++) {
+                    if (void 0 !== (t = positionsClone[i]) && !0 !== t.generatedInput && (end <= i || begin <= i && IsEnclosedStatic(i, positionsClone, {
+                        begin: begin,
+                        end: end
+                    }))) {
+                        for (;"" !== _validationTests.getTest.call(this, posMatch).match.def; ) {
+                            if (!1 !== (canMatch = positionCanMatchDefinition.call(this, posMatch, t, opts)) || "+" === t.match.def) {
+                                "+" === t.match.def && _positioning.getBuffer.call(this, !0);
+                                var result = isValid.call(this, posMatch, t.input, "+" !== t.match.def, "+" !== t.match.def);
+                                if (valid = !1 !== result, j = (result.pos || posMatch) + 1, !valid && canMatch) break;
+                            } else valid = !1;
+                            if (valid) {
+                                void 0 === validTest && t.match.static && i === pos.begin && offset++;
+                                break;
+                            }
+                            if (!valid && posMatch > maskset.maskLength) break;
+                            posMatch++;
+                        }
+                        "" == _validationTests.getTest.call(this, posMatch).match.def && (valid = !1), posMatch = j;
+                    }
+                    if (!valid) break;
+                }
+                if (!valid) return maskset.validPositions = $.extend(!0, {}, positionsClone), _positioning.resetMaskSet.call(this, !0), 
+                !1;
+            } else validTest && _validationTests.getTest.call(this, validatedPos).match.cd === validTest.match.cd && (maskset.validPositions[validatedPos] = $.extend(!0, {}, validTest));
+            return _positioning.resetMaskSet.call(this, !0), offset;
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.applyInputValue = applyInputValue, exports.clearOptionalTail = clearOptionalTail, 
+        exports.checkVal = checkVal, exports.HandleNativePlaceholder = HandleNativePlaceholder, 
+        exports.unmaskedvalue = unmaskedvalue, exports.writeBuffer = writeBuffer;
+        var _keycode = _interopRequireDefault(__webpack_require__(0)), _validationTests = __webpack_require__(3), _positioning = __webpack_require__(2), _validation = __webpack_require__(4), _environment = __webpack_require__(8), _eventhandlers = __webpack_require__(7);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function applyInputValue(input, value) {
+            var inputmask = input ? input.inputmask : this, opts = inputmask.opts;
+            input.inputmask.refreshValue = !1, "function" == typeof opts.onBeforeMask && (value = opts.onBeforeMask.call(inputmask, value, opts) || value), 
+            value = value.toString().split(""), checkVal(input, !0, !1, value), inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
+            (opts.clearMaskOnLostFocus || opts.clearIncomplete) && input.inputmask._valueGet() === _positioning.getBufferTemplate.call(inputmask).join("") && -1 === _positioning.getLastValidPosition.call(inputmask) && input.inputmask._valueSet("");
+        }
+        function clearOptionalTail(buffer) {
+            var inputmask = this;
+            buffer.length = 0;
+            for (var template = _validationTests.getMaskTemplate.call(this, !0, 0, !0, void 0, !0), lmnt; void 0 !== (lmnt = template.shift()); ) buffer.push(lmnt);
+            return buffer;
+        }
+        function checkVal(input, writeOut, strict, nptvl, initiatingEvent) {
+            var inputmask = input ? input.inputmask : this, maskset = inputmask.maskset, opts = inputmask.opts, $ = inputmask.dependencyLib, inputValue = nptvl.slice(), charCodes = "", initialNdx = -1, result = void 0, skipOptionalPartCharacter = opts.skipOptionalPartCharacter;
+            function isTemplateMatch(ndx, charCodes) {
+                for (var targetTemplate = _validationTests.getMaskTemplate.call(inputmask, !0, 0).slice(ndx, _positioning.seekNext.call(inputmask, ndx)).join("").replace(/'/g, ""), charCodeNdx = targetTemplate.indexOf(charCodes); 0 < charCodeNdx && " " === targetTemplate[charCodeNdx - 1]; ) charCodeNdx--;
+                var match = 0 === charCodeNdx && !_positioning.isMask.call(inputmask, ndx) && (_validationTests.getTest.call(inputmask, ndx).match.nativeDef === charCodes.charAt(0) || !0 === _validationTests.getTest.call(inputmask, ndx).match.static && _validationTests.getTest.call(inputmask, ndx).match.nativeDef === "'" + charCodes.charAt(0) || " " === _validationTests.getTest.call(inputmask, ndx).match.nativeDef && (_validationTests.getTest.call(inputmask, ndx + 1).match.nativeDef === charCodes.charAt(0) || !0 === _validationTests.getTest.call(inputmask, ndx + 1).match.static && _validationTests.getTest.call(inputmask, ndx + 1).match.nativeDef === "'" + charCodes.charAt(0)));
+                if (!match && 0 < charCodeNdx && !_positioning.isMask.call(inputmask, ndx, !1, !0)) {
+                    var nextPos = _positioning.seekNext.call(inputmask, ndx);
+                    inputmask.caretPos.begin < nextPos && (inputmask.caretPos = {
+                        begin: nextPos
+                    });
+                }
+                return match;
+            }
+            opts.skipOptionalPartCharacter = "", _positioning.resetMaskSet.call(inputmask), 
+            maskset.tests = {}, initialNdx = opts.radixPoint ? _positioning.determineNewCaretPosition.call(inputmask, {
+                begin: 0,
+                end: 0
+            }).begin : 0, maskset.p = initialNdx, inputmask.caretPos = {
+                begin: initialNdx
+            };
+            var staticMatches = [], prevCaretPos = inputmask.caretPos;
+            if (inputValue.forEach(function(charCode, ndx) {
+                if (void 0 !== charCode) if (void 0 === maskset.validPositions[ndx] && inputValue[ndx] === _validationTests.getPlaceholder.call(inputmask, ndx) && _positioning.isMask.call(inputmask, ndx, !0) && !1 === _validation.isValid.call(inputmask, ndx, inputValue[ndx], !0, void 0, void 0, !0)) maskset.p++; else {
+                    var keypress = new $.Event("_checkval");
+                    keypress.which = charCode.toString().charCodeAt(0), charCodes += charCode;
+                    var lvp = _positioning.getLastValidPosition.call(inputmask, void 0, !0);
+                    isTemplateMatch(initialNdx, charCodes) ? result = _eventhandlers.EventHandlers.keypressEvent.call(input || inputmask, keypress, !0, !1, strict, lvp + 1) : (result = _eventhandlers.EventHandlers.keypressEvent.call(input || inputmask, keypress, !0, !1, strict, inputmask.caretPos.begin), 
+                    result && (initialNdx = inputmask.caretPos.begin + 1, charCodes = "")), result ? (void 0 !== result.pos && maskset.validPositions[result.pos] && !0 === maskset.validPositions[result.pos].match.static && void 0 === maskset.validPositions[result.pos].alternation && (staticMatches.push(result.pos), 
+                    inputmask.isRTL || (result.forwardPosition = result.pos + 1)), writeBuffer.call(inputmask, void 0, _positioning.getBuffer.call(inputmask), result.forwardPosition, keypress, !1), 
+                    inputmask.caretPos = {
+                        begin: result.forwardPosition,
+                        end: result.forwardPosition
+                    }, prevCaretPos = inputmask.caretPos) : inputmask.caretPos = prevCaretPos;
+                }
+            }), 0 < staticMatches.length) {
+                var sndx, validPos, nextValid = _positioning.seekNext.call(inputmask, -1, void 0, !1);
+                if (!_validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && staticMatches.length <= nextValid || _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && 0 < staticMatches.length && staticMatches.length !== nextValid && 0 === staticMatches[0]) for (var nextSndx = nextValid; void 0 !== (sndx = staticMatches.shift()); ) {
+                    var keypress = new $.Event("_checkval");
+                    if (validPos = maskset.validPositions[sndx], validPos.generatedInput = !0, keypress.which = validPos.input.charCodeAt(0), 
+                    result = _eventhandlers.EventHandlers.keypressEvent.call(input, keypress, !0, !1, strict, nextSndx), 
+                    result && void 0 !== result.pos && result.pos !== sndx && maskset.validPositions[result.pos] && !0 === maskset.validPositions[result.pos].match.static) staticMatches.push(result.pos); else if (!result) break;
+                    nextSndx++;
+                }
+            }
+            writeOut && writeBuffer.call(inputmask, input, _positioning.getBuffer.call(inputmask), result ? result.forwardPosition : inputmask.caretPos.begin, initiatingEvent || new $.Event("checkval"), initiatingEvent && "input" === initiatingEvent.type && inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("")), 
+            opts.skipOptionalPartCharacter = skipOptionalPartCharacter;
+        }
+        function HandleNativePlaceholder(npt, value) {
+            var inputmask = npt ? npt.inputmask : this;
+            if (_environment.ie) {
+                if (npt.inputmask._valueGet() !== value && (npt.placeholder !== value || "" === npt.placeholder)) {
+                    var buffer = _positioning.getBuffer.call(inputmask).slice(), nptValue = npt.inputmask._valueGet();
+                    if (nptValue !== value) {
+                        var lvp = _positioning.getLastValidPosition.call(inputmask);
+                        -1 === lvp && nptValue === _positioning.getBufferTemplate.call(inputmask).join("") ? buffer = [] : -1 !== lvp && clearOptionalTail.call(inputmask, buffer), 
+                        writeBuffer(npt, buffer);
+                    }
+                }
+            } else npt.placeholder !== value && (npt.placeholder = value, "" === npt.placeholder && npt.removeAttribute("placeholder"));
+        }
+        function unmaskedvalue(input) {
+            var inputmask = input ? input.inputmask : this, opts = inputmask.opts, maskset = inputmask.maskset;
+            if (input) {
+                if (void 0 === input.inputmask) return input.value;
+                input.inputmask && input.inputmask.refreshValue && applyInputValue(input, input.inputmask._valueGet(!0));
+            }
+            var umValue = [], vps = maskset.validPositions;
+            for (var pndx in vps) vps[pndx] && vps[pndx].match && (1 != vps[pndx].match.static || Array.isArray(maskset.metadata) && !0 !== vps[pndx].generatedInput) && umValue.push(vps[pndx].input);
+            var unmaskedValue = 0 === umValue.length ? "" : (inputmask.isRTL ? umValue.reverse() : umValue).join("");
+            if ("function" == typeof opts.onUnMask) {
+                var bufferValue = (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice().reverse() : _positioning.getBuffer.call(inputmask)).join("");
+                unmaskedValue = opts.onUnMask.call(inputmask, bufferValue, unmaskedValue, opts);
+            }
+            return unmaskedValue;
+        }
+        function writeBuffer(input, buffer, caretPos, event, triggerEvents) {
+            var inputmask = input ? input.inputmask : this, opts = inputmask.opts, $ = inputmask.dependencyLib;
+            if (event && "function" == typeof opts.onBeforeWrite) {
+                var result = opts.onBeforeWrite.call(inputmask, event, buffer, caretPos, opts);
+                if (result) {
+                    if (result.refreshFromBuffer) {
+                        var refresh = result.refreshFromBuffer;
+                        _validation.refreshFromBuffer.call(inputmask, !0 === refresh ? refresh : refresh.start, refresh.end, result.buffer || buffer), 
+                        buffer = _positioning.getBuffer.call(inputmask, !0);
+                    }
+                    void 0 !== caretPos && (caretPos = void 0 !== result.caret ? result.caret : caretPos);
+                }
+            }
+            if (void 0 !== input && (input.inputmask._valueSet(buffer.join("")), void 0 === caretPos || void 0 !== event && "blur" === event.type || _positioning.caret.call(inputmask, input, caretPos, void 0, void 0, void 0 !== event && "keydown" === event.type && (event.keyCode === _keycode.default.DELETE || event.keyCode === _keycode.default.BACKSPACE)), 
+            !0 === triggerEvents)) {
+                var $input = $(input), nptVal = input.inputmask._valueGet();
+                input.inputmask.skipInputEvent = !0, $input.trigger("input"), setTimeout(function() {
+                    nptVal === _positioning.getBufferTemplate.call(inputmask).join("") ? $input.trigger("cleared") : !0 === _validation.isComplete.call(inputmask, buffer) && $input.trigger("complete");
+                }, 0);
+            }
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0;
+        var _default = "undefined" != typeof window ? window : new (eval("require('jsdom').JSDOM"))("").window;
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.EventHandlers = void 0;
+        var _positioning = __webpack_require__(2), _keycode = _interopRequireDefault(__webpack_require__(0)), _environment = __webpack_require__(8), _validation = __webpack_require__(4), _inputHandling = __webpack_require__(5), _validationTests = __webpack_require__(3);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var EventHandlers = {
+            keydownEvent: function keydownEvent(e) {
+                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib, maskset = inputmask.maskset, input = this, $input = $(input), k = e.keyCode, pos = _positioning.caret.call(inputmask, input), kdResult = opts.onKeyDown.call(this, e, _positioning.getBuffer.call(inputmask), pos, opts);
+                if (void 0 !== kdResult) return kdResult;
+                if (k === _keycode.default.BACKSPACE || k === _keycode.default.DELETE || _environment.iphone && k === _keycode.default.BACKSPACE_SAFARI || e.ctrlKey && k === _keycode.default.X && !("oncut" in input)) e.preventDefault(), 
+                _validation.handleRemove.call(inputmask, input, k, pos), (0, _inputHandling.writeBuffer)(input, _positioning.getBuffer.call(inputmask, !0), maskset.p, e, input.inputmask._valueGet() !== _positioning.getBuffer.call(inputmask).join("")); else if (k === _keycode.default.END || k === _keycode.default.PAGE_DOWN) {
+                    e.preventDefault();
+                    var caretPos = _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask));
+                    _positioning.caret.call(inputmask, input, e.shiftKey ? pos.begin : caretPos, caretPos, !0);
+                } else k === _keycode.default.HOME && !e.shiftKey || k === _keycode.default.PAGE_UP ? (e.preventDefault(), 
+                _positioning.caret.call(inputmask, input, 0, e.shiftKey ? pos.begin : 0, !0)) : (opts.undoOnEscape && k === _keycode.default.ESCAPE || 90 === k && e.ctrlKey) && !0 !== e.altKey ? ((0, 
+                _inputHandling.checkVal)(input, !0, !1, inputmask.undoValue.split("")), $input.trigger("click")) : !0 === opts.tabThrough && k === _keycode.default.TAB ? !0 === e.shiftKey ? (pos.end = _positioning.seekPrevious.call(inputmask, pos.end, !0), 
+                !0 === _validationTests.getTest.call(inputmask, pos.end - 1).match.static && pos.end--, 
+                pos.begin = _positioning.seekPrevious.call(inputmask, pos.end, !0), 0 <= pos.begin && 0 < pos.end && (e.preventDefault(), 
+                _positioning.caret.call(inputmask, input, pos.begin, pos.end))) : (pos.begin = _positioning.seekNext.call(inputmask, pos.begin, !0), 
+                pos.end = _positioning.seekNext.call(inputmask, pos.begin, !0), pos.end < maskset.maskLength && pos.end--, 
+                pos.begin <= maskset.maskLength && (e.preventDefault(), _positioning.caret.call(inputmask, input, pos.begin, pos.end))) : e.shiftKey || opts.insertModeVisual && !1 === opts.insertMode && (k === _keycode.default.RIGHT ? setTimeout(function() {
+                    var caretPos = _positioning.caret.call(inputmask, input);
+                    _positioning.caret.call(inputmask, input, caretPos.begin);
+                }, 0) : k === _keycode.default.LEFT && setTimeout(function() {
+                    var caretPos_begin = _positioning.translatePosition.call(inputmask, input.inputmask.caretPos.begin), caretPos_end = _positioning.translatePosition.call(inputmask, input.inputmask.caretPos.end);
+                    inputmask.isRTL ? _positioning.caret.call(inputmask, input, caretPos_begin + (caretPos_begin === maskset.maskLength ? 0 : 1)) : _positioning.caret.call(inputmask, input, caretPos_begin - (0 === caretPos_begin ? 0 : 1));
+                }, 0));
+                inputmask.ignorable = opts.ignorables.includes(k);
+            },
+            keypressEvent: function keypressEvent(e, checkval, writeOut, strict, ndx) {
+                var inputmask = this.inputmask || this, opts = inputmask.opts, $ = inputmask.dependencyLib, maskset = inputmask.maskset, input = inputmask.el, $input = $(input), k = e.which || e.charCode || e.keyCode;
+                if (!(!0 === checkval || e.ctrlKey && e.altKey) && (e.ctrlKey || e.metaKey || inputmask.ignorable)) return k === _keycode.default.ENTER && inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && (inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
+                setTimeout(function() {
+                    $input.trigger("change");
+                }, 0)), inputmask.skipInputEvent = !0, !0;
+                if (k) {
+                    44 !== k && 46 !== k || 3 !== e.location || "" === opts.radixPoint || (k = opts.radixPoint.charCodeAt(0));
+                    var pos = checkval ? {
+                        begin: ndx,
+                        end: ndx
+                    } : _positioning.caret.call(inputmask, input), forwardPosition, c = String.fromCharCode(k);
+                    maskset.writeOutBuffer = !0;
+                    var valResult = _validation.isValid.call(inputmask, pos, c, strict, void 0, void 0, void 0, checkval);
+                    if (!1 !== valResult && (_positioning.resetMaskSet.call(inputmask, !0), forwardPosition = void 0 !== valResult.caret ? valResult.caret : _positioning.seekNext.call(inputmask, valResult.pos.begin ? valResult.pos.begin : valResult.pos), 
+                    maskset.p = forwardPosition), forwardPosition = opts.numericInput && void 0 === valResult.caret ? _positioning.seekPrevious.call(inputmask, forwardPosition) : forwardPosition, 
+                    !1 !== writeOut && (setTimeout(function() {
+                        opts.onKeyValidation.call(input, k, valResult);
+                    }, 0), maskset.writeOutBuffer && !1 !== valResult)) {
+                        var buffer = _positioning.getBuffer.call(inputmask);
+                        (0, _inputHandling.writeBuffer)(input, buffer, forwardPosition, e, !0 !== checkval);
+                    }
+                    if (e.preventDefault(), checkval) return !1 !== valResult && (valResult.forwardPosition = forwardPosition), 
+                    valResult;
+                }
+            },
+            keyupEvent: function keyupEvent(e) {
+                var inputmask = this.inputmask;
+                !inputmask.isComposing || e.keyCode !== _keycode.default.KEY_229 && e.keyCode !== _keycode.default.ENTER || inputmask.$el.trigger("input");
+            },
+            pasteEvent: function pasteEvent(e) {
+                var inputmask = this.inputmask, opts = inputmask.opts, input = this, inputValue = inputmask._valueGet(!0), caretPos = _positioning.caret.call(inputmask, this), tempValue;
+                inputmask.isRTL && (tempValue = caretPos.end, caretPos.end = caretPos.begin, caretPos.begin = tempValue);
+                var valueBeforeCaret = inputValue.substr(0, caretPos.begin), valueAfterCaret = inputValue.substr(caretPos.end, inputValue.length);
+                if (valueBeforeCaret == (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).slice(0, caretPos.begin).join("") && (valueBeforeCaret = ""), 
+                valueAfterCaret == (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).slice(caretPos.end).join("") && (valueAfterCaret = ""), 
+                window.clipboardData && window.clipboardData.getData) inputValue = valueBeforeCaret + window.clipboardData.getData("Text") + valueAfterCaret; else {
+                    if (!e.clipboardData || !e.clipboardData.getData) return !0;
+                    inputValue = valueBeforeCaret + e.clipboardData.getData("text/plain") + valueAfterCaret;
+                }
+                var pasteValue = inputValue;
+                if ("function" == typeof opts.onBeforePaste) {
+                    if (pasteValue = opts.onBeforePaste.call(inputmask, inputValue, opts), !1 === pasteValue) return e.preventDefault();
+                    pasteValue = pasteValue || inputValue;
+                }
+                return (0, _inputHandling.checkVal)(this, !0, !1, pasteValue.toString().split(""), e), 
+                e.preventDefault();
+            },
+            inputFallBackEvent: function inputFallBackEvent(e) {
+                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib;
+                function ieMobileHandler(input, inputValue, caretPos) {
+                    if (_environment.iemobile) {
+                        var inputChar = inputValue.replace(_positioning.getBuffer.call(inputmask).join(""), "");
+                        if (1 === inputChar.length) {
+                            var iv = inputValue.split("");
+                            iv.splice(caretPos.begin, 0, inputChar), inputValue = iv.join("");
+                        }
+                    }
+                    return inputValue;
+                }
+                function analyseChanges(inputValue, buffer, caretPos) {
+                    for (var frontPart = inputValue.substr(0, caretPos.begin).split(""), backPart = inputValue.substr(caretPos.begin).split(""), frontBufferPart = buffer.substr(0, caretPos.begin).split(""), backBufferPart = buffer.substr(caretPos.begin).split(""), fpl = frontPart.length >= frontBufferPart.length ? frontPart.length : frontBufferPart.length, bpl = backPart.length >= backBufferPart.length ? backPart.length : backBufferPart.length, bl, i, action = "", data = [], marker = "~", placeholder; frontPart.length < fpl; ) frontPart.push("~");
+                    for (;frontBufferPart.length < fpl; ) frontBufferPart.push("~");
+                    for (;backPart.length < bpl; ) backPart.unshift("~");
+                    for (;backBufferPart.length < bpl; ) backBufferPart.unshift("~");
+                    var newBuffer = frontPart.concat(backPart), oldBuffer = frontBufferPart.concat(backBufferPart);
+                    for (i = 0, bl = newBuffer.length; i < bl; i++) switch (placeholder = _validationTests.getPlaceholder.call(inputmask, _positioning.translatePosition.call(inputmask, i)), 
+                    action) {
+                      case "insertText":
+                        oldBuffer[i - 1] === newBuffer[i] && caretPos.begin == newBuffer.length - 1 && data.push(newBuffer[i]), 
+                        i = bl;
+                        break;
+
+                      case "insertReplacementText":
+                        "~" === newBuffer[i] ? caretPos.end++ : i = bl;
+                        break;
+
+                      case "deleteContentBackward":
+                        "~" === newBuffer[i] ? caretPos.end++ : i = bl;
+                        break;
+
+                      default:
+                        newBuffer[i] !== oldBuffer[i] && ("~" !== newBuffer[i + 1] && newBuffer[i + 1] !== placeholder && void 0 !== newBuffer[i + 1] || (oldBuffer[i] !== placeholder || "~" !== oldBuffer[i + 1]) && "~" !== oldBuffer[i] ? "~" === oldBuffer[i + 1] && oldBuffer[i] === newBuffer[i + 1] ? (action = "insertText", 
+                        data.push(newBuffer[i]), caretPos.begin--, caretPos.end--) : newBuffer[i] !== placeholder && "~" !== newBuffer[i] && ("~" === newBuffer[i + 1] || oldBuffer[i] !== newBuffer[i] && oldBuffer[i + 1] === newBuffer[i + 1]) ? (action = "insertReplacementText", 
+                        data.push(newBuffer[i]), caretPos.begin--) : "~" === newBuffer[i] ? (action = "deleteContentBackward", 
+                        !_positioning.isMask.call(inputmask, _positioning.translatePosition.call(inputmask, i), !0) && oldBuffer[i] !== opts.radixPoint || caretPos.end++) : i = bl : (action = "insertText", 
+                        data.push(newBuffer[i]), caretPos.begin--, caretPos.end--));
+                        break;
+                    }
+                    return {
+                        action: action,
+                        data: data,
+                        caret: caretPos
+                    };
+                }
+                var input = this, inputValue = input.inputmask._valueGet(!0), buffer = (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice().reverse() : _positioning.getBuffer.call(inputmask)).join(""), caretPos = _positioning.caret.call(inputmask, input, void 0, void 0, !0);
+                if (buffer !== inputValue) {
+                    inputValue = ieMobileHandler(input, inputValue, caretPos);
+                    var changes = analyseChanges(inputValue, buffer, caretPos);
+                    switch ((input.inputmask.shadowRoot || document).activeElement !== input && input.focus(), 
+                    (0, _inputHandling.writeBuffer)(input, _positioning.getBuffer.call(inputmask)), 
+                    _positioning.caret.call(inputmask, input, caretPos.begin, caretPos.end, !0), changes.action) {
+                      case "insertText":
+                      case "insertReplacementText":
+                        changes.data.forEach(function(entry, ndx) {
+                            var keypress = new $.Event("keypress");
+                            keypress.which = entry.charCodeAt(0), inputmask.ignorable = !1, EventHandlers.keypressEvent.call(input, keypress);
+                        }), setTimeout(function() {
+                            inputmask.$el.trigger("keyup");
+                        }, 0);
+                        break;
+
+                      case "deleteContentBackward":
+                        var keydown = new $.Event("keydown");
+                        keydown.keyCode = _keycode.default.BACKSPACE, EventHandlers.keydownEvent.call(input, keydown);
+                        break;
+
+                      default:
+                        (0, _inputHandling.applyInputValue)(input, inputValue);
+                        break;
+                    }
+                    e.preventDefault();
+                }
+            },
+            compositionendEvent: function compositionendEvent(e) {
+                var inputmask = this.inputmask;
+                inputmask.isComposing = !1, inputmask.$el.trigger("input");
+            },
+            setValueEvent: function setValueEvent(e, argument_1, argument_2) {
+                var inputmask = this.inputmask, input = this, value = e && e.detail ? e.detail[0] : argument_1;
+                void 0 === value && (value = this.inputmask._valueGet(!0)), (0, _inputHandling.applyInputValue)(this, value), 
+                (e.detail && void 0 !== e.detail[1] || void 0 !== argument_2) && _positioning.caret.call(inputmask, this, e.detail ? e.detail[1] : argument_2);
+            },
+            focusEvent: function focusEvent(e) {
+                var inputmask = this.inputmask, opts = inputmask.opts, input = this, nptValue = this.inputmask._valueGet();
+                opts.showMaskOnFocus && nptValue !== _positioning.getBuffer.call(inputmask).join("") && (0, 
+                _inputHandling.writeBuffer)(this, _positioning.getBuffer.call(inputmask), _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask))), 
+                !0 !== opts.positionCaretOnTab || !1 !== inputmask.mouseEnter || _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && -1 !== _positioning.getLastValidPosition.call(inputmask) || EventHandlers.clickEvent.apply(this, [ e, !0 ]), 
+                inputmask.undoValue = _positioning.getBuffer.call(inputmask).join("");
+            },
+            invalidEvent: function invalidEvent(e) {
+                this.inputmask.validationEvent = !0;
+            },
+            mouseleaveEvent: function mouseleaveEvent() {
+                var inputmask = this.inputmask, opts = inputmask.opts, input = this;
+                inputmask.mouseEnter = !1, opts.clearMaskOnLostFocus && (this.inputmask.shadowRoot || document).activeElement !== this && (0, 
+                _inputHandling.HandleNativePlaceholder)(this, inputmask.originalPlaceholder);
+            },
+            clickEvent: function clickEvent(e, tabbed) {
+                var inputmask = this.inputmask, input = this;
+                if ((this.inputmask.shadowRoot || document).activeElement === this) {
+                    var newCaretPosition = _positioning.determineNewCaretPosition.call(inputmask, _positioning.caret.call(inputmask, this), tabbed);
+                    void 0 !== newCaretPosition && _positioning.caret.call(inputmask, this, newCaretPosition);
+                }
+            },
+            cutEvent: function cutEvent(e) {
+                var inputmask = this.inputmask, maskset = inputmask.maskset, input = this, pos = _positioning.caret.call(inputmask, this), clipboardData = window.clipboardData || e.clipboardData, clipData = inputmask.isRTL ? _positioning.getBuffer.call(inputmask).slice(pos.end, pos.begin) : _positioning.getBuffer.call(inputmask).slice(pos.begin, pos.end);
+                clipboardData.setData("text", inputmask.isRTL ? clipData.reverse().join("") : clipData.join("")), 
+                document.execCommand && document.execCommand("copy"), _validation.handleRemove.call(inputmask, this, _keycode.default.DELETE, pos), 
+                (0, _inputHandling.writeBuffer)(this, _positioning.getBuffer.call(inputmask), maskset.p, e, inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join(""));
+            },
+            blurEvent: function blurEvent(e) {
+                var inputmask = this.inputmask, opts = inputmask.opts, $ = inputmask.dependencyLib, $input = $(this), input = this;
+                if (this.inputmask) {
+                    (0, _inputHandling.HandleNativePlaceholder)(this, inputmask.originalPlaceholder);
+                    var nptValue = this.inputmask._valueGet(), buffer = _positioning.getBuffer.call(inputmask).slice();
+                    "" !== nptValue && (opts.clearMaskOnLostFocus && (-1 === _positioning.getLastValidPosition.call(inputmask) && nptValue === _positioning.getBufferTemplate.call(inputmask).join("") ? buffer = [] : _inputHandling.clearOptionalTail.call(inputmask, buffer)), 
+                    !1 === _validation.isComplete.call(inputmask, buffer) && (setTimeout(function() {
+                        $input.trigger("incomplete");
+                    }, 0), opts.clearIncomplete && (_positioning.resetMaskSet.call(inputmask), buffer = opts.clearMaskOnLostFocus ? [] : _positioning.getBufferTemplate.call(inputmask).slice())), 
+                    (0, _inputHandling.writeBuffer)(this, buffer, void 0, e)), inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && (inputmask.undoValue = _positioning.getBuffer.call(inputmask).join(""), 
+                    $input.trigger("change"));
+                }
+            },
+            mouseenterEvent: function mouseenterEvent() {
+                var inputmask = this.inputmask, opts = inputmask.opts, input = this;
+                inputmask.mouseEnter = !0, (this.inputmask.shadowRoot || document).activeElement !== this && (null == inputmask.originalPlaceholder && this.placeholder !== inputmask.originalPlaceholder && (inputmask.originalPlaceholder = this.placeholder), 
+                opts.showMaskOnHover && (0, _inputHandling.HandleNativePlaceholder)(this, (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).join("")));
+            },
+            submitEvent: function submitEvent() {
+                var inputmask = this.inputmask, opts = inputmask.opts;
+                inputmask.undoValue !== _positioning.getBuffer.call(inputmask).join("") && inputmask.$el.trigger("change"), 
+                opts.clearMaskOnLostFocus && -1 === _positioning.getLastValidPosition.call(inputmask) && inputmask._valueGet && inputmask._valueGet() === _positioning.getBufferTemplate.call(inputmask).join("") && inputmask._valueSet(""), 
+                opts.clearIncomplete && !1 === _validation.isComplete.call(inputmask, _positioning.getBuffer.call(inputmask)) && inputmask._valueSet(""), 
+                opts.removeMaskOnSubmit && (inputmask._valueSet(inputmask.unmaskedvalue(), !0), 
+                setTimeout(function() {
+                    (0, _inputHandling.writeBuffer)(inputmask.el, _positioning.getBuffer.call(inputmask));
+                }, 0));
+            },
+            resetEvent: function resetEvent() {
+                var inputmask = this.inputmask;
+                inputmask.refreshValue = !0, setTimeout(function() {
+                    (0, _inputHandling.applyInputValue)(inputmask.el, inputmask._valueGet(!0));
+                }, 0);
+            }
+        };
+        exports.EventHandlers = EventHandlers;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.iphone = exports.iemobile = exports.mobile = exports.ie = exports.ua = void 0;
+        var ua = window.navigator && window.navigator.userAgent || "", ie = 0 < ua.indexOf("MSIE ") || 0 < ua.indexOf("Trident/"), mobile = "ontouchstart" in window, iemobile = /iemobile/i.test(ua), iphone = /iphone/i.test(ua) && !iemobile;
+        exports.iphone = iphone, exports.iemobile = iemobile, exports.mobile = mobile, exports.ie = ie, 
+        exports.ua = ua;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0;
+        var _extend = _interopRequireDefault(__webpack_require__(13)), _window = _interopRequireDefault(__webpack_require__(6)), _data = _interopRequireDefault(__webpack_require__(17)), _events = __webpack_require__(18);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var document = _window.default.document;
+        function DependencyLib(elem) {
+            return elem instanceof DependencyLib ? elem : this instanceof DependencyLib ? void (null != elem && elem !== _window.default && (this[0] = elem.nodeName ? elem : void 0 !== elem[0] && elem[0].nodeName ? elem[0] : document.querySelector(elem), 
+            void 0 !== this[0] && null !== this[0] && (this[0].eventRegistry = this[0].eventRegistry || {}))) : new DependencyLib(elem);
+        }
+        DependencyLib.prototype = {
+            on: _events.on,
+            off: _events.off,
+            trigger: _events.trigger
+        }, DependencyLib.extend = _extend.default, DependencyLib.data = _data.default, DependencyLib.Event = _events.Event;
+        var _default = DependencyLib;
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        "function" != typeof Object.getPrototypeOf && (Object.getPrototypeOf = "object" === _typeof("test".__proto__) ? function(object) {
+            return object.__proto__;
+        } : function(object) {
+            return object.constructor.prototype;
+        });
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.mask = mask, __webpack_require__(10);
+        var _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _inputHandling = __webpack_require__(5), _eventruler = __webpack_require__(12), _environment = __webpack_require__(8), _validation = __webpack_require__(4), _eventhandlers = __webpack_require__(7);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function mask() {
+            var inputmask = this, opts = this.opts, el = this.el, $ = this.dependencyLib;
+            function isElementTypeSupported(input, opts) {
+                function patchValueProperty(npt) {
+                    var valueGet, valueSet;
+                    function patchValhook(type) {
+                        if ($.valHooks && (void 0 === $.valHooks[type] || !0 !== $.valHooks[type].inputmaskpatch)) {
+                            var valhookGet = $.valHooks[type] && $.valHooks[type].get ? $.valHooks[type].get : function(elem) {
+                                return elem.value;
+                            }, valhookSet = $.valHooks[type] && $.valHooks[type].set ? $.valHooks[type].set : function(elem, value) {
+                                return elem.value = value, elem;
+                            };
+                            $.valHooks[type] = {
+                                get: function get(elem) {
+                                    if (elem.inputmask) {
+                                        if (elem.inputmask.opts.autoUnmask) return elem.inputmask.unmaskedvalue();
+                                        var result = valhookGet(elem);
+                                        return -1 !== _positioning.getLastValidPosition.call(inputmask, void 0, void 0, elem.inputmask.maskset.validPositions) || !0 !== opts.nullable ? result : "";
+                                    }
+                                    return valhookGet(elem);
+                                },
+                                set: function set(elem, value) {
+                                    var result = valhookSet(elem, value);
+                                    return elem.inputmask && (0, _inputHandling.applyInputValue)(elem, value), result;
+                                },
+                                inputmaskpatch: !0
+                            };
+                        }
+                    }
+                    function getter() {
+                        return this.inputmask ? this.inputmask.opts.autoUnmask ? this.inputmask.unmaskedvalue() : -1 !== _positioning.getLastValidPosition.call(inputmask) || !0 !== opts.nullable ? (this.inputmask.shadowRoot || document.activeElement) === this && opts.clearMaskOnLostFocus ? (inputmask.isRTL ? _inputHandling.clearOptionalTail.call(inputmask, _positioning.getBuffer.call(inputmask).slice()).reverse() : _inputHandling.clearOptionalTail.call(inputmask, _positioning.getBuffer.call(inputmask).slice())).join("") : valueGet.call(this) : "" : valueGet.call(this);
+                    }
+                    function setter(value) {
+                        valueSet.call(this, value), this.inputmask && (0, _inputHandling.applyInputValue)(this, value);
+                    }
+                    function installNativeValueSetFallback(npt) {
+                        _eventruler.EventRuler.on(npt, "mouseenter", function() {
+                            var input = this, value = this.inputmask._valueGet(!0);
+                            value !== (inputmask.isRTL ? _positioning.getBuffer.call(inputmask).reverse() : _positioning.getBuffer.call(inputmask)).join("") && (0, 
+                            _inputHandling.applyInputValue)(this, value);
+                        });
+                    }
+                    if (!npt.inputmask.__valueGet) {
+                        if (!0 !== opts.noValuePatching) {
+                            if (Object.getOwnPropertyDescriptor) {
+                                var valueProperty = Object.getPrototypeOf ? Object.getOwnPropertyDescriptor(Object.getPrototypeOf(npt), "value") : void 0;
+                                valueProperty && valueProperty.get && valueProperty.set ? (valueGet = valueProperty.get, 
+                                valueSet = valueProperty.set, Object.defineProperty(npt, "value", {
+                                    get: getter,
+                                    set: setter,
+                                    configurable: !0
+                                })) : "input" !== npt.tagName.toLowerCase() && (valueGet = function valueGet() {
+                                    return this.textContent;
+                                }, valueSet = function valueSet(value) {
+                                    this.textContent = value;
+                                }, Object.defineProperty(npt, "value", {
+                                    get: getter,
+                                    set: setter,
+                                    configurable: !0
+                                }));
+                            } else document.__lookupGetter__ && npt.__lookupGetter__("value") && (valueGet = npt.__lookupGetter__("value"), 
+                            valueSet = npt.__lookupSetter__("value"), npt.__defineGetter__("value", getter), 
+                            npt.__defineSetter__("value", setter));
+                            npt.inputmask.__valueGet = valueGet, npt.inputmask.__valueSet = valueSet;
+                        }
+                        npt.inputmask._valueGet = function(overruleRTL) {
+                            return inputmask.isRTL && !0 !== overruleRTL ? valueGet.call(this.el).split("").reverse().join("") : valueGet.call(this.el);
+                        }, npt.inputmask._valueSet = function(value, overruleRTL) {
+                            valueSet.call(this.el, null == value ? "" : !0 !== overruleRTL && inputmask.isRTL ? value.split("").reverse().join("") : value);
+                        }, void 0 === valueGet && (valueGet = function valueGet() {
+                            return this.value;
+                        }, valueSet = function valueSet(value) {
+                            this.value = value;
+                        }, patchValhook(npt.type), installNativeValueSetFallback(npt));
+                    }
+                }
+                "textarea" !== input.tagName.toLowerCase() && opts.ignorables.push(_keycode.default.ENTER);
+                var elementType = input.getAttribute("type"), isSupported = "input" === input.tagName.toLowerCase() && opts.supportsInputType.includes(elementType) || input.isContentEditable || "textarea" === input.tagName.toLowerCase();
+                if (!isSupported) if ("input" === input.tagName.toLowerCase()) {
+                    var el = document.createElement("input");
+                    el.setAttribute("type", elementType), isSupported = "text" === el.type, el = null;
+                } else isSupported = "partial";
+                return !1 !== isSupported ? patchValueProperty(input) : input.inputmask = void 0, 
+                isSupported;
+            }
+            _eventruler.EventRuler.off(el);
+            var isSupported = isElementTypeSupported(el, opts);
+            if (!1 !== isSupported) {
+                inputmask.originalPlaceholder = el.placeholder, inputmask.maxLength = void 0 !== el ? el.maxLength : void 0, 
+                -1 === inputmask.maxLength && (inputmask.maxLength = void 0), "inputMode" in el && null === el.getAttribute("inputmode") && (el.inputMode = opts.inputmode, 
+                el.setAttribute("inputmode", opts.inputmode)), !0 === isSupported && (opts.showMaskOnFocus = opts.showMaskOnFocus && -1 === [ "cc-number", "cc-exp" ].indexOf(el.autocomplete), 
+                _environment.iphone && (opts.insertModeVisual = !1), _eventruler.EventRuler.on(el, "submit", _eventhandlers.EventHandlers.submitEvent), 
+                _eventruler.EventRuler.on(el, "reset", _eventhandlers.EventHandlers.resetEvent), 
+                _eventruler.EventRuler.on(el, "blur", _eventhandlers.EventHandlers.blurEvent), _eventruler.EventRuler.on(el, "focus", _eventhandlers.EventHandlers.focusEvent), 
+                _eventruler.EventRuler.on(el, "invalid", _eventhandlers.EventHandlers.invalidEvent), 
+                _eventruler.EventRuler.on(el, "click", _eventhandlers.EventHandlers.clickEvent), 
+                _eventruler.EventRuler.on(el, "mouseleave", _eventhandlers.EventHandlers.mouseleaveEvent), 
+                _eventruler.EventRuler.on(el, "mouseenter", _eventhandlers.EventHandlers.mouseenterEvent), 
+                _eventruler.EventRuler.on(el, "paste", _eventhandlers.EventHandlers.pasteEvent), 
+                _eventruler.EventRuler.on(el, "cut", _eventhandlers.EventHandlers.cutEvent), _eventruler.EventRuler.on(el, "complete", opts.oncomplete), 
+                _eventruler.EventRuler.on(el, "incomplete", opts.onincomplete), _eventruler.EventRuler.on(el, "cleared", opts.oncleared), 
+                !0 !== opts.inputEventOnly && (_eventruler.EventRuler.on(el, "keydown", _eventhandlers.EventHandlers.keydownEvent), 
+                _eventruler.EventRuler.on(el, "keypress", _eventhandlers.EventHandlers.keypressEvent), 
+                _eventruler.EventRuler.on(el, "keyup", _eventhandlers.EventHandlers.keyupEvent)), 
+                (_environment.mobile || opts.inputEventOnly) && el.removeAttribute("maxLength"), 
+                _eventruler.EventRuler.on(el, "input", _eventhandlers.EventHandlers.inputFallBackEvent), 
+                _eventruler.EventRuler.on(el, "compositionend", _eventhandlers.EventHandlers.compositionendEvent)), 
+                _eventruler.EventRuler.on(el, "setvalue", _eventhandlers.EventHandlers.setValueEvent), 
+                inputmask.undoValue = _positioning.getBufferTemplate.call(inputmask).join("");
+                var activeElement = (el.inputmask.shadowRoot || document).activeElement;
+                if ("" !== el.inputmask._valueGet(!0) || !1 === opts.clearMaskOnLostFocus || activeElement === el) {
+                    (0, _inputHandling.applyInputValue)(el, el.inputmask._valueGet(!0), opts);
+                    var buffer = _positioning.getBuffer.call(inputmask).slice();
+                    !1 === _validation.isComplete.call(inputmask, buffer) && opts.clearIncomplete && _positioning.resetMaskSet.call(inputmask), 
+                    opts.clearMaskOnLostFocus && activeElement !== el && (-1 === _positioning.getLastValidPosition.call(inputmask) ? buffer = [] : _inputHandling.clearOptionalTail.call(inputmask, buffer)), 
+                    (!1 === opts.clearMaskOnLostFocus || opts.showMaskOnFocus && activeElement === el || "" !== el.inputmask._valueGet(!0)) && (0, 
+                    _inputHandling.writeBuffer)(el, buffer), activeElement === el && _positioning.caret.call(inputmask, el, _positioning.seekNext.call(inputmask, _positioning.getLastValidPosition.call(inputmask)));
+                }
+            }
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.EventRuler = void 0;
+        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _positioning = __webpack_require__(2), _inputHandling = __webpack_require__(5);
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var EventRuler = {
+            on: function on(input, eventName, eventHandler) {
+                var $ = input.inputmask.dependencyLib, ev = function ev(e) {
+                    e.originalEvent && (e = e.originalEvent || e, arguments[0] = e);
+                    var that = this, args, inputmask = that.inputmask, opts = inputmask ? inputmask.opts : void 0, $ = inputmask.dependencyLib;
+                    if (void 0 === inputmask && "FORM" !== this.nodeName) {
+                        var imOpts = $.data(that, "_inputmask_opts");
+                        $(that).off(), imOpts && new _inputmask.default(imOpts).mask(that);
+                    } else {
+                        if ("setvalue" === e.type || "FORM" === this.nodeName || !(that.disabled || that.readOnly && !("keydown" === e.type && e.ctrlKey && 67 === e.keyCode || !1 === opts.tabThrough && e.keyCode === _keycode.default.TAB))) {
+                            switch (e.type) {
+                              case "input":
+                                if (!0 === inputmask.skipInputEvent || e.inputType && "insertCompositionText" === e.inputType) return inputmask.skipInputEvent = !1, 
+                                e.preventDefault();
+                                break;
+
+                              case "keydown":
+                                inputmask.skipKeyPressEvent = !1, inputmask.skipInputEvent = inputmask.isComposing = e.keyCode === _keycode.default.KEY_229;
+                                break;
+
+                              case "keyup":
+                              case "compositionend":
+                                inputmask.isComposing && (inputmask.skipInputEvent = !1);
+                                break;
+
+                              case "keypress":
+                                if (!0 === inputmask.skipKeyPressEvent) return e.preventDefault();
+                                inputmask.skipKeyPressEvent = !0;
+                                break;
+
+                              case "click":
+                              case "focus":
+                                return inputmask.validationEvent ? (inputmask.validationEvent = !1, input.blur(), 
+                                (0, _inputHandling.HandleNativePlaceholder)(input, (inputmask.isRTL ? _positioning.getBufferTemplate.call(inputmask).slice().reverse() : _positioning.getBufferTemplate.call(inputmask)).join("")), 
+                                setTimeout(function() {
+                                    input.focus();
+                                }, 3e3)) : (args = arguments, setTimeout(function() {
+                                    input.inputmask && eventHandler.apply(that, args);
+                                }, 0)), !1;
+                            }
+                            var returnVal = eventHandler.apply(that, arguments);
+                            return !1 === returnVal && (e.preventDefault(), e.stopPropagation()), returnVal;
+                        }
+                        e.preventDefault();
+                    }
+                };
+                input.inputmask.events[eventName] = input.inputmask.events[eventName] || [], input.inputmask.events[eventName].push(ev), 
+                [ "submit", "reset" ].includes(eventName) ? null !== input.form && $(input.form).on(eventName, ev.bind(input)) : $(input).on(eventName, ev);
+            },
+            off: function off(input, event) {
+                if (input.inputmask && input.inputmask.events) {
+                    var $ = input.inputmask.dependencyLib, events = input.inputmask.events;
+                    for (var eventName in event && (events = [], events[event] = input.inputmask.events[event]), 
+                    events) {
+                        for (var evArr = events[eventName]; 0 < evArr.length; ) {
+                            var ev = evArr.pop();
+                            [ "submit", "reset" ].includes(eventName) ? null !== input.form && $(input.form).off(eventName, ev) : $(input).off(eventName, ev);
+                        }
+                        delete input.inputmask.events[eventName];
+                    }
+                }
+            }
+        };
+        exports.EventRuler = EventRuler;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        function extend() {
+            var options, name, src, copy, copyIsArray, clone, target = arguments[0] || {}, i = 1, length = arguments.length, deep = !1;
+            for ("boolean" == typeof target && (deep = target, target = arguments[i] || {}, 
+            i++), "object" !== _typeof(target) && "function" != typeof target && (target = {}); i < length; i++) if (null != (options = arguments[i])) for (name in options) src = target[name], 
+            copy = options[name], target !== copy && (deep && copy && ("[object Object]" === Object.prototype.toString.call(copy) || (copyIsArray = Array.isArray(copy))) ? (clone = copyIsArray ? (copyIsArray = !1, 
+            src && Array.isArray(src) ? src : []) : src && "[object Object]" === Object.prototype.toString.call(src) ? src : {}, 
+            target[name] = extend(deep, clone, copy)) : void 0 !== copy && (target[name] = copy));
+            return target;
+        }
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = extend;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = _default;
+        var escapeRegexRegex = new RegExp("(\\" + [ "/", ".", "*", "+", "?", "|", "(", ")", "[", "]", "{", "}", "\\", "$", "^" ].join("|\\") + ")", "gim");
+        function _default(str) {
+            return str.replace(escapeRegexRegex, "\\$1");
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0, __webpack_require__(16), __webpack_require__(22), 
+        __webpack_require__(23), __webpack_require__(24);
+        var _inputmask2 = _interopRequireDefault(__webpack_require__(1));
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var _default = _inputmask2.default;
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        var _inputmask = _interopRequireDefault(__webpack_require__(1));
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        _inputmask.default.extendDefinitions({
+            A: {
+                validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+                casing: "upper"
+            },
+            "&": {
+                validator: "[0-9A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+                casing: "upper"
+            },
+            "#": {
+                validator: "[0-9A-Fa-f]",
+                casing: "upper"
+            }
+        });
+        var ipValidatorRegex = new RegExp("25[0-5]|2[0-4][0-9]|[01][0-9][0-9]");
+        function ipValidator(chrs, maskset, pos, strict, opts) {
+            return chrs = -1 < pos - 1 && "." !== maskset.buffer[pos - 1] ? (chrs = maskset.buffer[pos - 1] + chrs, 
+            -1 < pos - 2 && "." !== maskset.buffer[pos - 2] ? maskset.buffer[pos - 2] + chrs : "0" + chrs) : "00" + chrs, 
+            ipValidatorRegex.test(chrs);
+        }
+        _inputmask.default.extendAliases({
+            cssunit: {
+                regex: "[+-]?[0-9]+\\.?([0-9]+)?(px|em|rem|ex|%|in|cm|mm|pt|pc)"
+            },
+            url: {
+                regex: "(https?|ftp)://.*",
+                autoUnmask: !1,
+                keepStatic: !1,
+                tabThrough: !0
+            },
+            ip: {
+                mask: "i[i[i]].j[j[j]].k[k[k]].l[l[l]]",
+                definitions: {
+                    i: {
+                        validator: ipValidator
+                    },
+                    j: {
+                        validator: ipValidator
+                    },
+                    k: {
+                        validator: ipValidator
+                    },
+                    l: {
+                        validator: ipValidator
+                    }
+                },
+                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
+                    return maskedValue;
+                },
+                inputmode: "numeric"
+            },
+            email: {
+                mask: "*{1,64}[.*{1,64}][.*{1,64}][.*{1,63}]@-{1,63}.-{1,63}[.-{1,63}][.-{1,63}]",
+                greedy: !1,
+                casing: "lower",
+                onBeforePaste: function onBeforePaste(pastedValue, opts) {
+                    return pastedValue = pastedValue.toLowerCase(), pastedValue.replace("mailto:", "");
+                },
+                definitions: {
+                    "*": {
+                        validator: "[0-9\uff11-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5!#$%&'*+/=?^_`{|}~-]"
+                    },
+                    "-": {
+                        validator: "[0-9A-Za-z-]"
+                    }
+                },
+                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
+                    return maskedValue;
+                },
+                inputmode: "email"
+            },
+            mac: {
+                mask: "##:##:##:##:##:##"
+            },
+            vin: {
+                mask: "V{13}9{4}",
+                definitions: {
+                    V: {
+                        validator: "[A-HJ-NPR-Za-hj-npr-z\\d]",
+                        casing: "upper"
+                    }
+                },
+                clearIncomplete: !0,
+                autoUnmask: !0
+            },
+            ssn: {
+                mask: "999-99-9999",
+                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict) {
+                    return /^(?!219-09-9999|078-05-1120)(?!666|000|9.{2}).{3}-(?!00).{2}-(?!0{4}).{4}$/.test(buffer.join(""));
+                }
+            }
+        });
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function _default(owner, key, value) {
+            if (void 0 === value) return owner.__data ? owner.__data[key] : null;
+            owner.__data = owner.__data || {}, owner.__data[key] = value;
+        }
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.on = on, exports.off = off, exports.trigger = trigger, exports.Event = void 0;
+        var _extend = _interopRequireDefault(__webpack_require__(13)), _window = _interopRequireDefault(__webpack_require__(6)), _inputmask = _interopRequireDefault(__webpack_require__(9)), Event;
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function isValidElement(elem) {
+            return elem instanceof Element;
+        }
+        function on(events, handler) {
+            function addEvent(ev, namespace) {
+                elem.addEventListener ? elem.addEventListener(ev, handler, !1) : elem.attachEvent && elem.attachEvent("on" + ev, handler), 
+                eventRegistry[ev] = eventRegistry[ev] || {}, eventRegistry[ev][namespace] = eventRegistry[ev][namespace] || [], 
+                eventRegistry[ev][namespace].push(handler);
+            }
+            if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = events.split(" "), endx = 0; endx < _events.length; endx++) {
+                var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
+                addEvent(ev, namespace);
+            }
+            return this;
+        }
+        function off(events, handler) {
+            var eventRegistry, elem;
+            function removeEvent(ev, namespace, handler) {
+                if (ev in eventRegistry == !0) if (elem.removeEventListener ? elem.removeEventListener(ev, handler, !1) : elem.detachEvent && elem.detachEvent("on" + ev, handler), 
+                "global" === namespace) for (var nmsp in eventRegistry[ev]) eventRegistry[ev][nmsp].splice(eventRegistry[ev][nmsp].indexOf(handler), 1); else eventRegistry[ev][namespace].splice(eventRegistry[ev][namespace].indexOf(handler), 1);
+            }
+            function resolveNamespace(ev, namespace) {
+                var evts = [], hndx, hndL;
+                if (0 < ev.length) if (void 0 === handler) for (hndx = 0, hndL = eventRegistry[ev][namespace].length; hndx < hndL; hndx++) evts.push({
+                    ev: ev,
+                    namespace: namespace && 0 < namespace.length ? namespace : "global",
+                    handler: eventRegistry[ev][namespace][hndx]
+                }); else evts.push({
+                    ev: ev,
+                    namespace: namespace && 0 < namespace.length ? namespace : "global",
+                    handler: handler
+                }); else if (0 < namespace.length) for (var evNdx in eventRegistry) for (var nmsp in eventRegistry[evNdx]) if (nmsp === namespace) if (void 0 === handler) for (hndx = 0, 
+                hndL = eventRegistry[evNdx][nmsp].length; hndx < hndL; hndx++) evts.push({
+                    ev: evNdx,
+                    namespace: nmsp,
+                    handler: eventRegistry[evNdx][nmsp][hndx]
+                }); else evts.push({
+                    ev: evNdx,
+                    namespace: nmsp,
+                    handler: handler
+                });
+                return evts;
+            }
+            if (isValidElement(this[0])) {
+                eventRegistry = this[0].eventRegistry, elem = this[0];
+                for (var _events = events.split(" "), endx = 0; endx < _events.length; endx++) for (var nsEvent = _events[endx].split("."), offEvents = resolveNamespace(nsEvent[0], nsEvent[1]), i = 0, offEventsL = offEvents.length; i < offEventsL; i++) removeEvent(offEvents[i].ev, offEvents[i].namespace, offEvents[i].handler);
+            }
+            return this;
+        }
+        function trigger(events) {
+            if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = "string" == typeof events ? events.split(" ") : [ events.type ], endx = 0; endx < _events.length; endx++) {
+                var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
+                if (void 0 !== document && "global" === namespace) {
+                    var evnt, i, params = {
+                        bubbles: !0,
+                        cancelable: !0,
+                        detail: arguments[1]
+                    };
+                    if (document.createEvent) {
+                        try {
+                            evnt = new CustomEvent(ev, params);
+                        } catch (e) {
+                            evnt = document.createEvent("CustomEvent"), evnt.initCustomEvent(ev, params.bubbles, params.cancelable, params.detail);
+                        }
+                        events.type && (0, _extend.default)(evnt, events), elem.dispatchEvent(evnt);
+                    } else evnt = document.createEventObject(), evnt.eventType = ev, evnt.detail = arguments[1], 
+                    events.type && (0, _extend.default)(evnt, events), elem.fireEvent("on" + evnt.eventType, evnt);
+                } else if (void 0 !== eventRegistry[ev]) if (arguments[0] = arguments[0].type ? arguments[0] : _inputmask.default.Event(arguments[0]), 
+                arguments[0].detail = arguments.slice(1), "global" === namespace) for (var nmsp in eventRegistry[ev]) for (i = 0; i < eventRegistry[ev][nmsp].length; i++) eventRegistry[ev][nmsp][i].apply(elem, arguments); else for (i = 0; i < eventRegistry[ev][namespace].length; i++) eventRegistry[ev][namespace][i].apply(elem, arguments);
+            }
+            return this;
+        }
+        exports.Event = Event, "function" == typeof _window.default.CustomEvent ? exports.Event = Event = _window.default.CustomEvent : (exports.Event = Event = function Event(event, params) {
+            params = params || {
+                bubbles: !1,
+                cancelable: !1,
+                detail: void 0
+            };
+            var evt = document.createEvent("CustomEvent");
+            return evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail), 
+            evt;
+        }, Event.prototype = _window.default.Event.prototype);
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.generateMaskSet = generateMaskSet, exports.analyseMask = analyseMask;
+        var _inputmask = _interopRequireDefault(__webpack_require__(9));
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function generateMaskSet(opts, nocache) {
+            var ms;
+            function generateMask(mask, metadata, opts) {
+                var regexMask = !1, masksetDefinition, maskdefKey;
+                if (null !== mask && "" !== mask || (regexMask = null !== opts.regex, mask = regexMask ? (mask = opts.regex, 
+                mask.replace(/^(\^)(.*)(\$)$/, "$2")) : (regexMask = !0, ".*")), 1 === mask.length && !1 === opts.greedy && 0 !== opts.repeat && (opts.placeholder = ""), 
+                0 < opts.repeat || "*" === opts.repeat || "+" === opts.repeat) {
+                    var repeatStart = "*" === opts.repeat ? 0 : "+" === opts.repeat ? 1 : opts.repeat;
+                    mask = opts.groupmarker[0] + mask + opts.groupmarker[1] + opts.quantifiermarker[0] + repeatStart + "," + opts.repeat + opts.quantifiermarker[1];
+                }
+                return maskdefKey = regexMask ? "regex_" + opts.regex : opts.numericInput ? mask.split("").reverse().join("") : mask, 
+                !1 !== opts.keepStatic && (maskdefKey = "ks_" + maskdefKey), void 0 === Inputmask.prototype.masksCache[maskdefKey] || !0 === nocache ? (masksetDefinition = {
+                    mask: mask,
+                    maskToken: Inputmask.prototype.analyseMask(mask, regexMask, opts),
+                    validPositions: {},
+                    _buffer: void 0,
+                    buffer: void 0,
+                    tests: {},
+                    excludes: {},
+                    metadata: metadata,
+                    maskLength: void 0,
+                    jitOffset: {}
+                }, !0 !== nocache && (Inputmask.prototype.masksCache[maskdefKey] = masksetDefinition, 
+                masksetDefinition = _inputmask.default.extend(!0, {}, Inputmask.prototype.masksCache[maskdefKey]))) : masksetDefinition = _inputmask.default.extend(!0, {}, Inputmask.prototype.masksCache[maskdefKey]), 
+                masksetDefinition;
+            }
+            if ("function" == typeof opts.mask && (opts.mask = opts.mask(opts)), Array.isArray(opts.mask)) {
+                if (1 < opts.mask.length) {
+                    null === opts.keepStatic && (opts.keepStatic = !0);
+                    var altMask = opts.groupmarker[0];
+                    return (opts.isRTL ? opts.mask.reverse() : opts.mask).forEach(function(msk) {
+                        1 < altMask.length && (altMask += opts.groupmarker[1] + opts.alternatormarker + opts.groupmarker[0]), 
+                        void 0 !== msk.mask && "function" != typeof msk.mask ? altMask += msk.mask : altMask += msk;
+                    }), altMask += opts.groupmarker[1], generateMask(altMask, opts.mask, opts);
+                }
+                opts.mask = opts.mask.pop();
+            }
+            return null === opts.keepStatic && (opts.keepStatic = !1), ms = opts.mask && void 0 !== opts.mask.mask && "function" != typeof opts.mask.mask ? generateMask(opts.mask.mask, opts.mask, opts) : generateMask(opts.mask, opts.mask, opts), 
+            ms;
+        }
+        function analyseMask(mask, regexMask, opts) {
+            var tokenizer = /(?:[?*+]|\{[0-9+*]+(?:,[0-9+*]*)?(?:\|[0-9+*]*)?\})|[^.?*+^${[]()|\\]+|./g, regexTokenizer = /\[\^?]?(?:[^\\\]]+|\\[\S\s]?)*]?|\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|c[A-Za-z]|[\S\s]?)|\((?:\?[:=!]?)?|(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\})\??|[^.?*+^${[()|\\]+|./g, escaped = !1, currentToken = new MaskToken(), match, m, openenings = [], maskTokens = [], openingToken, currentOpeningToken, alternator, lastMatch, closeRegexGroup = !1;
+            function MaskToken(isGroup, isOptional, isQuantifier, isAlternator) {
+                this.matches = [], this.openGroup = isGroup || !1, this.alternatorGroup = !1, this.isGroup = isGroup || !1, 
+                this.isOptional = isOptional || !1, this.isQuantifier = isQuantifier || !1, this.isAlternator = isAlternator || !1, 
+                this.quantifier = {
+                    min: 1,
+                    max: 1
+                };
+            }
+            function insertTestDefinition(mtoken, element, position) {
+                position = void 0 !== position ? position : mtoken.matches.length;
+                var prevMatch = mtoken.matches[position - 1];
+                if (regexMask) 0 === element.indexOf("[") || escaped && /\\d|\\s|\\w]/i.test(element) || "." === element ? mtoken.matches.splice(position++, 0, {
+                    fn: new RegExp(element, opts.casing ? "i" : ""),
+                    static: !1,
+                    optionality: !1,
+                    newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== element,
+                    casing: null,
+                    def: element,
+                    placeholder: void 0,
+                    nativeDef: element
+                }) : (escaped && (element = element[element.length - 1]), element.split("").forEach(function(lmnt, ndx) {
+                    prevMatch = mtoken.matches[position - 1], mtoken.matches.splice(position++, 0, {
+                        fn: /[a-z]/i.test(opts.staticDefinitionSymbol || lmnt) ? new RegExp("[" + (opts.staticDefinitionSymbol || lmnt) + "]", opts.casing ? "i" : "") : null,
+                        static: !0,
+                        optionality: !1,
+                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== lmnt && !0 !== prevMatch.static,
+                        casing: null,
+                        def: opts.staticDefinitionSymbol || lmnt,
+                        placeholder: void 0 !== opts.staticDefinitionSymbol ? lmnt : void 0,
+                        nativeDef: (escaped ? "'" : "") + lmnt
+                    });
+                })), escaped = !1; else {
+                    var maskdef = opts.definitions && opts.definitions[element] || opts.usePrototypeDefinitions && Inputmask.prototype.definitions[element];
+                    maskdef && !escaped ? mtoken.matches.splice(position++, 0, {
+                        fn: maskdef.validator ? "string" == typeof maskdef.validator ? new RegExp(maskdef.validator, opts.casing ? "i" : "") : new function() {
+                            this.test = maskdef.validator;
+                        }() : new RegExp("."),
+                        static: maskdef.static || !1,
+                        optionality: !1,
+                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== (maskdef.definitionSymbol || element),
+                        casing: maskdef.casing,
+                        def: maskdef.definitionSymbol || element,
+                        placeholder: maskdef.placeholder,
+                        nativeDef: element,
+                        generated: maskdef.generated
+                    }) : (mtoken.matches.splice(position++, 0, {
+                        fn: /[a-z]/i.test(opts.staticDefinitionSymbol || element) ? new RegExp("[" + (opts.staticDefinitionSymbol || element) + "]", opts.casing ? "i" : "") : null,
+                        static: !0,
+                        optionality: !1,
+                        newBlockMarker: void 0 === prevMatch ? "master" : prevMatch.def !== element && !0 !== prevMatch.static,
+                        casing: null,
+                        def: opts.staticDefinitionSymbol || element,
+                        placeholder: void 0 !== opts.staticDefinitionSymbol ? element : void 0,
+                        nativeDef: (escaped ? "'" : "") + element
+                    }), escaped = !1);
+                }
+            }
+            function verifyGroupMarker(maskToken) {
+                maskToken && maskToken.matches && maskToken.matches.forEach(function(token, ndx) {
+                    var nextToken = maskToken.matches[ndx + 1];
+                    (void 0 === nextToken || void 0 === nextToken.matches || !1 === nextToken.isQuantifier) && token && token.isGroup && (token.isGroup = !1, 
+                    regexMask || (insertTestDefinition(token, opts.groupmarker[0], 0), !0 !== token.openGroup && insertTestDefinition(token, opts.groupmarker[1]))), 
+                    verifyGroupMarker(token);
+                });
+            }
+            function defaultCase() {
+                if (0 < openenings.length) {
+                    if (currentOpeningToken = openenings[openenings.length - 1], insertTestDefinition(currentOpeningToken, m), 
+                    currentOpeningToken.isAlternator) {
+                        alternator = openenings.pop();
+                        for (var mndx = 0; mndx < alternator.matches.length; mndx++) alternator.matches[mndx].isGroup && (alternator.matches[mndx].isGroup = !1);
+                        0 < openenings.length ? (currentOpeningToken = openenings[openenings.length - 1], 
+                        currentOpeningToken.matches.push(alternator)) : currentToken.matches.push(alternator);
+                    }
+                } else insertTestDefinition(currentToken, m);
+            }
+            function reverseTokens(maskToken) {
+                function reverseStatic(st) {
+                    return st === opts.optionalmarker[0] ? st = opts.optionalmarker[1] : st === opts.optionalmarker[1] ? st = opts.optionalmarker[0] : st === opts.groupmarker[0] ? st = opts.groupmarker[1] : st === opts.groupmarker[1] && (st = opts.groupmarker[0]), 
+                    st;
+                }
+                for (var match in maskToken.matches = maskToken.matches.reverse(), maskToken.matches) if (Object.prototype.hasOwnProperty.call(maskToken.matches, match)) {
+                    var intMatch = parseInt(match);
+                    if (maskToken.matches[match].isQuantifier && maskToken.matches[intMatch + 1] && maskToken.matches[intMatch + 1].isGroup) {
+                        var qt = maskToken.matches[match];
+                        maskToken.matches.splice(match, 1), maskToken.matches.splice(intMatch + 1, 0, qt);
+                    }
+                    void 0 !== maskToken.matches[match].matches ? maskToken.matches[match] = reverseTokens(maskToken.matches[match]) : maskToken.matches[match] = reverseStatic(maskToken.matches[match]);
+                }
+                return maskToken;
+            }
+            function groupify(matches) {
+                var groupToken = new MaskToken(!0);
+                return groupToken.openGroup = !1, groupToken.matches = matches, groupToken;
+            }
+            function closeGroup() {
+                if (openingToken = openenings.pop(), openingToken.openGroup = !1, void 0 !== openingToken) if (0 < openenings.length) {
+                    if (currentOpeningToken = openenings[openenings.length - 1], currentOpeningToken.matches.push(openingToken), 
+                    currentOpeningToken.isAlternator) {
+                        alternator = openenings.pop();
+                        for (var mndx = 0; mndx < alternator.matches.length; mndx++) alternator.matches[mndx].isGroup = !1, 
+                        alternator.matches[mndx].alternatorGroup = !1;
+                        0 < openenings.length ? (currentOpeningToken = openenings[openenings.length - 1], 
+                        currentOpeningToken.matches.push(alternator)) : currentToken.matches.push(alternator);
+                    }
+                } else currentToken.matches.push(openingToken); else defaultCase();
+            }
+            function groupQuantifier(matches) {
+                var lastMatch = matches.pop();
+                return lastMatch.isQuantifier && (lastMatch = groupify([ matches.pop(), lastMatch ])), 
+                lastMatch;
+            }
+            for (regexMask && (opts.optionalmarker[0] = void 0, opts.optionalmarker[1] = void 0); match = regexMask ? regexTokenizer.exec(mask) : tokenizer.exec(mask); ) {
+                if (m = match[0], regexMask) switch (m.charAt(0)) {
+                  case "?":
+                    m = "{0,1}";
+                    break;
+
+                  case "+":
+                  case "*":
+                    m = "{" + m + "}";
+                    break;
+
+                  case "|":
+                    if (0 === openenings.length) {
+                        var altRegexGroup = groupify(currentToken.matches);
+                        altRegexGroup.openGroup = !0, openenings.push(altRegexGroup), currentToken.matches = [], 
+                        closeRegexGroup = !0;
+                    }
+                    break;
+                }
+                if (escaped) defaultCase(); else switch (m.charAt(0)) {
+                  case "$":
+                  case "^":
+                    regexMask || defaultCase();
+                    break;
+
+                  case "(?=":
+                    break;
+
+                  case "(?!":
+                    break;
+
+                  case "(?<=":
+                    break;
+
+                  case "(?<!":
+                    break;
+
+                  case opts.escapeChar:
+                    escaped = !0, regexMask && defaultCase();
+                    break;
+
+                  case opts.optionalmarker[1]:
+                  case opts.groupmarker[1]:
+                    closeGroup();
+                    break;
+
+                  case opts.optionalmarker[0]:
+                    openenings.push(new MaskToken(!1, !0));
+                    break;
+
+                  case opts.groupmarker[0]:
+                    openenings.push(new MaskToken(!0));
+                    break;
+
+                  case opts.quantifiermarker[0]:
+                    var quantifier = new MaskToken(!1, !1, !0);
+                    m = m.replace(/[{}]/g, "");
+                    var mqj = m.split("|"), mq = mqj[0].split(","), mq0 = isNaN(mq[0]) ? mq[0] : parseInt(mq[0]), mq1 = 1 === mq.length ? mq0 : isNaN(mq[1]) ? mq[1] : parseInt(mq[1]);
+                    "*" !== mq0 && "+" !== mq0 || (mq0 = "*" === mq1 ? 0 : 1), quantifier.quantifier = {
+                        min: mq0,
+                        max: mq1,
+                        jit: mqj[1]
+                    };
+                    var matches = 0 < openenings.length ? openenings[openenings.length - 1].matches : currentToken.matches;
+                    if (match = matches.pop(), match.isAlternator) {
+                        matches.push(match), matches = match.matches;
+                        var groupToken = new MaskToken(!0), tmpMatch = matches.pop();
+                        matches.push(groupToken), matches = groupToken.matches, match = tmpMatch;
+                    }
+                    match.isGroup || (match = groupify([ match ])), matches.push(match), matches.push(quantifier);
+                    break;
+
+                  case opts.alternatormarker:
+                    if (0 < openenings.length) {
+                        currentOpeningToken = openenings[openenings.length - 1];
+                        var subToken = currentOpeningToken.matches[currentOpeningToken.matches.length - 1];
+                        lastMatch = currentOpeningToken.openGroup && (void 0 === subToken.matches || !1 === subToken.isGroup && !1 === subToken.isAlternator) ? openenings.pop() : groupQuantifier(currentOpeningToken.matches);
+                    } else lastMatch = groupQuantifier(currentToken.matches);
+                    if (lastMatch.isAlternator) openenings.push(lastMatch); else if (lastMatch.alternatorGroup ? (alternator = openenings.pop(), 
+                    lastMatch.alternatorGroup = !1) : alternator = new MaskToken(!1, !1, !1, !0), alternator.matches.push(lastMatch), 
+                    openenings.push(alternator), lastMatch.openGroup) {
+                        lastMatch.openGroup = !1;
+                        var alternatorGroup = new MaskToken(!0);
+                        alternatorGroup.alternatorGroup = !0, openenings.push(alternatorGroup);
+                    }
+                    break;
+
+                  default:
+                    defaultCase();
+                }
+            }
+            for (closeRegexGroup && closeGroup(); 0 < openenings.length; ) openingToken = openenings.pop(), 
+            currentToken.matches.push(openingToken);
+            return 0 < currentToken.matches.length && (verifyGroupMarker(currentToken), maskTokens.push(currentToken)), 
+            (opts.numericInput || opts.isRTL) && reverseTokens(maskTokens[0]), maskTokens;
+        }
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0;
+        var _default = {
+            9: {
+                validator: "[0-9\uff10-\uff19]",
+                definitionSymbol: "*"
+            },
+            a: {
+                validator: "[A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]",
+                definitionSymbol: "*"
+            },
+            "*": {
+                validator: "[0-9\uff10-\uff19A-Za-z\u0410-\u044f\u0401\u0451\xc0-\xff\xb5]"
+            }
+        };
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = void 0;
+        var _default = {
+            _maxTestPos: 500,
+            placeholder: "_",
+            optionalmarker: [ "[", "]" ],
+            quantifiermarker: [ "{", "}" ],
+            groupmarker: [ "(", ")" ],
+            alternatormarker: "|",
+            escapeChar: "\\",
+            mask: null,
+            regex: null,
+            oncomplete: function oncomplete() {},
+            onincomplete: function onincomplete() {},
+            oncleared: function oncleared() {},
+            repeat: 0,
+            greedy: !1,
+            autoUnmask: !1,
+            removeMaskOnSubmit: !1,
+            clearMaskOnLostFocus: !0,
+            insertMode: !0,
+            insertModeVisual: !0,
+            clearIncomplete: !1,
+            alias: null,
+            onKeyDown: function onKeyDown() {},
+            onBeforeMask: null,
+            onBeforePaste: function onBeforePaste(pastedValue, opts) {
+                return "function" == typeof opts.onBeforeMask ? opts.onBeforeMask.call(this, pastedValue, opts) : pastedValue;
+            },
+            onBeforeWrite: null,
+            onUnMask: null,
+            showMaskOnFocus: !0,
+            showMaskOnHover: !0,
+            onKeyValidation: function onKeyValidation() {},
+            skipOptionalPartCharacter: " ",
+            numericInput: !1,
+            rightAlign: !1,
+            undoOnEscape: !0,
+            radixPoint: "",
+            _radixDance: !1,
+            groupSeparator: "",
+            keepStatic: null,
+            positionCaretOnTab: !0,
+            tabThrough: !1,
+            supportsInputType: [ "text", "tel", "url", "password", "search" ],
+            ignorables: [ 8, 9, 19, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46, 93, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 0, 229 ],
+            isComplete: null,
+            preValidation: null,
+            postValidation: null,
+            staticDefinitionSymbol: void 0,
+            jitMasking: !1,
+            nullable: !0,
+            inputEventOnly: !1,
+            noValuePatching: !1,
+            positionCaretOnClick: "lvp",
+            casing: null,
+            inputmode: "text",
+            importDataAttributes: !0,
+            shiftPositions: !0,
+            usePrototypeDefinitions: !0
+        };
+        exports.default = _default;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _escapeRegex = _interopRequireDefault(__webpack_require__(14));
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var $ = _inputmask.default.dependencyLib, currentYear = new Date().getFullYear(), formatCode = {
+            d: [ "[1-9]|[12][0-9]|3[01]", Date.prototype.setDate, "day", Date.prototype.getDate ],
+            dd: [ "0[1-9]|[12][0-9]|3[01]", Date.prototype.setDate, "day", function() {
+                return pad(Date.prototype.getDate.call(this), 2);
+            } ],
+            ddd: [ "" ],
+            dddd: [ "" ],
+            m: [ "[1-9]|1[012]", Date.prototype.setMonth, "month", function() {
+                return Date.prototype.getMonth.call(this) + 1;
+            } ],
+            mm: [ "0[1-9]|1[012]", Date.prototype.setMonth, "month", function() {
+                return pad(Date.prototype.getMonth.call(this) + 1, 2);
+            } ],
+            mmm: [ "" ],
+            mmmm: [ "" ],
+            yy: [ "[0-9]{2}", Date.prototype.setFullYear, "year", function() {
+                return pad(Date.prototype.getFullYear.call(this), 2);
+            } ],
+            yyyy: [ "[0-9]{4}", Date.prototype.setFullYear, "year", function() {
+                return pad(Date.prototype.getFullYear.call(this), 4);
+            } ],
+            h: [ "[1-9]|1[0-2]", Date.prototype.setHours, "hours", Date.prototype.getHours ],
+            hh: [ "0[1-9]|1[0-2]", Date.prototype.setHours, "hours", function() {
+                return pad(Date.prototype.getHours.call(this), 2);
+            } ],
+            hx: [ function(x) {
+                return "[0-9]{".concat(x, "}");
+            }, Date.prototype.setHours, "hours", function(x) {
+                return Date.prototype.getHours;
+            } ],
+            H: [ "1?[0-9]|2[0-3]", Date.prototype.setHours, "hours", Date.prototype.getHours ],
+            HH: [ "0[0-9]|1[0-9]|2[0-3]", Date.prototype.setHours, "hours", function() {
+                return pad(Date.prototype.getHours.call(this), 2);
+            } ],
+            Hx: [ function(x) {
+                return "[0-9]{".concat(x, "}");
+            }, Date.prototype.setHours, "hours", function(x) {
+                return function() {
+                    return pad(Date.prototype.getHours.call(this), x);
+                };
+            } ],
+            M: [ "[1-5]?[0-9]", Date.prototype.setMinutes, "minutes", Date.prototype.getMinutes ],
+            MM: [ "0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]", Date.prototype.setMinutes, "minutes", function() {
+                return pad(Date.prototype.getMinutes.call(this), 2);
+            } ],
+            s: [ "[1-5]?[0-9]", Date.prototype.setSeconds, "seconds", Date.prototype.getSeconds ],
+            ss: [ "0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]", Date.prototype.setSeconds, "seconds", function() {
+                return pad(Date.prototype.getSeconds.call(this), 2);
+            } ],
+            l: [ "[0-9]{3}", Date.prototype.setMilliseconds, "milliseconds", function() {
+                return pad(Date.prototype.getMilliseconds.call(this), 3);
+            } ],
+            L: [ "[0-9]{2}", Date.prototype.setMilliseconds, "milliseconds", function() {
+                return pad(Date.prototype.getMilliseconds.call(this), 2);
+            } ],
+            t: [ "[ap]" ],
+            tt: [ "[ap]m" ],
+            T: [ "[AP]" ],
+            TT: [ "[AP]M" ],
+            Z: [ "" ],
+            o: [ "" ],
+            S: [ "" ]
+        }, formatAlias = {
+            isoDate: "yyyy-mm-dd",
+            isoTime: "HH:MM:ss",
+            isoDateTime: "yyyy-mm-dd'T'HH:MM:ss",
+            isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
+        };
+        function formatcode(match) {
+            var dynMatches = new RegExp("\\d+$").exec(match[0]);
+            if (dynMatches && void 0 !== dynMatches[0]) {
+                var fcode = formatCode[match[0][0] + "x"].slice("");
+                return fcode[0] = fcode[0](dynMatches[0]), fcode[3] = fcode[3](dynMatches[0]), fcode;
+            }
+            if (formatCode[match[0]]) return formatCode[match[0]];
+        }
+        function getTokenizer(opts) {
+            if (!opts.tokenizer) {
+                var tokens = [], dyntokens = [];
+                for (var ndx in formatCode) if (/\.*x$/.test(ndx)) {
+                    var dynToken = ndx[0] + "\\d+";
+                    -1 === dyntokens.indexOf(dynToken) && dyntokens.push(dynToken);
+                } else -1 === tokens.indexOf(ndx[0]) && tokens.push(ndx[0]);
+                opts.tokenizer = "(" + (0 < dyntokens.length ? dyntokens.join("|") + "|" : "") + tokens.join("+|") + ")+?|.", 
+                opts.tokenizer = new RegExp(opts.tokenizer, "g");
+            }
+            return opts.tokenizer;
+        }
+        function prefillYear(dateParts, currentResult, opts) {
+            if (dateParts.year !== dateParts.rawyear) {
+                var crrntyear = currentYear.toString(), enteredPart = dateParts.rawyear.replace(/[^0-9]/g, ""), currentYearPart = crrntyear.slice(0, enteredPart.length), currentYearNextPart = crrntyear.slice(enteredPart.length);
+                if (2 === enteredPart.length && enteredPart === currentYearPart) {
+                    var entryCurrentYear = new Date(currentYear, dateParts.month - 1, dateParts.day);
+                    dateParts.day == entryCurrentYear.getDate() && (!opts.max || opts.max.date.getTime() >= entryCurrentYear.getTime()) && (dateParts.date.setFullYear(currentYear), 
+                    dateParts.year = crrntyear, currentResult.insert = [ {
+                        pos: currentResult.pos + 1,
+                        c: currentYearNextPart[0]
+                    }, {
+                        pos: currentResult.pos + 2,
+                        c: currentYearNextPart[1]
+                    } ]);
+                }
+            }
+            return currentResult;
+        }
+        function isValidDate(dateParts, currentResult, opts) {
+            if (!isFinite(dateParts.rawday) || "29" == dateParts.day && !isFinite(dateParts.rawyear) || new Date(dateParts.date.getFullYear(), isFinite(dateParts.rawmonth) ? dateParts.month : dateParts.date.getMonth() + 1, 0).getDate() >= dateParts.day) return currentResult;
+            if ("29" == dateParts.day) {
+                var tokenMatch = getTokenMatch(currentResult.pos, opts);
+                if ("yyyy" === tokenMatch.targetMatch[0] && currentResult.pos - tokenMatch.targetMatchIndex == 2) return currentResult.remove = currentResult.pos + 1, 
+                currentResult;
+            }
+            return !1;
+        }
+        function isDateInRange(dateParts, result, opts, maskset, fromCheckval) {
+            if (!result) return result;
+            if (opts.min) {
+                if (dateParts.rawyear) {
+                    var rawYear = dateParts.rawyear.replace(/[^0-9]/g, ""), minYear = opts.min.year.substr(0, rawYear.length), maxYear;
+                    if (rawYear < minYear) {
+                        var tokenMatch = getTokenMatch(result.pos, opts);
+                        if (rawYear = dateParts.rawyear.substr(0, result.pos - tokenMatch.targetMatchIndex + 1), 
+                        minYear = opts.min.year.substr(0, rawYear.length), minYear <= rawYear) return result.remove = tokenMatch.targetMatchIndex + rawYear.length, 
+                        result;
+                        if (rawYear = "yyyy" === tokenMatch.targetMatch[0] ? dateParts.rawyear.substr(1, 1) : dateParts.rawyear.substr(0, 1), 
+                        minYear = opts.min.year.substr(2, 1), maxYear = opts.max ? opts.max.year.substr(2, 1) : rawYear, 
+                        1 === rawYear.length && minYear <= rawYear <= maxYear && !0 !== fromCheckval) return "yyyy" === tokenMatch.targetMatch[0] ? (result.insert = [ {
+                            pos: result.pos + 1,
+                            c: rawYear,
+                            strict: !0
+                        } ], result.caret = result.pos + 2, maskset.validPositions[result.pos].input = opts.min.year[1]) : (result.insert = [ {
+                            pos: result.pos + 1,
+                            c: opts.min.year[1],
+                            strict: !0
+                        }, {
+                            pos: result.pos + 2,
+                            c: rawYear,
+                            strict: !0
+                        } ], result.caret = result.pos + 3, maskset.validPositions[result.pos].input = opts.min.year[0]), 
+                        result;
+                        result = !1;
+                    }
+                }
+                result && dateParts.year && dateParts.year === dateParts.rawyear && opts.min.date.getTime() == opts.min.date.getTime() && (result = opts.min.date.getTime() <= dateParts.date.getTime());
+            }
+            return result && opts.max && opts.max.date.getTime() == opts.max.date.getTime() && (result = opts.max.date.getTime() >= dateParts.date.getTime()), 
+            result;
+        }
+        function parse(format, dateObjValue, opts, raw) {
+            var mask = "", match, fcode;
+            for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(format); ) if (void 0 === dateObjValue) if (fcode = formatcode(match)) mask += "(" + fcode[0] + ")"; else switch (match[0]) {
+              case "[":
+                mask += "(";
+                break;
+
+              case "]":
+                mask += ")?";
+                break;
+
+              default:
+                mask += (0, _escapeRegex.default)(match[0]);
+            } else if (fcode = formatcode(match)) if (!0 !== raw && fcode[3]) {
+                var getFn = fcode[3];
+                mask += getFn.call(dateObjValue.date);
+            } else fcode[2] ? mask += dateObjValue["raw" + fcode[2]] : mask += match[0]; else mask += match[0];
+            return mask;
+        }
+        function pad(val, len) {
+            for (val = String(val), len = len || 2; val.length < len; ) val = "0" + val;
+            return val;
+        }
+        function analyseMask(maskString, format, opts) {
+            var dateObj = {
+                date: new Date(1, 0, 1)
+            }, targetProp, mask = maskString, match, dateOperation;
+            function setValue(dateObj, value, opts) {
+                dateObj[targetProp] = value.replace(/[^0-9]/g, "0"), dateObj["raw" + targetProp] = value, 
+                void 0 !== dateOperation && dateOperation.call(dateObj.date, "month" == targetProp ? parseInt(dateObj[targetProp]) - 1 : dateObj[targetProp]);
+            }
+            if ("string" == typeof mask) {
+                for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(format); ) {
+                    var dynMatches = new RegExp("\\d+$").exec(match[0]), fcode = dynMatches ? match[0][0] + "x" : match[0], value = void 0;
+                    if (dynMatches) {
+                        var lastIndex = getTokenizer(opts).lastIndex, tokanMatch = getTokenMatch(match.index, opts);
+                        getTokenizer(opts).lastIndex = lastIndex, value = mask.slice(0, mask.indexOf(tokanMatch.nextMatch[0]));
+                    } else value = mask.slice(0, fcode.length);
+                    Object.prototype.hasOwnProperty.call(formatCode, fcode) && (targetProp = formatCode[fcode][2], 
+                    dateOperation = formatCode[fcode][1], setValue(dateObj, value, opts)), mask = mask.slice(value.length);
+                }
+                return dateObj;
+            }
+            if (mask && "object" === _typeof(mask) && Object.prototype.hasOwnProperty.call(mask, "date")) return mask;
+        }
+        function importDate(dateObj, opts) {
+            return parse(opts.inputFormat, {
+                date: dateObj
+            }, opts);
+        }
+        function getTokenMatch(pos, opts) {
+            var calcPos = 0, targetMatch, match, matchLength = 0;
+            for (getTokenizer(opts).lastIndex = 0; match = getTokenizer(opts).exec(opts.inputFormat); ) {
+                var dynMatches = new RegExp("\\d+$").exec(match[0]);
+                if (matchLength = dynMatches ? parseInt(dynMatches[0]) : match[0].length, calcPos += matchLength, 
+                pos <= calcPos) {
+                    targetMatch = match, match = getTokenizer(opts).exec(opts.inputFormat);
+                    break;
+                }
+            }
+            return {
+                targetMatchIndex: calcPos - matchLength,
+                nextMatch: match,
+                targetMatch: targetMatch
+            };
+        }
+        _inputmask.default.extendAliases({
+            datetime: {
+                mask: function mask(opts) {
+                    return opts.numericInput = !1, formatCode.S = opts.i18n.ordinalSuffix.join("|"), 
+                    opts.inputFormat = formatAlias[opts.inputFormat] || opts.inputFormat, opts.displayFormat = formatAlias[opts.displayFormat] || opts.displayFormat || opts.inputFormat, 
+                    opts.outputFormat = formatAlias[opts.outputFormat] || opts.outputFormat || opts.inputFormat, 
+                    opts.placeholder = "" !== opts.placeholder ? opts.placeholder : opts.inputFormat.replace(/[[\]]/, ""), 
+                    opts.regex = parse(opts.inputFormat, void 0, opts), opts.min = analyseMask(opts.min, opts.inputFormat, opts), 
+                    opts.max = analyseMask(opts.max, opts.inputFormat, opts), null;
+                },
+                placeholder: "",
+                inputFormat: "isoDateTime",
+                displayFormat: void 0,
+                outputFormat: void 0,
+                min: null,
+                max: null,
+                skipOptionalPartCharacter: "",
+                i18n: {
+                    dayNames: [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+                    monthNames: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+                    ordinalSuffix: [ "st", "nd", "rd", "th" ]
+                },
+                preValidation: function preValidation(buffer, pos, c, isSelection, opts, maskset, caretPos, strict) {
+                    if (strict) return !0;
+                    if (isNaN(c) && buffer[pos] !== c) {
+                        var tokenMatch = getTokenMatch(pos, opts);
+                        if (tokenMatch.nextMatch && tokenMatch.nextMatch[0] === c && 1 < tokenMatch.targetMatch[0].length) {
+                            var validator = formatCode[tokenMatch.targetMatch[0]][0];
+                            if (new RegExp(validator).test("0" + buffer[pos - 1])) return buffer[pos] = buffer[pos - 1], 
+                            buffer[pos - 1] = "0", {
+                                fuzzy: !0,
+                                buffer: buffer,
+                                refreshFromBuffer: {
+                                    start: pos - 1,
+                                    end: pos + 1
+                                },
+                                pos: pos + 1
+                            };
+                        }
+                    }
+                    return !0;
+                },
+                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict, fromCheckval) {
+                    if (strict) return !0;
+                    var tokenMatch, validator;
+                    if (!1 === currentResult) return tokenMatch = getTokenMatch(pos + 1, opts), tokenMatch.targetMatch && tokenMatch.targetMatchIndex === pos && 1 < tokenMatch.targetMatch[0].length && void 0 !== formatCode[tokenMatch.targetMatch[0]] && (validator = formatCode[tokenMatch.targetMatch[0]][0], 
+                    new RegExp(validator).test("0" + c)) ? {
+                        insert: [ {
+                            pos: pos,
+                            c: "0"
+                        }, {
+                            pos: pos + 1,
+                            c: c
+                        } ],
+                        pos: pos + 1
+                    } : currentResult;
+                    if (currentResult.fuzzy && (buffer = currentResult.buffer, pos = currentResult.pos), 
+                    tokenMatch = getTokenMatch(pos, opts), tokenMatch.targetMatch && tokenMatch.targetMatch[0] && void 0 !== formatCode[tokenMatch.targetMatch[0]]) {
+                        validator = formatCode[tokenMatch.targetMatch[0]][0];
+                        var part = buffer.slice(tokenMatch.targetMatchIndex, tokenMatch.targetMatchIndex + tokenMatch.targetMatch[0].length);
+                        !1 === new RegExp(validator).test(part.join("")) && 2 === tokenMatch.targetMatch[0].length && maskset.validPositions[tokenMatch.targetMatchIndex] && maskset.validPositions[tokenMatch.targetMatchIndex + 1] && (maskset.validPositions[tokenMatch.targetMatchIndex + 1].input = "0");
+                    }
+                    var result = currentResult, dateParts = analyseMask(buffer.join(""), opts.inputFormat, opts);
+                    return result && dateParts.date.getTime() == dateParts.date.getTime() && (result = prefillYear(dateParts, result, opts), 
+                    result = isValidDate(dateParts, result, opts), result = isDateInRange(dateParts, result, opts, maskset, fromCheckval)), 
+                    pos && result && currentResult.pos !== pos ? {
+                        buffer: parse(opts.inputFormat, dateParts, opts).split(""),
+                        refreshFromBuffer: {
+                            start: pos,
+                            end: currentResult.pos
+                        }
+                    } : result;
+                },
+                onKeyDown: function onKeyDown(e, buffer, caretPos, opts) {
+                    var input = this;
+                    e.ctrlKey && e.keyCode === _keycode.default.RIGHT && (this.inputmask._valueSet(importDate(new Date(), opts)), 
+                    $(this).trigger("setvalue"));
+                },
+                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
+                    return unmaskedValue ? parse(opts.outputFormat, analyseMask(maskedValue, opts.inputFormat, opts), opts, !0) : unmaskedValue;
+                },
+                casing: function casing(elem, test, pos, validPositions) {
+                    return 0 == test.nativeDef.indexOf("[ap]") ? elem.toLowerCase() : 0 == test.nativeDef.indexOf("[AP]") ? elem.toUpperCase() : elem;
+                },
+                onBeforeMask: function onBeforeMask(initialValue, opts) {
+                    return "[object Date]" === Object.prototype.toString.call(initialValue) && (initialValue = importDate(initialValue, opts)), 
+                    initialValue;
+                },
+                insertMode: !1,
+                shiftPositions: !1,
+                keepStatic: !1,
+                inputmode: "numeric"
+            }
+        });
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        var _inputmask = _interopRequireDefault(__webpack_require__(1)), _keycode = _interopRequireDefault(__webpack_require__(0)), _escapeRegex = _interopRequireDefault(__webpack_require__(14));
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var $ = _inputmask.default.dependencyLib;
+        function autoEscape(txt, opts) {
+            for (var escapedTxt = "", i = 0; i < txt.length; i++) _inputmask.default.prototype.definitions[txt.charAt(i)] || opts.definitions[txt.charAt(i)] || opts.optionalmarker[0] === txt.charAt(i) || opts.optionalmarker[1] === txt.charAt(i) || opts.quantifiermarker[0] === txt.charAt(i) || opts.quantifiermarker[1] === txt.charAt(i) || opts.groupmarker[0] === txt.charAt(i) || opts.groupmarker[1] === txt.charAt(i) || opts.alternatormarker === txt.charAt(i) ? escapedTxt += "\\" + txt.charAt(i) : escapedTxt += txt.charAt(i);
+            return escapedTxt;
+        }
+        function alignDigits(buffer, digits, opts, force) {
+            if (0 < buffer.length && 0 < digits && (!opts.digitsOptional || force)) {
+                var radixPosition = buffer.indexOf(opts.radixPoint), negationBack = !1;
+                opts.negationSymbol.back === buffer[buffer.length - 1] && (negationBack = !0, buffer.length--), 
+                -1 === radixPosition && (buffer.push(opts.radixPoint), radixPosition = buffer.length - 1);
+                for (var i = 1; i <= digits; i++) isFinite(buffer[radixPosition + i]) || (buffer[radixPosition + i] = "0");
+            }
+            return negationBack && buffer.push(opts.negationSymbol.back), buffer;
+        }
+        function findValidator(symbol, maskset) {
+            var posNdx = 0;
+            if ("+" === symbol) {
+                for (posNdx in maskset.validPositions) ;
+                posNdx = parseInt(posNdx);
+            }
+            for (var tstNdx in maskset.tests) if (tstNdx = parseInt(tstNdx), posNdx <= tstNdx) for (var ndx = 0, ndxl = maskset.tests[tstNdx].length; ndx < ndxl; ndx++) if ((void 0 === maskset.validPositions[tstNdx] || "-" === symbol) && maskset.tests[tstNdx][ndx].match.def === symbol) return tstNdx + (void 0 !== maskset.validPositions[tstNdx] && "-" !== symbol ? 1 : 0);
+            return posNdx;
+        }
+        function findValid(symbol, maskset) {
+            var ret = -1;
+            for (var ndx in maskset.validPositions) {
+                var tst = maskset.validPositions[ndx];
+                if (tst && tst.match.def === symbol) {
+                    ret = parseInt(ndx);
+                    break;
+                }
+            }
+            return ret;
+        }
+        function parseMinMaxOptions(opts) {
+            void 0 === opts.parseMinMaxOptions && (null !== opts.min && (opts.min = opts.min.toString().replace(new RegExp((0, 
+            _escapeRegex.default)(opts.groupSeparator), "g"), ""), "," === opts.radixPoint && (opts.min = opts.min.replace(opts.radixPoint, ".")), 
+            opts.min = isFinite(opts.min) ? parseFloat(opts.min) : NaN, isNaN(opts.min) && (opts.min = Number.MIN_VALUE)), 
+            null !== opts.max && (opts.max = opts.max.toString().replace(new RegExp((0, _escapeRegex.default)(opts.groupSeparator), "g"), ""), 
+            "," === opts.radixPoint && (opts.max = opts.max.replace(opts.radixPoint, ".")), 
+            opts.max = isFinite(opts.max) ? parseFloat(opts.max) : NaN, isNaN(opts.max) && (opts.max = Number.MAX_VALUE)), 
+            opts.parseMinMaxOptions = "done");
+        }
+        function genMask(opts) {
+            opts.repeat = 0, opts.groupSeparator === opts.radixPoint && opts.digits && "0" !== opts.digits && ("." === opts.radixPoint ? opts.groupSeparator = "," : "," === opts.radixPoint ? opts.groupSeparator = "." : opts.groupSeparator = ""), 
+            " " === opts.groupSeparator && (opts.skipOptionalPartCharacter = void 0), 1 < opts.placeholder.length && (opts.placeholder = opts.placeholder.charAt(0)), 
+            "radixFocus" === opts.positionCaretOnClick && "" === opts.placeholder && (opts.positionCaretOnClick = "lvp");
+            var decimalDef = "0", radixPointDef = opts.radixPoint;
+            !0 === opts.numericInput && void 0 === opts.__financeInput ? (decimalDef = "1", 
+            opts.positionCaretOnClick = "radixFocus" === opts.positionCaretOnClick ? "lvp" : opts.positionCaretOnClick, 
+            opts.digitsOptional = !1, isNaN(opts.digits) && (opts.digits = 2), opts._radixDance = !1, 
+            radixPointDef = "," === opts.radixPoint ? "?" : "!", "" !== opts.radixPoint && void 0 === opts.definitions[radixPointDef] && (opts.definitions[radixPointDef] = {}, 
+            opts.definitions[radixPointDef].validator = "[" + opts.radixPoint + "]", opts.definitions[radixPointDef].placeholder = opts.radixPoint, 
+            opts.definitions[radixPointDef].static = !0, opts.definitions[radixPointDef].generated = !0)) : (opts.__financeInput = !1, 
+            opts.numericInput = !0);
+            var mask = "[+]", altMask;
+            if (mask += autoEscape(opts.prefix, opts), "" !== opts.groupSeparator ? (void 0 === opts.definitions[opts.groupSeparator] && (opts.definitions[opts.groupSeparator] = {}, 
+            opts.definitions[opts.groupSeparator].validator = "[" + opts.groupSeparator + "]", 
+            opts.definitions[opts.groupSeparator].placeholder = opts.groupSeparator, opts.definitions[opts.groupSeparator].static = !0, 
+            opts.definitions[opts.groupSeparator].generated = !0), mask += opts._mask(opts)) : mask += "9{+}", 
+            void 0 !== opts.digits && 0 !== opts.digits) {
+                var dq = opts.digits.toString().split(",");
+                isFinite(dq[0]) && dq[1] && isFinite(dq[1]) ? mask += radixPointDef + decimalDef + "{" + opts.digits + "}" : (isNaN(opts.digits) || 0 < parseInt(opts.digits)) && (opts.digitsOptional ? (altMask = mask + radixPointDef + decimalDef + "{0," + opts.digits + "}", 
+                opts.keepStatic = !0) : mask += radixPointDef + decimalDef + "{" + opts.digits + "}");
+            }
+            return mask += autoEscape(opts.suffix, opts), mask += "[-]", altMask && (mask = [ altMask + autoEscape(opts.suffix, opts) + "[-]", mask ]), 
+            opts.greedy = !1, parseMinMaxOptions(opts), mask;
+        }
+        function hanndleRadixDance(pos, c, radixPos, maskset, opts) {
+            return opts._radixDance && opts.numericInput && c !== opts.negationSymbol.back && pos <= radixPos && (0 < radixPos || c == opts.radixPoint) && (void 0 === maskset.validPositions[pos - 1] || maskset.validPositions[pos - 1].input !== opts.negationSymbol.back) && (pos -= 1), 
+            pos;
+        }
+        function decimalValidator(chrs, maskset, pos, strict, opts) {
+            var radixPos = maskset.buffer ? maskset.buffer.indexOf(opts.radixPoint) : -1, result = -1 !== radixPos && new RegExp("[0-9\uff11-\uff19]").test(chrs);
+            return opts._radixDance && result && null == maskset.validPositions[radixPos] ? {
+                insert: {
+                    pos: radixPos === pos ? radixPos + 1 : radixPos,
+                    c: opts.radixPoint
+                },
+                pos: pos
+            } : result;
+        }
+        function checkForLeadingZeroes(buffer, opts) {
+            var numberMatches = new RegExp("(^" + ("" !== opts.negationSymbol.front ? (0, _escapeRegex.default)(opts.negationSymbol.front) + "?" : "") + (0, 
+            _escapeRegex.default)(opts.prefix) + ")(.*)(" + (0, _escapeRegex.default)(opts.suffix) + ("" != opts.negationSymbol.back ? (0, 
+            _escapeRegex.default)(opts.negationSymbol.back) + "?" : "") + "$)").exec(buffer.slice().reverse().join("")), number = numberMatches ? numberMatches[2] : "", leadingzeroes = !1;
+            return number && (number = number.split(opts.radixPoint.charAt(0))[0], leadingzeroes = new RegExp("^[0" + opts.groupSeparator + "]*").exec(number)), 
+            !(!leadingzeroes || !(1 < leadingzeroes[0].length || 0 < leadingzeroes[0].length && leadingzeroes[0].length < number.length)) && leadingzeroes;
+        }
+        _inputmask.default.extendAliases({
+            numeric: {
+                mask: genMask,
+                _mask: function _mask(opts) {
+                    return "(" + opts.groupSeparator + "999){+|1}";
+                },
+                digits: "*",
+                digitsOptional: !0,
+                enforceDigitsOnBlur: !1,
+                radixPoint: ".",
+                positionCaretOnClick: "radixFocus",
+                _radixDance: !0,
+                groupSeparator: "",
+                allowMinus: !0,
+                negationSymbol: {
+                    front: "-",
+                    back: ""
+                },
+                prefix: "",
+                suffix: "",
+                min: null,
+                max: null,
+                SetMaxOnOverflow: !1,
+                step: 1,
+                inputType: "text",
+                unmaskAsNumber: !1,
+                roundingFN: Math.round,
+                inputmode: "numeric",
+                shortcuts: {
+                    k: "000",
+                    m: "000000"
+                },
+                placeholder: "0",
+                greedy: !1,
+                rightAlign: !0,
+                insertMode: !0,
+                autoUnmask: !1,
+                skipOptionalPartCharacter: "",
+                definitions: {
+                    0: {
+                        validator: decimalValidator
+                    },
+                    1: {
+                        validator: decimalValidator,
+                        definitionSymbol: "9"
+                    },
+                    "+": {
+                        validator: function validator(chrs, maskset, pos, strict, opts) {
+                            return opts.allowMinus && ("-" === chrs || chrs === opts.negationSymbol.front);
+                        }
+                    },
+                    "-": {
+                        validator: function validator(chrs, maskset, pos, strict, opts) {
+                            return opts.allowMinus && chrs === opts.negationSymbol.back;
+                        }
+                    }
+                },
+                preValidation: function preValidation(buffer, pos, c, isSelection, opts, maskset, caretPos, strict) {
+                    if (!1 !== opts.__financeInput && c === opts.radixPoint) return !1;
+                    var pattern;
+                    if (pattern = opts.shortcuts && opts.shortcuts[c]) {
+                        if (1 < pattern.length) for (var inserts = [], i = 0; i < pattern.length; i++) inserts.push({
+                            pos: pos + i,
+                            c: pattern[i],
+                            strict: !1
+                        });
+                        return {
+                            insert: inserts
+                        };
+                    }
+                    var radixPos = buffer.indexOf(opts.radixPoint), initPos = pos;
+                    if (pos = hanndleRadixDance(pos, c, radixPos, maskset, opts), "-" === c || c === opts.negationSymbol.front) {
+                        if (!0 !== opts.allowMinus) return !1;
+                        var isNegative = !1, front = findValid("+", maskset), back = findValid("-", maskset);
+                        return -1 !== front && (isNegative = [ front, back ]), !1 !== isNegative ? {
+                            remove: isNegative,
+                            caret: initPos - opts.negationSymbol.front.length
+                        } : {
+                            insert: [ {
+                                pos: findValidator("+", maskset),
+                                c: opts.negationSymbol.front,
+                                fromIsValid: !0
+                            }, {
+                                pos: findValidator("-", maskset),
+                                c: opts.negationSymbol.back,
+                                fromIsValid: void 0
+                            } ],
+                            caret: initPos + opts.negationSymbol.back.length
+                        };
+                    }
+                    if (c === opts.groupSeparator) return {
+                        caret: initPos
+                    };
+                    if (strict) return !0;
+                    if (-1 !== radixPos && !0 === opts._radixDance && !1 === isSelection && c === opts.radixPoint && void 0 !== opts.digits && (isNaN(opts.digits) || 0 < parseInt(opts.digits)) && radixPos !== pos) return {
+                        caret: opts._radixDance && pos === radixPos - 1 ? radixPos + 1 : radixPos
+                    };
+                    if (!1 === opts.__financeInput) if (isSelection) {
+                        if (opts.digitsOptional) return {
+                            rewritePosition: caretPos.end
+                        };
+                        if (!opts.digitsOptional) {
+                            if (caretPos.begin > radixPos && caretPos.end <= radixPos) return c === opts.radixPoint ? {
+                                insert: {
+                                    pos: radixPos + 1,
+                                    c: "0",
+                                    fromIsValid: !0
+                                },
+                                rewritePosition: radixPos
+                            } : {
+                                rewritePosition: radixPos + 1
+                            };
+                            if (caretPos.begin < radixPos) return {
+                                rewritePosition: caretPos.begin - 1
+                            };
+                        }
+                    } else if (!opts.showMaskOnHover && !opts.showMaskOnFocus && !opts.digitsOptional && 0 < opts.digits && "" === this.inputmask.__valueGet.call(this)) return {
+                        rewritePosition: radixPos
+                    };
+                    return {
+                        rewritePosition: pos
+                    };
+                },
+                postValidation: function postValidation(buffer, pos, c, currentResult, opts, maskset, strict) {
+                    if (!1 === currentResult) return currentResult;
+                    if (strict) return !0;
+                    if (null !== opts.min || null !== opts.max) {
+                        var unmasked = opts.onUnMask(buffer.slice().reverse().join(""), void 0, $.extend({}, opts, {
+                            unmaskAsNumber: !0
+                        }));
+                        if (null !== opts.min && unmasked < opts.min && (unmasked.toString().length > opts.min.toString().length || unmasked < 0)) return !1;
+                        if (null !== opts.max && unmasked > opts.max) return !!opts.SetMaxOnOverflow && {
+                            refreshFromBuffer: !0,
+                            buffer: alignDigits(opts.max.toString().replace(".", opts.radixPoint).split(""), opts.digits, opts).reverse()
+                        };
+                    }
+                    return currentResult;
+                },
+                onUnMask: function onUnMask(maskedValue, unmaskedValue, opts) {
+                    if ("" === unmaskedValue && !0 === opts.nullable) return unmaskedValue;
+                    var processValue = maskedValue.replace(opts.prefix, "");
+                    return processValue = processValue.replace(opts.suffix, ""), processValue = processValue.replace(new RegExp((0, 
+                    _escapeRegex.default)(opts.groupSeparator), "g"), ""), "" !== opts.placeholder.charAt(0) && (processValue = processValue.replace(new RegExp(opts.placeholder.charAt(0), "g"), "0")), 
+                    opts.unmaskAsNumber ? ("" !== opts.radixPoint && -1 !== processValue.indexOf(opts.radixPoint) && (processValue = processValue.replace(_escapeRegex.default.call(this, opts.radixPoint), ".")), 
+                    processValue = processValue.replace(new RegExp("^" + (0, _escapeRegex.default)(opts.negationSymbol.front)), "-"), 
+                    processValue = processValue.replace(new RegExp((0, _escapeRegex.default)(opts.negationSymbol.back) + "$"), ""), 
+                    Number(processValue)) : processValue;
+                },
+                isComplete: function isComplete(buffer, opts) {
+                    var maskedValue = (opts.numericInput ? buffer.slice().reverse() : buffer).join("");
+                    return maskedValue = maskedValue.replace(new RegExp("^" + (0, _escapeRegex.default)(opts.negationSymbol.front)), "-"), 
+                    maskedValue = maskedValue.replace(new RegExp((0, _escapeRegex.default)(opts.negationSymbol.back) + "$"), ""), 
+                    maskedValue = maskedValue.replace(opts.prefix, ""), maskedValue = maskedValue.replace(opts.suffix, ""), 
+                    maskedValue = maskedValue.replace(new RegExp((0, _escapeRegex.default)(opts.groupSeparator) + "([0-9]{3})", "g"), "$1"), 
+                    "," === opts.radixPoint && (maskedValue = maskedValue.replace((0, _escapeRegex.default)(opts.radixPoint), ".")), 
+                    isFinite(maskedValue);
+                },
+                onBeforeMask: function onBeforeMask(initialValue, opts) {
+                    var radixPoint = opts.radixPoint || ",";
+                    isFinite(opts.digits) && (opts.digits = parseInt(opts.digits)), "number" != typeof initialValue && "number" !== opts.inputType || "" === radixPoint || (initialValue = initialValue.toString().replace(".", radixPoint));
+                    var isNagtive = "-" === initialValue.charAt(0) || initialValue.charAt(0) === opts.negationSymbol.front, valueParts = initialValue.split(radixPoint), integerPart = valueParts[0].replace(/[^\-0-9]/g, ""), decimalPart = 1 < valueParts.length ? valueParts[1].replace(/[^0-9]/g, "") : "", forceDigits = 1 < valueParts.length;
+                    initialValue = integerPart + ("" !== decimalPart ? radixPoint + decimalPart : decimalPart);
+                    var digits = 0;
+                    if ("" !== radixPoint && (digits = opts.digitsOptional ? opts.digits < decimalPart.length ? opts.digits : decimalPart.length : opts.digits, 
+                    "" !== decimalPart || !opts.digitsOptional)) {
+                        var digitsFactor = Math.pow(10, digits || 1);
+                        initialValue = initialValue.replace((0, _escapeRegex.default)(radixPoint), "."), 
+                        isNaN(parseFloat(initialValue)) || (initialValue = (opts.roundingFN(parseFloat(initialValue) * digitsFactor) / digitsFactor).toFixed(digits)), 
+                        initialValue = initialValue.toString().replace(".", radixPoint);
+                    }
+                    if (0 === opts.digits && -1 !== initialValue.indexOf(radixPoint) && (initialValue = initialValue.substring(0, initialValue.indexOf(radixPoint))), 
+                    null !== opts.min || null !== opts.max) {
+                        var numberValue = initialValue.toString().replace(radixPoint, ".");
+                        null !== opts.min && numberValue < opts.min ? initialValue = opts.min.toString().replace(".", radixPoint) : null !== opts.max && numberValue > opts.max && (initialValue = opts.max.toString().replace(".", radixPoint));
+                    }
+                    return isNagtive && "-" !== initialValue.charAt(0) && (initialValue = "-" + initialValue), 
+                    alignDigits(initialValue.toString().split(""), digits, opts, forceDigits).join("");
+                },
+                onBeforeWrite: function onBeforeWrite(e, buffer, caretPos, opts) {
+                    function stripBuffer(buffer, stripRadix) {
+                        if (!1 !== opts.__financeInput || stripRadix) {
+                            var position = buffer.indexOf(opts.radixPoint);
+                            -1 !== position && buffer.splice(position, 1);
+                        }
+                        if ("" !== opts.groupSeparator) for (;-1 !== (position = buffer.indexOf(opts.groupSeparator)); ) buffer.splice(position, 1);
+                        return buffer;
+                    }
+                    var result, leadingzeroes = checkForLeadingZeroes(buffer, opts);
+                    if (leadingzeroes) for (var caretNdx = buffer.join("").lastIndexOf(leadingzeroes[0].split("").reverse().join("")) - (leadingzeroes[0] == leadingzeroes.input ? 0 : 1), offset = leadingzeroes[0] == leadingzeroes.input ? 1 : 0, i = leadingzeroes[0].length - offset; 0 < i; i--) delete this.maskset.validPositions[caretNdx + i], 
+                    delete buffer[caretNdx + i];
+                    if (e) switch (e.type) {
+                      case "blur":
+                      case "checkval":
+                        if (null !== opts.min) {
+                            var unmasked = opts.onUnMask(buffer.slice().reverse().join(""), void 0, $.extend({}, opts, {
+                                unmaskAsNumber: !0
+                            }));
+                            if (null !== opts.min && unmasked < opts.min) return {
+                                refreshFromBuffer: !0,
+                                buffer: alignDigits(opts.min.toString().replace(".", opts.radixPoint).split(""), opts.digits, opts).reverse()
+                            };
+                        }
+                        if (buffer[buffer.length - 1] === opts.negationSymbol.front) {
+                            var nmbrMtchs = new RegExp("(^" + ("" != opts.negationSymbol.front ? (0, _escapeRegex.default)(opts.negationSymbol.front) + "?" : "") + (0, 
+                            _escapeRegex.default)(opts.prefix) + ")(.*)(" + (0, _escapeRegex.default)(opts.suffix) + ("" != opts.negationSymbol.back ? (0, 
+                            _escapeRegex.default)(opts.negationSymbol.back) + "?" : "") + "$)").exec(stripBuffer(buffer.slice(), !0).reverse().join("")), number = nmbrMtchs ? nmbrMtchs[2] : "";
+                            0 == number && (result = {
+                                refreshFromBuffer: !0,
+                                buffer: [ 0 ]
+                            });
+                        } else "" !== opts.radixPoint && buffer[0] === opts.radixPoint && (result && result.buffer ? result.buffer.shift() : (buffer.shift(), 
+                        result = {
+                            refreshFromBuffer: !0,
+                            buffer: stripBuffer(buffer)
+                        }));
+                        if (opts.enforceDigitsOnBlur) {
+                            result = result || {};
+                            var bffr = result && result.buffer || buffer.slice().reverse();
+                            result.refreshFromBuffer = !0, result.buffer = alignDigits(bffr, opts.digits, opts, !0).reverse();
+                        }
+                    }
+                    return result;
+                },
+                onKeyDown: function onKeyDown(e, buffer, caretPos, opts) {
+                    var $input = $(this), bffr;
+                    if (e.ctrlKey) switch (e.keyCode) {
+                      case _keycode.default.UP:
+                        return this.inputmask.__valueSet.call(this, parseFloat(this.inputmask.unmaskedvalue()) + parseInt(opts.step)), 
+                        $input.trigger("setvalue"), !1;
+
+                      case _keycode.default.DOWN:
+                        return this.inputmask.__valueSet.call(this, parseFloat(this.inputmask.unmaskedvalue()) - parseInt(opts.step)), 
+                        $input.trigger("setvalue"), !1;
+                    }
+                    if (!e.shiftKey && (e.keyCode === _keycode.default.DELETE || e.keyCode === _keycode.default.BACKSPACE || e.keyCode === _keycode.default.BACKSPACE_SAFARI) && caretPos.begin !== buffer.length) {
+                        if (buffer[e.keyCode === _keycode.default.DELETE ? caretPos.begin - 1 : caretPos.end] === opts.negationSymbol.front) return bffr = buffer.slice().reverse(), 
+                        "" !== opts.negationSymbol.front && bffr.shift(), "" !== opts.negationSymbol.back && bffr.pop(), 
+                        $input.trigger("setvalue", [ bffr.join(""), caretPos.begin ]), !1;
+                        if (!0 === opts._radixDance) {
+                            var radixPos = buffer.indexOf(opts.radixPoint);
+                            if (opts.digitsOptional) {
+                                if (0 === radixPos) return bffr = buffer.slice().reverse(), bffr.pop(), $input.trigger("setvalue", [ bffr.join(""), caretPos.begin >= bffr.length ? bffr.length : caretPos.begin ]), 
+                                !1;
+                            } else if (-1 !== radixPos && (caretPos.begin < radixPos || caretPos.end < radixPos || e.keyCode === _keycode.default.DELETE && caretPos.begin === radixPos)) return caretPos.begin !== caretPos.end || e.keyCode !== _keycode.default.BACKSPACE && e.keyCode !== _keycode.default.BACKSPACE_SAFARI || caretPos.begin++, 
+                            bffr = buffer.slice().reverse(), bffr.splice(bffr.length - caretPos.begin, caretPos.begin - caretPos.end + 1), 
+                            bffr = alignDigits(bffr, opts.digits, opts).join(""), $input.trigger("setvalue", [ bffr, caretPos.begin >= bffr.length ? radixPos + 1 : caretPos.begin ]), 
+                            !1;
+                        }
+                    }
+                }
+            },
+            currency: {
+                prefix: "",
+                groupSeparator: ",",
+                alias: "numeric",
+                digits: 2,
+                digitsOptional: !1
+            },
+            decimal: {
+                alias: "numeric"
+            },
+            integer: {
+                alias: "numeric",
+                digits: 0
+            },
+            percentage: {
+                alias: "numeric",
+                min: 0,
+                max: 100,
+                suffix: " %",
+                digits: 0,
+                allowMinus: !1
+            },
+            indianns: {
+                alias: "numeric",
+                _mask: function _mask(opts) {
+                    return "(" + opts.groupSeparator + "99){*|1}(" + opts.groupSeparator + "999){1|1}";
+                },
+                groupSeparator: ",",
+                radixPoint: ".",
+                placeholder: "0",
+                digits: 2,
+                digitsOptional: !1
+            }
+        });
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        var _window = _interopRequireDefault(__webpack_require__(6)), _inputmask = _interopRequireDefault(__webpack_require__(1));
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+        }
+        function _inherits(subClass, superClass) {
+            if ("function" != typeof superClass && null !== superClass) throw new TypeError("Super expression must either be null or a function");
+            subClass.prototype = Object.create(superClass && superClass.prototype, {
+                constructor: {
+                    value: subClass,
+                    writable: !0,
+                    configurable: !0
+                }
+            }), superClass && _setPrototypeOf(subClass, superClass);
+        }
+        function _createSuper(Derived) {
+            var hasNativeReflectConstruct = _isNativeReflectConstruct();
+            return function _createSuperInternal() {
+                var Super = _getPrototypeOf(Derived), result;
+                if (hasNativeReflectConstruct) {
+                    var NewTarget = _getPrototypeOf(this).constructor;
+                    result = Reflect.construct(Super, arguments, NewTarget);
+                } else result = Super.apply(this, arguments);
+                return _possibleConstructorReturn(this, result);
+            };
+        }
+        function _possibleConstructorReturn(self, call) {
+            return !call || "object" !== _typeof(call) && "function" != typeof call ? _assertThisInitialized(self) : call;
+        }
+        function _assertThisInitialized(self) {
+            if (void 0 === self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return self;
+        }
+        function _wrapNativeSuper(Class) {
+            var _cache = "function" == typeof Map ? new Map() : void 0;
+            return _wrapNativeSuper = function _wrapNativeSuper(Class) {
+                if (null === Class || !_isNativeFunction(Class)) return Class;
+                if ("function" != typeof Class) throw new TypeError("Super expression must either be null or a function");
+                if ("undefined" != typeof _cache) {
+                    if (_cache.has(Class)) return _cache.get(Class);
+                    _cache.set(Class, Wrapper);
+                }
+                function Wrapper() {
+                    return _construct(Class, arguments, _getPrototypeOf(this).constructor);
+                }
+                return Wrapper.prototype = Object.create(Class.prototype, {
+                    constructor: {
+                        value: Wrapper,
+                        enumerable: !1,
+                        writable: !0,
+                        configurable: !0
+                    }
+                }), _setPrototypeOf(Wrapper, Class);
+            }, _wrapNativeSuper(Class);
+        }
+        function _construct(Parent, args, Class) {
+            return _construct = _isNativeReflectConstruct() ? Reflect.construct : function _construct(Parent, args, Class) {
+                var a = [ null ];
+                a.push.apply(a, args);
+                var Constructor = Function.bind.apply(Parent, a), instance = new Constructor();
+                return Class && _setPrototypeOf(instance, Class.prototype), instance;
+            }, _construct.apply(null, arguments);
+        }
+        function _isNativeReflectConstruct() {
+            if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
+            if (Reflect.construct.sham) return !1;
+            if ("function" == typeof Proxy) return !0;
+            try {
+                return Date.prototype.toString.call(Reflect.construct(Date, [], function() {})), 
+                !0;
+            } catch (e) {
+                return !1;
+            }
+        }
+        function _isNativeFunction(fn) {
+            return -1 !== Function.toString.call(fn).indexOf("[native code]");
+        }
+        function _setPrototypeOf(o, p) {
+            return _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+                return o.__proto__ = p, o;
+            }, _setPrototypeOf(o, p);
+        }
+        function _getPrototypeOf(o) {
+            return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+                return o.__proto__ || Object.getPrototypeOf(o);
+            }, _getPrototypeOf(o);
+        }
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        var document = _window.default.document;
+        if (document && document.head && document.head.attachShadow && _window.default.customElements && void 0 === _window.default.customElements.get("input-mask")) {
+            var InputmaskElement = function(_HTMLElement) {
+                _inherits(InputmaskElement, _HTMLElement);
+                var _super = _createSuper(InputmaskElement);
+                function InputmaskElement() {
+                    var _this;
+                    _classCallCheck(this, InputmaskElement), _this = _super.call(this);
+                    var attributeNames = _this.getAttributeNames(), shadow = _this.attachShadow({
+                        mode: "closed"
+                    }), input = document.createElement("input");
+                    for (var attr in input.type = "text", shadow.appendChild(input), attributeNames) Object.prototype.hasOwnProperty.call(attributeNames, attr) && input.setAttribute(attributeNames[attr], _this.getAttribute(attributeNames[attr]));
+                    var im = new _inputmask.default();
+                    return im.dataAttribute = "", im.mask(input), input.inputmask.shadowRoot = shadow, 
+                    _this;
+                }
+                return InputmaskElement;
+            }(_wrapNativeSuper(HTMLElement));
+            _window.default.customElements.define("input-mask", InputmaskElement);
+        }
+    } ], installedModules = {}, __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
+    __webpack_require__.d = function(exports, name, getter) {
+        __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {
+            enumerable: !0,
+            get: getter
+        });
+    }, __webpack_require__.r = function(exports) {
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {
+            value: "Module"
+        }), Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+    }, __webpack_require__.t = function(value, mode) {
+        if (1 & mode && (value = __webpack_require__(value)), 8 & mode) return value;
+        if (4 & mode && "object" == typeof value && value && value.__esModule) return value;
+        var ns = Object.create(null);
+        if (__webpack_require__.r(ns), Object.defineProperty(ns, "default", {
+            enumerable: !0,
+            value: value
+        }), 2 & mode && "string" != typeof value) for (var key in value) __webpack_require__.d(ns, key, function(key) {
+            return value[key];
+        }.bind(null, key));
+        return ns;
+    }, __webpack_require__.n = function(module) {
+        var getter = module && module.__esModule ? function getDefault() {
+            return module.default;
+        } : function getModuleExports() {
+            return module;
+        };
+        return __webpack_require__.d(getter, "a", getter), getter;
+    }, __webpack_require__.o = function(object, property) {
+        return Object.prototype.hasOwnProperty.call(object, property);
+    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 15);
+    function __webpack_require__(moduleId) {
+        if (installedModules[moduleId]) return installedModules[moduleId].exports;
+        var module = installedModules[moduleId] = {
+            i: moduleId,
+            l: !1,
+            exports: {}
+        };
+        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+        module.l = !0, module.exports;
+    }
+    var modules, installedModules;
+});
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+ * International Telephone Input v17.0.6
+ * https://github.com/jackocnr/intl-tel-input.git
+ * Licensed under the MIT license
+ */
+
+// wrap in UMD
+(function(factory) {
+    if ( true && module.exports) module.exports = factory(); else window.intlTelInput = factory();
+})(function(undefined) {
+    "use strict";
+    return function() {
+        // Array of country objects for the flag dropdown.
+        // Here is the criteria for the plugin to support a given country/territory
+        // - It has an iso2 code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        // - It has it's own country calling code (it is not a sub-region of another country): https://en.wikipedia.org/wiki/List_of_country_calling_codes
+        // - It has a flag in the region-flags project: https://github.com/behdad/region-flags/tree/gh-pages/png
+        // - It is supported by libphonenumber (it must be listed on this page): https://github.com/googlei18n/libphonenumber/blob/master/resources/ShortNumberMetadata.xml
+        // Each country array has the following information:
+        // [
+        //    Country name,
+        //    iso2 code,
+        //    International dial code,
+        //    Order (if >1 country with same dial code),
+        //    Area codes
+        // ]
+        var allCountries = [ [ "Afghanistan (‫افغانستان‬‎)", "af", "93" ], [ "Albania (Shqipëri)", "al", "355" ], [ "Algeria (‫الجزائر‬‎)", "dz", "213" ], [ "American Samoa", "as", "1", 5, [ "684" ] ], [ "Andorra", "ad", "376" ], [ "Angola", "ao", "244" ], [ "Anguilla", "ai", "1", 6, [ "264" ] ], [ "Antigua and Barbuda", "ag", "1", 7, [ "268" ] ], [ "Argentina", "ar", "54" ], [ "Armenia (Հայաստան)", "am", "374" ], [ "Aruba", "aw", "297" ], [ "Australia", "au", "61", 0 ], [ "Austria (Österreich)", "at", "43" ], [ "Azerbaijan (Azərbaycan)", "az", "994" ], [ "Bahamas", "bs", "1", 8, [ "242" ] ], [ "Bahrain (‫البحرين‬‎)", "bh", "973" ], [ "Bangladesh (বাংলাদেশ)", "bd", "880" ], [ "Barbados", "bb", "1", 9, [ "246" ] ], [ "Belarus (Беларусь)", "by", "375" ], [ "Belgium (België)", "be", "32" ], [ "Belize", "bz", "501" ], [ "Benin (Bénin)", "bj", "229" ], [ "Bermuda", "bm", "1", 10, [ "441" ] ], [ "Bhutan (འབྲུག)", "bt", "975" ], [ "Bolivia", "bo", "591" ], [ "Bosnia and Herzegovina (Босна и Херцеговина)", "ba", "387" ], [ "Botswana", "bw", "267" ], [ "Brazil (Brasil)", "br", "55" ], [ "British Indian Ocean Territory", "io", "246" ], [ "British Virgin Islands", "vg", "1", 11, [ "284" ] ], [ "Brunei", "bn", "673" ], [ "Bulgaria (България)", "bg", "359" ], [ "Burkina Faso", "bf", "226" ], [ "Burundi (Uburundi)", "bi", "257" ], [ "Cambodia (កម្ពុជា)", "kh", "855" ], [ "Cameroon (Cameroun)", "cm", "237" ], [ "Canada", "ca", "1", 1, [ "204", "226", "236", "249", "250", "289", "306", "343", "365", "387", "403", "416", "418", "431", "437", "438", "450", "506", "514", "519", "548", "579", "581", "587", "604", "613", "639", "647", "672", "705", "709", "742", "778", "780", "782", "807", "819", "825", "867", "873", "902", "905" ] ], [ "Cape Verde (Kabu Verdi)", "cv", "238" ], [ "Caribbean Netherlands", "bq", "599", 1, [ "3", "4", "7" ] ], [ "Cayman Islands", "ky", "1", 12, [ "345" ] ], [ "Central African Republic (République centrafricaine)", "cf", "236" ], [ "Chad (Tchad)", "td", "235" ], [ "Chile", "cl", "56" ], [ "China (中国)", "cn", "86" ], [ "Christmas Island", "cx", "61", 2, [ "89164" ] ], [ "Cocos (Keeling) Islands", "cc", "61", 1, [ "89162" ] ], [ "Colombia", "co", "57" ], [ "Comoros (‫جزر القمر‬‎)", "km", "269" ], [ "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)", "cd", "243" ], [ "Congo (Republic) (Congo-Brazzaville)", "cg", "242" ], [ "Cook Islands", "ck", "682" ], [ "Costa Rica", "cr", "506" ], [ "Côte d’Ivoire", "ci", "225" ], [ "Croatia (Hrvatska)", "hr", "385" ], [ "Cuba", "cu", "53" ], [ "Curaçao", "cw", "599", 0 ], [ "Cyprus (Κύπρος)", "cy", "357" ], [ "Czech Republic (Česká republika)", "cz", "420" ], [ "Denmark (Danmark)", "dk", "45" ], [ "Djibouti", "dj", "253" ], [ "Dominica", "dm", "1", 13, [ "767" ] ], [ "Dominican Republic (República Dominicana)", "do", "1", 2, [ "809", "829", "849" ] ], [ "Ecuador", "ec", "593" ], [ "Egypt (‫مصر‬‎)", "eg", "20" ], [ "El Salvador", "sv", "503" ], [ "Equatorial Guinea (Guinea Ecuatorial)", "gq", "240" ], [ "Eritrea", "er", "291" ], [ "Estonia (Eesti)", "ee", "372" ], [ "Ethiopia", "et", "251" ], [ "Falkland Islands (Islas Malvinas)", "fk", "500" ], [ "Faroe Islands (Føroyar)", "fo", "298" ], [ "Fiji", "fj", "679" ], [ "Finland (Suomi)", "fi", "358", 0 ], [ "France", "fr", "33" ], [ "French Guiana (Guyane française)", "gf", "594" ], [ "French Polynesia (Polynésie française)", "pf", "689" ], [ "Gabon", "ga", "241" ], [ "Gambia", "gm", "220" ], [ "Georgia (საქართველო)", "ge", "995" ], [ "Germany (Deutschland)", "de", "49" ], [ "Ghana (Gaana)", "gh", "233" ], [ "Gibraltar", "gi", "350" ], [ "Greece (Ελλάδα)", "gr", "30" ], [ "Greenland (Kalaallit Nunaat)", "gl", "299" ], [ "Grenada", "gd", "1", 14, [ "473" ] ], [ "Guadeloupe", "gp", "590", 0 ], [ "Guam", "gu", "1", 15, [ "671" ] ], [ "Guatemala", "gt", "502" ], [ "Guernsey", "gg", "44", 1, [ "1481", "7781", "7839", "7911" ] ], [ "Guinea (Guinée)", "gn", "224" ], [ "Guinea-Bissau (Guiné Bissau)", "gw", "245" ], [ "Guyana", "gy", "592" ], [ "Haiti", "ht", "509" ], [ "Honduras", "hn", "504" ], [ "Hong Kong (香港)", "hk", "852" ], [ "Hungary (Magyarország)", "hu", "36" ], [ "Iceland (Ísland)", "is", "354" ], [ "India (भारत)", "in", "91" ], [ "Indonesia", "id", "62" ], [ "Iran (‫ایران‬‎)", "ir", "98" ], [ "Iraq (‫العراق‬‎)", "iq", "964" ], [ "Ireland", "ie", "353" ], [ "Isle of Man", "im", "44", 2, [ "1624", "74576", "7524", "7924", "7624" ] ], [ "Israel (‫ישראל‬‎)", "il", "972" ], [ "Italy (Italia)", "it", "39", 0 ], [ "Jamaica", "jm", "1", 4, [ "876", "658" ] ], [ "Japan (日本)", "jp", "81" ], [ "Jersey", "je", "44", 3, [ "1534", "7509", "7700", "7797", "7829", "7937" ] ], [ "Jordan (‫الأردن‬‎)", "jo", "962" ], [ "Kazakhstan (Казахстан)", "kz", "7", 1, [ "33", "7" ] ], [ "Kenya", "ke", "254" ], [ "Kiribati", "ki", "686" ], [ "Kosovo", "xk", "383" ], [ "Kuwait (‫الكويت‬‎)", "kw", "965" ], [ "Kyrgyzstan (Кыргызстан)", "kg", "996" ], [ "Laos (ລາວ)", "la", "856" ], [ "Latvia (Latvija)", "lv", "371" ], [ "Lebanon (‫لبنان‬‎)", "lb", "961" ], [ "Lesotho", "ls", "266" ], [ "Liberia", "lr", "231" ], [ "Libya (‫ليبيا‬‎)", "ly", "218" ], [ "Liechtenstein", "li", "423" ], [ "Lithuania (Lietuva)", "lt", "370" ], [ "Luxembourg", "lu", "352" ], [ "Macau (澳門)", "mo", "853" ], [ "Macedonia (FYROM) (Македонија)", "mk", "389" ], [ "Madagascar (Madagasikara)", "mg", "261" ], [ "Malawi", "mw", "265" ], [ "Malaysia", "my", "60" ], [ "Maldives", "mv", "960" ], [ "Mali", "ml", "223" ], [ "Malta", "mt", "356" ], [ "Marshall Islands", "mh", "692" ], [ "Martinique", "mq", "596" ], [ "Mauritania (‫موريتانيا‬‎)", "mr", "222" ], [ "Mauritius (Moris)", "mu", "230" ], [ "Mayotte", "yt", "262", 1, [ "269", "639" ] ], [ "Mexico (México)", "mx", "52" ], [ "Micronesia", "fm", "691" ], [ "Moldova (Republica Moldova)", "md", "373" ], [ "Monaco", "mc", "377" ], [ "Mongolia (Монгол)", "mn", "976" ], [ "Montenegro (Crna Gora)", "me", "382" ], [ "Montserrat", "ms", "1", 16, [ "664" ] ], [ "Morocco (‫المغرب‬‎)", "ma", "212", 0 ], [ "Mozambique (Moçambique)", "mz", "258" ], [ "Myanmar (Burma) (မြန်မာ)", "mm", "95" ], [ "Namibia (Namibië)", "na", "264" ], [ "Nauru", "nr", "674" ], [ "Nepal (नेपाल)", "np", "977" ], [ "Netherlands (Nederland)", "nl", "31" ], [ "New Caledonia (Nouvelle-Calédonie)", "nc", "687" ], [ "New Zealand", "nz", "64" ], [ "Nicaragua", "ni", "505" ], [ "Niger (Nijar)", "ne", "227" ], [ "Nigeria", "ng", "234" ], [ "Niue", "nu", "683" ], [ "Norfolk Island", "nf", "672" ], [ "North Korea (조선 민주주의 인민 공화국)", "kp", "850" ], [ "Northern Mariana Islands", "mp", "1", 17, [ "670" ] ], [ "Norway (Norge)", "no", "47", 0 ], [ "Oman (‫عُمان‬‎)", "om", "968" ], [ "Pakistan (‫پاکستان‬‎)", "pk", "92" ], [ "Palau", "pw", "680" ], [ "Palestine (‫فلسطين‬‎)", "ps", "970" ], [ "Panama (Panamá)", "pa", "507" ], [ "Papua New Guinea", "pg", "675" ], [ "Paraguay", "py", "595" ], [ "Peru (Perú)", "pe", "51" ], [ "Philippines", "ph", "63" ], [ "Poland (Polska)", "pl", "48" ], [ "Portugal", "pt", "351" ], [ "Puerto Rico", "pr", "1", 3, [ "787", "939" ] ], [ "Qatar (‫قطر‬‎)", "qa", "974" ], [ "Réunion (La Réunion)", "re", "262", 0 ], [ "Romania (România)", "ro", "40" ], [ "Russia (Россия)", "ru", "7", 0 ], [ "Rwanda", "rw", "250" ], [ "Saint Barthélemy", "bl", "590", 1 ], [ "Saint Helena", "sh", "290" ], [ "Saint Kitts and Nevis", "kn", "1", 18, [ "869" ] ], [ "Saint Lucia", "lc", "1", 19, [ "758" ] ], [ "Saint Martin (Saint-Martin (partie française))", "mf", "590", 2 ], [ "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)", "pm", "508" ], [ "Saint Vincent and the Grenadines", "vc", "1", 20, [ "784" ] ], [ "Samoa", "ws", "685" ], [ "San Marino", "sm", "378" ], [ "São Tomé and Príncipe (São Tomé e Príncipe)", "st", "239" ], [ "Saudi Arabia (‫المملكة العربية السعودية‬‎)", "sa", "966" ], [ "Senegal (Sénégal)", "sn", "221" ], [ "Serbia (Србија)", "rs", "381" ], [ "Seychelles", "sc", "248" ], [ "Sierra Leone", "sl", "232" ], [ "Singapore", "sg", "65" ], [ "Sint Maarten", "sx", "1", 21, [ "721" ] ], [ "Slovakia (Slovensko)", "sk", "421" ], [ "Slovenia (Slovenija)", "si", "386" ], [ "Solomon Islands", "sb", "677" ], [ "Somalia (Soomaaliya)", "so", "252" ], [ "South Africa", "za", "27" ], [ "South Korea (대한민국)", "kr", "82" ], [ "South Sudan (‫جنوب السودان‬‎)", "ss", "211" ], [ "Spain (España)", "es", "34" ], [ "Sri Lanka (ශ්‍රී ලංකාව)", "lk", "94" ], [ "Sudan (‫السودان‬‎)", "sd", "249" ], [ "Suriname", "sr", "597" ], [ "Svalbard and Jan Mayen", "sj", "47", 1, [ "79" ] ], [ "Swaziland", "sz", "268" ], [ "Sweden (Sverige)", "se", "46" ], [ "Switzerland (Schweiz)", "ch", "41" ], [ "Syria (‫سوريا‬‎)", "sy", "963" ], [ "Taiwan (台灣)", "tw", "886" ], [ "Tajikistan", "tj", "992" ], [ "Tanzania", "tz", "255" ], [ "Thailand (ไทย)", "th", "66" ], [ "Timor-Leste", "tl", "670" ], [ "Togo", "tg", "228" ], [ "Tokelau", "tk", "690" ], [ "Tonga", "to", "676" ], [ "Trinidad and Tobago", "tt", "1", 22, [ "868" ] ], [ "Tunisia (‫تونس‬‎)", "tn", "216" ], [ "Turkey (Türkiye)", "tr", "90" ], [ "Turkmenistan", "tm", "993" ], [ "Turks and Caicos Islands", "tc", "1", 23, [ "649" ] ], [ "Tuvalu", "tv", "688" ], [ "U.S. Virgin Islands", "vi", "1", 24, [ "340" ] ], [ "Uganda", "ug", "256" ], [ "Ukraine (Україна)", "ua", "380" ], [ "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)", "ae", "971" ], [ "United Kingdom", "gb", "44", 0 ], [ "United States", "us", "1", 0 ], [ "Uruguay", "uy", "598" ], [ "Uzbekistan (Oʻzbekiston)", "uz", "998" ], [ "Vanuatu", "vu", "678" ], [ "Vatican City (Città del Vaticano)", "va", "39", 1, [ "06698" ] ], [ "Venezuela", "ve", "58" ], [ "Vietnam (Việt Nam)", "vn", "84" ], [ "Wallis and Futuna (Wallis-et-Futuna)", "wf", "681" ], [ "Western Sahara (‫الصحراء الغربية‬‎)", "eh", "212", 1, [ "5288", "5289" ] ], [ "Yemen (‫اليمن‬‎)", "ye", "967" ], [ "Zambia", "zm", "260" ], [ "Zimbabwe", "zw", "263" ], [ "Åland Islands", "ax", "358", 1, [ "18" ] ] ];
+        // loop over all of the countries above, restructuring the data to be objects with named keys
+        for (var i = 0; i < allCountries.length; i++) {
+            var c = allCountries[i];
+            allCountries[i] = {
+                name: c[0],
+                iso2: c[1],
+                dialCode: c[2],
+                priority: c[3] || 0,
+                areaCodes: c[4] || null
+            };
+        }
+        "use strict";
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        }
+        function _defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+        function _createClass(Constructor, protoProps, staticProps) {
+            if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) _defineProperties(Constructor, staticProps);
+            return Constructor;
+        }
+        var intlTelInputGlobals = {
+            getInstance: function getInstance(input) {
+                var id = input.getAttribute("data-intl-tel-input-id");
+                return window.intlTelInputGlobals.instances[id];
+            },
+            instances: {},
+            // using a global like this allows us to mock it in the tests
+            documentReady: function documentReady() {
+                return document.readyState === "complete";
+            }
+        };
+        if (typeof window === "object") window.intlTelInputGlobals = intlTelInputGlobals;
+        // these vars persist through all instances of the plugin
+        var id = 0;
+        var defaults = {
+            // whether or not to allow the dropdown
+            allowDropdown: true,
+            // if there is just a dial code in the input: remove it on blur
+            autoHideDialCode: true,
+            // add a placeholder in the input with an example number for the selected country
+            autoPlaceholder: "polite",
+            // modify the parentClass
+            customContainer: "",
+            // modify the auto placeholder
+            customPlaceholder: null,
+            // append menu to specified element
+            dropdownContainer: null,
+            // don't display these countries
+            excludeCountries: [],
+            // format the input value during initialisation and on setNumber
+            formatOnDisplay: true,
+            // geoIp lookup function
+            geoIpLookup: null,
+            // inject a hidden input with this name, and on submit, populate it with the result of getNumber
+            hiddenInput: "",
+            // initial country
+            initialCountry: "",
+            // localized country names e.g. { 'de': 'Deutschland' }
+            localizedCountries: null,
+            // don't insert international dial codes
+            nationalMode: true,
+            // display only these countries
+            onlyCountries: [],
+            // number type to use for placeholders
+            placeholderNumberType: "MOBILE",
+            // the countries at the top of the list. defaults to united states and united kingdom
+            preferredCountries: [ "us", "gb" ],
+            // display the country dial code next to the selected flag so it's not part of the typed number
+            separateDialCode: false,
+            // specify the path to the libphonenumber script to enable validation/formatting
+            utilsScript: ""
+        };
+        // https://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes#Non-geographic_area_codes
+        var regionlessNanpNumbers = [ "800", "822", "833", "844", "855", "866", "877", "880", "881", "882", "883", "884", "885", "886", "887", "888", "889" ];
+        // utility function to iterate over an object. can't use Object.entries or native forEach because
+        // of IE11
+        var forEachProp = function forEachProp(obj, callback) {
+            var keys = Object.keys(obj);
+            for (var i = 0; i < keys.length; i++) {
+                callback(keys[i], obj[keys[i]]);
+            }
+        };
+        // run a method on each instance of the plugin
+        var forEachInstance = function forEachInstance(method) {
+            forEachProp(window.intlTelInputGlobals.instances, function(key) {
+                window.intlTelInputGlobals.instances[key][method]();
+            });
+        };
+        // this is our plugin class that we will create an instance of
+        // eslint-disable-next-line no-unused-vars
+        var Iti = /*#__PURE__*/
+        function() {
+            function Iti(input, options) {
+                var _this = this;
+                _classCallCheck(this, Iti);
+                this.id = id++;
+                this.telInput = input;
+                this.activeItem = null;
+                this.highlightedItem = null;
+                // process specified options / defaults
+                // alternative to Object.assign, which isn't supported by IE11
+                var customOptions = options || {};
+                this.options = {};
+                forEachProp(defaults, function(key, value) {
+                    _this.options[key] = customOptions.hasOwnProperty(key) ? customOptions[key] : value;
+                });
+                this.hadInitialPlaceholder = Boolean(input.getAttribute("placeholder"));
+            }
+            _createClass(Iti, [ {
+                key: "_init",
+                value: function _init() {
+                    var _this2 = this;
+                    // if in nationalMode, disable options relating to dial codes
+                    if (this.options.nationalMode) this.options.autoHideDialCode = false;
+                    // if separateDialCode then doesn't make sense to A) insert dial code into input
+                    // (autoHideDialCode), and B) display national numbers (because we're displaying the country
+                    // dial code next to them)
+                    if (this.options.separateDialCode) {
+                        this.options.autoHideDialCode = this.options.nationalMode = false;
+                    }
+                    // we cannot just test screen size as some smartphones/website meta tags will report desktop
+                    // resolutions
+                    // Note: for some reason jasmine breaks if you put this in the main Plugin function with the
+                    // rest of these declarations
+                    // Note: to target Android Mobiles (and not Tablets), we must find 'Android' and 'Mobile'
+                    this.isMobile = /Android.+Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    if (this.isMobile) {
+                        // trigger the mobile dropdown css
+                        document.body.classList.add("iti-mobile");
+                        // on mobile, we want a full screen dropdown, so we must append it to the body
+                        if (!this.options.dropdownContainer) this.options.dropdownContainer = document.body;
+                    }
+                    // these promises get resolved when their individual requests complete
+                    // this way the dev can do something like iti.promise.then(...) to know when all requests are
+                    // complete
+                    if (typeof Promise !== "undefined") {
+                        var autoCountryPromise = new Promise(function(resolve, reject) {
+                            _this2.resolveAutoCountryPromise = resolve;
+                            _this2.rejectAutoCountryPromise = reject;
+                        });
+                        var utilsScriptPromise = new Promise(function(resolve, reject) {
+                            _this2.resolveUtilsScriptPromise = resolve;
+                            _this2.rejectUtilsScriptPromise = reject;
+                        });
+                        this.promise = Promise.all([ autoCountryPromise, utilsScriptPromise ]);
+                    } else {
+                        // prevent errors when Promise doesn't exist
+                        this.resolveAutoCountryPromise = this.rejectAutoCountryPromise = function() {};
+                        this.resolveUtilsScriptPromise = this.rejectUtilsScriptPromise = function() {};
+                    }
+                    // in various situations there could be no country selected initially, but we need to be able
+                    // to assume this variable exists
+                    this.selectedCountryData = {};
+                    // process all the data: onlyCountries, excludeCountries, preferredCountries etc
+                    this._processCountryData();
+                    // generate the markup
+                    this._generateMarkup();
+                    // set the initial state of the input value and the selected flag
+                    this._setInitialState();
+                    // start all of the event listeners: autoHideDialCode, input keydown, selectedFlag click
+                    this._initListeners();
+                    // utils script, and auto country
+                    this._initRequests();
+                }
+            }, {
+                key: "_processCountryData",
+                value: function _processCountryData() {
+                    // process onlyCountries or excludeCountries array if present
+                    this._processAllCountries();
+                    // process the countryCodes map
+                    this._processCountryCodes();
+                    // process the preferredCountries
+                    this._processPreferredCountries();
+                    // translate countries according to localizedCountries option
+                    if (this.options.localizedCountries) this._translateCountriesByLocale();
+                    // sort countries by name
+                    if (this.options.onlyCountries.length || this.options.localizedCountries) {
+                        this.countries.sort(this._countryNameSort);
+                    }
+                }
+            }, {
+                key: "_addCountryCode",
+                value: function _addCountryCode(iso2, countryCode, priority) {
+                    if (countryCode.length > this.countryCodeMaxLen) {
+                        this.countryCodeMaxLen = countryCode.length;
+                    }
+                    if (!this.countryCodes.hasOwnProperty(countryCode)) {
+                        this.countryCodes[countryCode] = [];
+                    }
+                    // bail if we already have this country for this countryCode
+                    for (var i = 0; i < this.countryCodes[countryCode].length; i++) {
+                        if (this.countryCodes[countryCode][i] === iso2) return;
+                    }
+                    // check for undefined as 0 is falsy
+                    var index = priority !== undefined ? priority : this.countryCodes[countryCode].length;
+                    this.countryCodes[countryCode][index] = iso2;
+                }
+            }, {
+                key: "_processAllCountries",
+                value: function _processAllCountries() {
+                    if (this.options.onlyCountries.length) {
+                        var lowerCaseOnlyCountries = this.options.onlyCountries.map(function(country) {
+                            return country.toLowerCase();
+                        });
+                        this.countries = allCountries.filter(function(country) {
+                            return lowerCaseOnlyCountries.indexOf(country.iso2) > -1;
+                        });
+                    } else if (this.options.excludeCountries.length) {
+                        var lowerCaseExcludeCountries = this.options.excludeCountries.map(function(country) {
+                            return country.toLowerCase();
+                        });
+                        this.countries = allCountries.filter(function(country) {
+                            return lowerCaseExcludeCountries.indexOf(country.iso2) === -1;
+                        });
+                    } else {
+                        this.countries = allCountries;
+                    }
+                }
+            }, {
+                key: "_translateCountriesByLocale",
+                value: function _translateCountriesByLocale() {
+                    for (var i = 0; i < this.countries.length; i++) {
+                        var iso = this.countries[i].iso2.toLowerCase();
+                        if (this.options.localizedCountries.hasOwnProperty(iso)) {
+                            this.countries[i].name = this.options.localizedCountries[iso];
+                        }
+                    }
+                }
+            }, {
+                key: "_countryNameSort",
+                value: function _countryNameSort(a, b) {
+                    return a.name.localeCompare(b.name);
+                }
+            }, {
+                key: "_processCountryCodes",
+                value: function _processCountryCodes() {
+                    this.countryCodeMaxLen = 0;
+                    // here we store just dial codes
+                    this.dialCodes = {};
+                    // here we store "country codes" (both dial codes and their area codes)
+                    this.countryCodes = {};
+                    // first: add dial codes
+                    for (var i = 0; i < this.countries.length; i++) {
+                        var c = this.countries[i];
+                        if (!this.dialCodes[c.dialCode]) this.dialCodes[c.dialCode] = true;
+                        this._addCountryCode(c.iso2, c.dialCode, c.priority);
+                    }
+                    // next: add area codes
+                    // this is a second loop over countries, to make sure we have all of the "root" countries
+                    // already in the map, so that we can access them, as each time we add an area code substring
+                    // to the map, we also need to include the "root" country's code, as that also matches
+                    for (var _i = 0; _i < this.countries.length; _i++) {
+                        var _c = this.countries[_i];
+                        // area codes
+                        if (_c.areaCodes) {
+                            var rootCountryCode = this.countryCodes[_c.dialCode][0];
+                            // for each area code
+                            for (var j = 0; j < _c.areaCodes.length; j++) {
+                                var areaCode = _c.areaCodes[j];
+                                // for each digit in the area code to add all partial matches as well
+                                for (var k = 1; k < areaCode.length; k++) {
+                                    var partialDialCode = _c.dialCode + areaCode.substr(0, k);
+                                    // start with the root country, as that also matches this dial code
+                                    this._addCountryCode(rootCountryCode, partialDialCode);
+                                    this._addCountryCode(_c.iso2, partialDialCode);
+                                }
+                                // add the full area code
+                                this._addCountryCode(_c.iso2, _c.dialCode + areaCode);
+                            }
+                        }
+                    }
+                }
+            }, {
+                key: "_processPreferredCountries",
+                value: function _processPreferredCountries() {
+                    this.preferredCountries = [];
+                    for (var i = 0; i < this.options.preferredCountries.length; i++) {
+                        var countryCode = this.options.preferredCountries[i].toLowerCase();
+                        var countryData = this._getCountryData(countryCode, false, true);
+                        if (countryData) this.preferredCountries.push(countryData);
+                    }
+                }
+            }, {
+                key: "_createEl",
+                value: function _createEl(name, attrs, container) {
+                    var el = document.createElement(name);
+                    if (attrs) forEachProp(attrs, function(key, value) {
+                        return el.setAttribute(key, value);
+                    });
+                    if (container) container.appendChild(el);
+                    return el;
+                }
+            }, {
+                key: "_generateMarkup",
+                value: function _generateMarkup() {
+                    // if autocomplete does not exist on the element and its form, then
+                    // prevent autocomplete as there's no safe, cross-browser event we can react to, so it can
+                    // easily put the plugin in an inconsistent state e.g. the wrong flag selected for the
+                    // autocompleted number, which on submit could mean wrong number is saved (esp in nationalMode)
+                    if (!this.telInput.hasAttribute("autocomplete") && !(this.telInput.form && this.telInput.form.hasAttribute("autocomplete"))) {
+                        this.telInput.setAttribute("autocomplete", "off");
+                    }
+                    // containers (mostly for positioning)
+                    var parentClass = "iti";
+                    if (this.options.allowDropdown) parentClass += " iti--allow-dropdown";
+                    if (this.options.separateDialCode) parentClass += " iti--separate-dial-code";
+                    if (this.options.customContainer) {
+                        parentClass += " ";
+                        parentClass += this.options.customContainer;
+                    }
+                    var wrapper = this._createEl("div", {
+                        "class": parentClass
+                    });
+                    this.telInput.parentNode.insertBefore(wrapper, this.telInput);
+                    this.flagsContainer = this._createEl("div", {
+                        "class": "iti__flag-container"
+                    }, wrapper);
+                    wrapper.appendChild(this.telInput);
+                    // selected flag (displayed to left of input)
+                    this.selectedFlag = this._createEl("div", {
+                        "class": "iti__selected-flag",
+                        role: "combobox",
+                        "aria-controls": "iti-".concat(this.id, "__country-listbox"),
+                        "aria-owns": "iti-".concat(this.id, "__country-listbox"),
+                        "aria-expanded": "false"
+                    }, this.flagsContainer);
+                    this.selectedFlagInner = this._createEl("div", {
+                        "class": "iti__flag"
+                    }, this.selectedFlag);
+                    if (this.options.separateDialCode) {
+                        this.selectedDialCode = this._createEl("div", {
+                            "class": "iti__selected-dial-code"
+                        }, this.selectedFlag);
+                    }
+                    if (this.options.allowDropdown) {
+                        // make element focusable and tab navigable
+                        this.selectedFlag.setAttribute("tabindex", "0");
+                        this.dropdownArrow = this._createEl("div", {
+                            "class": "iti__arrow"
+                        }, this.selectedFlag);
+                        // country dropdown: preferred countries, then divider, then all countries
+                        this.countryList = this._createEl("ul", {
+                            "class": "iti__country-list iti__hide",
+                            id: "iti-".concat(this.id, "__country-listbox"),
+                            role: "listbox",
+                            "aria-label": "List of countries"
+                        });
+                        if (this.preferredCountries.length) {
+                            this._appendListItems(this.preferredCountries, "iti__preferred", true);
+                            this._createEl("li", {
+                                "class": "iti__divider",
+                                role: "separator",
+                                "aria-disabled": "true"
+                            }, this.countryList);
+                        }
+                        this._appendListItems(this.countries, "iti__standard");
+                        // create dropdownContainer markup
+                        if (this.options.dropdownContainer) {
+                            this.dropdown = this._createEl("div", {
+                                "class": "iti iti--container"
+                            });
+                            this.dropdown.appendChild(this.countryList);
+                        } else {
+                            this.flagsContainer.appendChild(this.countryList);
+                        }
+                    }
+                    if (this.options.hiddenInput) {
+                        var hiddenInputName = this.options.hiddenInput;
+                        var name = this.telInput.getAttribute("name");
+                        if (name) {
+                            var i = name.lastIndexOf("[");
+                            // if input name contains square brackets, then give the hidden input the same name,
+                            // replacing the contents of the last set of brackets with the given hiddenInput name
+                            if (i !== -1) hiddenInputName = "".concat(name.substr(0, i), "[").concat(hiddenInputName, "]");
+                        }
+                        this.hiddenInput = this._createEl("input", {
+                            type: "hidden",
+                            name: hiddenInputName
+                        });
+                        wrapper.appendChild(this.hiddenInput);
+                    }
+                }
+            }, {
+                key: "_appendListItems",
+                value: function _appendListItems(countries, className, preferred) {
+                    // we create so many DOM elements, it is faster to build a temp string
+                    // and then add everything to the DOM in one go at the end
+                    var tmp = "";
+                    // for each country
+                    for (var i = 0; i < countries.length; i++) {
+                        var c = countries[i];
+                        var idSuffix = preferred ? "-preferred" : "";
+                        // open the list item
+                        tmp += "<li class='iti__country ".concat(className, "' tabIndex='-1' id='iti-").concat(this.id, "__item-").concat(c.iso2).concat(idSuffix, "' role='option' data-dial-code='").concat(c.dialCode, "' data-country-code='").concat(c.iso2, "' aria-selected='false'>");
+                        // add the flag
+                        tmp += "<div class='iti__flag-box'><div class='iti__flag iti__".concat(c.iso2, "'></div></div>");
+                        // and the country name and dial code
+                        tmp += "<span class='iti__country-name'>".concat(c.name, "</span>");
+                        tmp += "<span class='iti__dial-code'>+".concat(c.dialCode, "</span>");
+                        // close the list item
+                        tmp += "</li>";
+                    }
+                    this.countryList.insertAdjacentHTML("beforeend", tmp);
+                }
+            }, {
+                key: "_setInitialState",
+                value: function _setInitialState() {
+                    var val = this.telInput.value;
+                    var dialCode = this._getDialCode(val);
+                    var isRegionlessNanp = this._isRegionlessNanp(val);
+                    var _this$options = this.options, initialCountry = _this$options.initialCountry, nationalMode = _this$options.nationalMode, autoHideDialCode = _this$options.autoHideDialCode, separateDialCode = _this$options.separateDialCode;
+                    // if we already have a dial code, and it's not a regionlessNanp, we can go ahead and set the
+                    // flag, else fall back to the default country
+                    if (dialCode && !isRegionlessNanp) {
+                        this._updateFlagFromNumber(val);
+                    } else if (initialCountry !== "auto") {
+                        // see if we should select a flag
+                        if (initialCountry) {
+                            this._setFlag(initialCountry.toLowerCase());
+                        } else {
+                            if (dialCode && isRegionlessNanp) {
+                                // has intl dial code, is regionless nanp, and no initialCountry, so default to US
+                                this._setFlag("us");
+                            } else {
+                                // no dial code and no initialCountry, so default to first in list
+                                this.defaultCountry = this.preferredCountries.length ? this.preferredCountries[0].iso2 : this.countries[0].iso2;
+                                if (!val) {
+                                    this._setFlag(this.defaultCountry);
+                                }
+                            }
+                        }
+                        // if empty and no nationalMode and no autoHideDialCode then insert the default dial code
+                        if (!val && !nationalMode && !autoHideDialCode && !separateDialCode) {
+                            this.telInput.value = "+".concat(this.selectedCountryData.dialCode);
+                        }
+                    }
+                    // NOTE: if initialCountry is set to auto, that will be handled separately
+                    // format - note this wont be run after _updateDialCode as that's only called if no val
+                    if (val) this._updateValFromNumber(val);
+                }
+            }, {
+                key: "_initListeners",
+                value: function _initListeners() {
+                    this._initKeyListeners();
+                    if (this.options.autoHideDialCode) this._initBlurListeners();
+                    if (this.options.allowDropdown) this._initDropdownListeners();
+                    if (this.hiddenInput) this._initHiddenInputListener();
+                }
+            }, {
+                key: "_initHiddenInputListener",
+                value: function _initHiddenInputListener() {
+                    var _this3 = this;
+                    this._handleHiddenInputSubmit = function() {
+                        _this3.hiddenInput.value = _this3.getNumber();
+                    };
+                    if (this.telInput.form) this.telInput.form.addEventListener("submit", this._handleHiddenInputSubmit);
+                }
+            }, {
+                key: "_getClosestLabel",
+                value: function _getClosestLabel() {
+                    var el = this.telInput;
+                    while (el && el.tagName !== "LABEL") {
+                        el = el.parentNode;
+                    }
+                    return el;
+                }
+            }, {
+                key: "_initDropdownListeners",
+                value: function _initDropdownListeners() {
+                    var _this4 = this;
+                    // hack for input nested inside label (which is valid markup): clicking the selected-flag to
+                    // open the dropdown would then automatically trigger a 2nd click on the input which would
+                    // close it again
+                    this._handleLabelClick = function(e) {
+                        // if the dropdown is closed, then focus the input, else ignore the click
+                        if (_this4.countryList.classList.contains("iti__hide")) _this4.telInput.focus(); else e.preventDefault();
+                    };
+                    var label = this._getClosestLabel();
+                    if (label) label.addEventListener("click", this._handleLabelClick);
+                    // toggle country dropdown on click
+                    this._handleClickSelectedFlag = function() {
+                        // only intercept this event if we're opening the dropdown
+                        // else let it bubble up to the top ("click-off-to-close" listener)
+                        // we cannot just stopPropagation as it may be needed to close another instance
+                        if (_this4.countryList.classList.contains("iti__hide") && !_this4.telInput.disabled && !_this4.telInput.readOnly) {
+                            _this4._showDropdown();
+                        }
+                    };
+                    this.selectedFlag.addEventListener("click", this._handleClickSelectedFlag);
+                    // open dropdown list if currently focused
+                    this._handleFlagsContainerKeydown = function(e) {
+                        var isDropdownHidden = _this4.countryList.classList.contains("iti__hide");
+                        if (isDropdownHidden && [ "ArrowUp", "Up", "ArrowDown", "Down", " ", "Enter" ].indexOf(e.key) !== -1) {
+                            // prevent form from being submitted if "ENTER" was pressed
+                            e.preventDefault();
+                            // prevent event from being handled again by document
+                            e.stopPropagation();
+                            _this4._showDropdown();
+                        }
+                        // allow navigation from dropdown to input on TAB
+                        if (e.key === "Tab") _this4._closeDropdown();
+                    };
+                    this.flagsContainer.addEventListener("keydown", this._handleFlagsContainerKeydown);
+                }
+            }, {
+                key: "_initRequests",
+                value: function _initRequests() {
+                    var _this5 = this;
+                    // if the user has specified the path to the utils script, fetch it on window.load, else resolve
+                    if (this.options.utilsScript && !window.intlTelInputUtils) {
+                        // if the plugin is being initialised after the window.load event has already been fired
+                        if (window.intlTelInputGlobals.documentReady()) {
+                            window.intlTelInputGlobals.loadUtils(this.options.utilsScript);
+                        } else {
+                            // wait until the load event so we don't block any other requests e.g. the flags image
+                            window.addEventListener("load", function() {
+                                window.intlTelInputGlobals.loadUtils(_this5.options.utilsScript);
+                            });
+                        }
+                    } else this.resolveUtilsScriptPromise();
+                    if (this.options.initialCountry === "auto") this._loadAutoCountry(); else this.resolveAutoCountryPromise();
+                }
+            }, {
+                key: "_loadAutoCountry",
+                value: function _loadAutoCountry() {
+                    // 3 options:
+                    // 1) already loaded (we're done)
+                    // 2) not already started loading (start)
+                    // 3) already started loading (do nothing - just wait for loading callback to fire)
+                    if (window.intlTelInputGlobals.autoCountry) {
+                        this.handleAutoCountry();
+                    } else if (!window.intlTelInputGlobals.startedLoadingAutoCountry) {
+                        // don't do this twice!
+                        window.intlTelInputGlobals.startedLoadingAutoCountry = true;
+                        if (typeof this.options.geoIpLookup === "function") {
+                            this.options.geoIpLookup(function(countryCode) {
+                                window.intlTelInputGlobals.autoCountry = countryCode.toLowerCase();
+                                // tell all instances the auto country is ready
+                                // TODO: this should just be the current instances
+                                // UPDATE: use setTimeout in case their geoIpLookup function calls this callback straight
+                                // away (e.g. if they have already done the geo ip lookup somewhere else). Using
+                                // setTimeout means that the current thread of execution will finish before executing
+                                // this, which allows the plugin to finish initialising.
+                                setTimeout(function() {
+                                    return forEachInstance("handleAutoCountry");
+                                });
+                            }, function() {
+                                return forEachInstance("rejectAutoCountryPromise");
+                            });
+                        }
+                    }
+                }
+            }, {
+                key: "_initKeyListeners",
+                value: function _initKeyListeners() {
+                    var _this6 = this;
+                    // update flag on keyup
+                    this._handleKeyupEvent = function() {
+                        if (_this6._updateFlagFromNumber(_this6.telInput.value)) {
+                            _this6._triggerCountryChange();
+                        }
+                    };
+                    this.telInput.addEventListener("keyup", this._handleKeyupEvent);
+                    // update flag on cut/paste events (now supported in all major browsers)
+                    this._handleClipboardEvent = function() {
+                        // hack because "paste" event is fired before input is updated
+                        setTimeout(_this6._handleKeyupEvent);
+                    };
+                    this.telInput.addEventListener("cut", this._handleClipboardEvent);
+                    this.telInput.addEventListener("paste", this._handleClipboardEvent);
+                }
+            }, {
+                key: "_cap",
+                value: function _cap(number) {
+                    var max = this.telInput.getAttribute("maxlength");
+                    return max && number.length > max ? number.substr(0, max) : number;
+                }
+            }, {
+                key: "_initBlurListeners",
+                value: function _initBlurListeners() {
+                    var _this7 = this;
+                    // on blur or form submit: if just a dial code then remove it
+                    this._handleSubmitOrBlurEvent = function() {
+                        _this7._removeEmptyDialCode();
+                    };
+                    if (this.telInput.form) this.telInput.form.addEventListener("submit", this._handleSubmitOrBlurEvent);
+                    this.telInput.addEventListener("blur", this._handleSubmitOrBlurEvent);
+                }
+            }, {
+                key: "_removeEmptyDialCode",
+                value: function _removeEmptyDialCode() {
+                    if (this.telInput.value.charAt(0) === "+") {
+                        var numeric = this._getNumeric(this.telInput.value);
+                        // if just a plus, or if just a dial code
+                        if (!numeric || this.selectedCountryData.dialCode === numeric) {
+                            this.telInput.value = "";
+                        }
+                    }
+                }
+            }, {
+                key: "_getNumeric",
+                value: function _getNumeric(s) {
+                    return s.replace(/\D/g, "");
+                }
+            }, {
+                key: "_trigger",
+                value: function _trigger(name) {
+                    // have to use old school document.createEvent as IE11 doesn't support `new Event()` syntax
+                    var e = document.createEvent("Event");
+                    e.initEvent(name, true, true);
+                    // can bubble, and is cancellable
+                    this.telInput.dispatchEvent(e);
+                }
+            }, {
+                key: "_showDropdown",
+                value: function _showDropdown() {
+                    this.countryList.classList.remove("iti__hide");
+                    this.selectedFlag.setAttribute("aria-expanded", "true");
+                    this._setDropdownPosition();
+                    // update highlighting and scroll to active list item
+                    if (this.activeItem) {
+                        this._highlightListItem(this.activeItem, false);
+                        this._scrollTo(this.activeItem, true);
+                    }
+                    // bind all the dropdown-related listeners: mouseover, click, click-off, keydown
+                    this._bindDropdownListeners();
+                    // update the arrow
+                    this.dropdownArrow.classList.add("iti__arrow--up");
+                    this._trigger("open:countrydropdown");
+                }
+            }, {
+                key: "_toggleClass",
+                value: function _toggleClass(el, className, shouldHaveClass) {
+                    if (shouldHaveClass && !el.classList.contains(className)) el.classList.add(className); else if (!shouldHaveClass && el.classList.contains(className)) el.classList.remove(className);
+                }
+            }, {
+                key: "_setDropdownPosition",
+                value: function _setDropdownPosition() {
+                    var _this8 = this;
+                    if (this.options.dropdownContainer) {
+                        this.options.dropdownContainer.appendChild(this.dropdown);
+                    }
+                    if (!this.isMobile) {
+                        var pos = this.telInput.getBoundingClientRect();
+                        // windowTop from https://stackoverflow.com/a/14384091/217866
+                        var windowTop = window.pageYOffset || document.documentElement.scrollTop;
+                        var inputTop = pos.top + windowTop;
+                        var dropdownHeight = this.countryList.offsetHeight;
+                        // dropdownFitsBelow = (dropdownBottom < windowBottom)
+                        var dropdownFitsBelow = inputTop + this.telInput.offsetHeight + dropdownHeight < windowTop + window.innerHeight;
+                        var dropdownFitsAbove = inputTop - dropdownHeight > windowTop;
+                        // by default, the dropdown will be below the input. If we want to position it above the
+                        // input, we add the dropup class.
+                        this._toggleClass(this.countryList, "iti__country-list--dropup", !dropdownFitsBelow && dropdownFitsAbove);
+                        // if dropdownContainer is enabled, calculate postion
+                        if (this.options.dropdownContainer) {
+                            // by default the dropdown will be directly over the input because it's not in the flow.
+                            // If we want to position it below, we need to add some extra top value.
+                            var extraTop = !dropdownFitsBelow && dropdownFitsAbove ? 0 : this.telInput.offsetHeight;
+                            // calculate placement
+                            this.dropdown.style.top = "".concat(inputTop + extraTop, "px");
+                            this.dropdown.style.left = "".concat(pos.left + document.body.scrollLeft, "px");
+                            // close menu on window scroll
+                            this._handleWindowScroll = function() {
+                                return _this8._closeDropdown();
+                            };
+                            window.addEventListener("scroll", this._handleWindowScroll);
+                        }
+                    }
+                }
+            }, {
+                key: "_getClosestListItem",
+                value: function _getClosestListItem(target) {
+                    var el = target;
+                    while (el && el !== this.countryList && !el.classList.contains("iti__country")) {
+                        el = el.parentNode;
+                    }
+                    // if we reached the countryList element, then return null
+                    return el === this.countryList ? null : el;
+                }
+            }, {
+                key: "_bindDropdownListeners",
+                value: function _bindDropdownListeners() {
+                    var _this9 = this;
+                    // when mouse over a list item, just highlight that one
+                    // we add the class "highlight", so if they hit "enter" we know which one to select
+                    this._handleMouseoverCountryList = function(e) {
+                        // handle event delegation, as we're listening for this event on the countryList
+                        var listItem = _this9._getClosestListItem(e.target);
+                        if (listItem) _this9._highlightListItem(listItem, false);
+                    };
+                    this.countryList.addEventListener("mouseover", this._handleMouseoverCountryList);
+                    // listen for country selection
+                    this._handleClickCountryList = function(e) {
+                        var listItem = _this9._getClosestListItem(e.target);
+                        if (listItem) _this9._selectListItem(listItem);
+                    };
+                    this.countryList.addEventListener("click", this._handleClickCountryList);
+                    // click off to close
+                    // (except when this initial opening click is bubbling up)
+                    // we cannot just stopPropagation as it may be needed to close another instance
+                    var isOpening = true;
+                    this._handleClickOffToClose = function() {
+                        if (!isOpening) _this9._closeDropdown();
+                        isOpening = false;
+                    };
+                    document.documentElement.addEventListener("click", this._handleClickOffToClose);
+                    // listen for up/down scrolling, enter to select, or letters to jump to country name.
+                    // use keydown as keypress doesn't fire for non-char keys and we want to catch if they
+                    // just hit down and hold it to scroll down (no keyup event).
+                    // listen on the document because that's where key events are triggered if no input has focus
+                    var query = "";
+                    var queryTimer = null;
+                    this._handleKeydownOnDropdown = function(e) {
+                        // prevent down key from scrolling the whole page,
+                        // and enter key from submitting a form etc
+                        e.preventDefault();
+                        // up and down to navigate
+                        if (e.key === "ArrowUp" || e.key === "Up" || e.key === "ArrowDown" || e.key === "Down") _this9._handleUpDownKey(e.key); else if (e.key === "Enter") _this9._handleEnterKey(); else if (e.key === "Escape") _this9._closeDropdown(); else if (/^[a-zA-ZÀ-ÿа-яА-Я ]$/.test(e.key)) {
+                            // jump to countries that start with the query string
+                            if (queryTimer) clearTimeout(queryTimer);
+                            query += e.key.toLowerCase();
+                            _this9._searchForCountry(query);
+                            // if the timer hits 1 second, reset the query
+                            queryTimer = setTimeout(function() {
+                                query = "";
+                            }, 1e3);
+                        }
+                    };
+                    document.addEventListener("keydown", this._handleKeydownOnDropdown);
+                }
+            }, {
+                key: "_handleUpDownKey",
+                value: function _handleUpDownKey(key) {
+                    var next = key === "ArrowUp" || key === "Up" ? this.highlightedItem.previousElementSibling : this.highlightedItem.nextElementSibling;
+                    if (next) {
+                        // skip the divider
+                        if (next.classList.contains("iti__divider")) {
+                            next = key === "ArrowUp" || key === "Up" ? next.previousElementSibling : next.nextElementSibling;
+                        }
+                        this._highlightListItem(next, true);
+                    }
+                }
+            }, {
+                key: "_handleEnterKey",
+                value: function _handleEnterKey() {
+                    if (this.highlightedItem) this._selectListItem(this.highlightedItem);
+                }
+            }, {
+                key: "_searchForCountry",
+                value: function _searchForCountry(query) {
+                    for (var i = 0; i < this.countries.length; i++) {
+                        if (this._startsWith(this.countries[i].name, query)) {
+                            var listItem = this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(this.countries[i].iso2));
+                            // update highlighting and scroll
+                            this._highlightListItem(listItem, false);
+                            this._scrollTo(listItem, true);
+                            break;
+                        }
+                    }
+                }
+            }, {
+                key: "_startsWith",
+                value: function _startsWith(a, b) {
+                    return a.substr(0, b.length).toLowerCase() === b;
+                }
+            }, {
+                key: "_updateValFromNumber",
+                value: function _updateValFromNumber(originalNumber) {
+                    var number = originalNumber;
+                    if (this.options.formatOnDisplay && window.intlTelInputUtils && this.selectedCountryData) {
+                        var useNational = !this.options.separateDialCode && (this.options.nationalMode || number.charAt(0) !== "+");
+                        var _intlTelInputUtils$nu = intlTelInputUtils.numberFormat, NATIONAL = _intlTelInputUtils$nu.NATIONAL, INTERNATIONAL = _intlTelInputUtils$nu.INTERNATIONAL;
+                        var format = useNational ? NATIONAL : INTERNATIONAL;
+                        number = intlTelInputUtils.formatNumber(number, this.selectedCountryData.iso2, format);
+                    }
+                    number = this._beforeSetNumber(number);
+                    this.telInput.value = number;
+                }
+            }, {
+                key: "_updateFlagFromNumber",
+                value: function _updateFlagFromNumber(originalNumber) {
+                    // if we're in nationalMode and we already have US/Canada selected, make sure the number starts
+                    // with a +1 so _getDialCode will be able to extract the area code
+                    // update: if we dont yet have selectedCountryData, but we're here (trying to update the flag
+                    // from the number), that means we're initialising the plugin with a number that already has a
+                    // dial code, so fine to ignore this bit
+                    var number = originalNumber;
+                    var selectedDialCode = this.selectedCountryData.dialCode;
+                    var isNanp = selectedDialCode === "1";
+                    if (number && this.options.nationalMode && isNanp && number.charAt(0) !== "+") {
+                        if (number.charAt(0) !== "1") number = "1".concat(number);
+                        number = "+".concat(number);
+                    }
+                    // update flag if user types area code for another country
+                    if (this.options.separateDialCode && selectedDialCode && number.charAt(0) !== "+") {
+                        number = "+".concat(selectedDialCode).concat(number);
+                    }
+                    // try and extract valid dial code from input
+                    var dialCode = this._getDialCode(number, true);
+                    var numeric = this._getNumeric(number);
+                    var countryCode = null;
+                    if (dialCode) {
+                        var countryCodes = this.countryCodes[this._getNumeric(dialCode)];
+                        // check if the right country is already selected. this should be false if the number is
+                        // longer than the matched dial code because in this case we need to make sure that if
+                        // there are multiple country matches, that the first one is selected (note: we could
+                        // just check that here, but it requires the same loop that we already have later)
+                        var alreadySelected = countryCodes.indexOf(this.selectedCountryData.iso2) !== -1 && numeric.length <= dialCode.length - 1;
+                        var isRegionlessNanpNumber = selectedDialCode === "1" && this._isRegionlessNanp(numeric);
+                        // only update the flag if:
+                        // A) NOT (we currently have a NANP flag selected, and the number is a regionlessNanp)
+                        // AND
+                        // B) the right country is not already selected
+                        if (!isRegionlessNanpNumber && !alreadySelected) {
+                            // if using onlyCountries option, countryCodes[0] may be empty, so we must find the first
+                            // non-empty index
+                            for (var j = 0; j < countryCodes.length; j++) {
+                                if (countryCodes[j]) {
+                                    countryCode = countryCodes[j];
+                                    break;
+                                }
+                            }
+                        }
+                    } else if (number.charAt(0) === "+" && numeric.length) {
+                        // invalid dial code, so empty
+                        // Note: use getNumeric here because the number has not been formatted yet, so could contain
+                        // bad chars
+                        countryCode = "";
+                    } else if (!number || number === "+") {
+                        // empty, or just a plus, so default
+                        countryCode = this.defaultCountry;
+                    }
+                    if (countryCode !== null) {
+                        return this._setFlag(countryCode);
+                    }
+                    return false;
+                }
+            }, {
+                key: "_isRegionlessNanp",
+                value: function _isRegionlessNanp(number) {
+                    var numeric = this._getNumeric(number);
+                    if (numeric.charAt(0) === "1") {
+                        var areaCode = numeric.substr(1, 3);
+                        return regionlessNanpNumbers.indexOf(areaCode) !== -1;
+                    }
+                    return false;
+                }
+            }, {
+                key: "_highlightListItem",
+                value: function _highlightListItem(listItem, shouldFocus) {
+                    var prevItem = this.highlightedItem;
+                    if (prevItem) prevItem.classList.remove("iti__highlight");
+                    this.highlightedItem = listItem;
+                    this.highlightedItem.classList.add("iti__highlight");
+                    if (shouldFocus) this.highlightedItem.focus();
+                }
+            }, {
+                key: "_getCountryData",
+                value: function _getCountryData(countryCode, ignoreOnlyCountriesOption, allowFail) {
+                    var countryList = ignoreOnlyCountriesOption ? allCountries : this.countries;
+                    for (var i = 0; i < countryList.length; i++) {
+                        if (countryList[i].iso2 === countryCode) {
+                            return countryList[i];
+                        }
+                    }
+                    if (allowFail) {
+                        return null;
+                    }
+                    throw new Error("No country data for '".concat(countryCode, "'"));
+                }
+            }, {
+                key: "_setFlag",
+                value: function _setFlag(countryCode) {
+                    var prevCountry = this.selectedCountryData.iso2 ? this.selectedCountryData : {};
+                    // do this first as it will throw an error and stop if countryCode is invalid
+                    this.selectedCountryData = countryCode ? this._getCountryData(countryCode, false, false) : {};
+                    // update the defaultCountry - we only need the iso2 from now on, so just store that
+                    if (this.selectedCountryData.iso2) {
+                        this.defaultCountry = this.selectedCountryData.iso2;
+                    }
+                    this.selectedFlagInner.setAttribute("class", "iti__flag iti__".concat(countryCode));
+                    // update the selected country's title attribute
+                    var title = countryCode ? "".concat(this.selectedCountryData.name, ": +").concat(this.selectedCountryData.dialCode) : "Unknown";
+                    this.selectedFlag.setAttribute("title", title);
+                    if (this.options.separateDialCode) {
+                        var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
+                        this.selectedDialCode.innerHTML = dialCode;
+                        // offsetWidth is zero if input is in a hidden container during initialisation
+                        var selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
+                        // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
+                        this.telInput.style.paddingLeft = "".concat(selectedFlagWidth + 6, "px");
+                    }
+                    // and the input's placeholder
+                    this._updatePlaceholder();
+                    // update the active list item
+                    if (this.options.allowDropdown) {
+                        var prevItem = this.activeItem;
+                        if (prevItem) {
+                            prevItem.classList.remove("iti__active");
+                            prevItem.setAttribute("aria-selected", "false");
+                        }
+                        if (countryCode) {
+                            // check if there is a preferred item first, else fall back to standard
+                            var nextItem = this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(countryCode, "-preferred")) || this.countryList.querySelector("#iti-".concat(this.id, "__item-").concat(countryCode));
+                            nextItem.setAttribute("aria-selected", "true");
+                            nextItem.classList.add("iti__active");
+                            this.activeItem = nextItem;
+                            this.selectedFlag.setAttribute("aria-activedescendant", nextItem.getAttribute("id"));
+                        }
+                    }
+                    // return if the flag has changed or not
+                    return prevCountry.iso2 !== countryCode;
+                }
+            }, {
+                key: "_getHiddenSelectedFlagWidth",
+                value: function _getHiddenSelectedFlagWidth() {
+                    // to get the right styling to apply, all we need is a shallow clone of the container,
+                    // and then to inject a deep clone of the selectedFlag element
+                    var containerClone = this.telInput.parentNode.cloneNode();
+                    containerClone.style.visibility = "hidden";
+                    document.body.appendChild(containerClone);
+                    var flagsContainerClone = this.flagsContainer.cloneNode();
+                    containerClone.appendChild(flagsContainerClone);
+                    var selectedFlagClone = this.selectedFlag.cloneNode(true);
+                    flagsContainerClone.appendChild(selectedFlagClone);
+                    var width = selectedFlagClone.offsetWidth;
+                    containerClone.parentNode.removeChild(containerClone);
+                    return width;
+                }
+            }, {
+                key: "_updatePlaceholder",
+                value: function _updatePlaceholder() {
+                    var shouldSetPlaceholder = this.options.autoPlaceholder === "aggressive" || !this.hadInitialPlaceholder && this.options.autoPlaceholder === "polite";
+                    if (window.intlTelInputUtils && shouldSetPlaceholder) {
+                        var numberType = intlTelInputUtils.numberType[this.options.placeholderNumberType];
+                        var placeholder = this.selectedCountryData.iso2 ? intlTelInputUtils.getExampleNumber(this.selectedCountryData.iso2, this.options.nationalMode, numberType) : "";
+                        placeholder = this._beforeSetNumber(placeholder);
+                        if (typeof this.options.customPlaceholder === "function") {
+                            placeholder = this.options.customPlaceholder(placeholder, this.selectedCountryData);
+                        }
+                        this.telInput.setAttribute("placeholder", placeholder);
+                    }
+                }
+            }, {
+                key: "_selectListItem",
+                value: function _selectListItem(listItem) {
+                    // update selected flag and active list item
+                    var flagChanged = this._setFlag(listItem.getAttribute("data-country-code"));
+                    this._closeDropdown();
+                    this._updateDialCode(listItem.getAttribute("data-dial-code"), true);
+                    // focus the input
+                    this.telInput.focus();
+                    // put cursor at end - this fix is required for FF and IE11 (with nationalMode=false i.e. auto
+                    // inserting dial code), who try to put the cursor at the beginning the first time
+                    var len = this.telInput.value.length;
+                    this.telInput.setSelectionRange(len, len);
+                    if (flagChanged) {
+                        this._triggerCountryChange();
+                    }
+                }
+            }, {
+                key: "_closeDropdown",
+                value: function _closeDropdown() {
+                    this.countryList.classList.add("iti__hide");
+                    this.selectedFlag.setAttribute("aria-expanded", "false");
+                    // update the arrow
+                    this.dropdownArrow.classList.remove("iti__arrow--up");
+                    // unbind key events
+                    document.removeEventListener("keydown", this._handleKeydownOnDropdown);
+                    document.documentElement.removeEventListener("click", this._handleClickOffToClose);
+                    this.countryList.removeEventListener("mouseover", this._handleMouseoverCountryList);
+                    this.countryList.removeEventListener("click", this._handleClickCountryList);
+                    // remove menu from container
+                    if (this.options.dropdownContainer) {
+                        if (!this.isMobile) window.removeEventListener("scroll", this._handleWindowScroll);
+                        if (this.dropdown.parentNode) this.dropdown.parentNode.removeChild(this.dropdown);
+                    }
+                    this._trigger("close:countrydropdown");
+                }
+            }, {
+                key: "_scrollTo",
+                value: function _scrollTo(element, middle) {
+                    var container = this.countryList;
+                    // windowTop from https://stackoverflow.com/a/14384091/217866
+                    var windowTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var containerHeight = container.offsetHeight;
+                    var containerTop = container.getBoundingClientRect().top + windowTop;
+                    var containerBottom = containerTop + containerHeight;
+                    var elementHeight = element.offsetHeight;
+                    var elementTop = element.getBoundingClientRect().top + windowTop;
+                    var elementBottom = elementTop + elementHeight;
+                    var newScrollTop = elementTop - containerTop + container.scrollTop;
+                    var middleOffset = containerHeight / 2 - elementHeight / 2;
+                    if (elementTop < containerTop) {
+                        // scroll up
+                        if (middle) newScrollTop -= middleOffset;
+                        container.scrollTop = newScrollTop;
+                    } else if (elementBottom > containerBottom) {
+                        // scroll down
+                        if (middle) newScrollTop += middleOffset;
+                        var heightDifference = containerHeight - elementHeight;
+                        container.scrollTop = newScrollTop - heightDifference;
+                    }
+                }
+            }, {
+                key: "_updateDialCode",
+                value: function _updateDialCode(newDialCodeBare, hasSelectedListItem) {
+                    var inputVal = this.telInput.value;
+                    // save having to pass this every time
+                    var newDialCode = "+".concat(newDialCodeBare);
+                    var newNumber;
+                    if (inputVal.charAt(0) === "+") {
+                        // there's a plus so we're dealing with a replacement (doesn't matter if nationalMode or not)
+                        var prevDialCode = this._getDialCode(inputVal);
+                        if (prevDialCode) {
+                            // current number contains a valid dial code, so replace it
+                            newNumber = inputVal.replace(prevDialCode, newDialCode);
+                        } else {
+                            // current number contains an invalid dial code, so ditch it
+                            // (no way to determine where the invalid dial code ends and the rest of the number begins)
+                            newNumber = newDialCode;
+                        }
+                    } else if (this.options.nationalMode || this.options.separateDialCode) {
+                        // don't do anything
+                        return;
+                    } else {
+                        // nationalMode is disabled
+                        if (inputVal) {
+                            // there is an existing value with no dial code: prefix the new dial code
+                            newNumber = newDialCode + inputVal;
+                        } else if (hasSelectedListItem || !this.options.autoHideDialCode) {
+                            // no existing value and either they've just selected a list item, or autoHideDialCode is
+                            // disabled: insert new dial code
+                            newNumber = newDialCode;
+                        } else {
+                            return;
+                        }
+                    }
+                    this.telInput.value = newNumber;
+                }
+            }, {
+                key: "_getDialCode",
+                value: function _getDialCode(number, includeAreaCode) {
+                    var dialCode = "";
+                    // only interested in international numbers (starting with a plus)
+                    if (number.charAt(0) === "+") {
+                        var numericChars = "";
+                        // iterate over chars
+                        for (var i = 0; i < number.length; i++) {
+                            var c = number.charAt(i);
+                            // if char is number (https://stackoverflow.com/a/8935649/217866)
+                            if (!isNaN(parseInt(c, 10))) {
+                                numericChars += c;
+                                // if current numericChars make a valid dial code
+                                if (includeAreaCode) {
+                                    if (this.countryCodes[numericChars]) {
+                                        // store the actual raw string (useful for matching later)
+                                        dialCode = number.substr(0, i + 1);
+                                    }
+                                } else {
+                                    if (this.dialCodes[numericChars]) {
+                                        dialCode = number.substr(0, i + 1);
+                                        // if we're just looking for a dial code, we can break as soon as we find one
+                                        break;
+                                    }
+                                }
+                                // stop searching as soon as we can - in this case when we hit max len
+                                if (numericChars.length === this.countryCodeMaxLen) {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    return dialCode;
+                }
+            }, {
+                key: "_getFullNumber",
+                value: function _getFullNumber() {
+                    var val = this.telInput.value.trim();
+                    var dialCode = this.selectedCountryData.dialCode;
+                    var prefix;
+                    var numericVal = this._getNumeric(val);
+                    if (this.options.separateDialCode && val.charAt(0) !== "+" && dialCode && numericVal) {
+                        // when using separateDialCode, it is visible so is effectively part of the typed number
+                        prefix = "+".concat(dialCode);
+                    } else {
+                        prefix = "";
+                    }
+                    return prefix + val;
+                }
+            }, {
+                key: "_beforeSetNumber",
+                value: function _beforeSetNumber(originalNumber) {
+                    var number = originalNumber;
+                    if (this.options.separateDialCode) {
+                        var dialCode = this._getDialCode(number);
+                        // if there is a valid dial code
+                        if (dialCode) {
+                            // in case _getDialCode returned an area code as well
+                            dialCode = "+".concat(this.selectedCountryData.dialCode);
+                            // a lot of numbers will have a space separating the dial code and the main number, and
+                            // some NANP numbers will have a hyphen e.g. +1 684-733-1234 - in both cases we want to get
+                            // rid of it
+                            // NOTE: don't just trim all non-numerics as may want to preserve an open parenthesis etc
+                            var start = number[dialCode.length] === " " || number[dialCode.length] === "-" ? dialCode.length + 1 : dialCode.length;
+                            number = number.substr(start);
+                        }
+                    }
+                    return this._cap(number);
+                }
+            }, {
+                key: "_triggerCountryChange",
+                value: function _triggerCountryChange() {
+                    this._trigger("countrychange");
+                }
+            }, {
+                key: "handleAutoCountry",
+                value: function handleAutoCountry() {
+                    if (this.options.initialCountry === "auto") {
+                        // we must set this even if there is an initial val in the input: in case the initial val is
+                        // invalid and they delete it - they should see their auto country
+                        this.defaultCountry = window.intlTelInputGlobals.autoCountry;
+                        // if there's no initial value in the input, then update the flag
+                        if (!this.telInput.value) {
+                            this.setCountry(this.defaultCountry);
+                        }
+                        this.resolveAutoCountryPromise();
+                    }
+                }
+            }, {
+                key: "handleUtils",
+                value: function handleUtils() {
+                    // if the request was successful
+                    if (window.intlTelInputUtils) {
+                        // if there's an initial value in the input, then format it
+                        if (this.telInput.value) {
+                            this._updateValFromNumber(this.telInput.value);
+                        }
+                        this._updatePlaceholder();
+                    }
+                    this.resolveUtilsScriptPromise();
+                }
+            }, {
+                key: "destroy",
+                value: function destroy() {
+                    var form = this.telInput.form;
+                    if (this.options.allowDropdown) {
+                        // make sure the dropdown is closed (and unbind listeners)
+                        this._closeDropdown();
+                        this.selectedFlag.removeEventListener("click", this._handleClickSelectedFlag);
+                        this.flagsContainer.removeEventListener("keydown", this._handleFlagsContainerKeydown);
+                        // label click hack
+                        var label = this._getClosestLabel();
+                        if (label) label.removeEventListener("click", this._handleLabelClick);
+                    }
+                    // unbind hiddenInput listeners
+                    if (this.hiddenInput && form) form.removeEventListener("submit", this._handleHiddenInputSubmit);
+                    // unbind autoHideDialCode listeners
+                    if (this.options.autoHideDialCode) {
+                        if (form) form.removeEventListener("submit", this._handleSubmitOrBlurEvent);
+                        this.telInput.removeEventListener("blur", this._handleSubmitOrBlurEvent);
+                    }
+                    // unbind key events, and cut/paste events
+                    this.telInput.removeEventListener("keyup", this._handleKeyupEvent);
+                    this.telInput.removeEventListener("cut", this._handleClipboardEvent);
+                    this.telInput.removeEventListener("paste", this._handleClipboardEvent);
+                    // remove attribute of id instance: data-intl-tel-input-id
+                    this.telInput.removeAttribute("data-intl-tel-input-id");
+                    // remove markup (but leave the original input)
+                    var wrapper = this.telInput.parentNode;
+                    wrapper.parentNode.insertBefore(this.telInput, wrapper);
+                    wrapper.parentNode.removeChild(wrapper);
+                    delete window.intlTelInputGlobals.instances[this.id];
+                }
+            }, {
+                key: "getExtension",
+                value: function getExtension() {
+                    if (window.intlTelInputUtils) {
+                        return intlTelInputUtils.getExtension(this._getFullNumber(), this.selectedCountryData.iso2);
+                    }
+                    return "";
+                }
+            }, {
+                key: "getNumber",
+                value: function getNumber(format) {
+                    if (window.intlTelInputUtils) {
+                        var iso2 = this.selectedCountryData.iso2;
+                        return intlTelInputUtils.formatNumber(this._getFullNumber(), iso2, format);
+                    }
+                    return "";
+                }
+            }, {
+                key: "getNumberType",
+                value: function getNumberType() {
+                    if (window.intlTelInputUtils) {
+                        return intlTelInputUtils.getNumberType(this._getFullNumber(), this.selectedCountryData.iso2);
+                    }
+                    return -99;
+                }
+            }, {
+                key: "getSelectedCountryData",
+                value: function getSelectedCountryData() {
+                    return this.selectedCountryData;
+                }
+            }, {
+                key: "getValidationError",
+                value: function getValidationError() {
+                    if (window.intlTelInputUtils) {
+                        var iso2 = this.selectedCountryData.iso2;
+                        return intlTelInputUtils.getValidationError(this._getFullNumber(), iso2);
+                    }
+                    return -99;
+                }
+            }, {
+                key: "isValidNumber",
+                value: function isValidNumber() {
+                    var val = this._getFullNumber().trim();
+                    var countryCode = this.options.nationalMode ? this.selectedCountryData.iso2 : "";
+                    return window.intlTelInputUtils ? intlTelInputUtils.isValidNumber(val, countryCode) : null;
+                }
+            }, {
+                key: "setCountry",
+                value: function setCountry(originalCountryCode) {
+                    var countryCode = originalCountryCode.toLowerCase();
+                    // check if already selected
+                    if (!this.selectedFlagInner.classList.contains("iti__".concat(countryCode))) {
+                        this._setFlag(countryCode);
+                        this._updateDialCode(this.selectedCountryData.dialCode, false);
+                        this._triggerCountryChange();
+                    }
+                }
+            }, {
+                key: "setNumber",
+                value: function setNumber(number) {
+                    // we must update the flag first, which updates this.selectedCountryData, which is used for
+                    // formatting the number before displaying it
+                    var flagChanged = this._updateFlagFromNumber(number);
+                    this._updateValFromNumber(number);
+                    if (flagChanged) {
+                        this._triggerCountryChange();
+                    }
+                }
+            }, {
+                key: "setPlaceholderNumberType",
+                value: function setPlaceholderNumberType(type) {
+                    this.options.placeholderNumberType = type;
+                    this._updatePlaceholder();
+                }
+            } ]);
+            return Iti;
+        }();
+        /********************
+ *  STATIC METHODS
+ ********************/
+        // get the country data object
+        intlTelInputGlobals.getCountryData = function() {
+            return allCountries;
+        };
+        // inject a <script> element to load utils.js
+        var injectScript = function injectScript(path, handleSuccess, handleFailure) {
+            // inject a new script element into the page
+            var script = document.createElement("script");
+            script.onload = function() {
+                forEachInstance("handleUtils");
+                if (handleSuccess) handleSuccess();
+            };
+            script.onerror = function() {
+                forEachInstance("rejectUtilsScriptPromise");
+                if (handleFailure) handleFailure();
+            };
+            script.className = "iti-load-utils";
+            script.async = true;
+            script.src = path;
+            document.body.appendChild(script);
+        };
+        // load the utils script
+        intlTelInputGlobals.loadUtils = function(path) {
+            // 2 options:
+            // 1) not already started loading (start)
+            // 2) already started loading (do nothing - just wait for the onload callback to fire, which will
+            // trigger handleUtils on all instances, invoking their resolveUtilsScriptPromise functions)
+            if (!window.intlTelInputUtils && !window.intlTelInputGlobals.startedLoadingUtilsScript) {
+                // only do this once
+                window.intlTelInputGlobals.startedLoadingUtilsScript = true;
+                // if we have promises, then return a promise
+                if (typeof Promise !== "undefined") {
+                    return new Promise(function(resolve, reject) {
+                        return injectScript(path, resolve, reject);
+                    });
+                }
+                injectScript(path);
+            }
+            return null;
+        };
+        // default options
+        intlTelInputGlobals.defaults = defaults;
+        // version
+        intlTelInputGlobals.version = "17.0.6";
+        // convenience wrapper
+        return function(input, options) {
+            var iti = new Iti(input, options);
+            iti._init();
+            input.setAttribute("data-intl-tel-input-id", iti.id);
+            window.intlTelInputGlobals.instances[iti.id] = iti;
+            return iti;
+        };
+    }();
+});
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function(window, factory) {
@@ -38045,7 +42191,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 31 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -41061,7 +45207,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 32 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Magnific Popup - v1.1.0 - 2016-02-20
@@ -42924,7 +47070,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -44585,23 +48731,23 @@ return $;
 }));
 
 /***/ }),
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
 /* 38 */,
 /* 39 */,
-/* 40 */
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(7);
-var Axios = __webpack_require__(41);
-var mergeConfig = __webpack_require__(13);
-var defaults = __webpack_require__(10);
+var bind = __webpack_require__(9);
+var Axios = __webpack_require__(45);
+var mergeConfig = __webpack_require__(15);
+var defaults = __webpack_require__(12);
 
 /**
  * Create an instance of Axios
@@ -44634,15 +48780,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(14);
-axios.CancelToken = __webpack_require__(55);
-axios.isCancel = __webpack_require__(9);
+axios.Cancel = __webpack_require__(16);
+axios.CancelToken = __webpack_require__(59);
+axios.isCancel = __webpack_require__(11);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(56);
+axios.spread = __webpack_require__(60);
 
 module.exports = axios;
 
@@ -44651,17 +48797,17 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 41 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var buildURL = __webpack_require__(8);
-var InterceptorManager = __webpack_require__(42);
-var dispatchRequest = __webpack_require__(43);
-var mergeConfig = __webpack_require__(13);
+var buildURL = __webpack_require__(10);
+var InterceptorManager = __webpack_require__(46);
+var dispatchRequest = __webpack_require__(47);
+var mergeConfig = __webpack_require__(15);
 
 /**
  * Create a new instance of Axios
@@ -44752,7 +48898,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 42 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44811,16 +48957,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 43 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(44);
-var isCancel = __webpack_require__(9);
-var defaults = __webpack_require__(10);
+var transformData = __webpack_require__(48);
+var isCancel = __webpack_require__(11);
+var defaults = __webpack_require__(12);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -44897,7 +49043,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 44 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44924,7 +49070,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 45 */
+/* 49 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -45114,7 +49260,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 46 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45133,13 +49279,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 47 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(14);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -45165,7 +49311,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 48 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45214,7 +49360,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 49 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45274,14 +49420,14 @@ module.exports = (
 
 
 /***/ }),
-/* 50 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isAbsoluteURL = __webpack_require__(51);
-var combineURLs = __webpack_require__(52);
+var isAbsoluteURL = __webpack_require__(55);
+var combineURLs = __webpack_require__(56);
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -45301,7 +49447,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 
 
 /***/ }),
-/* 51 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45322,7 +49468,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45343,7 +49489,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45403,7 +49549,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45478,13 +49624,13 @@ module.exports = (
 
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(14);
+var Cancel = __webpack_require__(16);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -45542,7 +49688,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45576,14 +49722,14 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(3);
-var formats = __webpack_require__(15);
+var formats = __webpack_require__(17);
 var has = Object.prototype.hasOwnProperty;
 
 var arrayPrefixGenerators = {
@@ -45854,7 +50000,7 @@ module.exports = function (object, opts) {
 
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46118,13 +50264,12 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */
+/* 63 */,
+/* 64 */,
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(5)({});
+__webpack_require__(4)({});
 
 
 /***/ })
